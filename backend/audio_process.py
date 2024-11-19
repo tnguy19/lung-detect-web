@@ -33,9 +33,10 @@ spike_times_ms = spike_times / sample_rate * 1000
 # Initialize cluster dict for holding crackle families
 clusters = defaultdict(list)
 cluster_id = 0
+cluster_thresh = 9000
 
 for i in range(len(spike_times_ms)):
-    if not clusters or spike_times_ms[i] - clusters[cluster_id][-1][1] > 9000:  # Check if new cluster needed
+    if not clusters or spike_times_ms[i] - clusters[cluster_id][-1][1] > cluster_thresh:  # Check if new cluster needed
         cluster_id += 1
     clusters[cluster_id].append((spike_channels[i], spike_times_ms[i]))
 
@@ -73,9 +74,9 @@ for family_id, crackle_family in enumerate(crackle_families):
     mother_sample = int(mother_time * sample_rate / 1000)
 
     #print(f"Cluster {family_id + 1}: Mother crackle at channel {mother_channel}, time {mother_time} ms")
-
+    slice_duration = 0.5
     # Extract 1/2-second slices around peaks for cross-correlation
-    slice_length = int(sample_rate) / 2  # 1/2 second slice
+    slice_length = int(sample_rate) * slice_duration  # 1/2 second slice
     mother_slice = audio_data[mother_channel][int(max(0, mother_sample - slice_length // 2)):int(min(len(audio_data[mother_channel]), mother_sample + slice_length // 2))]
 
     autocorrelation = signal.correlate(mother_slice, mother_slice, mode='full')
@@ -88,7 +89,7 @@ for family_id, crackle_family in enumerate(crackle_families):
             continue  # Skip autocorrelation (already computed)
 
         daughter_sample = int(time * sample_rate / 1000)
-        daughter_slice = audio_data[channel][int(max(0, daughter_sample - slice_length // 2)):int(min(len(audio_data[channel]), daughter_sample + slice_length // 2))]
+        daughter_slice = audio_data[channel][int(max(0, mother_sample - slice_length // 2)):int(min(len(audio_data[channel]), daughter_sample + slice_length // 2))]
 
         cross_correlation = signal.correlate(mother_slice, daughter_slice, mode='full')
         cross_correlation_peak = np.max(cross_correlation)
