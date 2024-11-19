@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import LungVisualization from './LungVisualization';
 
-export default function UploadContainer({ updateComputeState }) {
+export default function UploadContainer({ updateComputeState, setData }) {
   const [file, setFile] = useState(null);
 
   function handleFileChange(e) {
@@ -25,9 +26,11 @@ export default function UploadContainer({ updateComputeState }) {
       });
 
       if (response.ok) {
-        const data = await response.text(); // Process response data if needed
+        const data = await response.json(); // Process response as JSON
         console.log('File uploaded successfully:', data);
+        setData(data);  // Update state with the correlation data
         updateComputeState(); // Update state in the parent component
+        console.log('Data:', data)
       } else {
         console.error('Error uploading file:', response.statusText);
         alert('Error uploading file');
@@ -39,11 +42,13 @@ export default function UploadContainer({ updateComputeState }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="upload-buttons-container">
-        <input type="file" name="uploaded_file" onChange={handleFileChange} />
-      </div>
-      <input type="submit" value="Upload File" className="btn btn-default" />
-    </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <div className="upload-buttons-container">
+          <input type="file" onChange={handleFileChange} />
+          <button type="submit">Upload and Compute</button>
+        </div>
+      </form>
+    </div>
   );
 }

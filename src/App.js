@@ -5,16 +5,21 @@ import { useState } from 'react';
 
 function App() {
   const [dataComputed, isDataComputed] = useState(false); // default == false!
+  const [data, isData] = useState(null); // default == true
 
   function updateComputeState() {
     isDataComputed((prevState) => !prevState);
   }
 
+  function setData(newData) {
+    isData((prevState) => newData);
+  }
+
   return (
     <div className="App">
       <h1>Lung Detect</h1>
-      {!dataComputed && <UploadContainer updateComputeState={updateComputeState} />}
-      {dataComputed && <LungVisualization leftDetected={false} rightDetected={false} />}
+      {!dataComputed && <UploadContainer updateComputeState={updateComputeState} setData={setData} />}
+      {dataComputed && data && <LungVisualization data={data} />}
     </div>
   );
 }

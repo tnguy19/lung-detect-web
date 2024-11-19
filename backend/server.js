@@ -40,10 +40,23 @@ app.post('/compute', upload.single('uploaded_file'), (req, res) => {
             console.error(`Python script error: ${stderr}`);
             return res.status(500).send(`Error executing Python script: ${stderr}`);
         }
-
-        console.log(`Python script output: ${stdout}`);
-        res.send(`Python script executed successfully: ${stdout}`);
+    
+        // Log the raw output from Python for debugging
+        console.log("Raw Python output:", stdout);
+    
+        // Remove any unnecessary outer arrays (if present)
+        const cleanedOutput = stdout.replace(/^\[{/, '[').replace(/\}]$/, ']');
+    
+        try {
+            const jsonResponse = JSON.parse(cleanedOutput);
+            console.log("Parsed JSON response:", jsonResponse);
+            res.json(jsonResponse);
+        } catch (parseError) {
+            console.error('Error parsing Python response:', parseError);
+            return res.status(500).send('Error parsing Python response');
+        }
     });
+    
 });
 
 app.listen(PORT, () => {
