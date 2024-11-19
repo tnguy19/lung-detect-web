@@ -9,11 +9,12 @@ import matplotlib.pyplot as plt
 from collections import defaultdict
 from scipy import signal
 import sys
-#Code to create crackle families
-input_file = sys.argv[1]
-audio_data, sample_rate = librosa.load(input_file, sr=None, mono=False)
 
-print(audio_data.shape)
+#Code to create crackle families
+
+audio_data, sample_rate = librosa.load('Nums_7dot1_24_48000.wav', sr=None, mono=False)
+
+#print(audio_data.shape)
 
 # Calculate the mean and standard deviation of each channel
 channel_means = np.mean(audio_data, axis=1)
@@ -24,23 +25,24 @@ threshold = 2 * channel_stds #perhaps make threshold narrower and find way to fi
 
 # Find the time points where the audio exceeds the threshold for each channel
 spike_indices = np.where(np.abs(audio_data) > threshold[:, None])
-
+#print(spike_indices)
 # Get the channel and time indices of the spikes
 spike_channels = spike_indices[0]
 spike_times = spike_indices[1]
 spike_times_ms = spike_times / sample_rate * 1000
-print(spike_times_ms)
+#print(spike_times_ms)
 
 #initalize cluster dict for holding crackle families
 clusters = defaultdict(list)
 cluster_id = 0
+family_range = 5 #how many milliseconds are considered family (big for testing purposes, should be 5ms)
 
 for i in range(len(spike_times_ms)):
-    if not clusters or spike_times_ms[i] - clusters[cluster_id][-1][1] > 9000:  # Check if new cluster needed
+    if not clusters or spike_times_ms[i] - clusters[cluster_id][-1][1] > family_range:  # Check if new cluster needed
         cluster_id += 1
     clusters[cluster_id].append((spike_channels[i], spike_times_ms[i]))
 
-print(clusters)
+#print(clusters)
 
 #remove clusters that arent on every channel
 
@@ -65,7 +67,7 @@ for cluster in filtered_clusters:
     refined_cluster = [(channel, time) for channel, (amplitude, time) in channel_max_amplitudes.items()]
     crackle_families.append(refined_cluster)
 
-print(crackle_families)
+#print(crackle_families)
 
 
 cross_correlation_families = []
@@ -79,7 +81,8 @@ for family_id, crackle_family in enumerate(crackle_families):
     print(f"Cluster {family_id +1}: Mother crackle at channel {mother_channel}, time {mother_time} ms")
 
     # Extract 1/2-second slices around peaks for cross-correlation
-    slice_length = int(sample_rate) / 2  # 1/2 second slice
+    slice_coef = 0.5 #Slice length in seconds
+    slice_length = int(sample_rate) * slice_coef   # 1/2 second slice(sample rate /2)
     #slice is 1/2s slice filtered from audio data centered at mother peak
 
     #print(audio_data[0, int(max(0, mother_sample - slice_length // 2)):int(min(len(audio_data[mother_channel]), mother_sample + slice_length // 2))])
@@ -94,18 +97,17 @@ for family_id, crackle_family in enumerate(crackle_families):
     for channel, time in crackle_family:
         if channel == mother_channel:
             print(f"  Channel {channel}, Delay: 0 ms, Transmission Coefficient: 1")
+            one_family_cross_correlation.append({'channel': channel, 'delay': 0, 'transmission_coefficient': 1})
             continue  # Skip autocorrelation (already computed)
 
         daughter_sample = int(time * sample_rate / 1000)
-        daughter_slice = audio_data[channel][int(max(0, daughter_sample - slice_length // 2)):int(min(len(audio_data[channel]), daughter_sample + slice_length / 2))]
+        daughter_slice = audio_data[channel][int(max(0, mother_sample - slice_length // 2)):int(min(len(audio_data[channel]), mother_sample + slice_length / 2))]
 
 
-        cross_correlation = signal.correlate(mother_slice, daughter_slice, mode='full')
+        cross_correlation = signal.correlate(daughter_slice, mother_slice, mode='full')
 
         cross_correlation_peak = np.max(cross_correlation)
 
-        #can hardcode delay because peak was found, or calculate it to maximize cross correlation
-        #delay = mother_time - time
         lags = signal.correlation_lags(len(mother_slice), len(daughter_slice), mode="full")
         lag = lags[np.argmax(cross_correlation)]
         delay = lag / sample_rate * 1000
@@ -114,9 +116,9 @@ for family_id, crackle_family in enumerate(crackle_families):
 
         one_family_cross_correlation.append({'channel': channel, 'delay': delay, 'transmission_coefficient': transmission_coefficient})
 
-        print(f"  Channel {channel}, Delay: {delay:.2f} ms, Transmission Coefficient: {transmission_coefficient:.4f}")
+        #print(f"  Channel {channel}, Delay: {delay:.2f} ms, Transmission Coefficient: {transmission_coefficient:.4f}")
 
-    print("-" * 20)
+    #print("-" * 20)
 
     cross_correlation_families.append(one_family_cross_correlation)
     print(cross_correlation_families)
