@@ -41,7 +41,7 @@ export default function LungVisualization({ data }) {
     }
     
     //basically the one with the lower delay is nearer to the sign, so assign location based on that
-    if (leftDelay < rightDelay) {
+    if (leftDelay <= rightDelay) {
       leftFound = true;
     } else {
       rightFound = true;
