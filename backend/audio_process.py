@@ -8,10 +8,10 @@ from scipy.io import wavfile
 import matplotlib.pyplot as plt
 from collections import defaultdict
 from scipy import signal
-
+import sys
 #Code to create crackle families
-
-audio_data, sample_rate = librosa.load('Nums_7dot1_24_48000.wav', sr=None, mono=False)
+input_file = sys.argv[1]
+audio_data, sample_rate = librosa.load(input_file, sr=None, mono=False)
 
 print(audio_data.shape)
 
