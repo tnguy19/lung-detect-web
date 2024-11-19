@@ -75,6 +75,7 @@ for family_id, crackle_family in enumerate(crackle_families):
 
     #print(f"Cluster {family_id + 1}: Mother crackle at channel {mother_channel}, time {mother_time} ms")
     slice_duration = 0.5
+
     # Extract 1/2-second slices around peaks for cross-correlation
     slice_length = int(sample_rate) * slice_duration  # 1/2 second slice
     mother_slice = audio_data[mother_channel][int(max(0, mother_sample - slice_length // 2)):int(min(len(audio_data[mother_channel]), mother_sample + slice_length // 2))]
@@ -86,6 +87,7 @@ for family_id, crackle_family in enumerate(crackle_families):
 
     for channel, time in crackle_family:
         if channel == mother_channel:
+            one_family_cross_correlation.append({'channel': channel, 'delay': 0, 'transmission_coefficient': 1})
             continue  # Skip autocorrelation (already computed)
 
         daughter_sample = int(time * sample_rate / 1000)
