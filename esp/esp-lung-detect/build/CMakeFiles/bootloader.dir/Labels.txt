@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/CMakeFiles/bootloader
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/CMakeFiles/bootloader.rule
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/CMakeFiles/bootloader-complete.rule
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
