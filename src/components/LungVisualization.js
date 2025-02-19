@@ -5,33 +5,48 @@ import HumanBack from "../images/human_back.jpg";
 export default function LungVisualization({ data }) {
   const canvasRef = useRef(null);
   const imageRef = useRef(null); // Reference for the image element
-  const [leftDetected, setLeftDetected] = useState(false);
-  const [rightDetected, setRightDetected] = useState(false);
+
+  const [topLeftDetected, setTopLeftDetected] = useState(false);
+  const [topRightDetected, setTopRightDetected] = useState(false);
+  const [midLeftDetected, setMidLeftDetected] = useState(false);
+  const [midRightDetected, setMidRightDetected] = useState(false);
 
   function analyze(data) {
-    let leftFound = false;
-    let rightFound = false;
-    let leftDelay = Infinity;
-    let rightDelay = Infinity;
+    let delays = {
+      midLeft: Infinity,
+      midRight: Infinity,
+      topLeft: Infinity,
+      topRight: Infinity,
+    };
 
+    // Extract delays for each channel
     for (let i = 0; i < data[0].length; i++) {
       let dataPoint = data[0][i];
 
       if (dataPoint.channel === 0) {
-        leftDelay = dataPoint.delay;
+        delays.midLeft = dataPoint.delay;
       } else if (dataPoint.channel === 1) {
-        rightDelay = dataPoint.delay;
+        delays.midRight = dataPoint.delay;
+      } else if (dataPoint.channel === 2) {
+        delays.topLeft = dataPoint.delay;
+      } else if (dataPoint.channel === 3) {
+        delays.topRight = dataPoint.delay;
       }
     }
 
-    if (Math.abs(leftDelay) < Math.abs(rightDelay)) {
-      leftFound = true;
-    } else {
-      rightFound = true;
-    }
+    // Find the minimum delay
+    let minDelay = Math.min(
+      Math.abs(delays.midLeft),
+      Math.abs(delays.midRight),
+      Math.abs(delays.topLeft),
+      Math.abs(delays.topRight)
+    );
 
-    setLeftDetected(leftFound);
-    setRightDetected(rightFound);
+    // Set detected states based on the minimum delay
+    setMidLeftDetected(Math.abs(delays.midLeft) === minDelay);
+    setMidRightDetected(Math.abs(delays.midRight) === minDelay);
+    setTopLeftDetected(Math.abs(delays.topLeft) === minDelay);
+    setTopRightDetected(Math.abs(delays.topRight) === minDelay);
   }
 
   useEffect(() => {
@@ -42,7 +57,7 @@ export default function LungVisualization({ data }) {
 
   const drawGrid = useCallback(() => {
     const canvas = canvasRef.current;
-    const context = canvas.getContext('2d');
+    const context = canvas.getContext("2d");
     const image = imageRef.current;
 
     if (!canvas || !image) return;
@@ -56,8 +71,8 @@ export default function LungVisualization({ data }) {
     canvas.height = canvasHeight;
 
     // Draw grid lines
-    context.clearRect(0, 0, canvasWidth, canvasHeight); 
-    context.strokeStyle = 'black'; 
+    context.clearRect(0, 0, canvasWidth, canvasHeight);
+    context.strokeStyle = "black";
     context.lineWidth = 0.8;
 
     // Draw vertical grid lines
@@ -82,8 +97,8 @@ export default function LungVisualization({ data }) {
   }, [drawGrid]);
 
   return (
-    <div className="visualization-container" style={{ position: 'relative' }}>
-      <div className="lung-container" style={{ position: 'relative' }}>
+    <div className="visualization-container" style={{ position: "relative" }}>
+      <div className="lung-container" style={{ position: "relative" }}>
         {/* human back image to overlay over */}
         <img
           ref={imageRef}
@@ -91,12 +106,12 @@ export default function LungVisualization({ data }) {
           alt="Human Back Diagram"
           className="lung-image"
           style={{
-            position: 'absolute',
+            position: "absolute",
             top: 0,
             left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
           }}
         />
 
@@ -104,23 +119,41 @@ export default function LungVisualization({ data }) {
         <canvas
           ref={canvasRef}
           style={{
-            position: 'absolute',
+            position: "absolute",
             top: 0,
             left: 0,
-            pointerEvents: 'none', // Allow interaction with underlying elements
+            pointerEvents: "none", // Allow interaction with underlying elements
           }}
         />
 
         {/* Detected points */}
         <div
-          className={`lung-point left ${leftDetected ? "detected" : "not-detected"}`}
+          className={`lung-point top-left ${
+            topLeftDetected ? "detected" : "not-detected"
+          }`}
         >
-          {leftDetected ? "Sound" : "No Sound"}
+          {topLeftDetected ? "Sound" : "No Sound"}
         </div>
         <div
-          className={`lung-point right ${rightDetected ? "detected" : "not-detected"}`}
+          className={`lung-point top-right ${
+            topRightDetected ? "detected" : "not-detected"
+          }`}
         >
-          {rightDetected ? "Sound" : "No Sound"}
+          {topRightDetected ? "Sound" : "No Sound"}
+        </div>
+        <div
+          className={`lung-point mid-left ${
+            midLeftDetected ? "detected" : "not-detected"
+          }`}
+        >
+          {midLeftDetected ? "Sound" : "No Sound"}
+        </div>
+        <div
+          className={`lung-point mid-right ${
+            midRightDetected ? "detected" : "not-detected"
+          }`}
+        >
+          {midRightDetected ? "Sound" : "No Sound"}
         </div>
       </div>
     </div>

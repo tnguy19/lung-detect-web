@@ -31,8 +31,8 @@
 
 .lung-container {
   position: relative;
-  width: 500px; 
-  height: 600px; 
+  width: 500px;
+  height: 600px;
   margin: auto;
 }
 
@@ -55,13 +55,25 @@
   font-size: 14px;
 }
 
-.left {
+.top-left {
+  top: 43%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.top-right {
+  top: 43%;
+  right: 30%;
+  transform: translate(50%, -50%);
+}
+
+.mid-left {
   top: 60%;
   left: 30%;
   transform: translate(-50%, -50%);
 }
 
-.right {
+.mid-right {
   top: 60%;
   right: 30%;
   transform: translate(50%, -50%);
@@ -74,4 +86,3 @@
 .not-detected {
   background-color: green;
 }
-
