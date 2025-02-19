@@ -1,6 +1,7 @@
 import LungImage from "../images/lungImage.jpg";
 import { useState, useEffect, useRef, useCallback } from "react";
 import HumanBack from "../images/human_back.jpg";
+import DataTable from "./DataTable";
 
 export default function LungVisualization({ data }) {
   const canvasRef = useRef(null);
@@ -97,64 +98,36 @@ export default function LungVisualization({ data }) {
   }, [drawGrid]);
 
   return (
-    <div className="visualization-container" style={{ position: "relative" }}>
-      <div className="lung-container" style={{ position: "relative" }}>
-        {/* human back image to overlay over */}
+    <div className="visualization-container">
+      <div className="lung-container">
+        {/* Human Back Image */}
         <img
           ref={imageRef}
           src={HumanBack}
           alt="Human Back Diagram"
           className="lung-image"
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-          }}
         />
 
-        {/* Canvas overlay*/}
-        <canvas
-          ref={canvasRef}
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            pointerEvents: "none", // Allow interaction with underlying elements
-          }}
-        />
+        {/* Canvas Overlay */}
+        <canvas ref={canvasRef} className="lung-canvas" />
 
-        {/* Detected points */}
-        <div
-          className={`lung-point top-left ${
-            topLeftDetected ? "detected" : "not-detected"
-          }`}
-        >
+        {/* Detected Points */}
+        <div className={`lung-point top-left ${topLeftDetected ? "detected" : "not-detected"}`}>
           {topLeftDetected ? "Sound" : "No Sound"}
         </div>
-        <div
-          className={`lung-point top-right ${
-            topRightDetected ? "detected" : "not-detected"
-          }`}
-        >
+        <div className={`lung-point top-right ${topRightDetected ? "detected" : "not-detected"}`}>
           {topRightDetected ? "Sound" : "No Sound"}
         </div>
-        <div
-          className={`lung-point mid-left ${
-            midLeftDetected ? "detected" : "not-detected"
-          }`}
-        >
+        <div className={`lung-point mid-left ${midLeftDetected ? "detected" : "not-detected"}`}>
           {midLeftDetected ? "Sound" : "No Sound"}
         </div>
-        <div
-          className={`lung-point mid-right ${
-            midRightDetected ? "detected" : "not-detected"
-          }`}
-        >
+        <div className={`lung-point mid-right ${midRightDetected ? "detected" : "not-detected"}`}>
           {midRightDetected ? "Sound" : "No Sound"}
         </div>
+      </div>
+
+      <div className="table-container">
+        <DataTable data={data[0]} />
       </div>
     </div>
   );
