@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "lung-detect",
-    "project_version":    "b85187c-dirty",
+    "project_version":    "a9d5503-dirty",
     "project_path":       "/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect",
     "idf_path":           "/Users/hilariogonzalez/School/EC444/esp/esp-idf",
     "build_dir":          "/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build",
