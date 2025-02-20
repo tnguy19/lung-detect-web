@@ -30,7 +30,7 @@ export default function UploadContainer({ updateComputeState, setData }) {
         console.log('File uploaded successfully:', data);
         setData(data);  // Update state with the correlation data
         updateComputeState(); // Update state in the parent component
-        console.log('Data:', data)
+        console.log('Data in upload container:', data)
       } else {
         console.error('Error uploading file:', response.statusText);
         alert('Error uploading file');

@@ -3,9 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
+    "@material-tailwind/react": "^2.1.10",
+    "@tailwindcss/vite": "^4.0.6",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "ag-grid-community": "^33.1.0",
+    "ag-grid-react": "^33.1.0",
     "axios": "^1.7.7",
     "childprocess": "^2.0.2",
     "cors": "^2.8.5",
@@ -13,6 +19,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
+    "tailwindcss": "^4.0.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
