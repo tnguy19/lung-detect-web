@@ -29,20 +29,21 @@
 }
 
 .visualization-container {
+  flex: 1;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: flex-start;
-  gap: 20px; /* Space between visualization and table */
+  justify-content: center;
+   gap: 10px; /*Space between visualization and table */
   width: 100%;
-  padding: 20px;
+  padding: 10px;
 }
 
 
 .lung-container {
   flex: 1;
   position: relative;
-  max-width: 600px; /* Prevents the lung visualization from shrinking too much */
+  max-width: 500px; /* Prevents the lung visualization from shrinking too much */
 }
 
 .lung-image {
@@ -61,8 +62,9 @@
 
 .table-container {
   flex: 1;
-  max-width: 500px; 
-  min-width: 300px;
+  max-width: 600px; 
+  min-width: 200px;
+  min-height: 200px;
 }
 
 .lung-point {

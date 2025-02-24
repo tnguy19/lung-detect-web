@@ -45,8 +45,7 @@ export default function DataTable({ data }) {
   ]);
 
   return (
-    // Data Grid will fill the size of the parent container
-    <div style={{ height: 500, width: '100%' }}>
+    <div style={{ height: 200, width: '100%' }}>
         <AgGridReact
             rowData={rowData}
             columnDefs={colDefs}
