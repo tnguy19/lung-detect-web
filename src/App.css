@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  flex: 1;
 }
 
 .App-logo {
@@ -110,4 +111,16 @@
 
 .not-detected {
   background-color: green;
+}
+
+.analysis-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 2px solid black;
+  min-height: 100px;
+  width: 60%;      /* Adjust this percentage or use max-width as needed */
+  margin: 0 auto;
 }
