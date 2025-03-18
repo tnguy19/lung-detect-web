@@ -1,0 +1,17 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/bootloader/esp-idf/esptool_py && /Users/hilariogonzalez/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/bootloader/bootloader.bin
+Bootloader binary size 0x6920 bytes. 0x6e0 bytes (6%) free.
+[2/9] No install step for 'bootloader'
+[3/9] Completed 'bootloader'
+[4/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/lung_detect.c.obj
+[5/9] Linking C static library esp-idf/main/libmain.a
+[6/9] Generating ld/sections.ld
+[7/9] Linking CXX executable lung-detect.elf
+[8/9] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/lung-detect.bin
+[9/9] cd /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/esp-idf/esptool_py && /Users/hilariogonzalez/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/partition_table/partition-table.bin /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/lung-detect.bin
+lung-detect.bin binary size 0x2ea60 bytes. Smallest app partition is 0x100000 bytes. 0xd15a0 bytes (82%) free.

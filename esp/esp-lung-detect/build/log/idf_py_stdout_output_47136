@@ -1,0 +1,544 @@
+5 18:52:46[0m
+[0;32mI (225) app_init: ELF file SHA256:  95a0150...[0m
+[0;32mI (231) app_init: ESP-IDF:          v5.4-dev-2744-g59e1838270[0m
+[0;32mI (237) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (242) efuse_init: Max chiets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7112
+load:0x40078000,len:15788
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (30) boot: ESP-IDF v5.4-dev-2744-g59e1838270 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Feb 24 2025 18:52:52[0m
+[0;32mI (32) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v1.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (45) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a1d8h ( 41432) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0001a200 vaddr=3ffb0000 size=02364h (  9060) load[0m
+[0;32mI (123) esp_image: segment 2: paddr=0001c56c vaddr=40080000 size=03aach ( 15020) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=155e8h ( 87528) map[0m
+[0;32mI (163) esp_image: segment 4: paddr=00035610 vaddr=40083aac size=093e8h ( 37864) load[0m
+[0;32mI (185) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (185) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (209) app_init: Project name:     lung-detect[0m
+[0;32mI (214) app_init: App version:      d333ba4-dirty[0m
+[0;32mI (219) app_init: Compile time:     Feb 24 2025 18:52:46[0m
+[0;32mI (225) app_init: ELF file SHA256:  95a015250...[0m
+[0;32mI (231) app_init: ESP-IDF:          v5.4-dev-2744-g59e1838270[0m
+[0;32mI (237) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (242) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (247) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (252) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (259) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (265) heap_init: At 3FFB2C28 len 0002D3D8 (180 KiB): DRAM[0m
+[0;32mI (271) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (277) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (284) heap_init: At 4008CE94 len 0001316C (76 KiB): IRAM[0m
+[0;32mI (292) spi_flash: detected chip: gd[0m
+[0;32mI (294) spi_flash: flash io: dio[0m
+[0;32mI (299) main_task: Started on CPU0[0m
+[0;32mI (309) main_task: Calling app_main()[0m
+[0;32mI (309) LUNG_DETECT: Initializing...[0m
+[0;32mI (309) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;31mE (5309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (5309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (5309) task_wdt: Tasks currently running:[0m
+[0;31mE (5309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (5309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (5309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E3F:0x3FFB0F80 0x400D9204:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D90 0x40087C4E:0x3FFB5DB0 0x400D6B57:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (10309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (10309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (10309) task_wdt: Tasks currently running:[0m
+[0;31mE (10309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (10309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (10309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E3F:0x3FFB0F80 0x400D9204:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D90 0x40087C4E:0x3FFB5DB0 0x400D6B57:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (15309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (15309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (15309) task_wdt: Tasks currently running:[0m
+[0;31mE (15309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (15309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (15309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E3F:0x3FFB0F80 0x400D9204:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D90 0x40087C4E:0x3FFB5DB0 0x400D6B57:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;32mI (17079) LUNG_DETECT: Streaming Enabled[0m
+[0;32mI (17079) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17079) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17079) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17089) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17099) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17099) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17109) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17119) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17119) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17129) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17139) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17139) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17149) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17159) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17159) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17169) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17179) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17189) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17189) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17199) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17209) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17209) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17219) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17229) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17229) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17239) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17249) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17249) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17259) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17269) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17269) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17279) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17289) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17299) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17299) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17309) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17319) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17319) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17329) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17339) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17339) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17349) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17359) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17359) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17369) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17379) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17379) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17389) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17399) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17409) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17409) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17419) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17429) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17429) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17439) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17449) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17449) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17459) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17469) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17469) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17479) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17489) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17489) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17499) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17509) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17519) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17519) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17529) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17529) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17539) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17549) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17559) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17559) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17569) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17579) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17579) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17589) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17599) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17599) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17609) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17619) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17619) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17629) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17639) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17639) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17649) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17659) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17669) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17669) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17679) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17689) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17689) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17699) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17709) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17709) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17719) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17729) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17729) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17739) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17749) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17749) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17759) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17769) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17779) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17779) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17789) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17799) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17799) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17809) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17819) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17819) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17829) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17839) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17839) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17849) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17859) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17859) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17869) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17879) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17889) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17889) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17899) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17909) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17909) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17919) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17929) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17929) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17939) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17949) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17949) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17959) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17969) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17969) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17979) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17989) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (17999) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (17999) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18009) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18019) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18019) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18029) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18039) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18039) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18049) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18059) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18059) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18069) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18079) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18079) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18089) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18099) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18099) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18109) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18119) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18119) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18129) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18139) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18149) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18149) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18159) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18169) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18169) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18179) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18189) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18189) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18199) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18209) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18209) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18219) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18229) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18229) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18239) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18249) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18259) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18259) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18269) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18279) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18279) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18289) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18299) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18299) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18309) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18319) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18319) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18329) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18339) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18339) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18349) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18359) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18369) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18369) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18379) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18389) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18389) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18399) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18409) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18409) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18419) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18429) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18429) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18439) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18449) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18449) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18459) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18469) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18479) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18479) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18489) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18499) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18499) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18509) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18519) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18519) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18529) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18539) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18539) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18549) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18559) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18559) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18569) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18579) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18579) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18589) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18599) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18599) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18609) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18619) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18629) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18629) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18639) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18649) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18649) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18659) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18669) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18669) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18679) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18689) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18689) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18699) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18709) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18709) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18719) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18729) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18739) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18739) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18749) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18759) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18759) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18769) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18779) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18779) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18789) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18799) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18799) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18809) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18819) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18819) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18829) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18839) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18849) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18849) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18859) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18869) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18869) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18879) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18889) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18889) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18899) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18909) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18909) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18919) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;31mE (18929) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18929) LUNG_DETECT: got eoc from adc, attempting to transmit over uart
+[0m
+[0;32mI (18939) LUNG_DETECT: Streaming Disabled[0m
+[0;31mE (18939) uart: uart_write_bytes(1460): uart driver error[0m
+[0;31mE (23949) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (23949) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (23949) task_wdt: Tasks currently running:[0m
+[0;31mE (23949) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (23949) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (23949) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E3F:0x3FFB0F80 0x400D9204:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D90 0x40087C4E:0x3FFB5DB0 0x400D6B57:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (28949) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (28949) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (28949) task_wdt: Tasks currently running:[0m
+[0;31mE (28949) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (28949) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (28949) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E3F:0x3FFB0F80 0x400D9204:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D90 0x40087C4E:0x3FFB5DB0 0x400D6B57:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (33949) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (33949) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (33949) task_wdt: Tasks currently running:[0m
+[0;31mE (33949) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (33949) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (33949) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E3F:0x3FFB0F80 0x400D9204:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D90 0x40087C4E:0x3FFB5DB0 0x400D6B57:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (38949) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (38949) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (38949) task_wdt: Tasks currently running:[0m
+[0;31mE (38949) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (38949) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (38949) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E3F:0x3FFB0F80 0x400D9204:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D90 0x40087C4E:0x3FFB5DB0 0x400D6B57:0x3FFB5DD0 0x40086195:0x3FFB5E00
+

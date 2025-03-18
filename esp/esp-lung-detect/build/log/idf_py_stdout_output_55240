@@ -1,0 +1,58 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/bootloader/esp-idf/esptool_py && /Users/hilariogonzalez/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/bootloader/bootloader.bin
+Bootloader binary size 0x6920 bytes. 0x6e0 bytes (6%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/lung_detect.c.obj
+[5/10] Linking C static library esp-idf/main/libmain.a
+[6/10] Generating ld/sections.ld
+[7/10] Linking CXX executable lung-detect.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/lung-detect.bin
+[9/10] cd /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/esp-idf/esptool_py && /Users/hilariogonzalez/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/partition_table/partition-table.bin /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/lung-detect.bin
+lung-detect.bin binary size 0x2eab0 bytes. Smallest app partition is 0x100000 bytes. 0xd1550 bytes (82%) free.
+[9/10] cd /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esptool_py && /opt/homebrew/bin/cmake -D IDF_PATH=/Users/hilariogonzalez/School/EC444/esp/esp-idf -D "SERIAL_TOOL=/Users/hilariogonzalez/.espressif/python_env/idf5.4_py3.13_env/bin/python;;/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build -P /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/cu.usbserial-01746A42 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 4MB 0x1000 bootloader/bootloader.bin 0x10000 lung-detect.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port /dev/cu.usbserial-01746A42
+Connecting....
+Chip is ESP32-D0WDQ6 (revision v1.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: b4:e6:2d:9f:8d:61
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x0003efff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26912 bytes to 16548...
+Writing at 0x00001000... (50 %)
+Writing at 0x0000783e... (100 %)
+Wrote 26912 bytes (16548 compressed) at 0x00001000 in 0.9 seconds (effective 238.2 kbit/s)...
+Hash of data verified.
+Compressed 191152 bytes to 101611...
+Writing at 0x00010000... (14 %)
+Writing at 0x0001caf0... (28 %)
+Writing at 0x0002254d... (42 %)
+Writing at 0x00028599... (57 %)
+Writing at 0x0002fc59... (71 %)
+Writing at 0x000372fd... (85 %)
+Writing at 0x0003d521... (100 %)
+Wrote 191152 bytes (101611 compressed) at 0x00010000 in 3.2 seconds (effective 477.3 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 234.1 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

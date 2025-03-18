@@ -1,0 +1,868 @@
+ject name:     lung-detect[0m
+[0;32mI (214) app_init: App ver220) app_init: Compile time:     Feb 24 2025 18:52:46[0m
+[0;32mI (226) app_init: ELF file SHA256:  889a1ffa5...[0m
+[0;32mI (231) app_init: ESP-IDF:          v5.4-dev-2744-g59e1838�ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7112
+load:0x40078000,len:15788
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (30) boot: ESP-IDF v5.4-dev-2744-g59e1838270 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Feb 24 2025 18:52:52[0m
+[0;32mI (32) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v1.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a428h ( 42024) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0001a450 vaddr=3ffb0000 size=02364h (  9060) load[0m
+[0;32mI (123) esp_image: segment 2: paddr=0001c7bc vaddr=40080000 size=0385ch ( 14428) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=15758h ( 87896) map[0m
+[0;32mI (164) esp_image: segment 4: paddr=00035780 vaddr=4008385c size=09638h ( 38456) load[0m
+[0;32mI (185) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (186) boot: Disabling RNG early entropy source...[0m
+[0;32mI (198) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (209) app_init: Project name:     lung-detect[0m
+[0;32mI (214) app_init: App version:      d333ba4-dirty[0m
+[0;32mI (220) app_init: Compile time:     Feb 24 2025 18:52:46[0m
+[0;32mI (226) app_init: ELF file SHA256:  889a1ffa5...[0m
+[0;32mI (231) app_init: ESP-IDF:          v5.4-dev-2744-g59e1838270[0m
+[0;32mI (237) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (242) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (247) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (252) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (259) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (265) heap_init: At 3FFB2C28 len 0002D3D8 (180 KiB): DRAM[0m
+[0;32mI (272) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (278) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (284) heap_init: At 4008CE94 len 0001316C (76 KiB): IRAM[0m
+[0;32mI (292) spi_flash: detected chip: gd[0m
+[0;32mI (295) spi_flash: flash io: dio[0m
+[0;32mI (299) main_task: Started on CPU0[0m
+[0;32mI (309) main_task: Calling app_main()[0m
+[0;32mI (309) LUNG_DETECT: Initializing...[0m
+[0;32mI (309) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (319) LUNG_DETECT: Finished GPIO config[0m
+[0;32mI (319) LUNG_DETECT: Starting task functions[0m
+[0;32mI (329) SWITCH_TASK: switch task started[0m
+[0;32mI (329) ADC_TASK: adc sample task started[0m
+[0;31mE (5309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (5309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (5309) task_wdt: Tasks currently running:[0m
+[0;31mE (5309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (5309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (5309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8FAF:0x3FFB0F80 0x400D9374:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C8F:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (10309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (10309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (10309) task_wdt: Tasks currently running:[0m
+[0;31mE (10309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (10309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (10309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8FAF:0x3FFB0F80 0x400D9374:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C8F:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (15309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (15309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (15309) task_wdt: Tasks currently running:[0m
+[0;31mE (15309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (15309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (15309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8FAF:0x3FFB0F80 0x400D9374:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C8F:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;32mI (18439) LUNG_DETECT: Streaming Enabled[0m
+[0;32mI (18439) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18439) ADC_TASK: EOC recieved[0m
+[0;32mI (18439) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18439) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18449) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18459) ADC_TASK: Num: 0[0m
+[0;32mI (18459) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18469) ADC_TASK: EOC recieved[0m
+[0;32mI (18469) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18469) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18479) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18489) ADC_TASK: Num: 0[0m
+[0;32mI (18489) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18499) ADC_TASK: EOC recieved[0m
+[0;32mI (18499) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18499) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18509) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18519) ADC_TASK: Num: 0[0m
+[0;32mI (18519) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18529) ADC_TASK: EOC recieved[0m
+[0;32mI (18529) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18529) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18539) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18549) ADC_TASK: Num: 0[0m
+[0;32mI (18549) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18559) ADC_TASK: EOC recieved[0m
+[0;32mI (18559) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18569) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18569) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18579) ADC_TASK: Num: 0[0m
+[0;32mI (18579) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18589) ADC_TASK: EOC recieved[0m
+[0;32mI (18589) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18599) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18599) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18609) ADC_TASK: Num: 0[0m
+[0;32mI (18609) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18619) ADC_TASK: EOC recieved[0m
+[0;32mI (18619) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18629) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18629) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18639) ADC_TASK: Num: 0[0m
+[0;32mI (18639) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18649) ADC_TASK: EOC recieved[0m
+[0;32mI (18649) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18659) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18659) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18669) ADC_TASK: Num: 0[0m
+[0;32mI (18669) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18679) ADC_TASK: EOC recieved[0m
+[0;32mI (18679) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18689) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18689) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18699) ADC_TASK: Num: 0[0m
+[0;32mI (18699) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18709) ADC_TASK: EOC recieved[0m
+[0;32mI (18709) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18719) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18729) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18729) ADC_TASK: Num: 0[0m
+[0;32mI (18739) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18739) ADC_TASK: EOC recieved[0m
+[0;32mI (18739) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18749) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18759) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18759) ADC_TASK: Num: 0[0m
+[0;32mI (18769) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18769) ADC_TASK: EOC recieved[0m
+[0;32mI (18779) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18779) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18789) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18789) ADC_TASK: Num: 0[0m
+[0;32mI (18799) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18799) ADC_TASK: EOC recieved[0m
+[0;32mI (18809) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18809) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18819) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18819) ADC_TASK: Num: 0[0m
+[0;32mI (18829) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18829) ADC_TASK: EOC recieved[0m
+[0;32mI (18839) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18839) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18849) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18849) ADC_TASK: Num: 0[0m
+[0;32mI (18859) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18859) ADC_TASK: EOC recieved[0m
+[0;32mI (18869) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18869) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18879) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18879) ADC_TASK: Num: 0[0m
+[0;32mI (18889) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18889) ADC_TASK: EOC recieved[0m
+[0;32mI (18899) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18899) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18909) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18919) ADC_TASK: Num: 0[0m
+[0;32mI (18919) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18919) ADC_TASK: EOC recieved[0m
+[0;32mI (18929) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18929) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18939) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18949) ADC_TASK: Num: 0[0m
+[0;32mI (18949) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18959) ADC_TASK: EOC recieved[0m
+[0;32mI (18959) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18959) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18969) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18979) ADC_TASK: Num: 0[0m
+[0;32mI (18979) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18989) ADC_TASK: EOC recieved[0m
+[0;32mI (18989) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18989) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18999) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19009) ADC_TASK: Num: 0[0m
+[0;32mI (19009) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19019) ADC_TASK: EOC recieved[0m
+[0;32mI (19019) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19019) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19029) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19039) ADC_TASK: Num: 0[0m
+[0;32mI (19039) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19049) ADC_TASK: EOC recieved[0m
+[0;32mI (19049) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19059) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19059) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19069) ADC_TASK: Num: 0[0m
+[0;32mI (19069) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19079) ADC_TASK: EOC recieved[0m
+[0;32mI (19079) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19089) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19089) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19099) ADC_TASK: Num: 0[0m
+[0;32mI (19099) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19109) ADC_TASK: EOC recieved[0m
+[0;32mI (19109) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19119) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19119) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19129) ADC_TASK: Num: 0[0m
+[0;32mI (19129) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19139) ADC_TASK: EOC recieved[0m
+[0;32mI (19139) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19149) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19149) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19159) ADC_TASK: Num: 0[0m
+[0;32mI (19159) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19169) ADC_TASK: EOC recieved[0m
+[0;32mI (19169) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19179) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19189) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19189) ADC_TASK: Num: 0[0m
+[0;32mI (19189) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19199) ADC_TASK: EOC recieved[0m
+[0;32mI (19199) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19209) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19219) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19219) ADC_TASK: Num: 0[0m
+[0;32mI (19229) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19229) ADC_TASK: EOC recieved[0m
+[0;32mI (19239) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19239) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19249) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19249) ADC_TASK: Num: 0[0m
+[0;32mI (19259) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19259) ADC_TASK: EOC recieved[0m
+[0;32mI (19269) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19269) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19279) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19279) ADC_TASK: Num: 0[0m
+[0;32mI (19289) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19289) ADC_TASK: EOC recieved[0m
+[0;32mI (19299) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19299) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19309) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19309) ADC_TASK: Num: 0[0m
+[0;32mI (19319) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19319) ADC_TASK: EOC recieved[0m
+[0;32mI (19329) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19329) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19339) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19339) ADC_TASK: Num: 0[0m
+[0;32mI (19349) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19349) ADC_TASK: EOC recieved[0m
+[0;32mI (19359) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19359) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19369) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19379) ADC_TASK: Num: 0[0m
+[0;32mI (19379) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19379) ADC_TASK: EOC recieved[0m
+[0;32mI (19389) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19389) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19399) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19409) ADC_TASK: Num: 0[0m
+[0;32mI (19409) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19419) ADC_TASK: EOC recieved[0m
+[0;32mI (19419) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19419) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19429) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19439) ADC_TASK: Num: 0[0m
+[0;32mI (19439) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19449) ADC_TASK: EOC recieved[0m
+[0;32mI (19449) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19449) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19459) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19469) ADC_TASK: Num: 0[0m
+[0;32mI (19469) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19479) ADC_TASK: EOC recieved[0m
+[0;32mI (19479) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19479) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19489) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19499) ADC_TASK: Num: 0[0m
+[0;32mI (19499) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19509) ADC_TASK: EOC recieved[0m
+[0;32mI (19509) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19519) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19519) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19529) ADC_TASK: Num: 0[0m
+[0;32mI (19529) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19539) ADC_TASK: EOC recieved[0m
+[0;32mI (19539) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19549) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19549) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19559) ADC_TASK: Num: 0[0m
+[0;32mI (19559) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19569) ADC_TASK: EOC recieved[0m
+[0;32mI (19569) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19579) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19579) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19589) ADC_TASK: Num: 0[0m
+[0;32mI (19589) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19599) ADC_TASK: EOC recieved[0m
+[0;32mI (19599) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19609) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19609) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19619) ADC_TASK: Num: 0[0m
+[0;32mI (19619) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19629) ADC_TASK: EOC recieved[0m
+[0;32mI (19629) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19639) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19639) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19649) ADC_TASK: Num: 0[0m
+[0;32mI (19649) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19659) ADC_TASK: EOC recieved[0m
+[0;32mI (19659) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19669) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19679) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19679) ADC_TASK: Num: 0[0m
+[0;32mI (19679) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19689) ADC_TASK: EOC recieved[0m
+[0;32mI (19689) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19699) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19709) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19709) ADC_TASK: Num: 0[0m
+[0;32mI (19719) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19719) ADC_TASK: EOC recieved[0m
+[0;32mI (19729) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19729) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19739) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19739) ADC_TASK: Num: 0[0m
+[0;32mI (19749) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19749) ADC_TASK: EOC recieved[0m
+[0;32mI (19759) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19759) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19769) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19769) ADC_TASK: Num: 0[0m
+[0;32mI (19779) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19779) ADC_TASK: EOC recieved[0m
+[0;32mI (19789) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19789) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19799) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19799) ADC_TASK: Num: 0[0m
+[0;32mI (19809) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19809) ADC_TASK: EOC recieved[0m
+[0;32mI (19819) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19819) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19829) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19829) ADC_TASK: Num: 0[0m
+[0;32mI (19839) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19839) ADC_TASK: EOC recieved[0m
+[0;32mI (19849) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19849) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19859) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19869) ADC_TASK: Num: 0[0m
+[0;32mI (19869) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19869) ADC_TASK: EOC recieved[0m
+[0;32mI (19879) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19879) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19889) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19899) ADC_TASK: Num: 0[0m
+[0;32mI (19899) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19909) ADC_TASK: EOC recieved[0m
+[0;32mI (19909) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19909) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19919) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19929) ADC_TASK: Num: 0[0m
+[0;32mI (19929) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19939) ADC_TASK: EOC recieved[0m
+[0;32mI (19939) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19939) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19949) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19959) ADC_TASK: Num: 0[0m
+[0;32mI (19959) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19969) ADC_TASK: EOC recieved[0m
+[0;32mI (19969) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19969) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19979) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19989) ADC_TASK: Num: 0[0m
+[0;32mI (19989) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19999) ADC_TASK: EOC recieved[0m
+[0;32mI (19999) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20009) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20009) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20019) ADC_TASK: Num: 0[0m
+[0;32mI (20019) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20029) ADC_TASK: EOC recieved[0m
+[0;32mI (20029) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20039) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20039) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20049) ADC_TASK: Num: 0[0m
+[0;32mI (20049) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20059) ADC_TASK: EOC recieved[0m
+[0;32mI (20059) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20069) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20069) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20079) ADC_TASK: Num: 0[0m
+[0;32mI (20079) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20089) ADC_TASK: EOC recieved[0m
+[0;32mI (20089) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20099) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20099) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20109) ADC_TASK: Num: 0[0m
+[0;32mI (20109) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20119) ADC_TASK: EOC recieved[0m
+[0;32mI (20119) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20129) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20139) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20139) ADC_TASK: Num: 0[0m
+[0;32mI (20139) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20149) ADC_TASK: EOC recieved[0m
+[0;32mI (20149) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20159) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20169) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20169) ADC_TASK: Num: 0[0m
+[0;32mI (20179) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20179) ADC_TASK: EOC recieved[0m
+[0;32mI (20179) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20189) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20199) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20199) ADC_TASK: Num: 0[0m
+[0;32mI (20209) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20209) ADC_TASK: EOC recieved[0m
+[0;32mI (20219) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20219) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20229) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20229) ADC_TASK: Num: 0[0m
+[0;32mI (20239) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20239) ADC_TASK: EOC recieved[0m
+[0;32mI (20249) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20249) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20259) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20259) ADC_TASK: Num: 0[0m
+[0;32mI (20269) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20269) ADC_TASK: EOC recieved[0m
+[0;32mI (20279) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20279) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20289) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20289) ADC_TASK: Num: 0[0m
+[0;32mI (20299) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20299) ADC_TASK: E[0;31mE (20309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (20309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (20309) task_wdt: Tasks currently running:[0m
+[0;31mE (20309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (20309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (20309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8FAF:0x3FFB0F80 0x400D9374:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D4744:0x3FFB5830 0x400D4EFF:0x3FFB5860 0x400D5FB1:0x3FFB5880 0x4000BD83:0x3FFB58A0 0x4000182A:0x3FFB58C0 0x400D5B1D:0x3FFB58E0 0x400D5FB1:0x3FFB5900 0x4000BD83:0x3FFB5920 0x4000117D:0x3FFB5940 0x400592FE:0x3FFB5960 0x4005937A:0x3FFB5980 0x400DA4AD:0x3FFB59A0 0x400DE367:0x3FFB59D0 0x400DDD45:0x3FFB59F0 0x400DA555:0x3FFB5D10 0x400E56F1:0x3FFB5D40 0x4008B6DD:0x3FFB5D70 0x400D6C53:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+OC recieved[0m
+[0;32mI (20389) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20389) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20399) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20399) ADC_TASK: Num: 0[0m
+[0;32mI (20409) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20409) ADC_TASK: EOC recieved[0m
+[0;32mI (20419) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20419) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20429) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20429) ADC_TASK: Num: 0[0m
+[0;32mI (20439) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20439) ADC_TASK: EOC recieved[0m
+[0;32mI (20449) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20449) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20459) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20459) ADC_TASK: Num: 0[0m
+[0;32mI (20469) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20469) ADC_TASK: EOC recieved[0m
+[0;32mI (20479) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20479) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20489) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20489) ADC_TASK: Num: 0[0m
+[0;32mI (20499) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20499) ADC_TASK: EOC recieved[0m
+[0;32mI (20509) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20509) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20519) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20529) ADC_TASK: Num: 0[0m
+[0;32mI (20529) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20529) ADC_TASK: EOC recieved[0m
+[0;32mI (20539) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20539) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20549) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20559) ADC_TASK: Num: 0[0m
+[0;32mI (20559) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20569) ADC_TASK: EOC recieved[0m
+[0;32mI (20569) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20569) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20579) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20589) ADC_TASK: Num: 0[0m
+[0;32mI (20589) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20599) ADC_TASK: EOC recieved[0m
+[0;32mI (20599) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20599) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20609) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20619) ADC_TASK: Num: 0[0m
+[0;32mI (20619) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20629) ADC_TASK: EOC recieved[0m
+[0;32mI (20629) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20629) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20639) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20649) ADC_TASK: Num: 0[0m
+[0;32mI (20649) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20659) ADC_TASK: EOC recieved[0m
+[0;32mI (20659) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20669) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20669) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20679) ADC_TASK: Num: 0[0m
+[0;32mI (20679) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20689) ADC_TASK: EOC recieved[0m
+[0;32mI (20689) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20699) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20699) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20709) ADC_TASK: Num: 0[0m
+[0;32mI (20709) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20719) ADC_TASK: EOC recieved[0m
+[0;32mI (20719) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20729) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20729) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20739) ADC_TASK: Num: 0[0m
+[0;32mI (20739) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20749) ADC_TASK: EOC recieved[0m
+[0;32mI (20749) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20759) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20759) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20769) ADC_TASK: Num: 0[0m
+[0;32mI (20769) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20779) ADC_TASK: EOC recieved[0m
+[0;32mI (20779) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20789) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20799) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20799) ADC_TASK: Num: 0[0m
+[0;32mI (20799) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20809) ADC_TASK: EOC recieved[0m
+[0;32mI (20809) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20819) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20829) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20829) ADC_TASK: Num: 0[0m
+[0;32mI (20839) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20839) ADC_TASK: EOC recieved[0m
+[0;32mI (20849) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20849) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20859) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20859) ADC_TASK: Num: 0[0m
+[0;32mI (20869) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20869) ADC_TASK: EOC recieved[0m
+[0;32mI (20879) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20879) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20889) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20889) ADC_TASK: Num: 0[0m
+[0;32mI (20899) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20899) ADC_TASK: EOC recieved[0m
+[0;32mI (20909) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20909) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20919) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20919) ADC_TASK: Num: 0[0m
+[0;32mI (20929) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20929) ADC_TASK: EOC recieved[0m
+[0;32mI (20939) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20939) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20949) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20949) ADC_TASK: Num: 0[0m
+[0;32mI (20959) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20959) ADC_TASK: EOC recieved[0m
+[0;32mI (20969) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20969) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20979) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20989) ADC_TASK: Num: 0[0m
+[0;32mI (20989) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20989) ADC_TASK: EOC recieved[0m
+[0;32mI (20999) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20999) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (21009) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (21019) ADC_TASK: Num: 0[0m
+[0;32mI (21019) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (21019) ADC_TASK: EOC recieved[0m
+[0;32mI (21029) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (21029) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (21039) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (21049) ADC_TASK: Num: 0[0m
+[0;32mI (21049) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (21059) ADC_TASK: EOC recieved[0m
+[0;32mI (21059) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (21059) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (21069) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (21079) ADC_TASK: Num: 0[0m
+[0;32mI (21079) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (21089) ADC_TASK: EOC recieved[0m
+[0;32mI (21089) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (21089) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (21099) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (21109) ADC_TASK: Num: 0[0m
+[0;32mI (21109) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (21119) ADC_TASK: EOC recieved[0m
+[0;32mI (21119) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (21119) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (21129) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (21139) ADC_TASK: Num: 0[0m
+[0;32mI (21139) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (21149) ADC_TASK: EOC recieved[0m
+[0;32mI (21149) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (21159) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (21159) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (21169) ADC_TASK: Num: 0[0m
+[0;32mI (21169) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (21179) ADC_TASK: EOC recieved[0m
+[0;32mI (21179) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (21189) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (21189) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (21199) ADC_TASK: Num: 0[0m
+[0;32mI (21199) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (21209) ADC_TASK: EOC recieved[0m
+[0;32mI (21209) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (21219) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (21219) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (21229) ADC_TASK: Num: 0[0m
+[0;32mI (21229) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (21239) ADC_TASK: EOC recieved[0m
+[0;32mI (21239) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (21249) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (21249) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (21259) ADC_TASK: Num: 0[0m
+[0;32mI (21259) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (21269) ADC_TASK: EOC recieved[0m
+[0;32mI (21269) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (21279) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (21289) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (21289) ADC_TASK: Num: 0[0m
+[0;32mI (21289) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (21299) ADC_TASK: EOC recieved[0m
+[0;32mI (21299) ADC_READ: ADC Raw Data: 1[0m
+[0;32mI (21309) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (21319) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (21319) ADC_TASK: Num: 1[0m
+[0;32mI (21329) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (21329) ADC_TASK: EOC recieved[0m
+[0;32mI (21339) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (21339) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (21349) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (21349) ADC_TASK: Num: 0[0m
+[0;32mI (21359) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (21359) ADC_TASK: EOC recieved[0m
+[0;32mI (21369) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (21369) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (21379) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (21379) ADC_TASK: Num: 0[0m
+[0;32mI (21389) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (21389) ADC_TASK: EOC recieved[0m
+[0;32mI (21399) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (21399) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (21409) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (21409) ADC_TASK: Num: 0[0m
+[0;32mI (21419) ADC_TASK: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (21419) ADC_TASK: EOC recieved[0m
+[0;32mI (21429) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (21429) ADC_TASK: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (21439) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (21439) ADC_TASK: Num: 0[0m
+[0;32mI (21449) LUNG_DETECT: Streaming Disabled[0m
+[0;31mE (25309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (25309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (25309) task_wdt: Tasks currently running:[0m
+[0;31mE (25309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (25309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (25309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8FAF:0x3FFB0F80 0x400D9374:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C8F:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (30309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (30309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (30309) task_wdt: Tasks currently running:[0m
+[0;31mE (30309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (30309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (30309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8FAF:0x3FFB0F80 0x400D9374:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C8F:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (35309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (35309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (35309) task_wdt: Tasks currently running:[0m
+[0;31mE (35309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (35309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (35309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8FAF:0x3FFB0F80 0x400D9374:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C8F:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (40309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (40309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (40309) task_wdt: Tasks currently running:[0m
+[0;31mE (40309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (40309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (40309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8FAF:0x3FFB0F80 0x400D9374:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C8F:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (45309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (45309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (45309) task_wdt: Tasks currently running:[0m
+[0;31mE (45309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (45309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (45309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8FAF:0x3FFB0F80 0x400D9374:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C8F:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (50309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (50309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (50309) task_wdt: Tasks currently running:[0m
+[0;31mE (50309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (50309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (50309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8FAF:0x3FFB0F80 0x400D9374:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C8F:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (55309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (55309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (55309) task_wdt: Tasks currently running:[0m
+[0;31mE (55309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (55309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (55309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8FAF:0x3FFB0F80 0x400D9374:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C8F:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (60309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (60309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (60309) task_wdt: Tasks currently running:[0m
+[0;31mE (60309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (60309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (60309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8FAF:0x3FFB0F80 0x400D9374:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C8F:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (65309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (65309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (65309) task_wdt: Tasks currently running:[0m
+[0;31mE (65309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (65309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (65309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8FAF:0x3FFB0F80 0x400D9374:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C8F:0x3FFB5DC0 0x40086195:0x3FFB5E00
+

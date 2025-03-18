@@ -1,0 +1,183 @@
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/cu.usbserial-01746A42 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d46f7: uart_ll_get_txfifo_len at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h:408
+ (inlined by) uart_tx_char at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:170
+0x400d4eb7: uart_write at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:223
+0x400d5f69: esp_vfs_write at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/vfs/vfs.c:502 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000182a: write in ROM
+0x400d5ad5: console_write at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_vfs_console/vfs_console.c:70
+0x400d5f69: esp_vfs_write at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/vfs/vfs.c:502 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000117d: __swrite in ROM
+0x400592fe: __sflush_r in ROM
+0x4005937a: _fflush_r in ROM
+0x400da33d: __sfvwrite_r at /Users/brnomac003/.gitlab-runner/builds/qR2TxTby/0/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+0x400de1f7: __sprint_r at /Users/brnomac003/.gitlab-runner/builds/qR2TxTby/0/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfiprintf.c:429
+ (inlined by) __sprint_r at /Users/brnomac003/.gitlab-runner/builds/qR2TxTby/0/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+0x400ddbd5: _vfprintf_r at /Users/brnomac003/.gitlab-runner/builds/qR2TxTby/0/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+0x400da3e5: vprintf at /Users/brnomac003/.gitlab-runner/builds/qR2TxTby/0/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x400e5581: esp_log_writev at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/src/os/log_write.c:34
+0x4008b6dd: esp_log_write at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/src/os/log_write.c:44
+0x400d57e3: uart_write_bytes at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_uart/src/uart.c:1460 (discriminator 1)
+0x400d6b52: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:331
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8e3f: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9204: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6b57: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:334
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0m

@@ -1,0 +1,30 @@
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/cu.usbserial-01746A42 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400818a1: panic_abort at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/panic.c:453
+0x40085931: esp_system_abort at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40086592: vApplicationStackOverflowHook at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:558
+0x400875f7: vTaskSwitchContext at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3701 (discriminator 7)
+0x4008669c: _frxt_dispatch at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4008664e: _frxt_int_exit at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d8fab: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9370: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6c86: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:340
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x400d8fab: task_wdt_timeout_handling at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d9370: task_wdt_isr at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e0d: _xt_lowint1 at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400844c5: esp_crosscore_int_send_yield at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/crosscore_int.c:120
+0x40087c4e: vTaskDelay at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:1588 (discriminator 1)
+0x400d6c86: adc_sampling_task at /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:340
+0x40086195: vPortTaskWrapper at /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0m

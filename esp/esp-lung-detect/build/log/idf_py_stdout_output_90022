@@ -1,0 +1,2930 @@
+0m
+[0;32mI (226) app_init: ELF file SHA256:  73a433dd7...[0m
+[0;32mI (231) app_init: ESP-IDF:          v5.4-dev-2744-g59e1838270[0m
+[0;32mI (238) efuse_init: Min chip rev:     v�ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7112
+load:0x40078000,len:15788
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (30) boot: ESP-IDF v5.4-dev-2744-g59e1838270 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Feb 24 2025 18:52:52[0m
+[0;32mI (32) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v1.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (45) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (97) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a428h ( 42024) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0001a450 vaddr=3ffb0000 size=02364h (  9060) load[0m
+[0;32mI (123) esp_image: segment 2: paddr=0001c7bc vaddr=40080000 size=0385ch ( 14428) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=15770h ( 87920) map[0m
+[0;32mI (164) esp_image: segment 4: paddr=00035798 vaddr=4008385c size=09638h ( 38456) load[0m
+[0;32mI (186) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (186) boot: Disabling RNG early entropy source...[0m
+[0;32mI (198) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (207) app_init: Application information:[0m
+[0;32mI (209) app_init: Project name:     lung-detect[0m
+[0;32mI (215) app_init: App version:      d333ba4-dirty[0m
+[0;32mI (220) app_init: Compile time:     Feb 24 2025 18:52:46[0m
+[0;32mI (226) app_init: ELF file SHA256:  73a433dd7...[0m
+[0;32mI (231) app_init: ESP-IDF:          v5.4-dev-2744-g59e1838270[0m
+[0;32mI (238) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (243) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (247) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (253) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (260) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 3FFB2C28 len 0002D3D8 (180 KiB): DRAM[0m
+[0;32mI (272) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (278) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (285) heap_init: At 4008CE94 len 0001316C (76 KiB): IRAM[0m
+[0;32mI (292) spi_flash: detected chip: gd[0m
+[0;32mI (295) spi_flash: flash io: dio[0m
+[0;32mI (300) main_task: Started on CPU0[0m
+[0;32mI (310) main_task: Calling app_main()[0m
+[0;32mI (310) LUNG_DETECT: Initializing...[0m
+[0;32mI (310) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (320) LUNG_DETECT: Finished GPIO config[0m
+[0;32mI (320) LUNG_DETECT: Starting task functions[0m
+[0;32mI (330) SWITCH_TASK: switch task started[0m
+[0;32mI (330) ADC_TASK: adc sample task started[0m
+[0;32mI (340) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (340) ADC_TASK: EOC received[0m
+[0;32mI (340) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (350) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (350) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (360) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (360) ADC_TASK: EOC received[0m
+[0;32mI (370) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (370) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (380) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (380) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (390) ADC_TASK: EOC received[0m
+[0;32mI (390) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (390) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (400) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (400) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (410) ADC_TASK: EOC received[0m
+[0;32mI (410) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (420) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (420) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (430) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (430) ADC_TASK: EOC received[0m
+[0;32mI (430) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (440) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (440) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (450) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (450) ADC_TASK: EOC received[0m
+[0;32mI (460) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (460) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (470) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (470) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (480) ADC_TASK: EOC received[0m
+[0;32mI (480) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (480) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (490) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (500) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (500) ADC_TASK: EOC received[0m
+[0;32mI (500) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (510) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (510) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (520) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (520) ADC_TASK: EOC received[0m
+[0;32mI (530) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (530) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (530) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (540) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (550) ADC_TASK: EOC received[0m
+[0;32mI (550) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (550) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (560) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (560) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (570) ADC_TASK: EOC received[0m
+[0;32mI (570) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (580) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (580) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (590) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (590) ADC_TASK: EOC received[0m
+[0;32mI (590) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (600) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (600) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (610) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (610) ADC_TASK: EOC received[0m
+[0;32mI (620) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (620) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (630) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (630) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (640) ADC_TASK: EOC received[0m
+[0;32mI (640) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (640) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (650) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (650) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (660) ADC_TASK: EOC received[0m
+[0;32mI (660) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (670) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (670) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (680) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (680) ADC_TASK: EOC received[0m
+[0;32mI (690) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (690) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (690) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (700) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (700) ADC_TASK: EOC received[0m
+[0;32mI (710) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (710) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (720) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (720) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (730) ADC_TASK: EOC received[0m
+[0;32mI (730) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (740) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (740) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (750) LUNG_DETECT: Streaming Disabled[0m
+[0;32mI (2260) LUNG_DETECT: Streaming Enabled[0m
+[0;32mI (2260) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2260) ADC_TASK: EOC received[0m
+[0;32mI (2260) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2260) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2270) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2270) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2280) ADC_TASK: EOC received[0m
+[0;32mI (2280) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2280) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2290) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2300) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2300) ADC_TASK: EOC received[0m
+[0;32mI (2300) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2310) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2310) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2320) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2320) ADC_TASK: EOC received[0m
+[0;32mI (2330) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2330) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2340) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2340) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2350) ADC_TASK: EOC received[0m
+[0;32mI (2350) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2350) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2360) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2360) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2370) ADC_TASK: EOC received[0m
+[0;32mI (2370) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2380) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2380) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2390) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2390) ADC_TASK: EOC received[0m
+[0;32mI (2400) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2400) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2410) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2410) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2420) ADC_TASK: EOC received[0m
+[0;32mI (2420) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2420) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2430) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2430) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2440) ADC_TASK: EOC received[0m
+[0;32mI (2440) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2450) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2450) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2460) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2460) ADC_TASK: EOC received[0m
+[0;32mI (2470) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2470) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2480) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2480) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2490) ADC_TASK: EOC received[0m
+[0;32mI (2490) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2490) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2500) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2500) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2510) ADC_TASK: EOC received[0m
+[0;32mI (2510) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2520) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2520) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2530) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2530) ADC_TASK: EOC received[0m
+[0;32mI (2540) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2540) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2540) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2550) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2560) ADC_TASK: EOC received[0m
+[0;32mI (2560) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2560) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2570) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2570) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2580) ADC_TASK: EOC received[0m
+[0;32mI (2580) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2590) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2590) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2600) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2600) ADC_TASK: EOC received[0m
+[0;32mI (2610) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2610) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2610) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2620) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2630) ADC_TASK: EOC received[0m
+[0;32mI (2630) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2630) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2640) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2640) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2650) ADC_TASK: EOC received[0m
+[0;32mI (2650) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2660) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2660) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2670) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2670) ADC_TASK: EOC received[0m
+[0;32mI (2680) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2680) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2680) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2690) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2690) ADC_TASK: EOC received[0m
+[0;32mI (2700) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2700) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2710) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2710) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2720) ADC_TASK: EOC received[0m
+[0;32mI (2720) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2730) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2730) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2740) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2740) ADC_TASK: EOC received[0m
+[0;32mI (2750) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2750) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2750) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2760) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2760) ADC_TASK: EOC received[0m
+[0;32mI (2770) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2770) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2780) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2780) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2790) ADC_TASK: EOC received[0m
+[0;32mI (2790) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2800) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2800) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2810) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2810) ADC_TASK: EOC received[0m
+[0;32mI (2820) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2820) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2820) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2830) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2830) ADC_TASK: EOC received[0m
+[0;32mI (2840) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2840) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2850) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2850) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2860) ADC_TASK: EOC received[0m
+[0;32mI (2860) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2870) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2870) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2880) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2880) ADC_TASK: EOC received[0m
+[0;32mI (2880) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2890) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2890) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2900) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2900) ADC_TASK: EOC received[0m
+[0;32mI (2910) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2910) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2920) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2920) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2930) ADC_TASK: EOC received[0m
+[0;32mI (2930) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2940) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2940) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2950) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2950) ADC_TASK: EOC received[0m
+[0;32mI (2950) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2960) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2960) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2970) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2970) ADC_TASK: EOC received[0m
+[0;32mI (2980) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2980) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2990) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2990) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3000) ADC_TASK: EOC received[0m
+[0;32mI (3000) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3010) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3010) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3020) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3020) ADC_TASK: EOC received[0m
+[0;32mI (3020) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3030) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3030) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3040) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3040) ADC_TASK: EOC received[0m
+[0;32mI (3050) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3050) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3060) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3060) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3070) ADC_TASK: EOC received[0m
+[0;32mI (3070) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3080) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3080) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3090) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3090) ADC_TASK: EOC received[0m
+[0;32mI (3090) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3100) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3100) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3110) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3110) ADC_TASK: EOC received[0m
+[0;32mI (3120) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3120) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3130) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3130) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3140) ADC_TASK: EOC received[0m
+[0;32mI (3140) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3140) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3150) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3160) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3160) ADC_TASK: EOC received[0m
+[0;32mI (3160) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3170) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3170) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3180) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3180) ADC_TASK: EOC received[0m
+[0;32mI (3190) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3190) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3200) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3200) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3210) ADC_TASK: EOC received[0m
+[0;32mI (3210) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3210) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3220) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3230) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3230) ADC_TASK: EOC received[0m
+[0;32mI (3230) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3240) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3240) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3250) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3250) ADC_TASK: EOC received[0m
+[0;32mI (3260) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3260) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3270) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3270) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3280) ADC_TASK: EOC received[0m
+[0;32mI (3280) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3280) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3290) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3300) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3300) ADC_TASK: EOC received[0m
+[0;32mI (3300) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3310) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3310) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3320) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3320) ADC_TASK: EOC received[0m
+[0;32mI (3330) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3330) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3340) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3340) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3350) ADC_TASK: EOC received[0m
+[0;32mI (3350) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3350) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3360) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3370) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3370) ADC_TASK: EOC received[0m
+[0;32mI (3370) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3380) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3380) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3390) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3390) ADC_TASK: EOC received[0m
+[0;32mI (3400) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3400) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3410) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3410) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3420) ADC_TASK: EOC received[0m
+[0;32mI (3420) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3420) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3430) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3430) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3440) ADC_TASK: EOC received[0m
+[0;32mI (3440) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3450) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3450) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3460) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3460) ADC_TASK: EOC received[0m
+[0;32mI (3470) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3470) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3480) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3480) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3490) ADC_TASK: EOC received[0m
+[0;32mI (3490) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3490) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3500) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3500) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3510) ADC_TASK: EOC received[0m
+[0;32mI (3510) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3520) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3520) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3530) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3530) ADC_TASK: EOC received[0m
+[0;32mI (3540) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3540) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3550) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3550) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3560) ADC_TASK: EOC received[0m
+[0;32mI (3560) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3560) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3570) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3570) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3580) ADC_TASK: EOC received[0m
+[0;32mI (3580) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3590) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3590) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3600) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3600) ADC_TASK: EOC received[0m
+[0;32mI (3610) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3610) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3620) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3620) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3630) ADC_TASK: EOC received[0m
+[0;32mI (3630) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3630) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3640) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3640) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3650) ADC_TASK: EOC received[0m
+[0;32mI (3650) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3660) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3660) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3670) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3670) ADC_TASK: EOC received[0m
+[0;32mI (3680) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3680) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3680) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3690) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3700) ADC_TASK: EOC received[0m
+[0;32mI (3700) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3700) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3710) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3710) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3720) ADC_TASK: EOC received[0m
+[0;32mI (3720) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3730) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3730) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3740) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3740) ADC_TASK: EOC received[0m
+[0;32mI (3750) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3750) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3750) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3760) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3770) ADC_TASK: EOC received[0m
+[0;32mI (3770) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3770) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3780) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3780) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3790) ADC_TASK: EOC received[0m
+[0;32mI (3790) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3800) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3800) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3810) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3810) ADC_TASK: EOC received[0m
+[0;32mI (3820) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3820) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3820) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3830) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3830) ADC_TASK: EOC received[0m
+[0;32mI (3840) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3840) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3850) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3850) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3860) ADC_TASK: EOC received[0m
+[0;32mI (3860) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3870) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3870) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3880) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (3880) ADC_TASK: EOC received[0m
+[0;32mI (3890) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (3890) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (3890) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (3900) LUNG_DETECT: Streaming Disabled[0m
+[0;31mE (5310) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (5310) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (5310) task_wdt: Tasks currently running:[0m
+[0;31mE (5310) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (5310) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (5310) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8FC7:0x3FFB0F80 0x400D938C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB6580 0x40087C4E:0x3FFB65A0 0x400D6CA2:0x3FFB65C0 0x40086195:0x3FFB6600
+
+[0;32mI (5790) LUNG_DETECT: Streaming Enabled[0m
+[0;32mI (5790) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (5790) ADC_TASK: EOC received[0m
+[0;32mI (5790) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (5790) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (5800) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (5800) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (5810) ADC_TASK: EOC received[0m
+[0;32mI (5810) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (5810) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (5820) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (5830) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (5830) ADC_TASK: EOC received[0m
+[0;32mI (5830) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (5840) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (5840) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (5850) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (5850) ADC_TASK: EOC received[0m
+[0;32mI (5860) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (5860) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (5870) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (5870) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (5880) ADC_TASK: EOC received[0m
+[0;32mI (5880) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (5880) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (5890) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (5890) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (5900) ADC_TASK: EOC received[0m
+[0;32mI (5900) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (5910) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (5910) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (5920) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (5920) ADC_TASK: EOC received[0m
+[0;32mI (5930) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (5930) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (5940) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (5940) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (5950) ADC_TASK: EOC received[0m
+[0;32mI (5950) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (5950) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (5960) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (5960) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (5970) ADC_TASK: EOC received[0m
+[0;32mI (5970) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (5980) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (5980) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (5990) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (5990) ADC_TASK: EOC received[0m
+[0;32mI (6000) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6000) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6010) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6010) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6020) ADC_TASK: EOC received[0m
+[0;32mI (6020) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6020) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6030) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6030) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6040) ADC_TASK: EOC received[0m
+[0;32mI (6040) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6050) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6050) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6060) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6060) ADC_TASK: EOC received[0m
+[0;32mI (6070) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6070) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6070) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6080) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6090) ADC_TASK: EOC received[0m
+[0;32mI (6090) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6090) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6100) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6100) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6110) ADC_TASK: EOC received[0m
+[0;32mI (6110) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6120) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6120) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6130) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6130) ADC_TASK: EOC received[0m
+[0;32mI (6140) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6140) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6140) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6150) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6160) ADC_TASK: EOC received[0m
+[0;32mI (6160) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6160) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6170) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6170) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6180) ADC_TASK: EOC received[0m
+[0;32mI (6180) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6190) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6190) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6200) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6200) ADC_TASK: EOC received[0m
+[0;32mI (6210) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6210) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6210) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6220) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6220) ADC_TASK: EOC received[0m
+[0;32mI (6230) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6230) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6240) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6240) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6250) ADC_TASK: EOC received[0m
+[0;32mI (6250) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6260) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6260) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6270) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6270) ADC_TASK: EOC received[0m
+[0;32mI (6280) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6280) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6280) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6290) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6290) ADC_TASK: EOC received[0m
+[0;32mI (6300) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6300) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6310) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6310) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6320) ADC_TASK: EOC received[0m
+[0;32mI (6320) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6330) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6330) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6340) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6340) ADC_TASK: EOC received[0m
+[0;32mI (6350) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6350) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6350) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6360) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6360) ADC_TASK: EOC received[0m
+[0;32mI (6370) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6370) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6380) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6380) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6390) ADC_TASK: EOC received[0m
+[0;32mI (6390) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6400) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6400) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6410) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6410) ADC_TASK: EOC received[0m
+[0;32mI (6410) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6420) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6420) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6430) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6430) ADC_TASK: EOC received[0m
+[0;32mI (6440) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6440) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6450) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6450) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6460) ADC_TASK: EOC received[0m
+[0;32mI (6460) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6470) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6470) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6480) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6480) ADC_TASK: EOC received[0m
+[0;32mI (6480) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6490) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6490) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6500) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6500) ADC_TASK: EOC received[0m
+[0;32mI (6510) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6510) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6520) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6520) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6530) ADC_TASK: EOC received[0m
+[0;32mI (6530) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6540) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6540) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6550) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6550) ADC_TASK: EOC received[0m
+[0;32mI (6550) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6560) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6560) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6570) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6570) ADC_TASK: EOC received[0m
+[0;32mI (6580) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6580) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6590) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6590) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6600) ADC_TASK: EOC received[0m
+[0;32mI (6600) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6610) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6610) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6620) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6620) ADC_TASK: EOC received[0m
+[0;32mI (6620) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6630) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6630) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6640) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6640) ADC_TASK: EOC received[0m
+[0;32mI (6650) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6650) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6660) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6660) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6670) ADC_TASK: EOC received[0m
+[0;32mI (6670) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6670) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6680) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6690) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6690) ADC_TASK: EOC received[0m
+[0;32mI (6690) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6700) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6700) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6710) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6710) ADC_TASK: EOC received[0m
+[0;32mI (6720) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6720) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6730) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6730) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6740) ADC_TASK: EOC received[0m
+[0;32mI (6740) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6740) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6750) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6760) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6760) ADC_TASK: EOC received[0m
+[0;32mI (6760) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6770) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6770) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6780) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6780) ADC_TASK: EOC received[0m
+[0;32mI (6790) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6790) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6800) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6800) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6810) ADC_TASK: EOC received[0m
+[0;32mI (6810) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6810) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6820) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6830) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6830) ADC_TASK: EOC received[0m
+[0;32mI (6830) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6840) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6840) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6850) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6850) ADC_TASK: EOC received[0m
+[0;32mI (6860) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6860) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6870) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6870) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6880) ADC_TASK: EOC received[0m
+[0;32mI (6880) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6880) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6890) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6900) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6900) ADC_TASK: EOC received[0m
+[0;32mI (6900) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6910) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6910) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6920) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6920) ADC_TASK: EOC received[0m
+[0;32mI (6930) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6930) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6940) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6940) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6950) ADC_TASK: EOC received[0m
+[0;32mI (6950) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6950) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6960) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6960) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6970) ADC_TASK: EOC received[0m
+[0;32mI (6970) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6980) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (6980) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6990) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (6990) ADC_TASK: EOC received[0m
+[0;32mI (7000) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7000) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (7010) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7010) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (7020) ADC_TASK: EOC received[0m
+[0;32mI (7020) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7020) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (7030) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7030) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (7040) ADC_TASK: EOC received[0m
+[0;32mI (7040) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7050) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (7050) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7060) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (7060) ADC_TASK: EOC received[0m
+[0;32mI (7070) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7070) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (7080) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7080) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (7090) ADC_TASK: EOC received[0m
+[0;32mI (7090) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7090) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (7100) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7100) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (7110) ADC_TASK: EOC received[0m
+[0;32mI (7110) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7120) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (7120) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7130) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (7130) ADC_TASK: EOC received[0m
+[0;32mI (7140) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7140) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (7150) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7150) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (7160) ADC_TASK: EOC received[0m
+[0;32mI (7160) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7160) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (7170) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7170) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (7180) ADC_TASK: EOC received[0m
+[0;32mI (7180) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7190) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (7190) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7200) LUNG_DETECT: Streaming Disabled[0m
+[0;32mI (8940) LUNG_DETECT: Streaming Enabled[0m
+[0;32mI (8940) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (8940) ADC_TASK: EOC received[0m
+[0;32mI (8940) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8940) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (8950) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8950) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (8960) ADC_TASK: EOC received[0m
+[0;32mI (8960) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8960) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (8970) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8970) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (8980) ADC_TASK: EOC received[0m
+[0;32mI (8980) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8990) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (8990) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9000) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9000) ADC_TASK: EOC received[0m
+[0;32mI (9010) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9010) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9020) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9020) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9030) ADC_TASK: EOC received[0m
+[0;32mI (9030) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9030) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9040) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9040) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9050) ADC_TASK: EOC received[0m
+[0;32mI (9050) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9060) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9060) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9070) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9070) ADC_TASK: EOC received[0m
+[0;32mI (9080) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9080) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9090) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9090) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9100) ADC_TASK: EOC received[0m
+[0;32mI (9100) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9100) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9110) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9110) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9120) ADC_TASK: EOC received[0m
+[0;32mI (9120) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9130) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9130) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9140) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9140) ADC_TASK: EOC received[0m
+[0;32mI (9150) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9150) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9160) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9160) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9170) ADC_TASK: EOC received[0m
+[0;32mI (9170) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9170) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9180) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9180) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9190) ADC_TASK: EOC received[0m
+[0;32mI (9190) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9200) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9200) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9210) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9210) ADC_TASK: EOC received[0m
+[0;32mI (9220) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9220) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9220) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9230) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9240) ADC_TASK: EOC received[0m
+[0;32mI (9240) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9240) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9250) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9250) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9260) ADC_TASK: EOC received[0m
+[0;32mI (9260) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9270) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9270) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9280) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9280) ADC_TASK: EOC received[0m
+[0;32mI (9290) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9290) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9290) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9300) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9310) ADC_TASK: EOC received[0m
+[0;32mI (9310) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9310) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9320) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9320) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9330) ADC_TASK: EOC received[0m
+[0;32mI (9330) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9340) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9340) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9350) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9350) ADC_TASK: EOC received[0m
+[0;32mI (9360) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9360) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9360) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9370) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9370) ADC_TASK: EOC received[0m
+[0;32mI (9380) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9380) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9390) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9390) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9400) ADC_TASK: EOC received[0m
+[0;32mI (9400) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9410) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9410) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9420) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9420) ADC_TASK: EOC received[0m
+[0;32mI (9430) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9430) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9430) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9440) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9440) ADC_TASK: EOC received[0m
+[0;32mI (9450) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9450) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9460) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9460) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9470) ADC_TASK: EOC received[0m
+[0;32mI (9470) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9480) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9480) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9490) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9490) ADC_TASK: EOC received[0m
+[0;32mI (9500) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9500) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9500) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9510) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9510) ADC_TASK: EOC received[0m
+[0;32mI (9520) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9520) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9530) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9530) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9540) ADC_TASK: EOC received[0m
+[0;32mI (9540) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9550) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9550) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9560) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9560) ADC_TASK: EOC received[0m
+[0;32mI (9560) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9570) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9570) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9580) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9580) ADC_TASK: EOC received[0m
+[0;32mI (9590) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9590) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9600) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9600) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9610) ADC_TASK: EOC received[0m
+[0;32mI (9610) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9620) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9620) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9630) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9630) ADC_TASK: EOC received[0m
+[0;32mI (9630) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9640) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9640) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9650) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9650) ADC_TASK: EOC received[0m
+[0;32mI (9660) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9660) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9670) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9670) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9680) ADC_TASK: EOC received[0m
+[0;32mI (9680) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9690) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9690) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9700) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9700) ADC_TASK: EOC received[0m
+[0;32mI (9700) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9710) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9710) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9720) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9720) ADC_TASK: EOC received[0m
+[0;32mI (9730) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9730) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9740) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9740) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9750) ADC_TASK: EOC received[0m
+[0;32mI (9750) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9760) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9760) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9770) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9770) ADC_TASK: EOC received[0m
+[0;32mI (9770) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9780) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9780) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9790) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9790) ADC_TASK: EOC received[0m
+[0;32mI (9800) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9800) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9810) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9810) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9820) ADC_TASK: EOC received[0m
+[0;32mI (9820) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9820) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9830) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9840) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9840) ADC_TASK: EOC received[0m
+[0;32mI (9840) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9850) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9850) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9860) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9860) ADC_TASK: EOC received[0m
+[0;32mI (9870) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9870) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9880) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9880) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9890) ADC_TASK: EOC received[0m
+[0;32mI (9890) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9890) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9900) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9910) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9910) ADC_TASK: EOC received[0m
+[0;32mI (9910) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9920) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9920) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9930) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9930) ADC_TASK: EOC received[0m
+[0;32mI (9940) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9940) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9950) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9950) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9960) ADC_TASK: EOC received[0m
+[0;32mI (9960) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9960) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9970) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9980) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (9980) ADC_TASK: EOC received[0m
+[0;32mI (9980) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9990) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (9990) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10000) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10000) ADC_TASK: EOC received[0m
+[0;32mI (10010) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10010) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10020) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10020) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10030) ADC_TASK: EOC received[0m
+[0;32mI (10030) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10030) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10040) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10050) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10050) ADC_TASK: EOC received[0m
+[0;32mI (10050) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10060) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10060) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10070) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10070) ADC_TASK: EOC received[0m
+[0;32mI (10080) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10080) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10090) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10090) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10100) ADC_TASK: EOC received[0m
+[0;32mI (10100) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10110) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10110) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10120) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10120) ADC_TASK: EOC received[0m
+[0;32mI (10130) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10130) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10130) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10140) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10150) ADC_TASK: EOC received[0m
+[0;32mI (10150) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10150) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10160) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10160) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10170) ADC_TASK: EOC received[0m
+[0;32mI (10170) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10180) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10180) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10190) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10190) ADC_TASK: EOC received[0m
+[0;32mI (10200) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10200) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10210) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10210) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10220) ADC_TASK: EOC received[0m
+[0;32mI (10220) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10220) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10230) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10240) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10240) ADC_TASK: EOC received[0m
+[0;32mI (10240) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10250) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10250) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10260) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10260) ADC_TASK: EOC received[0m
+[0;32mI (10270) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10270) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10280) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10280) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10290) ADC_TASK: EOC received[0m
+[0;32mI (10290) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10300) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10300) uart: uart_write_bytes(1460): uart driver error[0;31mE (10310) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (10310) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (10310) task_wdt: Tasks currently running:[0m
+[0;31mE (10310) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (10310) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (10310) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8FC7:0x3FFB0F80 0x400D938C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D4746:0x3FFB6000 0x400D4F03:0x3FFB6030 0x400D5FB5:0x3FFB6050 0x4000BD83:0x3FFB6070 0x4000182A:0x3FFB6090 0x400D5B21:0x3FFB60B0 0x400D5FB5:0x3FFB60D0 0x4000BD83:0x3FFB60F0 0x4000117D:0x3FFB6110 0x400592FE:0x3FFB6130 0x4005937A:0x3FFB6150 0x400DA4C5:0x3FFB6170 0x400DE37F:0x3FFB61A0 0x400DDD5D:0x3FFB61C0 0x400DA56D:0x3FFB64E0 0x400E5709:0x3FFB6510 0x4008B6DD:0x3FFB6540 0x400D582F:0x3FFB6590 0x400D6C9D:0x3FFB65C0 0x40086195:0x3FFB6600
+
+[0m
+[0;32mI (10390) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10390) ADC_TASK: EOC received[0m
+[0;32mI (10390) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10400) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10400) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10410) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10410) ADC_TASK: EOC received[0m
+[0;32mI (10420) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10420) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10430) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10430) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10440) ADC_TASK: EOC received[0m
+[0;32mI (10440) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10450) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10450) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10460) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10460) ADC_TASK: EOC received[0m
+[0;32mI (10470) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10470) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10480) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10480) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10490) ADC_TASK: EOC received[0m
+[0;32mI (10490) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10490) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10500) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10500) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10510) ADC_TASK: EOC received[0m
+[0;32mI (10510) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10520) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10520) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10530) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10530) ADC_TASK: EOC received[0m
+[0;32mI (10540) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10540) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10550) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10550) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10560) ADC_TASK: EOC received[0m
+[0;32mI (10560) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10560) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10570) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10580) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10580) ADC_TASK: EOC received[0m
+[0;32mI (10580) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10590) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10590) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10600) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10600) ADC_TASK: EOC received[0m
+[0;32mI (10610) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10610) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10620) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10620) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10630) ADC_TASK: EOC received[0m
+[0;32mI (10630) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10640) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10640) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10650) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10650) ADC_TASK: EOC received[0m
+[0;32mI (10660) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10660) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10660) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10670) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10680) ADC_TASK: EOC received[0m
+[0;32mI (10680) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10680) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10690) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10690) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10700) ADC_TASK: EOC received[0m
+[0;32mI (10700) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10710) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10710) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10720) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10720) ADC_TASK: EOC received[0m
+[0;32mI (10730) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10730) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10740) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10740) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10750) ADC_TASK: EOC received[0m
+[0;32mI (10750) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10750) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10760) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10770) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10770) ADC_TASK: EOC received[0m
+[0;32mI (10770) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10780) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10780) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10790) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10790) ADC_TASK: EOC received[0m
+[0;32mI (10800) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10800) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (10810) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10810) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (10820) LUNG_DETECT: Streaming Disabled[0m
+[0;32mI (10820) ADC_TASK: EOC received[0m
+[0;32mI (10820) CLK_TASK: clk task started[0m
+[0;32mI (10830) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (10830) CLK_TASK: clock hit negedge[0m
+[0;32mI (10830) ADC_TASK: Transmitting ADC value: 0[0m
+[0;32mI (10840) CLK_TASK: clock hit negedge[0m
+[0;31mE (10840) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (10850) CLK_TASK: clock hit negedge[0m
+[0;32mI (10860) CLK_TASK: clock hit negedge[0m
+[0;32mI (10860) CLK_TASK: clock hit negedge[0m
+[0;32mI (10870) CLK_TASK: clock hit negedge[0m
+[0;32mI (10870) CLK_TASK: clock hit negedge[0m
+[0;32mI (10880) CLK_TASK: clock hit negedge[0m
+[0;32mI (10880) CLK_TASK: clock hit negedge[0m
+[0;32mI (10880) CLK_TASK: clock hit negedge[0m
+[0;32mI (10890) CLK_TASK: clock hit negedge[0m
+[0;32mI (10890) CLK_TASK: clock hit negedge[0m
+[0;32mI (10900) CLK_TASK: clock hit negedge[0m
+[0;32mI (10900) CLK_TASK: clock hit negedge[0m
+[0;32mI (10910) CLK_TASK: clock hit negedge[0m
+[0;32mI (10910) CLK_TASK: clock hit negedge[0m
+[0;32mI (10920) CLK_TASK: clock hit negedge[0m
+[0;32mI (10920) CLK_TASK: clock hit negedge[0m
+[0;32mI (10920) CLK_TASK: clock hit negedge[0m
+[0;32mI (10930) CLK_TASK: clock hit negedge[0m
+[0;32mI (10930) CLK_TASK: clock hit negedge[0m
+[0;32mI (10940) CLK_TASK: clock hit negedge[0m
+[0;32mI (10940) CLK_TASK: clock hit negedge[0m
+[0;32mI (10950) CLK_TASK: clock hit negedge[0m
+[0;32mI (10950) CLK_TASK: clock hit negedge[0m
+[0;32mI (10950) CLK_TASK: clock hit negedge[0m
+[0;32mI (10960) CLK_TASK: clock hit negedge[0m
+[0;32mI (10960) CLK_TASK: clock hit negedge[0m
+[0;32mI (10970) CLK_TASK: clock hit negedge[0m
+[0;32mI (10970) CLK_TASK: clock hit negedge[0m
+[0;32mI (10980) CLK_TASK: clock hit negedge[0m
+[0;32mI (10980) CLK_TASK: clock hit negedge[0m
+[0;32mI (10980) CLK_TASK: clock hit negedge[0m
+[0;32mI (10990) CLK_TASK: clock hit negedge[0m
+[0;32mI (10990) CLK_TASK: clock hit negedge[0m
+[0;32mI (11000) CLK_TASK: clock hit negedge[0m
+[0;32mI (11000) CLK_TASK: clock hit negedge[0m
+[0;32mI (11010) CLK_TASK: clock hit negedge[0m
+[0;32mI (11010) CLK_TASK: clock hit negedge[0m
+[0;32mI (11010) CLK_TASK: clock hit negedge[0m
+[0;32mI (11020) CLK_TASK: clock hit negedge[0m
+[0;32mI (11020) CLK_TASK: clock hit negedge[0m
+[0;32mI (11030) CLK_TASK: clock hit negedge[0m
+[0;32mI (11030) CLK_TASK: clock hit negedge[0m
+[0;32mI (11040) CLK_TASK: clock hit negedge[0m
+[0;32mI (11040) CLK_TASK: clock hit negedge[0m
+[0;32mI (11050) CLK_TASK: clock hit negedge[0m
+[0;32mI (11050) CLK_TASK: clock hit negedge[0m
+[0;32mI (11050) CLK_TASK: clock hit negedge[0m
+[0;32mI (11060) CLK_TASK: clock hit negedge[0m
+[0;32mI (11060) CLK_TASK: clock hit negedge[0m
+[0;32mI (11070) CLK_TASK: clock hit negedge[0m
+[0;32mI (11070) CLK_TASK: clock hit negedge[0m
+[0;32mI (11080) CLK_TASK: clock hit negedge[0m
+[0;32mI (11080) CLK_TASK: clock hit negedge[0m
+[0;32mI (11080) CLK_TASK: clock hit negedge[0m
+[0;32mI (11090) CLK_TASK: clock hit negedge[0m
+[0;32mI (11090) CLK_TASK: clock hit negedge[0m
+[0;32mI (11100) CLK_TASK: clock hit negedge[0m
+[0;32mI (11100) CLK_TASK: clock hit negedge[0m
+[0;32mI (11110) CLK_TASK: clock hit negedge[0m
+[0;32mI (11110) CLK_TASK: clock hit negedge[0m
+[0;32mI (11110) CLK_TASK: clock hit negedge[0m
+[0;32mI (11120) CLK_TASK: clock hit negedge[0m
+[0;32mI (11120) CLK_TASK: clock hit negedge[0m
+[0;32mI (11130) CLK_TASK: clock hit negedge[0m
+[0;32mI (11130) CLK_TASK: clock hit negedge[0m
+[0;32mI (11140) CLK_TASK: clock hit negedge[0m
+[0;32mI (11140) CLK_TASK: clock hit negedge[0m
+[0;32mI (11150) CLK_TASK: clock hit negedge[0m
+[0;32mI (11150) CLK_TASK: clock hit negedge[0m
+[0;32mI (11150) CLK_TASK: clock hit negedge[0m
+[0;32mI (11160) CLK_TASK: clock hit negedge[0m
+[0;32mI (11160) CLK_TASK: clock hit negedge[0m
+[0;32mI (11170) CLK_TASK: clock hit negedge[0m
+[0;32mI (11170) CLK_TASK: clock hit negedge[0m
+[0;32mI (11180) CLK_TASK: clock hit negedge[0m
+[0;32mI (11180) CLK_TASK: clock hit negedge[0m
+[0;32mI (11180) CLK_TASK: clock hit negedge[0m
+[0;32mI (11190) CLK_TASK: clock hit negedge[0m
+[0;32mI (11190) CLK_TASK: clock hit negedge[0m
+[0;32mI (11200) CLK_TASK: clock hit negedge[0m
+[0;32mI (11200) CLK_TASK: clock hit negedge[0m
+[0;32mI (11210) CLK_TASK: clock hit negedge[0m
+[0;32mI (11210) CLK_TASK: clock hit negedge[0m
+[0;32mI (11210) CLK_TASK: clock hit negedge[0m
+[0;32mI (11220) CLK_TASK: clock hit negedge[0m
+[0;32mI (11220) CLK_TASK: clock hit negedge[0m
+[0;32mI (11230) CLK_TASK: clock hit negedge[0m
+[0;32mI (11230) CLK_TASK: clock hit negedge[0m
+[0;32mI (11240) CLK_TASK: clock hit negedge[0m
+[0;32mI (11240) CLK_TASK: clock hit negedge[0m
+[0;32mI (11240) CLK_TASK: clock hit negedge[0m
+[0;32mI (11250) CLK_TASK: clock hit negedge[0m
+[0;32mI (11250) CLK_TASK: clock hit negedge[0m
+[0;32mI (11260) CLK_TASK: clock hit negedge[0m
+[0;32mI (11260) CLK_TASK: clock hit negedge[0m
+[0;32mI (11270) CLK_TASK: clock hit negedge[0m
+[0;32mI (11270) CLK_TASK: clock hit negedge[0m
+[0;32mI (11280) CLK_TASK: clock hit negedge[0m
+[0;32mI (11280) CLK_TASK: clock hit negedge[0m
+[0;32mI (11280) CLK_TASK: clock hit negedge[0m
+[0;32mI (11290) CLK_TASK: clock hit negedge[0m
+[0;32mI (11290) CLK_TASK: clock hit negedge[0m
+[0;32mI (11300) CLK_TASK: clock hit negedge[0m
+[0;32mI (11300) CLK_TASK: clock hit negedge[0m
+[0;32mI (11310) CLK_TASK: clock hit negedge[0m
+[0;32mI (11310) CLK_TASK: clock hit negedge[0m
+[0;32mI (11310) CLK_TASK: clock hit negedge[0m
+[0;32mI (11320) CLK_TASK: clock hit negedge[0m
+[0;32mI (11320) CLK_TASK: clock hit negedge[0m
+[0;32mI (11330) CLK_TASK: clock hit negedge[0m
+[0;32mI (11330) CLK_TASK: clock hit negedge[0m
+[0;32mI (11340) CLK_TASK: clock hit negedge[0m
+[0;32mI (11340) CLK_TASK: clock hit negedge[0m
+[0;32mI (11340) CLK_TASK: clock hit negedge[0m
+[0;32mI (11350) CLK_TASK: clock hit negedge[0m
+[0;32mI (11350) CLK_TASK: clock hit negedge[0m
+[0;32mI (11360) CLK_TASK: clock hit negedge[0m
+[0;32mI (11360) CLK_TASK: clock hit negedge[0m
+[0;32mI (11370) CLK_TASK: clock hit negedge[0m
+[0;32mI (11370) CLK_TASK: clock hit negedge[0m
+[0;32mI (11380) CLK_TASK: clock hit negedge[0m
+[0;32mI (11380) CLK_TASK: clock hit negedge[0m
+[0;32mI (11380) CLK_TASK: clock hit negedge[0m
+[0;32mI (11390) CLK_TASK: clock hit negedge[0m
+[0;32mI (11390) CLK_TASK: clock hit negedge[0m
+[0;32mI (11400) CLK_TASK: clock hit negedge[0m
+[0;32mI (11400) CLK_TASK: clock hit negedge[0m
+[0;32mI (11410) CLK_TASK: clock hit negedge[0m
+[0;32mI (11410) CLK_TASK: clock hit negedge[0m
+[0;32mI (11410) CLK_TASK: clock hit negedge[0m
+[0;32mI (11420) CLK_TASK: clock hit negedge[0m
+[0;32mI (11420) CLK_TASK: clock hit negedge[0m
+[0;32mI (11430) CLK_TASK: clock hit negedge[0m
+[0;32mI (11430) CLK_TASK: clock hit negedge[0m
+[0;32mI (11440) CLK_TASK: clock hit negedge[0m
+[0;32mI (11440) CLK_TASK: clock hit negedge[0m
+[0;32mI (11440) CLK_TASK: clock hit negedge[0m
+[0;32mI (11450) CLK_TASK: clock hit negedge[0m
+[0;32mI (11450) CLK_TASK: clock hit negedge[0m
+[0;32mI (11460) CLK_TASK: clock hit negedge[0m
+[0;32mI (11460) CLK_TASK: clock hit negedge[0m
+[0;32mI (11470) CLK_TASK: clock hit negedge[0m
+[0;32mI (11470) CLK_TASK: clock hit negedge[0m
+[0;32mI (11470) CLK_TASK: clock hit negedge[0m
+[0;32mI (11480) CLK_TASK: clock hit negedge[0m
+[0;32mI (11480) CLK_TASK: clock hit negedge[0m
+[0;32mI (11490) CLK_TASK: clock hit negedge[0m
+[0;32mI (11490) CLK_TASK: clock hit negedge[0m
+[0;32mI (11500) CLK_TASK: clock hit negedge[0m
+[0;32mI (11500) CLK_TASK: clock hit negedge[0m
+[0;32mI (11510) CLK_TASK: clock hit negedge[0m
+[0;32mI (11510) CLK_TASK: clock hit negedge[0m
+[0;32mI (11510) CLK_TASK: clock hit negedge[0m
+[0;32mI (11520) CLK_TASK: clock hit negedge[0m
+[0;32mI (11520) CLK_TASK: clock hit negedge[0m
+[0;32mI (11530) CLK_TASK: clock hit negedge[0m
+[0;32mI (11530) CLK_TASK: clock hit negedge[0m
+[0;32mI (11540) CLK_TASK: clock hit negedge[0m
+[0;32mI (11540) CLK_TASK: clock hit negedge[0m
+[0;32mI (11540) CLK_TASK: clock hit negedge[0m
+[0;32mI (11550) CLK_TASK: clock hit negedge[0m
+[0;32mI (11550) CLK_TASK: clock hit negedge[0m
+[0;32mI (11560) CLK_TASK: clock hit negedge[0m
+[0;32mI (11560) CLK_TASK: clock hit negedge[0m
+[0;32mI (11570) CLK_TASK: clock hit negedge[0m
+[0;32mI (11570) CLK_TASK: clock hit negedge[0m
+[0;32mI (11570) CLK_TASK: clock hit negedge[0m
+[0;32mI (11580) CLK_TASK: clock hit negedge[0m
+[0;32mI (11580) CLK_TASK: clock hit negedge[0m
+[0;32mI (11590) CLK_TASK: clock hit negedge[0m
+[0;32mI (11590) CLK_TASK: clock hit negedge[0m
+[0;32mI (11600) CLK_TASK: clock hit negedge[0m
+[0;32mI (11600) CLK_TASK: clock hit negedge[0m
+[0;32mI (11610) CLK_TASK: clock hit negedge[0m
+[0;32mI (11610) CLK_TASK: clock hit negedge[0m
+[0;32mI (11610) CLK_TASK: clock hit negedge[0m
+[0;32mI (11620) CLK_TASK: clock hit negedge[0m
+[0;32mI (11620) CLK_TASK: clock hit negedge[0m
+[0;32mI (11630) CLK_TASK: clock hit negedge[0m
+[0;32mI (11630) CLK_TASK: clock hit negedge[0m
+[0;32mI (11640) CLK_TASK: clock hit negedge[0m
+[0;32mI (11640) CLK_TASK: clock hit negedge[0m
+[0;32mI (11640) CLK_TASK: clock hit negedge[0m
+[0;32mI (11650) CLK_TASK: clock hit negedge[0m
+[0;32mI (11650) CLK_TASK: clock hit negedge[0m
+[0;32mI (11660) CLK_TASK: clock hit negedge[0m
+[0;32mI (11660) CLK_TASK: clock hit negedge[0m
+[0;32mI (11670) CLK_TASK: clock hit negedge[0m
+[0;32mI (11670) CLK_TASK: clock hit negedge[0m
+[0;32mI (11670) CLK_TASK: clock hit negedge[0m
+[0;32mI (11680) CLK_TASK: clock hit negedge[0m
+[0;32mI (11680) CLK_TASK: clock hit negedge[0m
+[0;32mI (11690) CLK_TASK: clock hit negedge[0m
+[0;32mI (11690) CLK_TASK: clock hit negedge[0m
+[0;32mI (11700) CLK_TASK: clock hit negedge[0m
+[0;32mI (11700) CLK_TASK: clock hit negedge[0m
+[0;32mI (11710) CLK_TASK: clock hit negedge[0m
+[0;32mI (11710) CLK_TASK: clock hit negedge[0m
+[0;32mI (11710) CLK_TASK: clock hit negedge[0m
+[0;32mI (11720) CLK_TASK: clock hit negedge[0m
+[0;32mI (11720) CLK_TASK: clock hit negedge[0m
+[0;32mI (11730) CLK_TASK: clock hit negedge[0m
+[0;32mI (11730) CLK_TASK: clock hit negedge[0m
+[0;32mI (11740) CLK_TASK: clock hit negedge[0m
+[0;32mI (11740) CLK_TASK: clock hit negedge[0m
+[0;32mI (11740) CLK_TASK: clock hit negedge[0m
+[0;32mI (11750) CLK_TASK: clock hit negedge[0m
+[0;32mI (11750) CLK_TASK: clock hit negedge[0m
+[0;32mI (11760) CLK_TASK: clock hit negedge[0m
+[0;32mI (11760) CLK_TASK: clock hit negedge[0m
+[0;32mI (11770) CLK_TASK: clock hit negedge[0m
+[0;32mI (11770) CLK_TASK: clock hit negedge[0m
+[0;32mI (11770) CLK_TASK: clock hit negedge[0m
+[0;32mI (11780) CLK_TASK: clock hit negedge[0m
+[0;32mI (11780) CLK_TASK: clock hit negedge[0m
+[0;32mI (11790) CLK_TASK: clock hit negedge[0m
+[0;32mI (11790) CLK_TASK: clock hit negedge[0m
+[0;32mI (11800) CLK_TASK: clock hit negedge[0m
+[0;32mI (11800) CLK_TASK: clock hit negedge[0m
+[0;32mI (11800) CLK_TASK: clock hit negedge[0m
+[0;32mI (11810) CLK_TASK: clock hit negedge[0m
+[0;32mI (11810) CLK_TASK: clock hit negedge[0m
+[0;32mI (11820) CLK_TASK: clock hit negedge[0m
+[0;32mI (11820) CLK_TASK: clock hit negedge[0m
+[0;32mI (11830) CLK_TASK: clock hit negedge[0m
+[0;32mI (11830) CLK_TASK: clock hit negedge[0m
+[0;32mI (11840) CLK_TASK: clock hit negedge[0m
+[0;32mI (11840) CLK_TASK: clock hit negedge[0m
+[0;32mI (11840) CLK_TASK: clock hit negedge[0m
+[0;32mI (11850) CLK_TASK: clock hit negedge[0m
+[0;32mI (11850) CLK_TASK: clock hit negedge[0m
+[0;32mI (11860) CLK_TASK: clock hit negedge[0m
+[0;32mI (11860) CLK_TASK: clock hit negedge[0m
+[0;32mI (11870) CLK_TASK: clock hit negedge[0m
+[0;32mI (11870) CLK_TASK: clock hit negedge[0m
+[0;32mI (11870) CLK_TASK: clock hit negedge[0m
+[0;32mI (11880) CLK_TASK: clock hit negedge[0m
+[0;32mI (11880) CLK_TASK: clock hit negedge[0m
+[0;32mI (11890) CLK_TASK: clock hit negedge[0m
+[0;32mI (11890) CLK_TASK: clock hit negedge[0m
+[0;32mI (11900) CLK_TASK: clock hit negedge[0m
+[0;32mI (11900) CLK_TASK: clock hit negedge[0m
+[0;32mI (11900) CLK_TASK: clock hit negedge[0m
+[0;32mI (11910) CLK_TASK: clock hit negedge[0m
+[0;32mI (11910) CLK_TASK: clock hit negedge[0m
+[0;32mI (11920) CLK_TASK: clock hit negedge[0m
+[0;32mI (11920) CLK_TASK: clock hit negedge[0m
+[0;32mI (11930) CLK_TASK: clock hit negedge[0m
+[0;32mI (11930) CLK_TASK: clock hit negedge[0m
+[0;32mI (11940) CLK_TASK: clock hit negedge[0m
+[0;32mI (11940) CLK_TASK: clock hit negedge[0m
+[0;32mI (11940) CLK_TASK: clock hit negedge[0m
+[0;32mI (11950) CLK_TASK: clock hit negedge[0m
+[0;32mI (11950) CLK_TASK: clock hit negedge[0m
+[0;32mI (11960) CLK_TASK: clock hit negedge[0m
+[0;32mI (11960) CLK_TASK: clock hit negedge[0m
+[0;32mI (11970) CLK_TASK: clock hit negedge[0m
+[0;32mI (11970) CLK_TASK: clock hit negedge[0m
+[0;32mI (11970) CLK_TASK: clock hit negedge[0m
+[0;32mI (11980) CLK_TASK: clock hit negedge[0m
+[0;32mI (11980) CLK_TASK: clock hit negedge[0m
+[0;32mI (11990) CLK_TASK: clock hit negedge[0m
+[0;32mI (11990) CLK_TASK: clock hit negedge[0m
+[0;32mI (12000) CLK_TASK: clock hit negedge[0m
+[0;32mI (12000) CLK_TASK: clock hit negedge[0m
+[0;32mI (12000) CLK_TASK: clock hit negedge[0m
+[0;32mI (12010) CLK_TASK: clock hit negedge[0m
+[0;32mI (12010) CLK_TASK: clock hit negedge[0m
+[0;32mI (12020) CLK_TASK: clock hit negedge[0m
+[0;32mI (12020) CLK_TASK: clock hit negedge[0m
+[0;32mI (12030) CLK_TASK: clock hit negedge[0m
+[0;32mI (12030) CLK_TASK: clock hit negedge[0m
+[0;32mI (12030) CLK_TASK: clock hit negedge[0m
+[0;32mI (12040) CLK_TASK: clock hit negedge[0m
+[0;32mI (12040) CLK_TASK: clock hit negedge[0m
+[0;32mI (12050) CLK_TASK: clock hit negedge[0m
+[0;32mI (12050) CLK_TASK: clock hit negedge[0m
+[0;32mI (12060) CLK_TASK: clock hit negedge[0m
+[0;32mI (12060) CLK_TASK: clock hit negedge[0m
+[0;32mI (12070) CLK_TASK: clock hit negedge[0m
+[0;32mI (12070) CLK_TASK: clock hit negedge[0m
+[0;32mI (12070) CLK_TASK: clock hit negedge[0m
+[0;32mI (12080) CLK_TASK: clock hit negedge[0m
+[0;32mI (12080) CLK_TASK: clock hit negedge[0m
+[0;32mI (12090) CLK_TASK: clock hit negedge[0m
+[0;32mI (12090) CLK_TASK: clock hit negedge[0m
+[0;32mI (12100) CLK_TASK: clock hit negedge[0m
+[0;32mI (12100) CLK_TASK: clock hit negedge[0m
+[0;32mI (12100) CLK_TASK: clock hit negedge[0m
+[0;32mI (12110) CLK_TASK: clock hit negedge[0m
+[0;32mI (12110) CLK_TASK: clock hit negedge[0m
+[0;32mI (12120) CLK_TASK: clock hit negedge[0m
+[0;32mI (12120) CLK_TASK: clock hit negedge[0m
+[0;32mI (12130) CLK_TASK: clock hit negedge[0m
+[0;32mI (12130) CLK_TASK: clock hit negedge[0m
+[0;32mI (12130) CLK_TASK: clock hit negedge[0m
+[0;32mI (12140) CLK_TASK: clock hit negedge[0m
+[0;32mI (12140) CLK_TASK: clock hit negedge[0m
+[0;32mI (12150) CLK_TASK: clock hit negedge[0m
+[0;32mI (12150) CLK_TASK: clock hit negedge[0m
+[0;32mI (12160) CLK_TASK: clock hit negedge[0m
+[0;32mI (12160) CLK_TASK: clock hit negedge[0m
+[0;32mI (12170) CLK_TASK: clock hit negedge[0m
+[0;32mI (12170) CLK_TASK: clock hit negedge[0m
+[0;32mI (12170) CLK_TASK: clock hit negedge[0m
+[0;32mI (12180) CLK_TASK: clock hit negedge[0m
+[0;32mI (12180) CLK_TASK: clock hit negedge[0m
+[0;32mI (12190) CLK_TASK: clock hit negedge[0m
+[0;32mI (12190) CLK_TASK: clock hit negedge[0m
+[0;32mI (12200) CLK_TASK: clock hit negedge[0m
+[0;32mI (12200) CLK_TASK: clock hit negedge[0m
+[0;32mI (12200) CLK_TASK: clock hit negedge[0m
+[0;32mI (12210) CLK_TASK: clock hit negedge[0m
+[0;32mI (12210) CLK_TASK: clock hit negedge[0m
+[0;32mI (12220) CLK_TASK: clock hit negedge[0m
+[0;32mI (12220) CLK_TASK: clock hit negedge[0m
+[0;32mI (12230) CLK_TASK: clock hit negedge[0m
+[0;32mI (12230) CLK_TASK: clock hit negedge[0m
+[0;32mI (12230) CLK_TASK: clock hit negedge[0m
+[0;32mI (12240) CLK_TASK: clock hit negedge[0m
+[0;32mI (12240) CLK_TASK: clock hit negedge[0m
+[0;32mI (12250) CLK_TASK: clock hit negedge[0m
+[0;32mI (12250) CLK_TASK: clock hit negedge[0m
+[0;32mI (12260) CLK_TASK: clock hit negedge[0m
+[0;32mI (12260) CLK_TASK: clock hit negedge[0m
+[0;32mI (12260) CLK_TASK: clock hit negedge[0m
+[0;32mI (12270) CLK_TASK: clock hit negedge[0m
+[0;32mI (12270) CLK_TASK: clock hit negedge[0m
+[0;32mI (12280) CLK_TASK: clock hit negedge[0m
+[0;32mI (12280) CLK_TASK: clock hit negedge[0m
+[0;32mI (12290) CLK_TASK: clock hit negedge[0m
+[0;32mI (12290) CLK_TASK: clock hit negedge[0m
+[0;32mI (12300) CLK_TASK: clock hit negedge[0m
+[0;32mI (12300) CLK_TASK: clock hit negedge[0m
+[0;32mI (12300) CLK_TASK: clock hit negedge[0m
+[0;32mI (12310) CLK_TASK: clock hit negedge[0m
+[0;32mI (12310) CLK_TASK: clock hit negedge[0m
+[0;32mI (12320) CLK_TASK: clock hit negedge[0m
+[0;32mI (12320) CLK_TASK: clock hit negedge[0m
+[0;32mI (12330) CLK_TASK: clock hit negedge[0m
+[0;32mI (12330) CLK_TASK: clock hit negedge[0m
+[0;32mI (12330) CLK_TASK: clock hit negedge[0m
+[0;32mI (12340) CLK_TASK: clock hit negedge[0m
+[0;32mI (12340) CLK_TASK: clock hit negedge[0m
+[0;32mI (12350) CLK_TASK: clock hit negedge[0m
+[0;32mI (12350) CLK_TASK: clock hit negedge[0m
+[0;32mI (12360) CLK_TASK: clock hit negedge[0m
+[0;32mI (12360) CLK_TASK: clock hit negedge[0m
+[0;32mI (12360) CLK_TASK: clock hit negedge[0m
+[0;32mI (12370) CLK_TASK: clock hit negedge[0m
+[0;32mI (12370) CLK_TASK: clock hit negedge[0m
+[0;32mI (12380) CLK_TASK: clock hit negedge[0m
+[0;32mI (12380) CLK_TASK: clock hit negedge[0m
+[0;32mI (12390) CLK_TASK: clock hit negedge[0m
+[0;32mI (12390) CLK_TASK: clock hit negedge[0m
+[0;32mI (12400) CLK_TASK: clock hit negedge[0m
+[0;32mI (12400) CLK_TASK: clock hit negedge[0m
+[0;32mI (12400) CLK_TASK: clock hit negedge[0m
+[0;32mI (12410) CLK_TASK: clock hit negedge[0m
+[0;32mI (12410) CLK_TASK: clock hit negedge[0m
+[0;32mI (12420) CLK_TASK: clock hit negedge[0m
+[0;32mI (12420) CLK_TASK: clock hit negedge[0m
+[0;32mI (12430) CLK_TASK: clock hit negedge[0m
+[0;32mI (12430) CLK_TASK: clock hit negedge[0m
+[0;32mI (12430) CLK_TASK: clock hit negedge[0m
+[0;32mI (12440) CLK_TASK: clock hit negedge[0m
+[0;32mI (12440) CLK_TASK: clock hit negedge[0m
+[0;32mI (12450) CLK_TASK: clock hit negedge[0m
+[0;32mI (12450) CLK_TASK: clock hit negedge[0m
+[0;32mI (12460) CLK_TASK: clock hit negedge[0m
+[0;32mI (12460) CLK_TASK: clock hit negedge[0m
+[0;32mI (12460) CLK_TASK: clock hit negedge[0m
+[0;32mI (12470) CLK_TASK: clock hit negedge[0m
+[0;32mI (12470) CLK_TASK: clock hit negedge[0m
+[0;32mI (12480) CLK_TASK: clock hit negedge[0m
+[0;32mI (12480) CLK_TASK: clock hit negedge[0m
+[0;32mI (12490) CLK_TASK: clock hit negedge[0m
+[0;32mI (12490) CLK_TASK: clock hit negedge[0m
+[0;32mI (12490) CLK_TASK: clock hit negedge[0m
+[0;32mI (12500) CLK_TASK: clock hit negedge[0m
+[0;32mI (12500) CLK_TASK: clock hit negedge[0m
+[0;32mI (12510) CLK_TASK: clock hit negedge[0m
+[0;32mI (12510) CLK_TASK: clock hit negedge[0m
+[0;32mI (12520) CLK_TASK: clock hit negedge[0m
+[0;32mI (12520) CLK_TASK: clock hit negedge[0m
+[0;32mI (12530) CLK_TASK: clock hit negedge[0m
+[0;32mI (12530) CLK_TASK: clock hit negedge[0m
+[0;32mI (12530) CLK_TASK: clock hit negedge[0m
+[0;32mI (12540) CLK_TASK: clock hit negedge[0m
+[0;32mI (12540) CLK_TASK: clock hit negedge[0m
+[0;32mI (12550) CLK_TASK: clock hit negedge[0m
+[0;32mI (12550) CLK_TASK: clock hit negedge[0m
+[0;32mI (12560) CLK_TASK: clock hit negedge[0m
+[0;32mI (12560) CLK_TASK: clock hit negedge[0m
+[0;32mI (12560) CLK_TASK: clock hit negedge[0m
+[0;32mI (12570) CLK_TASK: clock hit negedge[0m
+[0;32mI (12570) CLK_TASK: clock hit negedge[0m
+[0;32mI (12580) CLK_TASK: clock hit negedge[0m
+[0;32mI (12580) CLK_TASK: clock hit negedge[0m
+[0;32mI (12590) CLK_TASK: clock hit negedge[0m
+[0;32mI (12590) CLK_TASK: clock hit negedge[0m
+[0;32mI (12590) CLK_TASK: clock hit negedge[0m
+[0;32mI (12600) CLK_TASK: clock hit negedge[0m
+[0;32mI (12600) CLK_TASK: clock hit negedge[0m
+[0;32mI (12610) CLK_TASK: clock hit negedge[0m
+[0;32mI (12610) CLK_TASK: clock hit negedge[0m
+[0;32mI (12620) CLK_TASK: clock hit negedge[0m
+[0;32mI (12620) CLK_TASK: clock hit negedge[0m
+[0;32mI (12630) CLK_TASK: clock hit negedge[0m
+[0;32mI (12630) CLK_TASK: clock hit negedge[0m
+[0;32mI (12630) CLK_TASK: clock hit negedge[0m
+[0;32mI (12640) CLK_TASK: clock hit negedge[0m
+[0;32mI (12640) CLK_TASK: clock hit negedge[0m
+[0;32mI (12650) CLK_TASK: clock hit negedge[0m
+[0;32mI (12650) CLK_TASK: clock hit negedge[0m
+[0;32mI (12660) CLK_TASK: clock hit negedge[0m
+[0;32mI (12660) CLK_TASK: clock hit negedge[0m
+[0;32mI (12660) CLK_TASK: clock hit negedge[0m
+[0;32mI (12670) CLK_TASK: clock hit negedge[0m
+[0;32mI (12670) CLK_TASK: clock hit negedge[0m
+[0;32mI (12680) CLK_TASK: clock hit negedge[0m
+[0;32mI (12680) CLK_TASK: clock hit negedge[0m
+[0;32mI (12690) CLK_TASK: clock hit negedge[0m
+[0;32mI (12690) CLK_TASK: clock hit negedge[0m
+[0;32mI (12690) CLK_TASK: clock hit negedge[0m
+[0;32mI (12700) CLK_TASK: clock hit negedge[0m
+[0;32mI (12700) CLK_TASK: clock hit negedge[0m
+[0;32mI (12710) CLK_TASK: clock hit negedge[0m
+[0;32mI (12710) CLK_TASK: clock hit negedge[0m
+[0;32mI (12720) CLK_TASK: clock hit negedge[0m
+[0;32mI (12720) CLK_TASK: clock hit negedge[0m
+[0;32mI (12720) CLK_TASK: clock hit negedge[0m
+[0;32mI (12730) CLK_TASK: clock hit negedge[0m
+[0;32mI (12730) CLK_TASK: clock hit negedge[0m
+[0;32mI (12740) CLK_TASK: clock hit negedge[0m
+[0;32mI (12740) CLK_TASK: clock hit negedge[0m
+[0;32mI (12750) CLK_TASK: clock hit negedge[0m
+[0;32mI (12750) CLK_TASK: clock hit negedge[0m
+[0;32mI (12760) CLK_TASK: clock hit negedge[0m
+[0;32mI (12760) CLK_TASK: clock hit negedge[0m
+[0;32mI (12760) CLK_TASK: clock hit negedge[0m
+[0;32mI (12770) CLK_TASK: clock hit negedge[0m
+[0;32mI (12770) CLK_TASK: clock hit negedge[0m
+[0;32mI (12780) CLK_TASK: clock hit negedge[0m
+[0;32mI (12780) CLK_TASK: clock hit negedge[0m
+[0;32mI (12790) CLK_TASK: clock hit negedge[0m
+[0;32mI (12790) CLK_TASK: clock hit negedge[0m
+[0;32mI (12790) CLK_TASK: clock hit negedge[0m
+[0;32mI (12800) CLK_TASK: clock hit negedge[0m
+[0;32mI (12800) CLK_TASK: clock hit negedge[0m
+[0;32mI (12810) CLK_TASK: clock hit negedge[0m
+[0;32mI (12810) CLK_TASK: clock hit negedge[0m
+[0;32mI (12820) CLK_TASK: clock hit negedge[0m
+[0;32mI (12820) CLK_TASK: clock hit negedge[0m
+[0;32mI (12820) CLK_TASK: clock hit negedge[0m
+[0;32mI (12830) CLK_TASK: clock hit negedge[0m
+[0;32mI (12830) CLK_TASK: clock hit negedge[0m
+[0;32mI (12840) CLK_TASK: clock hit negedge[0m
+[0;32mI (12840) CLK_TASK: clock hit negedge[0m
+[0;32mI (12850) CLK_TASK: clock hit negedge[0m
+[0;32mI (12850) CLK_TASK: clock hit negedge[0m
+[0;32mI (12860) CLK_TASK: clock hit negedge[0m
+[0;32mI (12860) CLK_TASK: clock hit negedge[0m
+[0;32mI (12860) CLK_TASK: clock hit negedge[0m
+[0;32mI (12870) CLK_TASK: clock hit negedge[0m
+[0;32mI (12870) CLK_TASK: clock hit negedge[0m
+[0;32mI (12880) CLK_TASK: clock hit negedge[0m
+[0;32mI (12880) CLK_TASK: clock hit negedge[0m
+[0;32mI (12890) CLK_TASK: clock hit negedge[0m
+[0;32mI (12890) CLK_TASK: clock hit negedge[0m
+[0;32mI (12890) CLK_TASK: clock hit negedge[0m
+[0;32mI (12900) CLK_TASK: clock hit negedge[0m
+[0;32mI (12900) CLK_TASK: clock hit negedge[0m
+[0;32mI (12910) CLK_TASK: clock hit negedge[0m
+[0;32mI (12910) CLK_TASK: clock hit negedge[0m
+[0;32mI (12920) CLK_TASK: clock hit negedge[0m
+[0;32mI (12920) CLK_TASK: clock hit negedge[0m
+[0;32mI (12920) CLK_TASK: clock hit negedge[0m
+[0;32mI (12930) CLK_TASK: clock hit negedge[0m
+[0;32mI (12930) CLK_TASK: clock hit negedge[0m
+[0;32mI (12940) CLK_TASK: clock hit negedge[0m
+[0;32mI (12940) CLK_TASK: clock hit negedge[0m
+[0;32mI (12950) CLK_TASK: clock hit negedge[0m
+[0;32mI (12950) CLK_TASK: clock hit negedge[0m
+[0;32mI (12960) CLK_TASK: clock hit negedge[0m
+[0;32mI (12960) CLK_TASK: clock hit negedge[0m
+[0;32mI (12960) CLK_TASK: clock hit negedge[0m
+[0;32mI (12970) CLK_TASK: clock hit negedge[0m
+[0;32mI (12970) CLK_TASK: clock hit negedge[0m
+[0;32mI (12980) CLK_TASK: clock hit negedge[0m
+[0;32mI (12980) CLK_TASK: clock hit negedge[0m
+[0;32mI (12990) CLK_TASK: clock hit negedge[0m
+[0;32mI (12990) CLK_TASK: clock hit negedge[0m
+[0;32mI (12990) CLK_TASK: clock hit negedge[0m
+[0;32mI (13000) CLK_TASK: clock hit negedge[0m
+[0;32mI (13000) CLK_TASK: clock hit negedge[0m
+[0;32mI (13010) CLK_TASK: clock hit negedge[0m
+[0;32mI (13010) CLK_TASK: clock hit negedge[0m
+[0;32mI (13020) CLK_TASK: clock hit negedge[0m
+[0;32mI (13020) CLK_TASK: clock hit negedge[0m
+[0;32mI (13020) CLK_TASK: clock hit negedge[0m
+[0;32mI (13030) CLK_TASK: clock hit negedge[0m
+[0;32mI (13030) CLK_TASK: clock hit negedge[0m
+[0;32mI (13040) CLK_TASK: clock hit negedge[0m
+[0;32mI (13040) CLK_TASK: clock hit negedge[0m
+[0;32mI (13050) CLK_TASK: clock hit negedge[0m
+[0;32mI (13050) CLK_TASK: clock hit negedge[0m
+[0;32mI (13050) CLK_TASK: clock hit negedge[0m
+[0;32mI (13060) CLK_TASK: clock hit negedge[0m
+[0;32mI (13060) CLK_TASK: clock hit negedge[0m
+[0;32mI (13070) CLK_TASK: clock hit negedge[0m
+[0;32mI (13070) CLK_TASK: clock hit negedge[0m
+[0;32mI (13080) CLK_TASK: clock hit negedge[0m
+[0;32mI (13080) CLK_TASK: clock hit negedge[0m
+[0;32mI (13090) CLK_TASK: clock hit negedge[0m
+[0;32mI (13090) CLK_TASK: clock hit negedge[0m
+[0;32mI (13090) CLK_TASK: clock hit negedge[0m
+[0;32mI (13100) CLK_TASK: clock hit negedge[0m
+[0;32mI (13100) CLK_TASK: clock hit negedge[0m
+[0;32mI (13110) CLK_TASK: clock hit negedge[0m
+[0;32mI (13110) CLK_TASK: clock hit negedge[0m
+[0;32mI (13120) CLK_TASK: clock hit negedge[0m
+[0;32mI (13120) CLK_TASK: clock hit negedge[0m
+[0;32mI (13120) CLK_TASK: clock hit negedge[0m
+[0;32mI (13130) CLK_TASK: clock hit negedge[0m
+[0;32mI (13130) CLK_TASK: clock hit negedge[0m
+[0;32mI (13140) CLK_TASK: clock hit negedge[0m
+[0;32mI (13140) CLK_TASK: clock hit negedge[0m
+[0;32mI (13150) CLK_TASK: clock hit negedge[0m
+[0;32mI (13150) CLK_TASK: clock hit negedge[0m
+[0;32mI (13150) CLK_TASK: clock hit negedge[0m
+[0;32mI (13160) CLK_TASK: clock hit negedge[0m
+[0;32mI (13160) CLK_TASK: clock hit negedge[0m
+[0;32mI (13170) CLK_TASK: clock hit negedge[0m
+[0;32mI (13170) CLK_TASK: clock hit negedge[0m
+[0;32mI (13180) CLK_TASK: clock hit negedge[0m
+[0;32mI (13180) CLK_TASK: clock hit negedge[0m
+[0;32mI (13190) CLK_TASK: clock hit negedge[0m
+[0;32mI (13190) CLK_TASK: clock hit negedge[0m
+[0;32mI (13190) CLK_TASK: clock hit negedge[0m
+[0;32mI (13200) CLK_TASK: clock hit negedge[0m
+[0;32mI (13200) CLK_TASK: clock hit negedge[0m
+[0;32mI (13210) CLK_TASK: clock hit negedge[0m
+[0;32mI (13210) CLK_TASK: clock hit negedge[0m
+[0;32mI (13220) CLK_TASK: clock hit negedge[0m
+[0;32mI (13220) CLK_TASK: clock hit negedge[0m
+[0;32mI (13220) CLK_TASK: clock hit negedge[0m
+[0;32mI (13230) CLK_TASK: clock hit negedge[0m
+[0;32mI (13230) CLK_TASK: clock hit negedge[0m
+[0;32mI (13240) CLK_TASK: clock hit negedge[0m
+[0;32mI (13240) CLK_TASK: clock hit negedge[0m
+[0;32mI (13250) CLK_TASK: clock hit negedge[0m
+[0;32mI (13250) CLK_TASK: clock hit negedge[0m
+[0;32mI (13250) CLK_TASK: clock hit negedge[0m
+[0;32mI (13260) CLK_TASK: clock hit negedge[0m
+[0;32mI (13260) CLK_TASK: clock hit negedge[0m
+[0;32mI (13270) CLK_TASK: clock hit negedge[0m
+[0;32mI (13270) CLK_TASK: clock hit negedge[0m
+[0;32mI (13280) CLK_TASK: clock hit negedge[0m
+[0;32mI (13280) CLK_TASK: clock hit negedge[0m
+[0;32mI (13280) CLK_TASK: clock hit negedge[0m
+[0;32mI (13290) CLK_TASK: clock hit negedge[0m
+[0;32mI (13290) CLK_TASK: clock hit negedge[0m
+[0;32mI (13300) CLK_TASK: clock hit negedge[0m
+[0;32mI (13300) CLK_TASK: clock hit negedge[0m
+[0;32mI (13310) CLK_TASK: clock hit negedge[0m
+[0;32mI (13310) CLK_TASK: clock hit negedge[0m
+[0;32mI (13320) CLK_TASK: clock hit negedge[0m
+[0;32mI (13320) CLK_TASK: clock hit negedge[0m
+[0;32mI (13320) CLK_TASK: clock hit negedge[0m
+[0;32mI (13330) CLK_TASK: clock hit negedge[0m
+[0;32mI (13330) CLK_TASK: clock hit negedge[0m
+[0;32mI (13340) CLK_TASK: clock hit negedge[0m
+[0;32mI (13340) CLK_TASK: clock hit negedge[0m
+[0;32mI (13350) CLK_TASK: clock hit negedge[0m
+[0;32mI (13350) CLK_TASK: clock hit negedge[0m
+[0;32mI (13350) CLK_TASK: clock hit negedge[0m
+[0;32mI (13360) CLK_TASK: clock hit negedge[0m
+[0;32mI (13360) CLK_TASK: clock hit negedge[0m
+[0;32mI (13370) CLK_TASK: clock hit negedge[0m
+[0;32mI (13370) CLK_TASK: clock hit negedge[0m
+[0;32mI (13380) CLK_TASK: clock hit negedge[0m
+[0;32mI (13380) CLK_TASK: clock hit negedge[0m
+[0;32mI (13380) CLK_TASK: clock hit negedge[0m
+[0;32mI (13390) CLK_TASK: clock hit negedge[0m
+[0;32mI (13390) CLK_TASK: clock hit negedge[0m
+[0;32mI (13400) CLK_TASK: clock hit negedge[0m
+[0;32mI (13400) CLK_TASK: clock hit negedge[0m
+[0;32mI (13410) CLK_TASK: clock hit negedge[0m
+[0;32mI (13410) CLK_TASK: clock hit negedge[0m
+[0;32mI (13420) CLK_TASK: clock hit negedge[0m
+[0;32mI (13420) CLK_TASK: clock hit negedge[0m
+[0;32mI (13420) CLK_TASK: clock hit negedge[0m
+[0;32mI (13430) CLK_TASK: clock hit negedge[0m
+[0;32mI (13430) CLK_TASK: clock hit negedge[0m
+[0;32mI (13440) CLK_TASK: clock hit negedge[0m
+[0;32mI (13440) CLK_TASK: clock hit negedge[0m
+[0;32mI (13450) CLK_TASK: clock hit negedge[0m
+[0;32mI (13450) CLK_TASK: clock hit negedge[0m
+[0;32mI (13450) CLK_TASK: clock hit negedge[0m
+[0;32mI (13460) CLK_TASK: clock hit negedge[0m
+[0;32mI (13460) CLK_TASK: clock hit negedge[0m
+[0;32mI (13470) CLK_TASK: clock hit negedge[0m
+[0;32mI (13470) CLK_TASK: clock hit negedge[0m
+[0;32mI (13480) CLK_TASK: clock hit negedge[0m
+[0;32mI (13480) CLK_TASK: clock hit negedge[0m
+[0;32mI (13480) CLK_TASK: clock hit negedge[0m
+[0;32mI (13490) CLK_TASK: clock hit negedge[0m
+[0;32mI (13490) CLK_TASK: clock hit negedge[0m
+[0;32mI (13500) CLK_TASK: clock hit negedge[0m
+[0;32mI (13500) CLK_TASK: clock hit negedge[0m
+[0;32mI (13510) CLK_TASK: clock hit negedge[0m
+[0;32mI (13510) CLK_TASK: clock hit negedge[0m
+[0;32mI (13510) CLK_TASK: clock hit negedge[0m
+[0;32mI (13520) CLK_TASK: clock hit negedge[0m
+[0;32mI (13520) CLK_TASK: clock hit negedge[0m
+[0;32mI (13530) CLK_TASK: clock hit negedge[0m
+[0;32mI (13530) CLK_TASK: clock hit negedge[0m
+[0;32mI (13540) CLK_TASK: clock hit negedge[0m
+[0;32mI (13540) CLK_TASK: clock hit negedge[0m
+[0;32mI (13550) CLK_TASK: clock hit negedge[0m
+[0;32mI (13550) CLK_TASK: clock hit negedge[0m
+[0;32mI (13550) CLK_TASK: clock hit negedge[0m
+[0;32mI (13560) CLK_TASK: clock hit negedge[0m
+[0;32mI (13560) CLK_TASK: clock hit negedge[0m
+[0;32mI (13570) CLK_TASK: clock hit negedge[0m
+[0;32mI (13570) CLK_TASK: clock hit negedge[0m
+[0;32mI (13580) CLK_TASK: clock hit negedge[0m
+[0;32mI (13580) CLK_TASK: clock hit negedge[0m
+[0;32mI (13580) CLK_TASK: clock hit negedge[0m
+[0;32mI (13590) CLK_TASK: clock hit negedge[0m
+[0;32mI (13590) CLK_TASK: clock hit negedge[0m
+[0;32mI (13600) CLK_TASK: clock hit negedge[0m
+[0;32mI (13600) CLK_TASK: clock hit negedge[0m
+[0;32mI (13610) CLK_TASK: clock hit negedge[0m
+[0;32mI (13610) CLK_TASK: clock hit negedge[0m
+[0;32mI (13610) CLK_TASK: clock hit negedge[0m
+[0;32mI (13620) CLK_TASK: clock hit negedge[0m
+[0;32mI (13620) CLK_TASK: clock hit negedge[0m
+[0;32mI (13630) CLK_TASK: clock hit negedge[0m
+[0;32mI (13630) CLK_TASK: clock hit negedge[0m
+[0;32mI (13640) LUNG_DETECT: Streaming Enabled[0m
+[0;32mI (13640) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (13640) CLK_TASK: clock hit negedge[0m
+[0;32mI (13650) CLK_TASK: clock hit negedge[0m
+[0;32mI (13650) CLK_TASK: clock hit negedge[0m
+[0;33mW (13660) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (13660) CLK_TASK: clock hit negedge[0m
+[0;32mI (13660) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (13670) CLK_TASK: clock hit negedge[0m
+[0;32mI (13680) CLK_TASK: clock hit negedge[0m
+[0;32mI (13680) CLK_TASK: clock hit negedge[0m
+[0;33mW (13690) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (13690) CLK_TASK: clock hit negedge[0m
+[0;32mI (13690) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (13700) CLK_TASK: clock hit negedge[0m
+[0;32mI (13710) CLK_TASK: clock hit negedge[0m
+[0;32mI (13710) CLK_TASK: clock hit negedge[0m
+[0;33mW (13710) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (13710) CLK_TASK: clock hit negedge[0m
+[0;32mI (13720) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (13730) CLK_TASK: clock hit negedge[0m
+[0;32mI (13730) CLK_TASK: clock hit negedge[0m
+[0;32mI (13740) CLK_TASK: clock hit negedge[0m
+[0;33mW (13740) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (13740) CLK_TASK: clock hit negedge[0m
+[0;32mI (13750) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (13750) CLK_TASK: clock hit negedge[0m
+[0;32mI (13760) CLK_TASK: clock hit negedge[0m
+[0;32mI (13770) CLK_TASK: clock hit negedge[0m
+[0;33mW (13770) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (13770) CLK_TASK: clock hit negedge[0m
+[0;32mI (13780) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (13780) CLK_TASK: clock hit negedge[0m
+[0;32mI (13790) CLK_TASK: clock hit negedge[0m
+[0;32mI (13800) CLK_TASK: clock hit negedge[0m
+[0;33mW (13800) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (13800) CLK_TASK: clock hit negedge[0m
+[0;32mI (13810) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (13810) CLK_TASK: clock hit negedge[0m
+[0;32mI (13820) CLK_TASK: clock hit negedge[0m
+[0;32mI (13820) CLK_TASK: clock hit negedge[0m
+[0;33mW (13830) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (13830) CLK_TASK: clock hit negedge[0m
+[0;32mI (13830) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (13840) CLK_TASK: clock hit negedge[0m
+[0;32mI (13850) CLK_TASK: clock hit negedge[0m
+[0;32mI (13850) CLK_TASK: clock hit negedge[0m
+[0;33mW (13850) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (13860) CLK_TASK: clock hit negedge[0m
+[0;32mI (13860) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (13870) CLK_TASK: clock hit negedge[0m
+[0;32mI (13880) CLK_TASK: clock hit negedge[0m
+[0;32mI (13880) CLK_TASK: clock hit negedge[0m
+[0;33mW (13880) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (13880) CLK_TASK: clock hit negedge[0m
+[0;32mI (13890) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (13890) CLK_TASK: clock hit negedge[0m
+[0;32mI (13900) CLK_TASK: clock hit negedge[0m
+[0;32mI (13910) CLK_TASK: clock hit negedge[0m
+[0;33mW (13910) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (13910) CLK_TASK: clock hit negedge[0m
+[0;32mI (13920) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (13920) CLK_TASK: clock hit negedge[0m
+[0;32mI (13930) CLK_TASK: clock hit negedge[0m
+[0;32mI (13940) CLK_TASK: clock hit negedge[0m
+[0;33mW (13940) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (13940) CLK_TASK: clock hit negedge[0m
+[0;32mI (13950) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (13950) CLK_TASK: clock hit negedge[0m
+[0;32mI (13960) CLK_TASK: clock hit negedge[0m
+[0;32mI (13960) CLK_TASK: clock hit negedge[0m
+[0;33mW (13970) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (13970) CLK_TASK: clock hit negedge[0m
+[0;32mI (13980) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (13980) CLK_TASK: clock hit negedge[0m
+[0;32mI (13990) CLK_TASK: clock hit negedge[0m
+[0;32mI (13990) CLK_TASK: clock hit negedge[0m
+[0;33mW (14000) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14000) CLK_TASK: clock hit negedge[0m
+[0;32mI (14000) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14010) CLK_TASK: clock hit negedge[0m
+[0;32mI (14020) CLK_TASK: clock hit negedge[0m
+[0;32mI (14020) CLK_TASK: clock hit negedge[0m
+[0;33mW (14020) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14030) CLK_TASK: clock hit negedge[0m
+[0;32mI (14030) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14040) CLK_TASK: clock hit negedge[0m
+[0;32mI (14040) CLK_TASK: clock hit negedge[0m
+[0;32mI (14050) CLK_TASK: clock hit negedge[0m
+[0;33mW (14050) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14050) CLK_TASK: clock hit negedge[0m
+[0;32mI (14060) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14060) CLK_TASK: clock hit negedge[0m
+[0;32mI (14070) CLK_TASK: clock hit negedge[0m
+[0;32mI (14080) CLK_TASK: clock hit negedge[0m
+[0;33mW (14080) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14080) CLK_TASK: clock hit negedge[0m
+[0;32mI (14090) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14090) CLK_TASK: clock hit negedge[0m
+[0;32mI (14100) CLK_TASK: clock hit negedge[0m
+[0;32mI (14110) CLK_TASK: clock hit negedge[0m
+[0;33mW (14110) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14110) CLK_TASK: clock hit negedge[0m
+[0;32mI (14120) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14120) CLK_TASK: clock hit negedge[0m
+[0;32mI (14130) CLK_TASK: clock hit negedge[0m
+[0;32mI (14130) CLK_TASK: clock hit negedge[0m
+[0;33mW (14140) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14140) CLK_TASK: clock hit negedge[0m
+[0;32mI (14140) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14150) CLK_TASK: clock hit negedge[0m
+[0;32mI (14160) CLK_TASK: clock hit negedge[0m
+[0;32mI (14160) CLK_TASK: clock hit negedge[0m
+[0;33mW (14170) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14170) CLK_TASK: clock hit negedge[0m
+[0;32mI (14170) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14180) CLK_TASK: clock hit negedge[0m
+[0;32mI (14190) CLK_TASK: clock hit negedge[0m
+[0;32mI (14190) CLK_TASK: clock hit negedge[0m
+[0;33mW (14190) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14190) CLK_TASK: clock hit negedge[0m
+[0;32mI (14200) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14210) CLK_TASK: clock hit negedge[0m
+[0;32mI (14210) CLK_TASK: clock hit negedge[0m
+[0;32mI (14220) CLK_TASK: clock hit negedge[0m
+[0;33mW (14220) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14220) CLK_TASK: clock hit negedge[0m
+[0;32mI (14230) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14230) CLK_TASK: clock hit negedge[0m
+[0;32mI (14240) CLK_TASK: clock hit negedge[0m
+[0;32mI (14250) CLK_TASK: clock hit negedge[0m
+[0;33mW (14250) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14250) CLK_TASK: clock hit negedge[0m
+[0;32mI (14260) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14260) CLK_TASK: clock hit negedge[0m
+[0;32mI (14270) CLK_TASK: clock hit negedge[0m
+[0;32mI (14270) CLK_TASK: clock hit negedge[0m
+[0;33mW (14280) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14280) CLK_TASK: clock hit negedge[0m
+[0;32mI (14290) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14290) CLK_TASK: clock hit negedge[0m
+[0;32mI (14300) CLK_TASK: clock hit negedge[0m
+[0;32mI (14300) CLK_TASK: clock hit negedge[0m
+[0;33mW (14310) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14310) CLK_TASK: clock hit negedge[0m
+[0;32mI (14310) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14320) CLK_TASK: clock hit negedge[0m
+[0;32mI (14330) CLK_TASK: clock hit negedge[0m
+[0;32mI (14330) CLK_TASK: clock hit negedge[0m
+[0;33mW (14330) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14340) CLK_TASK: clock hit negedge[0m
+[0;32mI (14340) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14350) CLK_TASK: clock hit negedge[0m
+[0;32mI (14360) CLK_TASK: clock hit negedge[0m
+[0;32mI (14360) CLK_TASK: clock hit negedge[0m
+[0;33mW (14360) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14360) CLK_TASK: clock hit negedge[0m
+[0;32mI (14370) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14370) CLK_TASK: clock hit negedge[0m
+[0;32mI (14380) CLK_TASK: clock hit negedge[0m
+[0;32mI (14390) CLK_TASK: clock hit negedge[0m
+[0;33mW (14390) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14390) CLK_TASK: clock hit negedge[0m
+[0;32mI (14400) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14400) CLK_TASK: clock hit negedge[0m
+[0;32mI (14410) CLK_TASK: clock hit negedge[0m
+[0;32mI (14420) CLK_TASK: clock hit negedge[0m
+[0;33mW (14420) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14420) CLK_TASK: clock hit negedge[0m
+[0;32mI (14430) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14430) CLK_TASK: clock hit negedge[0m
+[0;32mI (14440) CLK_TASK: clock hit negedge[0m
+[0;32mI (14440) CLK_TASK: clock hit negedge[0m
+[0;33mW (14450) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14450) CLK_TASK: clock hit negedge[0m
+[0;32mI (14450) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14460) CLK_TASK: clock hit negedge[0m
+[0;32mI (14470) CLK_TASK: clock hit negedge[0m
+[0;32mI (14470) CLK_TASK: clock hit negedge[0m
+[0;33mW (14480) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14480) CLK_TASK: clock hit negedge[0m
+[0;32mI (14480) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14490) CLK_TASK: clock hit negedge[0m
+[0;32mI (14500) CLK_TASK: clock hit negedge[0m
+[0;32mI (14500) CLK_TASK: clock hit negedge[0m
+[0;33mW (14500) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14500) CLK_TASK: clock hit negedge[0m
+[0;32mI (14510) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14520) CLK_TASK: clock hit negedge[0m
+[0;32mI (14520) CLK_TASK: clock hit negedge[0m
+[0;32mI (14530) CLK_TASK: clock hit negedge[0m
+[0;33mW (14530) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14530) CLK_TASK: clock hit negedge[0m
+[0;32mI (14540) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14540) CLK_TASK: clock hit negedge[0m
+[0;32mI (14550) CLK_TASK: clock hit negedge[0m
+[0;32mI (14560) CLK_TASK: clock hit negedge[0m
+[0;33mW (14560) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14560) CLK_TASK: clock hit negedge[0m
+[0;32mI (14570) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14570) CLK_TASK: clock hit negedge[0m
+[0;32mI (14580) CLK_TASK: clock hit negedge[0m
+[0;32mI (14590) CLK_TASK: clock hit negedge[0m
+[0;33mW (14590) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14590) CLK_TASK: clock hit negedge[0m
+[0;32mI (14600) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14600) CLK_TASK: clock hit negedge[0m
+[0;32mI (14610) CLK_TASK: clock hit negedge[0m
+[0;32mI (14610) CLK_TASK: clock hit negedge[0m
+[0;33mW (14620) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14620) CLK_TASK: clock hit negedge[0m
+[0;32mI (14620) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14630) CLK_TASK: clock hit negedge[0m
+[0;32mI (14640) CLK_TASK: clock hit negedge[0m
+[0;32mI (14640) CLK_TASK: clock hit negedge[0m
+[0;33mW (14640) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14650) CLK_TASK: clock hit negedge[0m
+[0;32mI (14650) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14660) CLK_TASK: clock hit negedge[0m
+[0;32mI (14670) CLK_TASK: clock hit negedge[0m
+[0;32mI (14670) CLK_TASK: clock hit negedge[0m
+[0;33mW (14670) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14670) CLK_TASK: clock hit negedge[0m
+[0;32mI (14680) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14680) CLK_TASK: clock hit negedge[0m
+[0;32mI (14690) CLK_TASK: clock hit negedge[0m
+[0;32mI (14700) CLK_TASK: clock hit negedge[0m
+[0;33mW (14700) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14700) CLK_TASK: clock hit negedge[0m
+[0;32mI (14710) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14710) CLK_TASK: clock hit negedge[0m
+[0;32mI (14720) CLK_TASK: clock hit negedge[0m
+[0;32mI (14730) CLK_TASK: clock hit negedge[0m
+[0;33mW (14730) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14730) CLK_TASK: clock hit negedge[0m
+[0;32mI (14740) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14740) CLK_TASK: clock hit negedge[0m
+[0;32mI (14750) CLK_TASK: clock hit negedge[0m
+[0;32mI (14750) CLK_TASK: clock hit negedge[0m
+[0;33mW (14760) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14760) CLK_TASK: clock hit negedge[0m
+[0;32mI (14770) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14770) CLK_TASK: clock hit negedge[0m
+[0;32mI (14780) CLK_TASK: clock hit negedge[0m
+[0;32mI (14780) CLK_TASK: clock hit negedge[0m
+[0;33mW (14790) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14790) CLK_TASK: clock hit negedge[0m
+[0;32mI (14790) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14800) CLK_TASK: clock hit negedge[0m
+[0;32mI (14810) CLK_TASK: clock hit negedge[0m
+[0;32mI (14810) CLK_TASK: clock hit negedge[0m
+[0;33mW (14810) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14820) CLK_TASK: clock hit negedge[0m
+[0;32mI (14820) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14830) CLK_TASK: clock hit negedge[0m
+[0;32mI (14830) CLK_TASK: clock hit negedge[0m
+[0;32mI (14840) CLK_TASK: clock hit negedge[0m
+[0;33mW (14840) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14840) CLK_TASK: clock hit negedge[0m
+[0;32mI (14850) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14850) CLK_TASK: clock hit negedge[0m
+[0;32mI (14860) CLK_TASK: clock hit negedge[0m
+[0;32mI (14870) CLK_TASK: clock hit negedge[0m
+[0;33mW (14870) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14870) CLK_TASK: clock hit negedge[0m
+[0;32mI (14880) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14880) CLK_TASK: clock hit negedge[0m
+[0;32mI (14890) CLK_TASK: clock hit negedge[0m
+[0;32mI (14900) CLK_TASK: clock hit negedge[0m
+[0;33mW (14900) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14900) CLK_TASK: clock hit negedge[0m
+[0;32mI (14910) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14910) CLK_TASK: clock hit negedge[0m
+[0;32mI (14920) CLK_TASK: clock hit negedge[0m
+[0;32mI (14920) CLK_TASK: clock hit negedge[0m
+[0;33mW (14930) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14930) CLK_TASK: clock hit negedge[0m
+[0;32mI (14930) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14940) CLK_TASK: clock hit negedge[0m
+[0;32mI (14950) CLK_TASK: clock hit negedge[0m
+[0;32mI (14950) CLK_TASK: clock hit negedge[0m
+[0;33mW (14950) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14960) CLK_TASK: clock hit negedge[0m
+[0;32mI (14960) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (14970) CLK_TASK: clock hit negedge[0m
+[0;32mI (14980) CLK_TASK: clock hit negedge[0m
+[0;32mI (14980) CLK_TASK: clock hit negedge[0m
+[0;33mW (14980) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (14980) CLK_TASK: clock hit negedge[0m
+[0;32mI (14990) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15000) CLK_TASK: clock hit negedge[0m
+[0;32mI (15000) CLK_TASK: clock hit negedge[0m
+[0;32mI (15010) CLK_TASK: clock hit negedge[0m
+[0;33mW (15010) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15010) CLK_TASK: clock hit negedge[0m
+[0;32mI (15020) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15020) CLK_TASK: clock hit negedge[0m
+[0;32mI (15030) CLK_TASK: clock hit negedge[0m
+[0;32mI (15040) CLK_TASK: clock hit negedge[0m
+[0;33mW (15040) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15040) CLK_TASK: clock hit negedge[0m
+[0;32mI (15050) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15050) CLK_TASK: clock hit negedge[0m
+[0;32mI (15060) CLK_TASK: clock hit negedge[0m
+[0;32mI (15060) CLK_TASK: clock hit negedge[0m
+[0;33mW (15070) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15070) CLK_TASK: clock hit negedge[0m
+[0;32mI (15080) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15080) CLK_TASK: clock hit negedge[0m
+[0;32mI (15090) CLK_TASK: clock hit negedge[0m
+[0;32mI (15090) CLK_TASK: clock hit negedge[0m
+[0;33mW (15100) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15100) CLK_TASK: clock hit negedge[0m
+[0;32mI (15100) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15110) CLK_TASK: clock hit negedge[0m
+[0;32mI (15120) CLK_TASK: clock hit negedge[0m
+[0;32mI (15120) CLK_TASK: clock hit negedge[0m
+[0;33mW (15120) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15130) CLK_TASK: clock hit negedge[0m
+[0;32mI (15130) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15140) CLK_TASK: clock hit negedge[0m
+[0;32mI (15150) CLK_TASK: clock hit negedge[0m
+[0;32mI (15150) CLK_TASK: clock hit negedge[0m
+[0;33mW (15150) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15150) CLK_TASK: clock hit negedge[0m
+[0;32mI (15160) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15160) CLK_TASK: clock hit negedge[0m
+[0;32mI (15170) CLK_TASK: clock hit negedge[0m
+[0;32mI (15180) CLK_TASK: clock hit negedge[0m
+[0;33mW (15180) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15180) CLK_TASK: clock hit negedge[0m
+[0;32mI (15190) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15190) CLK_TASK: clock hit negedge[0m
+[0;32mI (15200) CLK_TASK: clock hit negedge[0m
+[0;32mI (15210) CLK_TASK: clock hit negedge[0m
+[0;33mW (15210) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15210) CLK_TASK: clock hit negedge[0m
+[0;32mI (15220) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15220) CLK_TASK: clock hit negedge[0m
+[0;32mI (15230) CLK_TASK: clock hit negedge[0m
+[0;32mI (15230) CLK_TASK: clock hit negedge[0m
+[0;33mW (15240) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15240) CLK_TASK: clock hit negedge[0m
+[0;32mI (15240) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15250) CLK_TASK: clock hit negedge[0m
+[0;32mI (15260) CLK_TASK: clock hit negedge[0m
+[0;32mI (15260) CLK_TASK: clock hit negedge[0m
+[0;33mW (15270) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15270) CLK_TASK: clock hit negedge[0m
+[0;32mI (15270) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15280) CLK_TASK: clock hit negedge[0m
+[0;32mI (15290) CLK_TASK: clock hit negedge[0m
+[0;32mI (15290) CLK_TASK: clock hit negedge[0m
+[0;33mW (15290) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15290) CLK_TASK: clock hit negedge[0m
+[0;32mI (15300) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15310) CLK_TASK: clock hit negedge[0m
+[0;32mI (15310) CLK_TASK: clock hit negedge[0m
+[0;32mI (15320) CLK_TASK: clock hit negedge[0m
+[0;33mW (15320) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15320) CLK_TASK: clock hit negedge[0m
+[0;32mI (15330) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15330) CLK_TASK: clock hit negedge[0m
+[0;32mI (15340) CLK_TASK: clock hit negedge[0m
+[0;32mI (15350) CLK_TASK: clock hit negedge[0m
+[0;33mW (15350) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15350) CLK_TASK: clock hit negedge[0m
+[0;32mI (15360) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15360) CLK_TASK: clock hit negedge[0m
+[0;32mI (15370) CLK_TASK: clock hit negedge[0m
+[0;32mI (15380) CLK_TASK: clock hit negedge[0m
+[0;33mW (15380) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15380) CLK_TASK: clock hit negedge[0m
+[0;32mI (15390) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15390) CLK_TASK: clock hit negedge[0m
+[0;32mI (15400) CLK_TASK: clock hit negedge[0m
+[0;32mI (15400) CLK_TASK: clock hit negedge[0m
+[0;33mW (15410) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15410) CLK_TASK: clock hit negedge[0m
+[0;32mI (15410) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15420) CLK_TASK: clock hit negedge[0m
+[0;32mI (15430) CLK_TASK: clock hit negedge[0m
+[0;32mI (15430) CLK_TASK: clock hit negedge[0m
+[0;33mW (15430) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15440) CLK_TASK: clock hit negedge[0m
+[0;32mI (15440) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15450) CLK_TASK: clock hit negedge[0m
+[0;32mI (15460) CLK_TASK: clock hit negedge[0m
+[0;32mI (15460) CLK_TASK: clock hit negedge[0m
+[0;33mW (15460) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15460) CLK_TASK: clock hit negedge[0m
+[0;32mI (15470) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15470) CLK_TASK: clock hit negedge[0m
+[0;32mI (15480) CLK_TASK: clock hit negedge[0m
+[0;32mI (15490) CLK_TASK: clock hit negedge[0m
+[0;33mW (15490) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15490) CLK_TASK: clock hit negedge[0m
+[0;32mI (15500) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15500) CLK_TASK: clock hit negedge[0m
+[0;32mI (15510) CLK_TASK: clock hit negedge[0m
+[0;32mI (15520) CLK_TASK: clock hit negedge[0m
+[0;33mW (15520) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15520) CLK_TASK: clock hit negedge[0m
+[0;32mI (15530) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15530) CLK_TASK: clock hit negedge[0m
+[0;32mI (15540) CLK_TASK: clock hit negedge[0m
+[0;32mI (15540) CLK_TASK: clock hit negedge[0m
+[0;33mW (15550) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15550) CLK_TASK: clock hit negedge[0m
+[0;32mI (15560) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15560) CLK_TASK: clock hit negedge[0m
+[0;32mI (15570) CLK_TASK: clock hit negedge[0m
+[0;32mI (15570) CLK_TASK: clock hit negedge[0m
+[0;33mW (15580) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15580) CLK_TASK: clock hit negedge[0m
+[0;32mI (15580) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15590) CLK_TASK: clock hit negedge[0m
+[0;32mI (15600) CLK_TASK: clock hit negedge[0m
+[0;32mI (15600) CLK_TASK: clock hit negedge[0m
+[0;33mW (15600) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15610) CLK_TASK: clock hit negedge[0m
+[0;32mI (15610) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15620) CLK_TASK: clock hit negedge[0m
+[0;32mI (15620) CLK_TASK: clock hit negedge[0m
+[0;32mI (15630) CLK_TASK: clock hit negedge[0m
+[0;33mW (15630) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15630) CLK_TASK: clock hit negedge[0m
+[0;32mI (15640) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15640) CLK_TASK: clock hit negedge[0m
+[0;32mI (15650) CLK_TASK: clock hit negedge[0m
+[0;32mI (15660) CLK_TASK: clock hit negedge[0m
+[0;33mW (15660) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15660) CLK_TASK: clock hit negedge[0m
+[0;32mI (15670) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15670) CLK_TASK: clock hit negedge[0m
+[0;32mI (15680) CLK_TASK: clock hit negedge[0m
+[0;32mI (15690) CLK_TASK: clock hit negedge[0m
+[0;33mW (15690) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15690) CLK_TASK: clock hit negedge[0m
+[0;32mI (15700) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (15700) CLK_TASK: clock hit negedge[0m
+[0;32mI (15710) LUNG_DETECT: Streaming Disabled[0m
+[0;32mI (15710) CLK_TASK: clock hit negedge[0m
+[0;33mW (15720) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (15720) CLK_TASK: clock hit negedge[0m
+[0;32mI (15730) CLK_TASK: clock hit negedge[0m
+[0;32mI (15730) CLK_TASK: clock hit negedge[0m
+[0;32mI (15740) CLK_TASK: clock hit negedge[0m
+[0;32mI (15740) CLK_TASK: clock hit negedge[0m
+[0;32mI (15750) CLK_TASK: clock hit negedge[0m
+[0;32mI (15750) CLK_TASK: clock hit negedge[0m
+[0;32mI (15760) CLK_TASK: clock hit negedge[0m
+[0;32mI (15760) CLK_TASK: clock hit negedge[0m
+[0;32mI (15760) CLK_TASK: clock hit negedge[0m
+[0;32mI (15770) CLK_TASK: clock hit negedge[0m
+[0;32mI (15770) CLK_TASK: clock hit negedge[0m
+[0;32mI (15780) CLK_TASK: clock hit negedge[0m
+[0;32mI (15780) CLK_TASK: clock hit negedge[0m
+[0;32mI (15790) CLK_TASK: clock hit negedge[0m
+[0;32mI (15790) CLK_TASK: clock hit negedge[0m
+[0;32mI (15790) CLK_TASK: clock hit negedge[0m
+[0;32mI (15800) CLK_TASK: clock hit negedge[0m
+[0;32mI (15800) CLK_TASK: clock hit negedge[0m
+[0;32mI (15810) CLK_TASK: clock hit negedge[0m
+[0;32mI (15810) CLK_TASK: clock hit negedge[0m
+[0;32mI (15820) CLK_TASK: clock hit negedge[0m
+[0;32mI (15820) CLK_TASK: clock hit negedge[0m
+[0;32mI (15820) CLK_TASK: clock hit negedge[0m
+[0;32mI (15830) CLK_TASK: clock hit negedge[0m
+[0;32mI (15830) CLK_TASK: clock hit negedge[0m
+[0;32mI (15840) CLK_TASK: clock hit negedge[0m
+[0;32mI (15840) CLK_TASK: clock hit negedge[0m
+[0;32mI (15850) CLK_TASK: clock hit negedge[0m
+[0;32mI (15850) CLK_TASK: clock hit negedge[0m
+[0;32mI (15850) CLK_TASK: clock hit negedge[0m
+[0;32mI (15860) CLK_TASK: clock hit negedge[0m
+[0;32mI (15860) CLK_TASK: clock hit negedge[0m
+[0;32mI (15870) CLK_TASK: clock hit negedge[0m
+[0;32mI (15870) CLK_TASK: clock hit negedge[0m
+[0;32mI (15880) CLK_TASK: clock hit negedge[0m
+[0;32mI (15880) CLK_TASK: clock hit negedge[0m
+[0;32mI (15890) CLK_TASK: clock hit negedge[0m
+[0;32mI (15890) CLK_TASK: clock hit negedge[0m
+[0;32mI (15890) CLK_TASK: clock hit negedge[0m
+[0;32mI (15900) CLK_TASK: clock hit negedge[0m
+[0;32mI (15900) CLK_TASK: clock hit negedge[0m
+[0;32mI (15910) CLK_TASK: clock hit negedge[0m
+[0;32mI (15910) CLK_TASK: clock hit negedge[0m
+[0;32mI (15920) CLK_TASK: clock hit negedge[0m
+[0;32mI (15920) CLK_TASK: clock hit negedge[0m
+[0;32mI (15920) CLK_TASK: clock hit negedge[0m
+[0;32mI (15930) CLK_TASK: clock hit negedge[0m
+[0;32mI (15930) CLK_TASK: clock hit negedge[0m
+[0;32mI (15940) CLK_TASK: clock hit negedge[0m
+[0;32mI (15940) CLK_TASK: clock hit negedge[0m
+[0;32mI (15950) CLK_TASK: clock hit negedge[0m
+[0;32mI (15950) CLK_TASK: clock hit negedge[0m
+[0;32mI (15950) CLK_TASK: clock hit negedge[0m
+[0;32mI (15960) CLK_TASK: clock hit negedge[0m
+[0;32mI (15960) CLK_TASK: clock hit negedge[0m
+[0;32mI (15970) CLK_TASK: clock hit negedge[0m
+[0;32mI (15970) CLK_TASK: clock hit negedge[0m
+[0;32mI (15980) CLK_TASK: clock hit negedge[0m
+[0;32mI (15980) CLK_TASK: clock hit negedge[0m
+[0;32mI (15990) CLK_TASK: clock hit negedge[0m
+[0;32mI (15990) CLK_TASK: clock hit negedge[0m
+[0;32mI (15990) CLK_TASK: clock hit negedge[0m
+[0;32mI (16000) CLK_TASK: clock hit negedge[0m
+[0;32mI (16000) CLK_TASK: clock hit negedge[0m
+[0;32mI (16010) CLK_TASK: clock hit negedge[0m
+[0;32mI (16010) CLK_TASK: clock hit negedge[0m
+[0;32mI (16020) CLK_TASK: clock hit negedge[0m
+[0;32mI (16020) CLK_TASK: clock hit negedge[0m
+[0;32mI (16020) CLK_TASK: clock hit negedge[0m
+[0;32mI (16030) CLK_TASK: clock hit negedge[0m
+[0;32mI (16030) CLK_TASK: clock hit negedge[0m
+[0;32mI (16040) CLK_TASK: clock hit negedge[0m
+[0;32mI (16040) CLK_TASK: clock hit negedge[0m
+[0;32mI (16050) CLK_TASK: clock hit negedge[0m
+[0;32mI (16050) CLK_TASK: clock hit negedge[0m
+[0;32mI (16050) CLK_TASK: clock hit negedge[0m
+[0;32mI (16060) CLK_TASK: clock hit negedge[0m
+[0;32mI (16060) CLK_TASK: clock hit negedge[0m
+[0;32mI (16070) CLK_TASK: clock hit negedge[0m
+[0;32mI (16070) CLK_TASK: clock hit negedge[0m
+[0;32mI (16080) CLK_TASK: clock hit negedge[0m
+[0;32mI (16080) CLK_TASK: clock hit negedge[0m
+[0;32mI (16080) CLK_TASK: clock hit negedge[0m
+[0;32mI (16090) CLK_TASK: clock hit negedge[0m
+[0;32mI (16090) CLK_TASK: clock hit negedge[0m
+[0;32mI (16100) CLK_TASK: clock hit negedge[0m
+[0;32mI (16100) CLK_TASK: clock hit negedge[0m
+[0;32mI (16110) CLK_TASK: clock hit negedge[0m
+[0;32mI (16110) CLK_TASK: clock hit negedge[0m
+[0;32mI (16120) CLK_TASK: clock hit negedge[0m
+[0;32mI (16120) CLK_TASK: clock hit negedge[0m
+[0;32mI (16120) CLK_TASK: clock hit negedge[0m
+[0;32mI (16130) CLK_TASK: clock hit negedge[0m
+[0;32mI (16130) CLK_TASK: clock hit negedge[0m
+[0;32mI (16140) CLK_TASK: clock hit negedge[0m
+[0;32mI (16140) CLK_TASK: clock hit negedge[0m
+[0;32mI (16150) CLK_TASK: clock hit negedge[0m
+[0;32mI (16150) CLK_TASK: clock hit negedge[0m
+[0;32mI (16150) CLK_TASK: clock hit negedge[0m
+[0;32mI (16160) CLK_TASK: clock hit negedge[0m
+[0;32mI (16160) CLK_TASK: clock hit negedge[0m
+[0;32mI (16170) CLK_TASK: clock hit negedge[0m
+[0;32mI (16170) CLK_TASK: clock hit negedge[0m
+[0;32mI (16180) CLK_TASK: clock hit negedge[0m
+[0;32mI (16180) CLK_TASK: clock hit negedge[0m
+[0;32mI (16180) CLK_TASK: clock hit negedge[0m
+[0;32mI (16190) CLK_TASK: clock hit negedge[0m
+[0;32mI (16190) CLK_TASK: clock hit negedge[0m
+[0;32mI (16200) CLK_TASK: clock hit negedge[0m
+[0;32mI (16200) CLK_TASK: clock hit negedge[0m
+[0;32mI (16210) CLK_TASK: clock hit negedge[0m
+[0;32mI (16210) CLK_TASK: clock hit negedge[0m
+[0;32mI (16220) CLK_TASK: clock hit negedge[0m
+[0;32mI (16220) CLK_TASK: clock hit negedge[0m
+[0;32mI (16220) CLK_TASK: clock hit negedge[0m
+[0;32mI (16230) CLK_TASK: clock hit negedge[0m
+[0;32mI (16230) CLK_TASK: clock hit negedge[0m
+[0;32mI (16240) CLK_TASK: clock hit negedge[0m
+[0;32mI (16240) CLK_TASK: clock hit negedge[0m
+[0;32mI (16250) CLK_TASK: clock hit negedge[0m
+[0;32mI (16250) CLK_TASK: clock hit negedge[0m
+[0;32mI (16250) CLK_TASK: clock hit negedge[0m
+[0;32mI (16260) CLK_TASK: clock hit negedge[0m
+[0;32mI (16260) CLK_TASK: clock hit negedge[0m
+[0;32mI (16270) CLK_TASK: clock hit negedge[0m
+[0;32mI (16270) CLK_TASK: clock hit negedge[0m
+[0;32mI (16280) CLK_TASK: clock hit negedge[0m
+[0;32mI (16280) CLK_TASK: clock hit negedge[0m
+[0;32mI (16280) CLK_TASK: clock hit negedge[0m
+[0;32mI (16290) CLK_TASK: clock hit negedge[0m
+[0;32mI (16290) CLK_TASK: clock hit negedge[0m
+[0;32mI (16300) CLK_TASK: clock hit negedge[0m
+[0;32mI (16300) CLK_TASK: clock hit negedge[0m
+[0;32mI (16310) CLK_TASK: clock hit negedge[0m
+[0;32mI (16310) CLK_TASK: clock hit negedge[0m
+[0;32mI (16310) CLK_TASK: clock hit negedge[0m
+[0;32mI (16320) CLK_TASK: clock hit negedge[0m
+[0;32mI (16320) CLK_TASK: clock hit negedge[0m
+[0;32mI (16330) CLK_TASK: clock hit negedge[0m
+[0;32mI (16330) CLK_TASK: clock hit negedge[0m
+[0;32mI (16340) CLK_TASK: clock hit negedge[0m
+[0;32mI (16340) CLK_TASK: clock hit negedge[0m
+[0;32mI (16350) CLK_TASK: clock hit negedge[0m
+[0;32mI (16350) CLK_TASK: clock hit negedge[0m
+[0;32mI (16350) CLK_TASK: clock hit negedge[0m
+[0;32mI (16360) CLK_TASK: clock hit negedge[0m
+[0;32mI (16360) CLK_TASK: clock hit negedge[0m
+[0;32mI (16370) CLK_TASK: clock hit negedge[0m
+[0;32mI (16370) CLK_TASK: clock hit negedge[0m
+[0;32mI (16380) CLK_TASK: clock hit negedge[0m
+[0;32mI (16380) CLK_TASK: clock hit negedge[0m
+[0;32mI (16380) CLK_TASK: clock hit negedge[0m
+[0;32mI (16390) CLK_TASK: clock hit negedge[0m
+[0;32mI (16390) CLK_TASK: clock hit negedge[0m
+[0;32mI (16400) CLK_TASK: clock hit negedge[0m
+[0;32mI (16400) CLK_TASK: clock hit negedge[0m
+[0;32mI (16410) CLK_TASK: clock hit negedge[0m
+[0;32mI (16410) CLK_TASK: clock hit negedge[0m
+[0;32mI (16410) CLK_TASK: clock hit negedge[0m
+[0;32mI (16420) CLK_TASK: clock hit negedge[0m
+[0;32mI (16420) CLK_TASK: clock hit negedge[0m
+[0;32mI (16430) CLK_TASK: clock hit negedge[0m
+[0;32mI (16430) CLK_TASK: clock hit negedge[0m
+[0;32mI (16440) CLK_TASK: clock hit negedge[0m
+[0;32mI (16440) CLK_TASK: clock hit negedge[0m
+[0;32mI (16450) CLK_TASK: clock hit negedge[0m
+[0;32mI (16450) CLK_TASK: clock hit negedge[0m
+[0;32mI (16450) CLK_TASK: clock hit negedge[0m
+[0;32mI (16460) CLK_TASK: clock hit negedge[0m
+[0;32mI (16460) CLK_TASK: clock hit negedge[0m
+[0;32mI (16470) CLK_TASK: clock hit negedge[0m
+[0;32mI (16470) CLK_TASK: clock hit negedge[0m
+[0;32mI (16480) CLK_TASK: clock hit negedge[0m
+[0;32mI (16480) CLK_TASK: clock hit negedge[0m
+[0;32mI (16480) CLK_TASK: clock hit negedge[0m
+[0;32mI (16490) CLK_TASK: clock hit negedge[0m
+[0;32mI (16490) CLK_TASK: clock hit negedge[0m
+[0;32mI (16500) CLK_TASK: clock hit negedge[0m
+[0;32mI (16500) CLK_TASK: clock hit negedge[0m
+[0;32mI (16510) CLK_TASK: clock hit negedge[0m
+[0;32mI (16510) CLK_TASK: clock hit negedge[0m
+[0;32mI (16510) CLK_TASK: clock hit negedge[0m
+[0;32mI (16520) CLK_TASK: clock hit negedge[0m
+[0;32mI (16520) CLK_TASK: clock hit negedge[0m
+[0;32mI (16530) CLK_TASK: clock hit negedge[0m
+[0;32mI (16530) CLK_TASK: clock hit negedge[0m
+[0;32mI (16540) CLK_TASK: clock hit negedge[0m
+[0;32mI (16540) CLK_TASK: clock hit negedge[0m
+[0;32mI (16540) CLK_TASK: clock hit negedge[0m
+[0;32mI (16550) CLK_TASK: clock hit negedge[0m
+[0;32mI (16550) CLK_TASK: clock hit negedge[0m
+[0;32mI (16560) CLK_TASK: clock hit negedge[0m
+[0;32mI (16560) CLK_TASK: clock hit negedge[0m
+[0;32mI (16570) CLK_TASK: clock hit negedge[0m
+[0;32mI (16570) CLK_TASK: clock hit negedge[0m
+[0;32mI (16580) CLK_TASK: clock hit negedge[0m
+[0;32mI (16580) CLK_TASK: clock hit negedge[0m
+[0;32mI (16580) CLK_TASK: clock hit negedge[0m
+[0;32mI (16590) CLK_TASK: clock hit negedge[0m
+[0;32mI (16590) CLK_TASK: clock hit negedge[0m
+[0;32mI (16600) CLK_TASK: clock hit negedge[0m
+[0;32mI (16600) CLK_TASK: clock hit negedge[0m
+[0;32mI (16610) CLK_TASK: clock hit negedge[0m
+[0;32mI (16610) CLK_TASK: clock hit negedge[0m
+[0;32mI (16610) CLK_TASK: clock hit negedge[0m
+[0;32mI (16620) CLK_TASK: clock hit negedge[0m
+[0;32mI (16620) CLK_TASK: clock hit negedge[0m
+[0;32mI (16630) CLK_TASK: clock hit negedge[0m
+[0;32mI (16630) CLK_TASK: clock hit negedge[0m
+[0;32mI (16640) CLK_TASK: clock hit negedge[0m
+[0;32mI (16640) CLK_TASK: clock hit negedge[0m
+[0;32mI (16640) CLK_TASK: clock hit negedge[0m
+[0;32mI (16650) CLK_TASK: clock hit negedge[0m
+[0;32mI (16650) CLK_TASK: clock hit negedge[0m
+[0;32mI (16660) CLK_TASK: clock hit negedge[0m
+[0;32mI (16660) CLK_TASK: clock hit negedge[0m
+[0;32mI (16670) CLK_TASK: clock hit negedge[0m
+[0;32mI (16670) CLK_TASK: clock hit negedge[0m
+[0;32mI (16680) CLK_TASK: clock hit negedge[0m
+[0;32mI (16680) CLK_TASK: clock hit negedge[0m
+[0;32mI (16680) CLK_TASK: clock hit negedge[0m
+[0;32mI (16690) CLK_TASK: clock hit negedge[0m
+[0;32mI (16690) CLK_TASK: clock hit negedge[0m
+[0;32mI (16700) CLK_TASK: clock hit negedge[0m
+[0;32mI (16700) CLK_TASK: clock hit negedge[0m
+[0;32mI (16710) CLK_TASK: clock hit negedge[0m
+[0;32mI (16710) CLK_TASK: clock hit negedge[0m
+[0;32mI (16710) CLK_TASK: clock hit negedge[0m
+[0;32mI (16720) CLK_TASK: clock hit negedge[0m
+[0;32mI (16720) CLK_TASK: clock hit negedge[0m
+[0;32mI (16730) CLK_TASK: clock hit negedge[0m
+[0;32mI (16730) CLK_TASK: clock hit negedge[0m
+[0;32mI (16740) CLK_TASK: clock hit negedge[0m
+[0;32mI (16740) CLK_TASK: clock hit negedge[0m
+[0;32mI (16740) CLK_TASK: clock hit negedge[0m
+[0;32mI (16750) CLK_TASK: clock hit negedge[0m
+[0;32mI (16750) CLK_TASK: clock hit negedge[0m
+[0;32mI (16760) CLK_TASK: clock hit negedge[0m
+[0;32mI (16760) CLK_TASK: clock hit negedge[0m
+[0;32mI (16770) CLK_TASK: clock hit negedge[0m
+[0;32mI (16770) CLK_TASK: clock hit negedge[0m
+[0;32mI (16780) CLK_TASK: clock hit negedge[0m
+[0;32mI (16780) CLK_TASK: clock hit negedge[0m
+[0;32mI (16780) CLK_TASK: clock hit negedge[0m
+[0;32mI (16790) CLK_TASK: clock hit negedge[0m
+[0;32mI (16790) CLK_TASK: clock hit negedge[0m
+[0;32mI (16800) CLK_TASK: clock hit negedge[0m
+[0;32mI (16800) CLK_TASK: clock hit negedge[0m
+[0;32mI (16810) CLK_TASK: clock hit negedge[0m
+[0;32mI (16810) CLK_TASK: clock hit negedge[0m
+[0;32mI (16810) CLK_TASK: clock hit negedge[0m
+[0;32mI (16820) CLK_TASK: clock hit negedge[0m
+[0;32mI (16820) CLK_TASK: clock hit negedge[0m
+[0;32mI (16830) CLK_TASK: clock hit negedge[0m
+[0;32mI (16830) CLK_TASK: clock hit negedge[0m
+[0;32mI (16840) CLK_TASK: clock hit negedge[0m
+[0;32mI (16840) CLK_TASK: clock hit negedge[0m
+[0;32mI (16840) CLK_TASK: clock hit negedge[0m
+[0;32mI (16850) CLK_TASK: clock hit negedge[0m
+[0;32mI (16850) CLK_TASK: clock hit negedge[0m
+[0;32mI (16860) CLK_TASK: clock hit negedge[0m
+[0;32mI (16860) CLK_TASK: clock hit negedge[0m
+[0;32mI (16870) CLK_TASK: clock hit negedge[0m
+[0;32mI (16870) CLK_TASK: clock hit negedge[0m
+[0;32mI (16870) CLK_TASK: clock hit negedge[0m
+[0;32mI (16880) CLK_TASK: clock hit negedge[0m
+[0;32mI (16880) CLK_TASK: clock hit negedge[0m
+[0;32mI (16890) CLK_TASK: clock hit negedge[0m
+[0;32mI (16890) CLK_TASK: clock hit negedge[0m
+[0;32mI (16900) CLK_TASK: clock hit negedge[0m
+[0;32mI (16900) CLK_TASK: clock hit negedge[0m
+[0;32mI (16910) CLK_TASK: clock hit negedge[0m
+[0;32mI (16910) CLK_TASK: clock hit negedge[0m
+[0;32mI (16910) CLK_TASK: clock hit negedge[0m
+[0;32mI (16920) CLK_TASK: clock hit negedge[0m
+[0;32mI (16920) CLK_TASK: clock hit negedge[0m
+[0;32mI (16930) CLK_TASK: clock hit negedge[0m
+[0;32mI (16930) CLK_TASK: clock hit negedge[0m
+[0;32mI (16940) CLK_TASK: clock hit negedge[0m
+[0;32mI (16940) CLK_TASK: clock hit negedge[0m
+[0;32mI (16940) CLK_TASK: clock hit negedge[0m
+[0;32mI (16950) CLK_TASK: clock hit negedge[0m
+[0;32mI (16950) CLK_TASK: clock hit negedge[0m
+[0;32mI (16960) CLK_TASK: clock hit negedge[0m
+[0;32mI (16960) CLK_TASK: clock hit negedge[0m
+[0;32mI (16970) CLK_TASK: clock hit negedge[0m
+[0;32mI (16970) CLK_TASK: clock hit negedge[0m
+[0;32mI (16970) CLK_TASK: clock hit negedge[0m
+[0;32mI (16980) CLK_TASK: clock hit negedge[0m
+[0;32mI (16980) CLK_TASK: clock hit negedge[0m
+[0;32mI (16990) CLK_TASK: clock hit negedge[0m
+[0;32mI (16990) CLK_TASK: clock hit negedge[0m
+[0;32mI (17000) CLK_TASK: clock hit negedge[0m
+[0;32mI (17000) CLK_TASK: clock hit negedge[0m
+[0;32mI (17010) CLK_TASK: clock hit negedge[0m
+[0;32mI (17010) CLK_TASK: clock hit negedge[0m
+[0;32mI (17010) CLK_TASK: clock hit negedge[0m
+[0;32mI (17020) CLK_TASK: clock hit negedge[0m
+[0;32mI (17020) CLK_TASK: clock hit negedge[0m
+[0;32mI (17030) CLK_TASK: clock hit negedge[0m
+[0;32mI (17030) CLK_TASK: clock hit negedge[0m
+[0;32mI (17040) CLK_TASK: clock hit negedge[0m
+[0;32mI (17040) CLK_TASK: clock hit negedge[0m
+[0;32mI (17040) CLK_TASK: clock hit negedge[0m
+[0;32mI (17050) CLK_TASK: clock hit negedge[0m
+[0;32mI (17050) CLK_TASK: clock hit negedge[0m
+[0;32mI (17060) CLK_TASK: clock hit negedge[0m
+[0;32mI (17060) CLK_TASK: clock hit negedge[0m
+[0;32mI (17070) CLK_TASK: clock hit negedge[0m
+[0;32mI (17070) CLK_TASK: clock hit negedge[0m
+[0;32mI (17070) CLK_TASK: clock hit negedge[0m
+[0;32mI (17080) LUNG_DETECT: Streaming Enabled[0m
+[0;32mI (17080) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17080) CLK_TASK: clock hit negedge[0m
+[0;32mI (17090) CLK_TASK: clock hit negedge[0m
+[0;32mI (17100) CLK_TASK: clock hit negedge[0m
+[0;33mW (17100) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17100) CLK_TASK: clock hit negedge[0m
+[0;32mI (17110) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17110) CLK_TASK: clock hit negedge[0m
+[0;32mI (17120) CLK_TASK: clock hit negedge[0m
+[0;32mI (17120) CLK_TASK: clock hit negedge[0m
+[0;33mW (17130) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17130) CLK_TASK: clock hit negedge[0m
+[0;32mI (17140) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17140) CLK_TASK: clock hit negedge[0m
+[0;32mI (17150) CLK_TASK: clock hit negedge[0m
+[0;32mI (17150) CLK_TASK: clock hit negedge[0m
+[0;33mW (17160) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17160) CLK_TASK: clock hit negedge[0m
+[0;32mI (17160) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17170) CLK_TASK: clock hit negedge[0m
+[0;32mI (17180) CLK_TASK: clock hit negedge[0m
+[0;32mI (17180) CLK_TASK: clock hit negedge[0m
+[0;33mW (17180) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17190) CLK_TASK: clock hit negedge[0m
+[0;32mI (17190) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17200) CLK_TASK: clock hit negedge[0m
+[0;32mI (17210) CLK_TASK: clock hit negedge[0m
+[0;32mI (17210) CLK_TASK: clock hit negedge[0m
+[0;33mW (17210) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17210) CLK_TASK: clock hit negedge[0m
+[0;32mI (17220) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17220) CLK_TASK: clock hit negedge[0m
+[0;32mI (17230) CLK_TASK: clock hit negedge[0m
+[0;32mI (17240) CLK_TASK: clock hit negedge[0m
+[0;33mW (17240) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17240) CLK_TASK: clock hit negedge[0m
+[0;32mI (17250) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17250) CLK_TASK: clock hit negedge[0m
+[0;32mI (17260) CLK_TASK: clock hit negedge[0m
+[0;32mI (17270) CLK_TASK: clock hit negedge[0m
+[0;33mW (17270) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17270) CLK_TASK: clock hit negedge[0m
+[0;32mI (17280) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17280) CLK_TASK: clock hit negedge[0m
+[0;32mI (17290) CLK_TASK: clock hit negedge[0m
+[0;32mI (17290) CLK_TASK: clock hit negedge[0m
+[0;33mW (17300) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17300) CLK_TASK: clock hit negedge[0m
+[0;32mI (17300) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17310) CLK_TASK: clock hit negedge[0m
+[0;32mI (17320) CLK_TASK: clock hit negedge[0m
+[0;32mI (17320) CLK_TASK: clock hit negedge[0m
+[0;33mW (17330) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17330) CLK_TASK: clock hit negedge[0m
+[0;32mI (17330) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17340) CLK_TASK: clock hit negedge[0m
+[0;32mI (17350) CLK_TASK: clock hit negedge[0m
+[0;32mI (17350) CLK_TASK: clock hit negedge[0m
+[0;33mW (17350) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17350) CLK_TASK: clock hit negedge[0m
+[0;32mI (17360) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17370) CLK_TASK: clock hit negedge[0m
+[0;32mI (17370) CLK_TASK: clock hit negedge[0m
+[0;32mI (17380) CLK_TASK: clock hit negedge[0m
+[0;33mW (17380) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17380) CLK_TASK: clock hit negedge[0m
+[0;32mI (17390) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17390) CLK_TASK: clock hit negedge[0m
+[0;32mI (17400) CLK_TASK: clock hit negedge[0m
+[0;32mI (17410) CLK_TASK: clock hit negedge[0m
+[0;33mW (17410) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17410) CLK_TASK: clock hit negedge[0m
+[0;32mI (17420) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17420) CLK_TASK: clock hit negedge[0m
+[0;32mI (17430) CLK_TASK: clock hit negedge[0m
+[0;32mI (17440) CLK_TASK: clock hit negedge[0m
+[0;33mW (17440) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17440) CLK_TASK: clock hit negedge[0m
+[0;32mI (17450) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17450) CLK_TASK: clock hit negedge[0m
+[0;32mI (17460) CLK_TASK: clock hit negedge[0m
+[0;32mI (17460) CLK_TASK: clock hit negedge[0m
+[0;33mW (17470) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17470) CLK_TASK: clock hit negedge[0m
+[0;32mI (17470) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17480) CLK_TASK: clock hit negedge[0m
+[0;32mI (17490) CLK_TASK: clock hit negedge[0m
+[0;32mI (17490) CLK_TASK: clock hit negedge[0m
+[0;33mW (17490) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17500) CLK_TASK: clock hit negedge[0m
+[0;32mI (17500) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17510) CLK_TASK: clock hit negedge[0m
+[0;32mI (17520) CLK_TASK: clock hit negedge[0m
+[0;32mI (17520) CLK_TASK: clock hit negedge[0m
+[0;33mW (17520) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17520) CLK_TASK: clock hit negedge[0m
+[0;32mI (17530) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17530) CLK_TASK: clock hit negedge[0m
+[0;32mI (17540) CLK_TASK: clock hit negedge[0m
+[0;32mI (17550) CLK_TASK: clock hit negedge[0m
+[0;33mW (17550) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17550) CLK_TASK: clock hit negedge[0m
+[0;32mI (17560) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17560) CLK_TASK: clock hit negedge[0m
+[0;32mI (17570) CLK_TASK: clock hit negedge[0m
+[0;32mI (17580) CLK_TASK: clock hit negedge[0m
+[0;33mW (17580) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17580) CLK_TASK: clock hit negedge[0m
+[0;32mI (17590) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17590) CLK_TASK: clock hit negedge[0m
+[0;32mI (17600) CLK_TASK: clock hit negedge[0m
+[0;32mI (17600) CLK_TASK: clock hit negedge[0m
+[0;33mW (17610) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17610) CLK_TASK: clock hit negedge[0m
+[0;32mI (17620) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17620) CLK_TASK: clock hit negedge[0m
+[0;32mI (17630) CLK_TASK: clock hit negedge[0m
+[0;32mI (17630) CLK_TASK: clock hit negedge[0m
+[0;33mW (17640) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17640) CLK_TASK: clock hit negedge[0m
+[0;32mI (17640) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17650) CLK_TASK: clock hit negedge[0m
+[0;32mI (17660) CLK_TASK: clock hit negedge[0m
+[0;32mI (17660) CLK_TASK: clock hit negedge[0m
+[0;33mW (17660) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17670) CLK_TASK: clock hit negedge[0m
+[0;32mI (17670) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17680) CLK_TASK: clock hit negedge[0m
+[0;32mI (17680) CLK_TASK: clock hit negedge[0m
+[0;32mI (17690) CLK_TASK: clock hit negedge[0m
+[0;33mW (17690) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17690) CLK_TASK: clock hit negedge[0m
+[0;32mI (17700) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17700) CLK_TASK: clock hit negedge[0m
+[0;32mI (17710) CLK_TASK: clock hit negedge[0m
+[0;32mI (17720) CLK_TASK: clock hit negedge[0m
+[0;33mW (17720) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17720) CLK_TASK: clock hit negedge[0m
+[0;32mI (17730) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17730) CLK_TASK: clock hit negedge[0m
+[0;32mI (17740) CLK_TASK: clock hit negedge[0m
+[0;32mI (17750) CLK_TASK: clock hit negedge[0m
+[0;33mW (17750) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17750) CLK_TASK: clock hit negedge[0m
+[0;32mI (17760) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17760) CLK_TASK: clock hit negedge[0m
+[0;32mI (17770) CLK_TASK: clock hit negedge[0m
+[0;32mI (17770) CLK_TASK: clock hit negedge[0m
+[0;33mW (17780) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17780) CLK_TASK: clock hit negedge[0m
+[0;32mI (17780) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17790) CLK_TASK: clock hit negedge[0m
+[0;32mI (17800) CLK_TASK: clock hit negedge[0m
+[0;32mI (17800) CLK_TASK: clock hit negedge[0m
+[0;33mW (17800) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17810) CLK_TASK: clock hit negedge[0m
+[0;32mI (17810) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17820) CLK_TASK: clock hit negedge[0m
+[0;32mI (17830) CLK_TASK: clock hit negedge[0m
+[0;32mI (17830) CLK_TASK: clock hit negedge[0m
+[0;33mW (17830) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17830) CLK_TASK: clock hit negedge[0m
+[0;32mI (17840) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17850) CLK_TASK: clock hit negedge[0m
+[0;32mI (17850) CLK_TASK: clock hit negedge[0m
+[0;32mI (17860) CLK_TASK: clock hit negedge[0m
+[0;33mW (17860) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17860) CLK_TASK: clock hit negedge[0m
+[0;32mI (17870) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17870) CLK_TASK: clock hit negedge[0m
+[0;32mI (17880) CLK_TASK: clock hit negedge[0m
+[0;32mI (17890) CLK_TASK: clock hit negedge[0m
+[0;33mW (17890) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17890) CLK_TASK: clock hit negedge[0m
+[0;32mI (17900) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17900) CLK_TASK: clock hit negedge[0m
+[0;32mI (17910) CLK_TASK: clock hit negedge[0m
+[0;32mI (17910) CLK_TASK: clock hit negedge[0m
+[0;33mW (17920) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17920) CLK_TASK: clock hit negedge[0m
+[0;32mI (17930) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17930) CLK_TASK: clock hit negedge[0m
+[0;32mI (17940) CLK_TASK: clock hit negedge[0m
+[0;32mI (17940) CLK_TASK: clock hit negedge[0m
+[0;33mW (17950) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17950) CLK_TASK: clock hit negedge[0m
+[0;32mI (17950) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17960) CLK_TASK: clock hit negedge[0m
+[0;32mI (17970) CLK_TASK: clock hit negedge[0m
+[0;32mI (17970) CLK_TASK: clock hit negedge[0m
+[0;33mW (17970) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (17980) CLK_TASK: clock hit negedge[0m
+[0;32mI (17980) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (17990) CLK_TASK: clock hit negedge[0m
+[0;32mI (18000) CLK_TASK: clock hit negedge[0m
+[0;32mI (18000) CLK_TASK: clock hit negedge[0m
+[0;33mW (18000) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (18000) CLK_TASK: clock hit negedge[0m
+[0;32mI (18010) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (18010) CLK_TASK: clock hit negedge[0m
+[0;32mI (18020) CLK_TASK: clock hit negedge[0m
+[0;32mI (18030) CLK_TASK: clock hit negedge[0m
+[0;33mW (18030) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (18030) CLK_TASK: clock hit negedge[0m
+[0;32mI (18040) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (18040) CLK_TASK: clock hit negedge[0m
+[0;32mI (18050) CLK_TASK: clock hit negedge[0m
+[0;32mI (18060) CLK_TASK: clock hit negedge[0m
+[0;33mW (18060) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (18060) CLK_TASK: clock hit negedge[0m
+[0;32mI (18070) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (18070) CLK_TASK: clock hit negedge[0m
+[0;32mI (18080) CLK_TASK: clock hit negedge[0m
+[0;32mI (18080) CLK_TASK: clock hit negedge[0m
+[0;33mW (18090) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (18090) CLK_TASK: clock hit negedge[0m
+[0;32mI (18090) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (18100) CLK_TASK: clock hit negedge[0m
+[0;32mI (18110) CLK_TASK: clock hit negedge[0m
+[0;32mI (18110) CLK_TASK: clock hit negedge[0m
+[0;33mW (18120) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (18120) CLK_TASK: clock hit negedge[0m
+[0;32mI (18120) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (18130) CLK_TASK: clock hit negedge[0m
+[0;32mI (18140) CLK_TASK: clock hit negedge[0m
+[0;32mI (18140) CLK_TASK: clock hit negedge[0m
+[0;33mW (18140) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (18140) CLK_TASK: clock hit negedge[0m
+[0;32mI (18150) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (18160) CLK_TASK: clock hit negedge[0m
+[0;32mI (18160) CLK_TASK: clock hit negedge[0m
+[0;32mI (18170) CLK_TASK: clock hit negedge[0m
+[0;33mW (18170) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (18170) CLK_TASK: clock hit negedge[0m
+[0;32mI (18180) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (18180) CLK_TASK: clock hit negedge[0m
+[0;32mI (18190) CLK_TASK: clock hit negedge[0m
+[0;32mI (18200) CLK_TASK: clock hit negedge[0m
+[0;33mW (18200) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (18200) CLK_TASK: clock hit negedge[0m
+[0;32mI (18210) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (18210) CLK_TASK: clock hit negedge[0m
+[0;32mI (18220) CLK_TASK: clock hit negedge[0m
+[0;32mI (18230) CLK_TASK: clock hit negedge[0m
+[0;33mW (18230) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (18230) CLK_TASK: clock hit negedge[0m
+[0;32mI (18240) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (18240) CLK_TASK: clock hit negedge[0m
+[0;32mI (18250) CLK_TASK: clock hit negedge[0m
+[0;32mI (18250) CLK_TASK: clock hit negedge[0m
+[0;33mW (18260) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (18260) CLK_TASK: clock hit negedge[0m
+[0;32mI (18260) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (18270) CLK_TASK: clock hit negedge[0m
+[0;32mI (18280) CLK_TASK: clock hit negedge[0m
+[0;32mI (18280) CLK_TASK: clock hit negedge[0m
+[0;33mW (18280) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (18290) CLK_TASK: clock hit negedge[0m
+[0;32mI (18290) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (18300) CLK_TASK: clock hit negedge[0m
+[0;32mI (18310) CLK_TASK: clock hit negedge[0m
+[0;32mI (18310) CLK_TASK: clock hit negedge[0m
+[0;33mW (18310) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (18310) CLK_TASK: clock hit negedge[0m
+[0;32mI (18320) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (18320) CLK_TASK: clock hit negedge[0m
+[0;32mI (18330) CLK_TASK: clock hit negedge[0m
+[0;32mI (18340) CLK_TASK: clock hit negedge[0m
+[0;33mW (18340) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (18340) CLK_TASK: clock hit negedge[0m
+[0;32mI (18350) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (18350) CLK_TASK: clock hit negedge[0m
+[0;32mI (18360) CLK_TASK: clock hit negedge[0m
+[0;32mI (18370) CLK_TASK: clock hit negedge[0m
+[0;33mW (18370) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (18370) CLK_TASK: clock hit negedge[0m
+[0;32mI (18380) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (18380) CLK_TASK: clock hit negedge[0m
+[0;32mI (18390) CLK_TASK: clock hit negedge[0m
+[0;32mI (18390) CLK_TASK: clock hit negedge[0m
+[0;33mW (18400) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (18400) CLK_TASK: clock hit negedge[0m
+[0;32mI (18410) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (18410) CLK_TASK: clock hit negedge[0m
+[0;32mI (18420) CLK_TASK: clock hit negedge[0m
+[0;32mI (18420) CLK_TASK: clock hit negedge[0m
+[0;33mW (18430) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (18430) CLK_TASK: clock hit negedge[0m
+[0;32mI (18430) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (18440) CLK_TASK: clock hit negedge[0m
+[0;32mI (18450) CLK_TASK: clock hit negedge[0m
+[0;32mI (18450) CLK_TASK: clock hit negedge[0m
+[0;33mW (18450) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (18460) CLK_TASK: clock hit negedge[0m
+[0;32mI (18460) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (18470) CLK_TASK: clock hit negedge[0m
+[0;32mI (18470) CLK_TASK: clock hit negedge[0m
+[0;32mI (18480) CLK_TASK: clock hit negedge[0m

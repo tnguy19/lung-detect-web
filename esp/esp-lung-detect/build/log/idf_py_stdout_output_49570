@@ -1,0 +1,1854 @@
+33ba4-dirty[0m
+[0;32mI (219) app_init: Compile time:     Feb  2025 18:52:46[0m
+[0;32mI (225) app_init: ELF file SHA256:  7f6c54393...[0m
+[0;32mI (231) app_init: ESP-IDF:          v5.4-dev-2744-g59e1838270[ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7112
+load:0x40078000,len:15788
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (30) boot: ESP-IDF v5.4-dev-2744-g59e1838270 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Feb 24 2025 18:52:52[0m
+[0;32mI (32) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v1.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (45) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a1f8h ( 41464) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0001a220 vaddr=3ffb0000 size=02364h (  9060) load[0m
+[0;32mI (123) esp_image: segment 2: paddr=0001c58c vaddr=40080000 size=03a8ch ( 14988) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=15600h ( 87552) map[0m
+[0;32mI (163) esp_image: segment 4: paddr=00035628 vaddr=40083a8c size=09408h ( 37896) load[0m
+[0;32mI (185) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (185) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (209) app_init: Project name:     lung-detect[0m
+[0;32mI (214) app_init: App version:      d333ba4-dirty[0m
+[0;32mI (219) app_init: Compile time:     Feb 24 2025 18:52:46[0m
+[0;32mI (225) app_init: ELF file SHA256:  7f6c54393...[0m
+[0;32mI (231) app_init: ESP-IDF:          v5.4-dev-2744-g59e1838270[0m
+[0;32mI (237) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (242) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (247) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (252) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (259) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (265) heap_init: At 3FFB2C28 len 0002D3D8 (180 KiB): DRAM[0m
+[0;32mI (271) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (277) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (284) heap_init: At 4008CE94 len 0001316C (76 KiB): IRAM[0m
+[0;32mI (292) spi_flash: detected chip: gd[0m
+[0;32mI (294) spi_flash: flash io: dio[0m
+[0;32mI (299) main_task: Started on CPU0[0m
+[0;32mI (309) main_task: Calling app_main()[0m
+[0;32mI (309) LUNG_DETECT: Initializing...[0m
+[0;32mI (309) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;31mE (5309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (5309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (5309) task_wdt: Tasks currently running:[0m
+[0;31mE (5309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (5309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (5309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D90 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (10309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (10309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (10309) task_wdt: Tasks currently running:[0m
+[0;31mE (10309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (10309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (10309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D90 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (15309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (15309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (15309) task_wdt: Tasks currently running:[0m
+[0;31mE (15309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (15309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (15309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D90 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (20309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (20309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (20309) task_wdt: Tasks currently running:[0m
+[0;31mE (20309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (20309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (20309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D90 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (25309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (25309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (25309) task_wdt: Tasks currently running:[0m
+[0;31mE (25309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (25309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (25309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D90 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (30309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (30309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (30309) task_wdt: Tasks currently running:[0m
+[0;31mE (30309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (30309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (30309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D90 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (35309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (35309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (35309) task_wdt: Tasks currently running:[0m
+[0;31mE (35309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (35309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (35309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D90 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;32mI (36029) LUNG_DETECT: Streaming Enabled[0m
+[0;32mI (36029) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36029) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36029) LUNG_DETECT: Num: 0[0m
+[0;32mI (36039) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36039) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36049) LUNG_DETECT: Num: 0[0m
+[0;32mI (36049) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36059) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36069) LUNG_DETECT: Num: 0[0m
+[0;32mI (36069) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36079) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36079) LUNG_DETECT: Num: 0[0m
+[0;32mI (36089) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36089) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36099) LUNG_DETECT: Num: 0[0m
+[0;32mI (36099) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36109) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36119) LUNG_DETECT: Num: 0[0m
+[0;32mI (36119) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36129) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36139) LUNG_DETECT: Num: 0[0m
+[0;32mI (36139) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36149) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36149) LUNG_DETECT: Num: 0[0m
+[0;32mI (36159) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36159) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36169) LUNG_DETECT: Num: 0[0m
+[0;32mI (36169) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36179) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36189) LUNG_DETECT: Num: 0[0m
+[0;32mI (36189) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36199) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36199) LUNG_DETECT: Num: 0[0m
+[0;32mI (36209) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36219) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36219) LUNG_DETECT: Num: 0[0m
+[0;32mI (36219) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36229) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36239) LUNG_DETECT: Num: 0[0m
+[0;32mI (36239) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36249) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36259) LUNG_DETECT: Num: 0[0m
+[0;32mI (36259) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36269) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36269) LUNG_DETECT: Num: 0[0m
+[0;32mI (36279) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36279) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36289) LUNG_DETECT: Num: 0[0m
+[0;32mI (36289) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36299) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36309) LUNG_DETECT: Num: 0[0m
+[0;32mI (36309) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36319) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36319) LUNG_DETECT: Num: 0[0m
+[0;32mI (36329) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36339) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36339) LUNG_DETECT: Num: 0[0m
+[0;32mI (36349) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36349) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36359) LUNG_DETECT: Num: 0[0m
+[0;32mI (36359) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36369) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36379) LUNG_DETECT: Num: 0[0m
+[0;32mI (36379) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36389) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36389) LUNG_DETECT: Num: 0[0m
+[0;32mI (36399) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36399) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36409) LUNG_DETECT: Num: 0[0m
+[0;32mI (36409) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36419) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36429) LUNG_DETECT: Num: 0[0m
+[0;32mI (36429) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36439) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36439) LUNG_DETECT: Num: 0[0m
+[0;32mI (36449) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36459) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36459) LUNG_DETECT: Num: 0[0m
+[0;32mI (36469) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36469) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36479) LUNG_DETECT: Num: 0[0m
+[0;32mI (36479) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36489) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36499) LUNG_DETECT: Num: 0[0m
+[0;32mI (36499) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36509) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36509) LUNG_DETECT: Num: 0[0m
+[0;32mI (36519) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36519) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36529) LUNG_DETECT: Num: 0[0m
+[0;32mI (36529) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36539) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36549) LUNG_DETECT: Num: 0[0m
+[0;32mI (36549) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36559) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36569) LUNG_DETECT: Num: 0[0m
+[0;32mI (36569) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36579) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36579) LUNG_DETECT: Num: 0[0m
+[0;32mI (36589) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36589) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36599) LUNG_DETECT: Num: 0[0m
+[0;32mI (36599) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36609) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36619) LUNG_DETECT: Num: 0[0m
+[0;32mI (36619) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36629) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36629) LUNG_DETECT: Num: 0[0m
+[0;32mI (36639) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36639) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36649) LUNG_DETECT: Num: 0[0m
+[0;32mI (36649) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36659) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36669) LUNG_DETECT: Num: 0[0m
+[0;32mI (36669) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36679) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36689) LUNG_DETECT: Num: 0[0m
+[0;32mI (36689) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36699) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36699) LUNG_DETECT: Num: 0[0m
+[0;32mI (36709) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36709) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36719) LUNG_DETECT: Num: 0[0m
+[0;32mI (36719) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36729) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36739) LUNG_DETECT: Num: 0[0m
+[0;32mI (36739) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36749) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36749) LUNG_DETECT: Num: 0[0m
+[0;32mI (36759) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36769) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36769) LUNG_DETECT: Num: 0[0m
+[0;32mI (36769) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36779) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36789) LUNG_DETECT: Num: 0[0m
+[0;32mI (36789) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36799) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36809) LUNG_DETECT: Num: 0[0m
+[0;32mI (36809) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36819) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36819) LUNG_DETECT: Num: 0[0m
+[0;32mI (36829) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36829) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36839) LUNG_DETECT: Num: 0[0m
+[0;32mI (36839) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36849) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36859) LUNG_DETECT: Num: 0[0m
+[0;32mI (36859) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36869) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36869) LUNG_DETECT: Num: 0[0m
+[0;32mI (36879) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36889) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36889) LUNG_DETECT: Num: 0[0m
+[0;32mI (36899) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36899) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36909) LUNG_DETECT: Num: 0[0m
+[0;32mI (36909) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36919) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36929) LUNG_DETECT: Num: 0[0m
+[0;32mI (36929) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36939) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36939) LUNG_DETECT: Num: 0[0m
+[0;32mI (36949) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36949) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36959) LUNG_DETECT: Num: 0[0m
+[0;32mI (36959) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36969) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36979) LUNG_DETECT: Num: 0[0m
+[0;32mI (36979) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (36989) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (36989) LUNG_DETECT: Num: 0[0m
+[0;32mI (36999) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37009) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37009) LUNG_DETECT: Num: 0[0m
+[0;32mI (37019) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37019) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37029) LUNG_DETECT: Num: 0[0m
+[0;32mI (37029) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37039) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37049) LUNG_DETECT: Num: 0[0m
+[0;32mI (37049) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37059) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37059) LUNG_DETECT: Num: 0[0m
+[0;32mI (37069) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37069) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37079) LUNG_DETECT: Num: 0[0m
+[0;32mI (37079) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37089) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37099) LUNG_DETECT: Num: 0[0m
+[0;32mI (37099) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37109) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37109) LUNG_DETECT: Num: 0[0m
+[0;32mI (37119) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37129) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37129) LUNG_DETECT: Num: 0[0m
+[0;32mI (37139) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37139) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37149) LUNG_DETECT: Num: 0[0m
+[0;32mI (37149) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37159) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37169) LUNG_DETECT: Num: 0[0m
+[0;32mI (37169) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37179) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37179) LUNG_DETECT: Num: 0[0m
+[0;32mI (37189) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37189) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37199) LUNG_DETECT: Num: 0[0m
+[0;32mI (37199) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37209) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37219) LUNG_DETECT: Num: 0[0m
+[0;32mI (37219) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37229) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37239) LUNG_DETECT: Num: 0[0m
+[0;32mI (37239) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37249) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37249) LUNG_DETECT: Num: 0[0m
+[0;32mI (37259) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37259) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37269) LUNG_DETECT: Num: 0[0m
+[0;32mI (37269) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37279) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37289) LUNG_DETECT: Num: 0[0m
+[0;32mI (37289) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37299) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37299) LUNG_DETECT: Num: 0[0m
+[0;32mI (37309) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37319) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37319) LUNG_DETECT: Num: 0[0m
+[0;32mI (37319) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37329) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37339) LUNG_DETECT: Num: 0[0m
+[0;32mI (37339) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37349) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37359) LUNG_DETECT: Num: 0[0m
+[0;32mI (37359) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37369) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37369) LUNG_DETECT: Num: 0[0m
+[0;32mI (37379) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37379) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37389) LUNG_DETECT: Num: 0[0m
+[0;32mI (37389) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37399) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37409) LUNG_DETECT: Num: 0[0m
+[0;32mI (37409) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37419) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37419) LUNG_DETECT: Num: 0[0m
+[0;32mI (37429) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37439) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37439) LUNG_DETECT: Num: 0[0m
+[0;32mI (37449) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37449) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37459) LUNG_DETECT: Num: 0[0m
+[0;32mI (37459) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37469) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37479) LUNG_DETECT: Num: 0[0m
+[0;32mI (37479) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37489) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37489) LUNG_DETECT: Num: 0[0m
+[0;32mI (37499) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37499) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37509) LUNG_DETECT: Num: 0[0m
+[0;32mI (37509) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37519) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37529) LUNG_DETECT: Num: 0[0m
+[0;32mI (37529) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37539) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37539) LUNG_DETECT: Num: 0[0m
+[0;32mI (37549) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37559) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37559) LUNG_DETECT: Num: 0[0m
+[0;32mI (37569) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37569) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37579) LUNG_DETECT: Num: 0[0m
+[0;32mI (37579) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37589) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37599) LUNG_DETECT: Num: 0[0m
+[0;32mI (37599) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37609) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37609) LUNG_DETECT: Num: 0[0m
+[0;32mI (37619) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37619) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37629) LUNG_DETECT: Num: 0[0m
+[0;32mI (37629) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37639) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37649) LUNG_DETECT: Num: 0[0m
+[0;32mI (37649) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37659) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37659) LUNG_DETECT: Num: 0[0m
+[0;32mI (37669) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37679) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37679) LUNG_DETECT: Num: 0[0m
+[0;32mI (37689) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37689) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37699) LUNG_DETECT: Num: 0[0m
+[0;32mI (37699) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37709) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37719) LUNG_DETECT: Num: 0[0m
+[0;32mI (37719) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37729) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37729) LUNG_DETECT: Num: 0[0m
+[0;32mI (37739) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37739) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37749) LUNG_DETECT: Num: 0[0m
+[0;32mI (37749) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37759) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37769) LUNG_DETECT: Num: 0[0m
+[0;32mI (37769) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37779) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37789) LUNG_DETECT: Num: 0[0m
+[0;32mI (37789) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37799) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37799) LUNG_DETECT: Num: 0[0m
+[0;32mI (37809) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37809) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37819) LUNG_DETECT: Num: 0[0m
+[0;32mI (37819) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37829) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37839) LUNG_DETECT: Num: 0[0m
+[0;32mI (37839) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37849) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37849) LUNG_DETECT: Num: 0[0m
+[0;32mI (37859) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37869) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37869) LUNG_DETECT: Num: 0[0m
+[0;32mI (37869) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37879) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37889) LUNG_DETECT: Num: 0[0m
+[0;32mI (37889) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37899) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37909) LUNG_DETECT: Num: 0[0m
+[0;32mI (37909) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37919) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37919) LUNG_DETECT: Num: 0[0m
+[0;32mI (37929) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37929) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37939) LUNG_DETECT: Num: 0[0m
+[0;32mI (37939) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37949) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37959) LUNG_DETECT: Num: 0[0m
+[0;32mI (37959) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37969) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37969) LUNG_DETECT: Num: 0[0m
+[0;32mI (37979) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37989) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (37989) LUNG_DETECT: Num: 0[0m
+[0;32mI (37999) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (37999) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38009) LUNG_DETECT: Num: 0[0m
+[0;32mI (38009) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38019) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38029) LUNG_DETECT: Num: 0[0m
+[0;32mI (38029) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38039) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38039) LUNG_DETECT: Num: 0[0m
+[0;32mI (38049) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38049) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38059) LUNG_DETECT: Num: 0[0m
+[0;32mI (38059) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38069) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38079) LUNG_DETECT: Num: 0[0m
+[0;32mI (38079) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38089) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38089) LUNG_DETECT: Num: 0[0m
+[0;32mI (38099) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38109) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38109) LUNG_DETECT: Num: 0[0m
+[0;32mI (38119) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38119) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38129) LUNG_DETECT: Num: 0[0m
+[0;32mI (38129) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38139) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38149) LUNG_DETECT: Num: 0[0m
+[0;32mI (38149) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38159) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38159) LUNG_DETECT: Num: 0[0m
+[0;32mI (38169) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38169) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38179) LUNG_DETECT: Num: 0[0m
+[0;32mI (38179) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38189) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38199) LUNG_DETECT: Num: 0[0m
+[0;32mI (38199) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38209) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38209) LUNG_DETECT: Num: 0[0m
+[0;32mI (38219) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38229) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38229) LUNG_DETECT: Num: 0[0m
+[0;32mI (38239) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38239) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38249) LUNG_DETECT: Num: 0[0m
+[0;32mI (38249) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38259) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38269) LUNG_DETECT: Num: 0[0m
+[0;32mI (38269) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38279) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38279) LUNG_DETECT: Num: 0[0m
+[0;32mI (38289) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38289) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38299) LUNG_DETECT: Num: 0[0m
+[0;32mI (38299) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38309) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38319) LUNG_DETECT: Num: 0[0m
+[0;32mI (38319) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38329) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38339) LUNG_DETECT: Num: 0[0m
+[0;32mI (38339) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38349) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38349) LUNG_DETECT: Num: 0[0m
+[0;32mI (38359) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38359) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38369) LUNG_DETECT: Num: 0[0m
+[0;32mI (38369) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38379) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38389) LUNG_DETECT: Num: 0[0m
+[0;32mI (38389) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38399) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38399) LUNG_DETECT: Num: 0[0m
+[0;32mI (38409) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38419) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38419) LUNG_DETECT: Num: 0[0m
+[0;32mI (38419) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38429) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38439) LUNG_DETECT: Num: 0[0m
+[0;32mI (38439) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38449) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38459) LUNG_DETECT: Num: 0[0m
+[0;32mI (38459) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38469) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38469) LUNG_DETECT: Num: 0[0m
+[0;32mI (38479) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38479) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38489) LUNG_DETECT: Num: 0[0m
+[0;32mI (38489) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38499) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38509) LUNG_DETECT: Num: 0[0m
+[0;32mI (38509) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38519) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38519) LUNG_DETECT: Num: 0[0m
+[0;32mI (38529) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38539) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38539) LUNG_DETECT: Num: 0[0m
+[0;32mI (38549) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38549) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38559) LUNG_DETECT: Num: 0[0m
+[0;32mI (38559) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38569) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38579) LUNG_DETECT: Num: 0[0m
+[0;32mI (38579) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38589) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38589) LUNG_DETECT: Num: 0[0m
+[0;32mI (38599) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38599) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38609) LUNG_DETECT: Num: 0[0m
+[0;32mI (38609) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38619) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38629) LUNG_DETECT: Num: 0[0m
+[0;32mI (38629) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38639) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38639) LUNG_DETECT: Num: 0[0m
+[0;32mI (38649) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38659) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38659) LUNG_DETECT: Num: 0[0m
+[0;32mI (38669) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38669) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38679) LUNG_DETECT: Num: 0[0m
+[0;32mI (38679) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38689) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38699) LUNG_DETECT: Num: 0[0m
+[0;32mI (38699) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38709) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38709) LUNG_DETECT: Num: 0[0m
+[0;32mI (38719) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38719) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38729) LUNG_DETECT: Num: 0[0m
+[0;32mI (38729) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38739) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38749) LUNG_DETECT: Num: 0[0m
+[0;32mI (38749) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38759) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38759) LUNG_DETECT: Num: 0[0m
+[0;32mI (38769) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38779) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38779) LUNG_DETECT: Num: 0[0m
+[0;32mI (38789) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38789) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38799) LUNG_DETECT: Num: 0[0m
+[0;32mI (38799) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38809) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38819) LUNG_DETECT: Num: 0[0m
+[0;32mI (38819) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38829) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38829) LUNG_DETECT: Num: 0[0m
+[0;32mI (38839) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38839) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38849) LUNG_DETECT: Num: 0[0m
+[0;32mI (38849) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38859) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38869) LUNG_DETECT: Num: 0[0m
+[0;32mI (38869) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38879) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38889) LUNG_DETECT: Num: 0[0m
+[0;32mI (38889) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38899) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38899) LUNG_DETECT: Num: 0[0m
+[0;32mI (38909) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38909) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38919) LUNG_DETECT: Num: 0[0m
+[0;32mI (38919) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38929) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38939) LUNG_DETECT: Num: 0[0m
+[0;32mI (38939) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38949) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38949) LUNG_DETECT: Num: 0[0m
+[0;32mI (38959) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38969) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38969) LUNG_DETECT: Num: 0[0m
+[0;32mI (38969) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38979) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (38989) LUNG_DETECT: Num: 0[0m
+[0;32mI (38989) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (38999) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (39009) LUNG_DETECT: Streaming Disabled[0m
+[0;32mI (39009) LUNG_DETECT: Num: 0[0m
+[0;31mE (44009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (44009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (44009) task_wdt: Tasks currently running:[0m
+[0;31mE (44009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (44009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (44009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (49009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (49009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (49009) task_wdt: Tasks currently running:[0m
+[0;31mE (49009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (49009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (49009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (54009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (54009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (54009) task_wdt: Tasks currently running:[0m
+[0;31mE (54009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (54009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (54009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (59009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (59009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (59009) task_wdt: Tasks currently running:[0m
+[0;31mE (59009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (59009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (59009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (64009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (64009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (64009) task_wdt: Tasks currently running:[0m
+[0;31mE (64009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (64009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (64009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (69009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (69009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (69009) task_wdt: Tasks currently running:[0m
+[0;31mE (69009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (69009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (69009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (74009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (74009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (74009) task_wdt: Tasks currently running:[0m
+[0;31mE (74009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (74009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (74009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (79009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (79009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (79009) task_wdt: Tasks currently running:[0m
+[0;31mE (79009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (79009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (79009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (84009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (84009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (84009) task_wdt: Tasks currently running:[0m
+[0;31mE (84009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (84009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (84009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (89009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (89009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (89009) task_wdt: Tasks currently running:[0m
+[0;31mE (89009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (89009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (89009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (94009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (94009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (94009) task_wdt: Tasks currently running:[0m
+[0;31mE (94009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (94009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (94009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (99009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (99009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (99009) task_wdt: Tasks currently running:[0m
+[0;31mE (99009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (99009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (99009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (104009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (104009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (104009) task_wdt: Tasks currently running:[0m
+[0;31mE (104009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (104009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (104009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (109009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (109009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (109009) task_wdt: Tasks currently running:[0m
+[0;31mE (109009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (109009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (109009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (114009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (114009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (114009) task_wdt: Tasks currently running:[0m
+[0;31mE (114009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (114009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (114009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (119009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (119009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (119009) task_wdt: Tasks currently running:[0m
+[0;31mE (119009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (119009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (119009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (124009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (124009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (124009) task_wdt: Tasks currently running:[0m
+[0;31mE (124009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (124009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (124009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (129009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (129009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (129009) task_wdt: Tasks currently running:[0m
+[0;31mE (129009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (129009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (129009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (134009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (134009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (134009) task_wdt: Tasks currently running:[0m
+[0;31mE (134009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (134009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (134009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (139009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (139009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (139009) task_wdt: Tasks currently running:[0m
+[0;31mE (139009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (139009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (139009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (144009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (144009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (144009) task_wdt: Tasks currently running:[0m
+[0;31mE (144009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (144009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (144009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (149009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (149009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (149009) task_wdt: Tasks currently running:[0m
+[0;31mE (149009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (149009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (149009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (154009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (154009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (154009) task_wdt: Tasks currently running:[0m
+[0;31mE (154009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (154009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (154009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (159009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (159009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (159009) task_wdt: Tasks currently running:[0m
+[0;31mE (159009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (159009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (159009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (164009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (164009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (164009) task_wdt: Tasks currently running:[0m
+[0;31mE (164009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (164009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (164009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (169009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (169009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (169009) task_wdt: Tasks currently running:[0m
+[0;31mE (169009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (169009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (169009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (174009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (174009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (174009) task_wdt: Tasks currently running:[0m
+[0;31mE (174009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (174009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (174009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (179009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (179009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (179009) task_wdt: Tasks currently running:[0m
+[0;31mE (179009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (179009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (179009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (184009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (184009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (184009) task_wdt: Tasks currently running:[0m
+[0;31mE (184009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (184009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (184009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (189009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (189009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (189009) task_wdt: Tasks currently running:[0m
+[0;31mE (189009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (189009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (189009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (194009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (194009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (194009) task_wdt: Tasks currently running:[0m
+[0;31mE (194009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (194009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (194009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (199009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (199009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (199009) task_wdt: Tasks currently running:[0m
+[0;31mE (199009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (199009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (199009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (204009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (204009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (204009) task_wdt: Tasks currently running:[0m
+[0;31mE (204009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (204009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (204009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (209009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (209009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (209009) task_wdt: Tasks currently running:[0m
+[0;31mE (209009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (209009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (209009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (214009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (214009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (214009) task_wdt: Tasks currently running:[0m
+[0;31mE (214009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (214009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (214009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (219009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (219009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (219009) task_wdt: Tasks currently running:[0m
+[0;31mE (219009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (219009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (219009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (224009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (224009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (224009) task_wdt: Tasks currently running:[0m
+[0;31mE (224009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (224009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (224009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (229009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (229009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (229009) task_wdt: Tasks currently running:[0m
+[0;31mE (229009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (229009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (229009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (234009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (234009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (234009) task_wdt: Tasks currently running:[0m
+[0;31mE (234009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (234009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (234009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (239009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (239009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (239009) task_wdt: Tasks currently running:[0m
+[0;31mE (239009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (239009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (239009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (244009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (244009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (244009) task_wdt: Tasks currently running:[0m
+[0;31mE (244009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (244009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (244009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (249009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (249009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (249009) task_wdt: Tasks currently running:[0m
+[0;31mE (249009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (249009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (249009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (254009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (254009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (254009) task_wdt: Tasks currently running:[0m
+[0;31mE (254009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (254009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (254009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (259009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (259009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (259009) task_wdt: Tasks currently running:[0m
+[0;31mE (259009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (259009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (259009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (264009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (264009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (264009) task_wdt: Tasks currently running:[0m
+[0;31mE (264009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (264009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (264009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (269009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (269009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (269009) task_wdt: Tasks currently running:[0m
+[0;31mE (269009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (269009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (269009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (274009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (274009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (274009) task_wdt: Tasks currently running:[0m
+[0;31mE (274009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (274009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (274009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (279009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (279009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (279009) task_wdt: Tasks currently running:[0m
+[0;31mE (279009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (279009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (279009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (284009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (284009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (284009) task_wdt: Tasks currently running:[0m
+[0;31mE (284009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (284009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (284009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (289009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (289009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (289009) task_wdt: Tasks currently running:[0m
+[0;31mE (289009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (289009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (289009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (294009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (294009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (294009) task_wdt: Tasks currently running:[0m
+[0;31mE (294009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (294009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (294009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (299009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (299009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (299009) task_wdt: Tasks currently running:[0m
+[0;31mE (299009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (299009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (299009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (304009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (304009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (304009) task_wdt: Tasks currently running:[0m
+[0;31mE (304009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (304009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (304009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (309009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (309009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (309009) task_wdt: Tasks currently running:[0m
+[0;31mE (309009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (309009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (309009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (314009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (314009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (314009) task_wdt: Tasks currently running:[0m
+[0;31mE (314009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (314009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (314009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (319009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (319009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (319009) task_wdt: Tasks currently running:[0m
+[0;31mE (319009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (319009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (319009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (324009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (324009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (324009) task_wdt: Tasks currently running:[0m
+[0;31mE (324009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (324009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (324009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (329009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (329009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (329009) task_wdt: Tasks currently running:[0m
+[0;31mE (329009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (329009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (329009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (334009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (334009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (334009) task_wdt: Tasks currently running:[0m
+[0;31mE (334009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (334009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (334009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (339009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (339009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (339009) task_wdt: Tasks currently running:[0m
+[0;31mE (339009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (339009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (339009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (344009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (344009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (344009) task_wdt: Tasks currently running:[0m
+[0;31mE (344009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (344009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (344009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (349009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (349009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (349009) task_wdt: Tasks currently running:[0m
+[0;31mE (349009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (349009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (349009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (354009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (354009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (354009) task_wdt: Tasks currently running:[0m
+[0;31mE (354009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (354009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (354009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (359009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (359009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (359009) task_wdt: Tasks currently running:[0m
+[0;31mE (359009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (359009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (359009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (364009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (364009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (364009) task_wdt: Tasks currently running:[0m
+[0;31mE (364009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (364009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (364009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (369009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (369009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (369009) task_wdt: Tasks currently running:[0m
+[0;31mE (369009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (369009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (369009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (374009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (374009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (374009) task_wdt: Tasks currently running:[0m
+[0;31mE (374009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (374009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (374009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (379009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (379009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (379009) task_wdt: Tasks currently running:[0m
+[0;31mE (379009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (379009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (379009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (384009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (384009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (384009) task_wdt: Tasks currently running:[0m
+[0;31mE (384009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (384009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (384009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (389009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (389009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (389009) task_wdt: Tasks currently running:[0m
+[0;31mE (389009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (389009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (389009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (394009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (394009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (394009) task_wdt: Tasks currently running:[0m
+[0;31mE (394009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (394009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (394009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (399009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (399009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (399009) task_wdt: Tasks currently running:[0m
+[0;31mE (399009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (399009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (399009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (404009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (404009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (404009) task_wdt: Tasks currently running:[0m
+[0;31mE (404009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (404009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (404009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (409009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (409009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (409009) task_wdt: Tasks currently running:[0m
+[0;31mE (409009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (409009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (409009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (414009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (414009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (414009) task_wdt: Tasks currently running:[0m
+[0;31mE (414009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (414009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (414009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D6B0A:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (419009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (419009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (419009) task_wdt: Tasks currently running:[0m
+[0;31mE (419009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (419009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (419009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (424009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (424009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (424009) task_wdt: Tasks currently running:[0m
+[0;31mE (424009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (424009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (424009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (429009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (429009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (429009) task_wdt: Tasks currently running:[0m
+[0;31mE (429009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (429009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (429009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (434009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (434009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (434009) task_wdt: Tasks currently running:[0m
+[0;31mE (434009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (434009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (434009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (439009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (439009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (439009) task_wdt: Tasks currently running:[0m
+[0;31mE (439009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (439009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (439009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (444009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (444009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (444009) task_wdt: Tasks currently running:[0m
+[0;31mE (444009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (444009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (444009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (449009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (449009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (449009) task_wdt: Tasks currently running:[0m
+[0;31mE (449009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (449009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (449009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (454009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (454009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (454009) task_wdt: Tasks currently running:[0m
+[0;31mE (454009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (454009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (454009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (459009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (459009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (459009) task_wdt: Tasks currently running:[0m
+[0;31mE (459009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (459009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (459009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (464009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (464009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (464009) task_wdt: Tasks currently running:[0m
+[0;31mE (464009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (464009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (464009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (469009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (469009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (469009) task_wdt: Tasks currently running:[0m
+[0;31mE (469009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (469009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (469009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (474009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (474009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (474009) task_wdt: Tasks currently running:[0m
+[0;31mE (474009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (474009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (474009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (479009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (479009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (479009) task_wdt: Tasks currently running:[0m
+[0;31mE (479009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (479009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (479009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (484009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (484009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (484009) task_wdt: Tasks currently running:[0m
+[0;31mE (484009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (484009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (484009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (489009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (489009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (489009) task_wdt: Tasks currently running:[0m
+[0;31mE (489009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (489009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (489009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (494009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (494009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (494009) task_wdt: Tasks currently running:[0m
+[0;31mE (494009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (494009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (494009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (499009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (499009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (499009) task_wdt: Tasks currently running:[0m
+[0;31mE (499009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (499009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (499009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (504009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (504009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (504009) task_wdt: Tasks currently running:[0m
+[0;31mE (504009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (504009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (504009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (509009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (509009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (509009) task_wdt: Tasks currently running:[0m
+[0;31mE (509009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (509009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (509009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (514009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (514009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (514009) task_wdt: Tasks currently running:[0m
+[0;31mE (514009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (514009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (514009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (519009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (519009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (519009) task_wdt: Tasks currently running:[0m
+[0;31mE (519009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (519009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (519009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (524009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (524009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (524009) task_wdt: Tasks currently running:[0m
+[0;31mE (524009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (524009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (524009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (529009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (529009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (529009) task_wdt: Tasks currently running:[0m
+[0;31mE (529009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (529009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (529009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (534009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (534009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (534009) task_wdt: Tasks currently running:[0m
+[0;31mE (534009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (534009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (534009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (539009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (539009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (539009) task_wdt: Tasks currently running:[0m
+[0;31mE (539009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (539009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (539009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (544009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (544009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (544009) task_wdt: Tasks currently running:[0m
+[0;31mE (544009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (544009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (544009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (549009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (549009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (549009) task_wdt: Tasks currently running:[0m
+[0;31mE (549009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (549009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (549009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (554009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (554009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (554009) task_wdt: Tasks currently running:[0m
+[0;31mE (554009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (554009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (554009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (559009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (559009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (559009) task_wdt: Tasks currently running:[0m
+[0;31mE (559009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (559009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (559009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (564009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (564009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (564009) task_wdt: Tasks currently running:[0m
+[0;31mE (564009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (564009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (564009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (569009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (569009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (569009) task_wdt: Tasks currently running:[0m
+[0;31mE (569009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (569009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (569009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (574009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (574009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (574009) task_wdt: Tasks currently running:[0m
+[0;31mE (574009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (574009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (574009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (579009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (579009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (579009) task_wdt: Tasks currently running:[0m
+[0;31mE (579009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (579009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (579009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (584009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (584009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (584009) task_wdt: Tasks currently running:[0m
+[0;31mE (584009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (584009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (584009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (589009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (589009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (589009) task_wdt: Tasks currently running:[0m
+[0;31mE (589009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (589009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (589009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (594009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (594009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (594009) task_wdt: Tasks currently running:[0m
+[0;31mE (594009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (594009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (594009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (599009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (599009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (599009) task_wdt: Tasks currently running:[0m
+[0;31mE (599009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (599009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (599009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (604009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (604009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (604009) task_wdt: Tasks currently running:[0m
+[0;31mE (604009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (604009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (604009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (609009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (609009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (609009) task_wdt: Tasks currently running:[0m
+[0;31mE (609009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (609009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (609009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (614009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (614009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (614009) task_wdt: Tasks currently running:[0m
+[0;31mE (614009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (614009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (614009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (619009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (619009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (619009) task_wdt: Tasks currently running:[0m
+[0;31mE (619009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (619009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (619009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (624009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (624009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (624009) task_wdt: Tasks currently running:[0m
+[0;31mE (624009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (624009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (624009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (629009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (629009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (629009) task_wdt: Tasks currently running:[0m
+[0;31mE (629009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (629009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (629009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (634009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (634009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (634009) task_wdt: Tasks currently running:[0m
+[0;31mE (634009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (634009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (634009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+
+[0;31mE (639009) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (639009) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (639009) task_wdt: Tasks currently running:[0m
+[0;31mE (639009) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (639009) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (639009) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8E57:0x3FFB0F80 0x400D921C:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x40087C4E:0x3FFB5DB0 0x400D6B6F:0x3FFB5DD0 0x40086195:0x3FFB5E00
+

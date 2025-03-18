@@ -1,0 +1,518 @@
+ Compile time:     Feb 24 2025 18:52:46[0m
+[0;32mI (226) app_init: ELF file SHA256:  02f046902...[0m
+[0;32mI (231) app_init: ESP-IDF:          v5.4-dev-2744-g59e1838270[0m
+[0;�ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7112
+load:0x40078000,len:15788
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (30) boot: ESP-IDF v5.4-dev-2744-g59e1838270 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Feb 24 2025 18:52:52[0m
+[0;32mI (32) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v1.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a388h ( 41864) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0001a3b0 vaddr=3ffb0000 size=02364h (  9060) load[0m
+[0;32mI (123) esp_image: segment 2: paddr=0001c71c vaddr=40080000 size=038fch ( 14588) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=156a0h ( 87712) map[0m
+[0;32mI (164) esp_image: segment 4: paddr=000356c8 vaddr=400838fc size=09598h ( 38296) load[0m
+[0;32mI (185) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (185) boot: Disabling RNG early entropy source...[0m
+[0;32mI (198) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (209) app_init: Project name:     lung-detect[0m
+[0;32mI (214) app_init: App version:      d333ba4-dirty[0m
+[0;32mI (220) app_init: Compile time:     Feb 24 2025 18:52:46[0m
+[0;32mI (226) app_init: ELF file SHA256:  02f046902...[0m
+[0;32mI (231) app_init: ESP-IDF:          v5.4-dev-2744-g59e1838270[0m
+[0;32mI (237) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (242) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (247) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (252) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (259) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (265) heap_init: At 3FFB2C28 len 0002D3D8 (180 KiB): DRAM[0m
+[0;32mI (271) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (278) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (284) heap_init: At 4008CE94 len 0001316C (76 KiB): IRAM[0m
+[0;32mI (292) spi_flash: detected chip: gd[0m
+[0;32mI (295) spi_flash: flash io: dio[0m
+[0;32mI (299) main_task: Started on CPU0[0m
+[0;32mI (309) main_task: Calling app_main()[0m
+[0;32mI (309) LUNG_DETECT: Initializing...[0m
+[0;32mI (309) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (319) LUNG_DETECT: Finished GPIO config[0m
+[0;32mI (319) LUNG_DETECT: Starting task functions[0m
+[0;32mI (329) ADC_TASK: adc sample task started[0m
+[0;32mI (329) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (329) ADC_TASK: EOC received[0m
+[0;32mI (339) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (339) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (349) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (349) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (359) ADC_TASK: EOC received[0m
+[0;32mI (359) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (369) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (369) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (379) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (379) ADC_TASK: EOC received[0m
+[0;32mI (379) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (389) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (389) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (399) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (399) ADC_TASK: EOC received[0m
+[0;32mI (409) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (409) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (419) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (419) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (429) ADC_TASK: EOC received[0m
+[0;32mI (429) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (429) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (439) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (439) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (449) ADC_TASK: EOC received[0m
+[0;32mI (449) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (459) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (459) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (469) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (469) ADC_TASK: EOC received[0m
+[0;32mI (479) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (479) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (479) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (489) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (489) ADC_TASK: EOC received[0m
+[0;32mI (499) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (499) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (509) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (509) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (519) ADC_TASK: EOC received[0m
+[0;32mI (519) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (529) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (529) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (539) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (539) ADC_TASK: EOC received[0m
+[0;32mI (539) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (549) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (549) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (559) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (559) ADC_TASK: EOC received[0m
+[0;32mI (569) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (569) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (579) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (579) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (589) ADC_TASK: EOC received[0m
+[0;32mI (589) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (589) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (599) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (599) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (609) ADC_TASK: EOC received[0m
+[0;32mI (609) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (619) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (619) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (629) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (629) ADC_TASK: EOC received[0m
+[0;32mI (639) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (639) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (639) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (649) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (649) ADC_TASK: EOC received[0m
+[0;32mI (659) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (659) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (669) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (669) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (679) ADC_TASK: EOC received[0m
+[0;32mI (679) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (689) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (689) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (699) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (699) ADC_TASK: EOC received[0m
+[0;32mI (699) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (709) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (709) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (719) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (719) ADC_TASK: EOC received[0m
+[0;32mI (729) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (729) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (739) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (739) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (749) ADC_TASK: EOC received[0m
+[0;32mI (749) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (749) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (759) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (759) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (769) ADC_TASK: EOC received[0m
+[0;32mI (769) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (779) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (779) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (789) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (789) ADC_TASK: EOC received[0m
+[0;32mI (799) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (799) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (799) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (809) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (809) ADC_TASK: EOC received[0m
+[0;32mI (819) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (819) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (829) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (829) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (839) ADC_TASK: EOC received[0m
+[0;32mI (839) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (839) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (849) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (859) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (859) ADC_TASK: EOC received[0m
+[0;32mI (859) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (869) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (869) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (879) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (879) ADC_TASK: EOC received[0m
+[0;32mI (889) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (889) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (899) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (899) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (909) ADC_TASK: EOC received[0m
+[0;32mI (909) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (909) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (919) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (919) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (929) ADC_TASK: EOC received[0m
+[0;32mI (929) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (939) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (939) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (949) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (949) ADC_TASK: EOC received[0m
+[0;32mI (959) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (959) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (959) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (969) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (969) ADC_TASK: EOC received[0m
+[0;32mI (979) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (979) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (989) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (989) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (999) ADC_TASK: EOC received[0m
+[0;32mI (999) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (999) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1009) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1019) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1019) ADC_TASK: EOC received[0m
+[0;32mI (1019) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1029) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1029) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1039) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1039) ADC_TASK: EOC received[0m
+[0;32mI (1049) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1049) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1059) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1059) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1069) ADC_TASK: EOC received[0m
+[0;32mI (1069) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1069) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1079) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1089) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1089) ADC_TASK: EOC received[0m
+[0;32mI (1089) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1099) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1099) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1109) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1109) ADC_TASK: EOC received[0m
+[0;32mI (1119) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1119) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1129) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1129) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1139) ADC_TASK: EOC received[0m
+[0;32mI (1139) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1139) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1149) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1159) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1159) ADC_TASK: EOC received[0m
+[0;32mI (1159) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1169) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1169) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1179) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1179) ADC_TASK: EOC received[0m
+[0;32mI (1189) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1189) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1199) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1199) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1209) ADC_TASK: EOC received[0m
+[0;32mI (1209) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1209) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1219) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1219) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1229) ADC_TASK: EOC received[0m
+[0;32mI (1229) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1239) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1239) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1249) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1249) ADC_TASK: EOC received[0m
+[0;32mI (1259) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1259) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1269) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1269) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1279) ADC_TASK: EOC received[0m
+[0;32mI (1279) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1279) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1289) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1289) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1299) ADC_TASK: EOC received[0m
+[0;32mI (1299) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1309) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1309) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1319) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1319) ADC_TASK: EOC received[0m
+[0;32mI (1329) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1329) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1339) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1339) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1349) ADC_TASK: EOC received[0m
+[0;32mI (1349) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1349) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1359) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1359) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1369) ADC_TASK: EOC received[0m
+[0;32mI (1369) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1379) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1379) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1389) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1389) ADC_TASK: EOC received[0m
+[0;32mI (1399) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1399) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1409) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1409) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1419) ADC_TASK: EOC received[0m
+[0;32mI (1419) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1419) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1429) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1429) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1439) ADC_TASK: EOC received[0m
+[0;32mI (1439) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1449) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1449) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1459) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1459) ADC_TASK: EOC received[0m
+[0;32mI (1469) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1469) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1469) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1479) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1489) ADC_TASK: EOC received[0m
+[0;32mI (1489) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1489) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1499) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1499) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1509) ADC_TASK: EOC received[0m
+[0;32mI (1509) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1519) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1519) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1529) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1529) ADC_TASK: EOC received[0m
+[0;32mI (1539) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1539) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1539) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1549) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1559) ADC_TASK: EOC received[0m
+[0;32mI (1559) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1559) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1569) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1569) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1579) ADC_TASK: EOC received[0m
+[0;32mI (1579) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1589) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1589) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1599) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1599) ADC_TASK: EOC received[0m
+[0;32mI (1609) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1609) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1609) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1619) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1619) ADC_TASK: EOC received[0m
+[0;32mI (1629) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1629) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1639) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1639) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1649) ADC_TASK: EOC received[0m
+[0;32mI (1649) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1659) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1659) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1669) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1669) ADC_TASK: EOC received[0m
+[0;32mI (1679) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1679) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1679) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1689) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1689) ADC_TASK: EOC received[0m
+[0;32mI (1699) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1699) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1709) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1709) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1719) ADC_TASK: EOC received[0m
+[0;32mI (1719) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1729) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1729) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1739) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1739) ADC_TASK: EOC received[0m
+[0;32mI (1739) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1749) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1749) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1759) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1759) ADC_TASK: EOC received[0m
+[0;32mI (1769) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1769) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1779) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1779) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1789) ADC_TASK: EOC received[0m
+[0;32mI (1789) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1799) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1799) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1809) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1809) ADC_TASK: EOC received[0m
+[0;32mI (1809) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1819) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1819) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1829) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1829) ADC_TASK: EOC received[0m
+[0;32mI (1839) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1839) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1849) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1849) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1859) ADC_TASK: EOC received[0m
+[0;32mI (1859) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1869) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1869) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1879) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1879) ADC_TASK: EOC received[0m
+[0;32mI (1879) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1889) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1889) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1899) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1899) ADC_TASK: EOC received[0m
+[0;32mI (1909) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1909) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1919) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1919) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1929) ADC_TASK: EOC received[0m
+[0;32mI (1929) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1939) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1939) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1949) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1949) ADC_TASK: EOC received[0m
+[0;32mI (1949) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1959) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1959) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1969) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1969) ADC_TASK: EOC received[0m
+[0;32mI (1979) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1979) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (1989) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (1989) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (1999) ADC_TASK: EOC received[0m
+[0;32mI (1999) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (1999) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2009) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2019) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2019) ADC_TASK: EOC received[0m
+[0;32mI (2019) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2029) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2029) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2039) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2039) ADC_TASK: EOC received[0m
+[0;32mI (2049) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2049) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2059) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2059) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2069) ADC_TASK: EOC received[0m
+[0;32mI (2069) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2069) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2079) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2089) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2089) ADC_TASK: EOC received[0m
+[0;32mI (2089) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2099) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2099) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2109) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2109) ADC_TASK: EOC received[0m
+[0;32mI (2119) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2119) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2129) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2129) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2139) ADC_TASK: EOC received[0m
+[0;32mI (2139) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2139) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2149) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2159) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2159) ADC_TASK: EOC received[0m
+[0;32mI (2159) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2169) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2169) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2179) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2179) ADC_TASK: EOC received[0m
+[0;32mI (2189) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2189) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2199) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2199) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2209) ADC_TASK: EOC received[0m
+[0;32mI (2209) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2209) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2219) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2229) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2229) ADC_TASK: EOC received[0m
+[0;32mI (2229) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2239) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2239) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2249) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2249) ADC_TASK: EOC received[0m
+[0;32mI (2259) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2259) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2269) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2269) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2279) ADC_TASK: EOC received[0m
+[0;32mI (2279) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2279) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2289) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2299) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2299) ADC_TASK: EOC received[0m
+[0;32mI (2299) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2309) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2309) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2319) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2319) ADC_TASK: EOC received[0m
+[0;32mI (2329) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2329) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2339) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2339) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2349) ADC_TASK: EOC received[0m
+[0;32mI (2349) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2349) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2359) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2359) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2369) ADC_TASK: EOC received[0m
+[0;32mI (2369) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2379) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2379) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2389) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2389) ADC_TASK: EOC received[0m
+[0;32mI (2399) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2399) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2409) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (2409) START: SOC pin: 0, EOC pin: 1[0m
+[0;32mI (2419) ADC_TASK: EOC received[0m
+[0;32mI (2419) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (2419) ADC_TASK: Transmitting ADC value: 0[0m
+[0;31mE (2429) uart: uart_write_bytes(1460): uart driver error[0m

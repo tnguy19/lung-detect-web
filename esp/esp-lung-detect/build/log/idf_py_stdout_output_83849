@@ -1,0 +1,2140 @@
+ject name:     lung-detect[0m
+[0;32mI (214) app_init: App ver      d333ba4-dirty[0m
+[0;32mI (220) app_init: Compile time:     Feb 24 2025 18:52:46[0m
+[0;32mI (226) app_init: ELF file SHA256:  73a433dd7...[ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7112
+load:0x40078000,len:15788
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (30) boot: ESP-IDF v5.4-dev-2744-g59e1838270 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Feb 24 2025 18:52:52[0m
+[0;32mI (32) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v1.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a428h ( 42024) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0001a450 vaddr=3ffb0000 size=02364h (  9060) load[0m
+[0;32mI (123) esp_image: segment 2: paddr=0001c7bc vaddr=40080000 size=0385ch ( 14428) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=15770h ( 87920) map[0m
+[0;32mI (164) esp_image: segment 4: paddr=00035798 vaddr=4008385c size=09638h ( 38456) load[0m
+[0;32mI (185) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (186) boot: Disabling RNG early entropy source...[0m
+[0;32mI (198) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (209) app_init: Project name:     lung-detect[0m
+[0;32mI (214) app_init: App version:      d333ba4-dirty[0m
+[0;32mI (220) app_init: Compile time:     Feb 24 2025 18:52:46[0m
+[0;32mI (226) app_init: ELF file SHA256:  73a433dd7...[0m
+[0;32mI (231) app_init: ESP-IDF:          v5.4-dev-2744-g59e1838270[0m
+[0;32mI (238) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (242) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (247) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (252) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (259) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (265) heap_init: At 3FFB2C28 len 0002D3D8 (180 KiB): DRAM[0m
+[0;32mI (272) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (278) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (284) heap_init: At 4008CE94 len 0001316C (76 KiB): IRAM[0m
+[0;32mI (292) spi_flash: detected chip: gd[0m
+[0;32mI (295) spi_flash: flash io: dio[0m
+[0;32mI (299) main_task: Started on CPU0[0m
+[0;32mI (309) main_task: Calling app_main()[0m
+[0;32mI (309) LUNG_DETECT: Initializing...[0m
+[0;32mI (309) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (319) LUNG_DETECT: Finished GPIO config[0m
+[0;32mI (319) LUNG_DETECT: Starting task functions[0m
+[0;32mI (329) SWITCH_TASK: switch task started[0m
+[0;32mI (329) ADC_TASK: adc sample task started[0m
+[0;32mI (339) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (349) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (349) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (359) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (359) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (369) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (369) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (389) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (389) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (399) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (399) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (409) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (409) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (419) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (419) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (429) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (429) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (439) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (439) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (459) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (459) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (469) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (469) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (479) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (479) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (489) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (489) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (499) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (499) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (509) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (509) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (529) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (529) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (539) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (539) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (549) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (549) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (559) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (559) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (569) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (569) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (579) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (579) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (599) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (599) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (609) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (609) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (619) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (619) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (629) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (629) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (639) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (639) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (649) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (649) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (669) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (669) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (679) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (679) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (689) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (689) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (699) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (699) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (709) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (709) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (719) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (719) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (739) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (739) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (749) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (749) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (759) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (759) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (769) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (769) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (779) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (779) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (789) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (789) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (809) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (809) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (819) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (819) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (829) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (829) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (839) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (839) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (849) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (849) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (859) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (859) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (869) LUNG_DETECT: Streaming Disabled[0m
+[0;32mI (869) CLK_TASK: clk task started[0m
+[0;32mI (869) CLK_TASK: clock hit negedge[0m
+[0;32mI (879) CLK_TASK: clock hit negedge[0m
+[0;33mW (879) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (879) CLK_TASK: clock hit negedge[0m
+[0;32mI (889) CLK_TASK: clock hit negedge[0m
+[0;32mI (889) CLK_TASK: clock hit negedge[0m
+[0;32mI (899) CLK_TASK: clock hit negedge[0m
+[0;32mI (899) CLK_TASK: clock hit negedge[0m
+[0;32mI (909) CLK_TASK: clock hit negedge[0m
+[0;32mI (909) CLK_TASK: clock hit negedge[0m
+[0;32mI (919) CLK_TASK: clock hit negedge[0m
+[0;32mI (919) CLK_TASK: clock hit negedge[0m
+[0;32mI (919) CLK_TASK: clock hit negedge[0m
+[0;32mI (929) CLK_TASK: clock hit negedge[0m
+[0;32mI (929) CLK_TASK: clock hit negedge[0m
+[0;32mI (939) CLK_TASK: clock hit negedge[0m
+[0;32mI (939) CLK_TASK: clock hit negedge[0m
+[0;32mI (939) CLK_TASK: clock hit negedge[0m
+[0;32mI (949) CLK_TASK: clock hit negedge[0m
+[0;32mI (949) CLK_TASK: clock hit negedge[0m
+[0;32mI (959) CLK_TASK: clock hit negedge[0m
+[0;32mI (959) CLK_TASK: clock hit negedge[0m
+[0;32mI (969) CLK_TASK: clock hit negedge[0m
+[0;32mI (969) CLK_TASK: clock hit negedge[0m
+[0;32mI (969) CLK_TASK: clock hit negedge[0m
+[0;32mI (979) CLK_TASK: clock hit negedge[0m
+[0;32mI (979) CLK_TASK: clock hit negedge[0m
+[0;32mI (989) CLK_TASK: clock hit negedge[0m
+[0;32mI (989) CLK_TASK: clock hit negedge[0m
+[0;32mI (989) CLK_TASK: clock hit negedge[0m
+[0;32mI (999) CLK_TASK: clock hit negedge[0m
+[0;32mI (999) CLK_TASK: clock hit negedge[0m
+[0;32mI (1009) CLK_TASK: clock hit negedge[0m
+[0;32mI (1009) CLK_TASK: clock hit negedge[0m
+[0;32mI (1019) CLK_TASK: clock hit negedge[0m
+[0;32mI (1019) CLK_TASK: clock hit negedge[0m
+[0;32mI (1019) CLK_TASK: clock hit negedge[0m
+[0;32mI (1029) CLK_TASK: clock hit negedge[0m
+[0;32mI (1029) CLK_TASK: clock hit negedge[0m
+[0;32mI (1039) CLK_TASK: clock hit negedge[0m
+[0;32mI (1039) CLK_TASK: clock hit negedge[0m
+[0;32mI (1049) CLK_TASK: clock hit negedge[0m
+[0;32mI (1049) CLK_TASK: clock hit negedge[0m
+[0;32mI (1049) CLK_TASK: clock hit negedge[0m
+[0;32mI (1059) CLK_TASK: clock hit negedge[0m
+[0;32mI (1059) CLK_TASK: clock hit negedge[0m
+[0;32mI (1069) CLK_TASK: clock hit negedge[0m
+[0;32mI (1069) CLK_TASK: clock hit negedge[0m
+[0;32mI (1079) CLK_TASK: clock hit negedge[0m
+[0;32mI (1079) CLK_TASK: clock hit negedge[0m
+[0;32mI (1079) CLK_TASK: clock hit negedge[0m
+[0;32mI (1089) CLK_TASK: clock hit negedge[0m
+[0;32mI (1089) CLK_TASK: clock hit negedge[0m
+[0;32mI (1099) CLK_TASK: clock hit negedge[0m
+[0;32mI (1099) CLK_TASK: clock hit negedge[0m
+[0;32mI (1109) CLK_TASK: clock hit negedge[0m
+[0;32mI (1109) CLK_TASK: clock hit negedge[0m
+[0;32mI (1109) CLK_TASK: clock hit negedge[0m
+[0;32mI (1119) CLK_TASK: clock hit negedge[0m
+[0;32mI (1119) CLK_TASK: clock hit negedge[0m
+[0;32mI (1129) CLK_TASK: clock hit negedge[0m
+[0;32mI (1129) CLK_TASK: clock hit negedge[0m
+[0;32mI (1129) CLK_TASK: clock hit negedge[0m
+[0;32mI (1139) CLK_TASK: clock hit negedge[0m
+[0;32mI (1139) CLK_TASK: clock hit negedge[0m
+[0;32mI (1149) CLK_TASK: clock hit negedge[0m
+[0;32mI (1149) CLK_TASK: clock hit negedge[0m
+[0;32mI (1159) CLK_TASK: clock hit negedge[0m
+[0;32mI (1159) CLK_TASK: clock hit negedge[0m
+[0;32mI (1159) CLK_TASK: clock hit negedge[0m
+[0;32mI (1169) CLK_TASK: clock hit negedge[0m
+[0;32mI (1169) CLK_TASK: clock hit negedge[0m
+[0;32mI (1179) CLK_TASK: clock hit negedge[0m
+[0;32mI (1179) CLK_TASK: clock hit negedge[0m
+[0;32mI (1189) CLK_TASK: clock hit negedge[0m
+[0;32mI (1189) CLK_TASK: clock hit negedge[0m
+[0;32mI (1189) CLK_TASK: clock hit negedge[0m
+[0;32mI (1199) CLK_TASK: clock hit negedge[0m
+[0;32mI (1199) CLK_TASK: clock hit negedge[0m
+[0;32mI (1209) CLK_TASK: clock hit negedge[0m
+[0;32mI (1209) CLK_TASK: clock hit negedge[0m
+[0;32mI (1219) CLK_TASK: clock hit negedge[0m
+[0;32mI (1219) CLK_TASK: clock hit negedge[0m
+[0;32mI (1219) CLK_TASK: clock hit negedge[0m
+[0;32mI (1229) CLK_TASK: clock hit negedge[0m
+[0;32mI (1229) CLK_TASK: clock hit negedge[0m
+[0;32mI (1239) CLK_TASK: clock hit negedge[0m
+[0;32mI (1239) CLK_TASK: clock hit negedge[0m
+[0;32mI (1249) CLK_TASK: clock hit negedge[0m
+[0;32mI (1249) CLK_TASK: clock hit negedge[0m
+[0;32mI (1249) CLK_TASK: clock hit negedge[0m
+[0;32mI (1259) CLK_TASK: clock hit negedge[0m
+[0;32mI (1259) CLK_TASK: clock hit negedge[0m
+[0;32mI (1269) CLK_TASK: clock hit negedge[0m
+[0;32mI (1269) CLK_TASK: clock hit negedge[0m
+[0;32mI (1279) CLK_TASK: clock hit negedge[0m
+[0;32mI (1279) CLK_TASK: clock hit negedge[0m
+[0;32mI (1279) CLK_TASK: clock hit negedge[0m
+[0;32mI (1289) CLK_TASK: clock hit negedge[0m
+[0;32mI (1289) CLK_TASK: clock hit negedge[0m
+[0;32mI (1299) CLK_TASK: clock hit negedge[0m
+[0;32mI (1299) CLK_TASK: clock hit negedge[0m
+[0;32mI (1309) CLK_TASK: clock hit negedge[0m
+[0;32mI (1309) CLK_TASK: clock hit negedge[0m
+[0;32mI (1309) CLK_TASK: clock hit negedge[0m
+[0;32mI (1319) CLK_TASK: clock hit negedge[0m
+[0;32mI (1319) CLK_TASK: clock hit negedge[0m
+[0;32mI (1329) CLK_TASK: clock hit negedge[0m
+[0;32mI (1329) CLK_TASK: clock hit negedge[0m
+[0;32mI (1329) CLK_TASK: clock hit negedge[0m
+[0;32mI (1339) CLK_TASK: clock hit negedge[0m
+[0;32mI (1339) CLK_TASK: clock hit negedge[0m
+[0;32mI (1349) CLK_TASK: clock hit negedge[0m
+[0;32mI (1349) CLK_TASK: clock hit negedge[0m
+[0;32mI (1359) CLK_TASK: clock hit negedge[0m
+[0;32mI (1359) CLK_TASK: clock hit negedge[0m
+[0;32mI (1359) CLK_TASK: clock hit negedge[0m
+[0;32mI (1369) CLK_TASK: clock hit negedge[0m
+[0;32mI (1369) CLK_TASK: clock hit negedge[0m
+[0;32mI (1379) CLK_TASK: clock hit negedge[0m
+[0;32mI (1379) CLK_TASK: clock hit negedge[0m
+[0;32mI (1389) CLK_TASK: clock hit negedge[0m
+[0;32mI (1389) CLK_TASK: clock hit negedge[0m
+[0;32mI (1389) CLK_TASK: clock hit negedge[0m
+[0;32mI (1399) CLK_TASK: clock hit negedge[0m
+[0;32mI (1399) CLK_TASK: clock hit negedge[0m
+[0;32mI (1409) CLK_TASK: clock hit negedge[0m
+[0;32mI (1409) CLK_TASK: clock hit negedge[0m
+[0;32mI (1419) CLK_TASK: clock hit negedge[0m
+[0;32mI (1419) CLK_TASK: clock hit negedge[0m
+[0;32mI (1419) CLK_TASK: clock hit negedge[0m
+[0;32mI (1429) CLK_TASK: clock hit negedge[0m
+[0;32mI (1429) CLK_TASK: clock hit negedge[0m
+[0;32mI (1439) CLK_TASK: clock hit negedge[0m
+[0;32mI (1439) CLK_TASK: clock hit negedge[0m
+[0;32mI (1449) CLK_TASK: clock hit negedge[0m
+[0;32mI (1449) CLK_TASK: clock hit negedge[0m
+[0;32mI (1449) CLK_TASK: clock hit negedge[0m
+[0;32mI (1459) CLK_TASK: clock hit negedge[0m
+[0;32mI (1459) CLK_TASK: clock hit negedge[0m
+[0;32mI (1469) CLK_TASK: clock hit negedge[0m
+[0;32mI (1469) CLK_TASK: clock hit negedge[0m
+[0;32mI (1479) CLK_TASK: clock hit negedge[0m
+[0;32mI (1479) CLK_TASK: clock hit negedge[0m
+[0;32mI (1479) CLK_TASK: clock hit negedge[0m
+[0;32mI (1489) CLK_TASK: clock hit negedge[0m
+[0;32mI (1489) CLK_TASK: clock hit negedge[0m
+[0;32mI (1499) CLK_TASK: clock hit negedge[0m
+[0;32mI (1499) CLK_TASK: clock hit negedge[0m
+[0;32mI (1499) CLK_TASK: clock hit negedge[0m
+[0;32mI (1509) CLK_TASK: clock hit negedge[0m
+[0;32mI (1509) CLK_TASK: clock hit negedge[0m
+[0;32mI (1519) CLK_TASK: clock hit negedge[0m
+[0;32mI (1519) CLK_TASK: clock hit negedge[0m
+[0;32mI (1529) CLK_TASK: clock hit negedge[0m
+[0;32mI (1529) CLK_TASK: clock hit negedge[0m
+[0;32mI (1529) CLK_TASK: clock hit negedge[0m
+[0;32mI (1539) CLK_TASK: clock hit negedge[0m
+[0;32mI (1539) CLK_TASK: clock hit negedge[0m
+[0;32mI (1549) CLK_TASK: clock hit negedge[0m
+[0;32mI (1549) CLK_TASK: clock hit negedge[0m
+[0;32mI (1559) CLK_TASK: clock hit negedge[0m
+[0;32mI (1559) CLK_TASK: clock hit negedge[0m
+[0;32mI (1559) CLK_TASK: clock hit negedge[0m
+[0;32mI (1569) CLK_TASK: clock hit negedge[0m
+[0;32mI (1569) CLK_TASK: clock hit negedge[0m
+[0;32mI (1579) CLK_TASK: clock hit negedge[0m
+[0;32mI (1579) CLK_TASK: clock hit negedge[0m
+[0;32mI (1589) CLK_TASK: clock hit negedge[0m
+[0;32mI (1589) CLK_TASK: clock hit negedge[0m
+[0;32mI (1589) CLK_TASK: clock hit negedge[0m
+[0;32mI (1599) CLK_TASK: clock hit negedge[0m
+[0;32mI (1599) CLK_TASK: clock hit negedge[0m
+[0;32mI (1609) CLK_TASK: clock hit negedge[0m
+[0;32mI (1609) CLK_TASK: clock hit negedge[0m
+[0;32mI (1619) CLK_TASK: clock hit negedge[0m
+[0;32mI (1619) CLK_TASK: clock hit negedge[0m
+[0;32mI (1619) CLK_TASK: clock hit negedge[0m
+[0;32mI (1629) CLK_TASK: clock hit negedge[0m
+[0;32mI (1629) CLK_TASK: clock hit negedge[0m
+[0;32mI (1639) CLK_TASK: clock hit negedge[0m
+[0;32mI (1639) CLK_TASK: clock hit negedge[0m
+[0;32mI (1649) CLK_TASK: clock hit negedge[0m
+[0;32mI (1649) CLK_TASK: clock hit negedge[0m
+[0;32mI (1649) CLK_TASK: clock hit negedge[0m
+[0;32mI (1659) CLK_TASK: clock hit negedge[0m
+[0;32mI (1659) CLK_TASK: clock hit negedge[0m
+[0;32mI (1669) CLK_TASK: clock hit negedge[0m
+[0;32mI (1669) CLK_TASK: clock hit negedge[0m
+[0;32mI (1679) CLK_TASK: clock hit negedge[0m
+[0;32mI (1679) CLK_TASK: clock hit negedge[0m
+[0;32mI (1679) CLK_TASK: clock hit negedge[0m
+[0;32mI (1689) CLK_TASK: clock hit negedge[0m
+[0;32mI (1689) CLK_TASK: clock hit negedge[0m
+[0;32mI (1699) CLK_TASK: clock hit negedge[0m
+[0;32mI (1699) CLK_TASK: clock hit negedge[0m
+[0;32mI (1699) CLK_TASK: clock hit negedge[0m
+[0;32mI (1709) CLK_TASK: clock hit negedge[0m
+[0;32mI (1709) CLK_TASK: clock hit negedge[0m
+[0;32mI (1719) CLK_TASK: clock hit negedge[0m
+[0;32mI (1719) CLK_TASK: clock hit negedge[0m
+[0;32mI (1729) CLK_TASK: clock hit negedge[0m
+[0;32mI (1729) CLK_TASK: clock hit negedge[0m
+[0;32mI (1729) CLK_TASK: clock hit negedge[0m
+[0;32mI (1739) CLK_TASK: clock hit negedge[0m
+[0;32mI (1739) CLK_TASK: clock hit negedge[0m
+[0;32mI (1749) CLK_TASK: clock hit negedge[0m
+[0;32mI (1749) CLK_TASK: clock hit negedge[0m
+[0;32mI (1759) CLK_TASK: clock hit negedge[0m
+[0;32mI (1759) CLK_TASK: clock hit negedge[0m
+[0;32mI (1759) CLK_TASK: clock hit negedge[0m
+[0;32mI (1769) CLK_TASK: clock hit negedge[0m
+[0;32mI (1769) CLK_TASK: clock hit negedge[0m
+[0;32mI (1779) CLK_TASK: clock hit negedge[0m
+[0;32mI (1779) CLK_TASK: clock hit negedge[0m
+[0;32mI (1789) LUNG_DETECT: Streaming Enabled[0m
+[0;32mI (1789) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (1789) CLK_TASK: clock hit negedge[0m
+[0;32mI (1799) CLK_TASK: clock hit negedge[0m
+[0;32mI (1799) CLK_TASK: clock hit negedge[0m
+[0;33mW (1809) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1809) CLK_TASK: clock hit negedge[0m
+[0;32mI (1809) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (1819) CLK_TASK: clock hit negedge[0m
+[0;32mI (1829) CLK_TASK: clock hit negedge[0m
+[0;32mI (1829) CLK_TASK: clock hit negedge[0m
+[0;33mW (1829) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1839) CLK_TASK: clock hit negedge[0m
+[0;32mI (1839) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (1849) CLK_TASK: clock hit negedge[0m
+[0;32mI (1849) CLK_TASK: clock hit negedge[0m
+[0;32mI (1859) CLK_TASK: clock hit negedge[0m
+[0;33mW (1859) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1859) CLK_TASK: clock hit negedge[0m
+[0;32mI (1869) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (1869) CLK_TASK: clock hit negedge[0m
+[0;32mI (1879) CLK_TASK: clock hit negedge[0m
+[0;32mI (1889) CLK_TASK: clock hit negedge[0m
+[0;33mW (1889) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1889) CLK_TASK: clock hit negedge[0m
+[0;32mI (1899) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (1899) CLK_TASK: clock hit negedge[0m
+[0;32mI (1909) CLK_TASK: clock hit negedge[0m
+[0;32mI (1909) CLK_TASK: clock hit negedge[0m
+[0;33mW (1919) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1919) CLK_TASK: clock hit negedge[0m
+[0;32mI (1919) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (1929) CLK_TASK: clock hit negedge[0m
+[0;32mI (1939) CLK_TASK: clock hit negedge[0m
+[0;32mI (1939) CLK_TASK: clock hit negedge[0m
+[0;33mW (1949) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1949) CLK_TASK: clock hit negedge[0m
+[0;32mI (1949) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (1959) CLK_TASK: clock hit negedge[0m
+[0;32mI (1969) CLK_TASK: clock hit negedge[0m
+[0;32mI (1969) CLK_TASK: clock hit negedge[0m
+[0;33mW (1969) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1969) CLK_TASK: clock hit negedge[0m
+[0;32mI (1979) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (1979) CLK_TASK: clock hit negedge[0m
+[0;32mI (1989) CLK_TASK: clock hit negedge[0m
+[0;32mI (1999) CLK_TASK: clock hit negedge[0m
+[0;33mW (1999) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1999) CLK_TASK: clock hit negedge[0m
+[0;32mI (2009) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2009) CLK_TASK: clock hit negedge[0m
+[0;32mI (2019) CLK_TASK: clock hit negedge[0m
+[0;32mI (2019) CLK_TASK: clock hit negedge[0m
+[0;33mW (2029) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2029) CLK_TASK: clock hit negedge[0m
+[0;32mI (2039) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2039) CLK_TASK: clock hit negedge[0m
+[0;32mI (2049) CLK_TASK: clock hit negedge[0m
+[0;32mI (2049) CLK_TASK: clock hit negedge[0m
+[0;33mW (2059) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2059) CLK_TASK: clock hit negedge[0m
+[0;32mI (2059) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2069) CLK_TASK: clock hit negedge[0m
+[0;32mI (2079) CLK_TASK: clock hit negedge[0m
+[0;32mI (2079) CLK_TASK: clock hit negedge[0m
+[0;33mW (2079) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2079) CLK_TASK: clock hit negedge[0m
+[0;32mI (2089) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2089) CLK_TASK: clock hit negedge[0m
+[0;32mI (2099) CLK_TASK: clock hit negedge[0m
+[0;32mI (2109) CLK_TASK: clock hit negedge[0m
+[0;33mW (2109) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2109) CLK_TASK: clock hit negedge[0m
+[0;32mI (2119) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2119) CLK_TASK: clock hit negedge[0m
+[0;32mI (2129) CLK_TASK: clock hit negedge[0m
+[0;32mI (2139) CLK_TASK: clock hit negedge[0m
+[0;33mW (2139) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2139) CLK_TASK: clock hit negedge[0m
+[0;32mI (2149) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2149) CLK_TASK: clock hit negedge[0m
+[0;32mI (2159) CLK_TASK: clock hit negedge[0m
+[0;32mI (2159) CLK_TASK: clock hit negedge[0m
+[0;33mW (2169) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2169) CLK_TASK: clock hit negedge[0m
+[0;32mI (2169) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2179) CLK_TASK: clock hit negedge[0m
+[0;32mI (2189) CLK_TASK: clock hit negedge[0m
+[0;32mI (2189) CLK_TASK: clock hit negedge[0m
+[0;33mW (2189) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2199) CLK_TASK: clock hit negedge[0m
+[0;32mI (2199) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2209) CLK_TASK: clock hit negedge[0m
+[0;32mI (2209) CLK_TASK: clock hit negedge[0m
+[0;32mI (2219) CLK_TASK: clock hit negedge[0m
+[0;33mW (2219) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2219) CLK_TASK: clock hit negedge[0m
+[0;32mI (2229) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2229) CLK_TASK: clock hit negedge[0m
+[0;32mI (2239) CLK_TASK: clock hit negedge[0m
+[0;32mI (2249) CLK_TASK: clock hit negedge[0m
+[0;33mW (2249) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2249) CLK_TASK: clock hit negedge[0m
+[0;32mI (2259) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2259) CLK_TASK: clock hit negedge[0m
+[0;32mI (2269) CLK_TASK: clock hit negedge[0m
+[0;32mI (2269) CLK_TASK: clock hit negedge[0m
+[0;33mW (2279) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2279) CLK_TASK: clock hit negedge[0m
+[0;32mI (2279) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2289) CLK_TASK: clock hit negedge[0m
+[0;32mI (2299) CLK_TASK: clock hit negedge[0m
+[0;32mI (2299) CLK_TASK: clock hit negedge[0m
+[0;33mW (2309) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2309) CLK_TASK: clock hit negedge[0m
+[0;32mI (2309) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2319) CLK_TASK: clock hit negedge[0m
+[0;32mI (2329) CLK_TASK: clock hit negedge[0m
+[0;32mI (2329) CLK_TASK: clock hit negedge[0m
+[0;33mW (2329) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2329) CLK_TASK: clock hit negedge[0m
+[0;32mI (2339) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2339) CLK_TASK: clock hit negedge[0m
+[0;32mI (2349) CLK_TASK: clock hit negedge[0m
+[0;32mI (2359) CLK_TASK: clock hit negedge[0m
+[0;33mW (2359) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2359) CLK_TASK: clock hit negedge[0m
+[0;32mI (2369) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2369) CLK_TASK: clock hit negedge[0m
+[0;32mI (2379) CLK_TASK: clock hit negedge[0m
+[0;32mI (2379) CLK_TASK: clock hit negedge[0m
+[0;33mW (2389) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2389) CLK_TASK: clock hit negedge[0m
+[0;32mI (2399) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2399) CLK_TASK: clock hit negedge[0m
+[0;32mI (2409) CLK_TASK: clock hit negedge[0m
+[0;32mI (2409) CLK_TASK: clock hit negedge[0m
+[0;33mW (2419) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2419) CLK_TASK: clock hit negedge[0m
+[0;32mI (2419) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2429) CLK_TASK: clock hit negedge[0m
+[0;32mI (2439) CLK_TASK: clock hit negedge[0m
+[0;32mI (2439) CLK_TASK: clock hit negedge[0m
+[0;33mW (2439) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2439) CLK_TASK: clock hit negedge[0m
+[0;32mI (2449) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2449) CLK_TASK: clock hit negedge[0m
+[0;32mI (2459) CLK_TASK: clock hit negedge[0m
+[0;32mI (2469) CLK_TASK: clock hit negedge[0m
+[0;33mW (2469) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2469) CLK_TASK: clock hit negedge[0m
+[0;32mI (2479) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2479) CLK_TASK: clock hit negedge[0m
+[0;32mI (2489) CLK_TASK: clock hit negedge[0m
+[0;32mI (2499) CLK_TASK: clock hit negedge[0m
+[0;33mW (2499) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2499) CLK_TASK: clock hit negedge[0m
+[0;32mI (2509) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2509) CLK_TASK: clock hit negedge[0m
+[0;32mI (2519) CLK_TASK: clock hit negedge[0m
+[0;32mI (2519) CLK_TASK: clock hit negedge[0m
+[0;33mW (2529) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2529) CLK_TASK: clock hit negedge[0m
+[0;32mI (2529) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2539) CLK_TASK: clock hit negedge[0m
+[0;32mI (2549) CLK_TASK: clock hit negedge[0m
+[0;32mI (2549) CLK_TASK: clock hit negedge[0m
+[0;33mW (2549) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2559) CLK_TASK: clock hit negedge[0m
+[0;32mI (2559) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2569) CLK_TASK: clock hit negedge[0m
+[0;32mI (2569) CLK_TASK: clock hit negedge[0m
+[0;32mI (2579) CLK_TASK: clock hit negedge[0m
+[0;33mW (2579) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2579) CLK_TASK: clock hit negedge[0m
+[0;32mI (2589) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2589) CLK_TASK: clock hit negedge[0m
+[0;32mI (2599) CLK_TASK: clock hit negedge[0m
+[0;32mI (2609) CLK_TASK: clock hit negedge[0m
+[0;33mW (2609) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2609) CLK_TASK: clock hit negedge[0m
+[0;32mI (2619) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2619) CLK_TASK: clock hit negedge[0m
+[0;32mI (2629) CLK_TASK: clock hit negedge[0m
+[0;32mI (2629) CLK_TASK: clock hit negedge[0m
+[0;33mW (2639) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2639) CLK_TASK: clock hit negedge[0m
+[0;32mI (2639) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2649) CLK_TASK: clock hit negedge[0m
+[0;32mI (2659) CLK_TASK: clock hit negedge[0m
+[0;32mI (2659) CLK_TASK: clock hit negedge[0m
+[0;33mW (2669) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2669) CLK_TASK: clock hit negedge[0m
+[0;32mI (2669) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (2679) CLK_TASK: clock hit negedge[0m
+[0;32mI (2689) CLK_TASK: clock hit negedge[0m
+[0;32mI (2689) CLK_TASK: clock hit negedge[0m
+[0;33mW (2689) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (2689) CLK_TASK: clock hit negedge[0m
+[0;32mI (2699) LUNG_DETECT: Streaming Disabled[0m
+[0;32mI (2699) CLK_TASK: clock hit negedge[0m
+[0;32mI (2709) CLK_TASK: clock hit negedge[0m
+[0;32mI (2719) CLK_TASK: clock hit negedge[0m
+[0;32mI (2719) CLK_TASK: clock hit negedge[0m
+[0;32mI (2729) CLK_TASK: clock hit negedge[0m
+[0;32mI (2729) CLK_TASK: clock hit negedge[0m
+[0;32mI (2729) CLK_TASK: clock hit negedge[0m
+[0;32mI (2739) CLK_TASK: clock hit negedge[0m
+[0;32mI (2739) CLK_TASK: clock hit negedge[0m
+[0;32mI (2749) CLK_TASK: clock hit negedge[0m
+[0;32mI (2749) CLK_TASK: clock hit negedge[0m
+[0;32mI (2759) CLK_TASK: clock hit negedge[0m
+[0;32mI (2759) CLK_TASK: clock hit negedge[0m
+[0;32mI (2759) CLK_TASK: clock hit negedge[0m
+[0;32mI (2769) CLK_TASK: clock hit negedge[0m
+[0;32mI (2769) CLK_TASK: clock hit negedge[0m
+[0;32mI (2779) CLK_TASK: clock hit negedge[0m
+[0;32mI (2779) CLK_TASK: clock hit negedge[0m
+[0;32mI (2789) CLK_TASK: clock hit negedge[0m
+[0;32mI (2789) CLK_TASK: clock hit negedge[0m
+[0;32mI (2789) CLK_TASK: clock hit negedge[0m
+[0;32mI (2799) CLK_TASK: clock hit negedge[0m
+[0;32mI (2799) CLK_TASK: clock hit negedge[0m
+[0;32mI (2809) CLK_TASK: clock hit negedge[0m
+[0;32mI (2809) CLK_TASK: clock hit negedge[0m
+[0;32mI (2809) CLK_TASK: clock hit negedge[0m
+[0;32mI (2819) CLK_TASK: clock hit negedge[0m
+[0;32mI (2819) CLK_TASK: clock hit negedge[0m
+[0;32mI (2829) CLK_TASK: clock hit negedge[0m
+[0;32mI (2829) CLK_TASK: clock hit negedge[0m
+[0;32mI (2839) CLK_TASK: clock hit negedge[0m
+[0;32mI (2839) CLK_TASK: clock hit negedge[0m
+[0;32mI (2839) CLK_TASK: clock hit negedge[0m
+[0;32mI (2849) CLK_TASK: clock hit negedge[0m
+[0;32mI (2849) CLK_TASK: clock hit negedge[0m
+[0;32mI (2859) CLK_TASK: clock hit negedge[0m
+[0;32mI (2859) CLK_TASK: clock hit negedge[0m
+[0;32mI (2869) CLK_TASK: clock hit negedge[0m
+[0;32mI (2869) CLK_TASK: clock hit negedge[0m
+[0;32mI (2869) CLK_TASK: clock hit negedge[0m
+[0;32mI (2879) CLK_TASK: clock hit negedge[0m
+[0;32mI (2879) CLK_TASK: clock hit negedge[0m
+[0;32mI (2889) CLK_TASK: clock hit negedge[0m
+[0;32mI (2889) CLK_TASK: clock hit negedge[0m
+[0;32mI (2899) CLK_TASK: clock hit negedge[0m
+[0;32mI (2899) CLK_TASK: clock hit negedge[0m
+[0;32mI (2899) CLK_TASK: clock hit negedge[0m
+[0;32mI (2909) CLK_TASK: clock hit negedge[0m
+[0;32mI (2909) CLK_TASK: clock hit negedge[0m
+[0;32mI (2919) CLK_TASK: clock hit negedge[0m
+[0;32mI (2919) CLK_TASK: clock hit negedge[0m
+[0;32mI (2929) CLK_TASK: clock hit negedge[0m
+[0;32mI (2929) CLK_TASK: clock hit negedge[0m
+[0;32mI (2929) CLK_TASK: clock hit negedge[0m
+[0;32mI (2939) CLK_TASK: clock hit negedge[0m
+[0;32mI (2939) CLK_TASK: clock hit negedge[0m
+[0;32mI (2949) CLK_TASK: clock hit negedge[0m
+[0;32mI (2949) CLK_TASK: clock hit negedge[0m
+[0;32mI (2959) CLK_TASK: clock hit negedge[0m
+[0;32mI (2959) CLK_TASK: clock hit negedge[0m
+[0;32mI (2959) CLK_TASK: clock hit negedge[0m
+[0;32mI (2969) CLK_TASK: clock hit negedge[0m
+[0;32mI (2969) CLK_TASK: clock hit negedge[0m
+[0;32mI (2979) CLK_TASK: clock hit negedge[0m
+[0;32mI (2979) CLK_TASK: clock hit negedge[0m
+[0;32mI (2989) CLK_TASK: clock hit negedge[0m
+[0;32mI (2989) CLK_TASK: clock hit negedge[0m
+[0;32mI (2989) CLK_TASK: clock hit negedge[0m
+[0;32mI (2999) CLK_TASK: clock hit negedge[0m
+[0;32mI (2999) CLK_TASK: clock hit negedge[0m
+[0;32mI (3009) CLK_TASK: clock hit negedge[0m
+[0;32mI (3009) CLK_TASK: clock hit negedge[0m
+[0;32mI (3009) CLK_TASK: clock hit negedge[0m
+[0;32mI (3019) CLK_TASK: clock hit negedge[0m
+[0;32mI (3019) CLK_TASK: clock hit negedge[0m
+[0;32mI (3029) CLK_TASK: clock hit negedge[0m
+[0;32mI (3029) CLK_TASK: clock hit negedge[0m
+[0;32mI (3039) CLK_TASK: clock hit negedge[0m
+[0;32mI (3039) CLK_TASK: clock hit negedge[0m
+[0;32mI (3039) CLK_TASK: clock hit negedge[0m
+[0;32mI (3049) CLK_TASK: clock hit negedge[0m
+[0;32mI (3049) CLK_TASK: clock hit negedge[0m
+[0;32mI (3059) CLK_TASK: clock hit negedge[0m
+[0;32mI (3059) CLK_TASK: clock hit negedge[0m
+[0;32mI (3069) CLK_TASK: clock hit negedge[0m
+[0;32mI (3069) CLK_TASK: clock hit negedge[0m
+[0;32mI (3069) CLK_TASK: clock hit negedge[0m
+[0;32mI (3079) CLK_TASK: clock hit negedge[0m
+[0;32mI (3079) CLK_TASK: clock hit negedge[0m
+[0;32mI (3089) CLK_TASK: clock hit negedge[0m
+[0;32mI (3089) CLK_TASK: clock hit negedge[0m
+[0;32mI (3099) CLK_TASK: clock hit negedge[0m
+[0;32mI (3099) CLK_TASK: clock hit negedge[0m
+[0;32mI (3099) CLK_TASK: clock hit negedge[0m
+[0;32mI (3109) CLK_TASK: clock hit negedge[0m
+[0;32mI (3109) CLK_TASK: clock hit negedge[0m
+[0;32mI (3119) CLK_TASK: clock hit negedge[0m
+[0;32mI (3119) CLK_TASK: clock hit negedge[0m
+[0;32mI (3129) CLK_TASK: clock hit negedge[0m
+[0;32mI (3129) CLK_TASK: clock hit negedge[0m
+[0;32mI (3129) CLK_TASK: clock hit negedge[0m
+[0;32mI (3139) CLK_TASK: clock hit negedge[0m
+[0;32mI (3139) CLK_TASK: clock hit negedge[0m
+[0;32mI (3149) CLK_TASK: clock hit negedge[0m
+[0;32mI (3149) CLK_TASK: clock hit negedge[0m
+[0;32mI (3159) CLK_TASK: clock hit negedge[0m
+[0;32mI (3159) CLK_TASK: clock hit negedge[0m
+[0;32mI (3159) CLK_TASK: clock hit negedge[0m
+[0;32mI (3169) CLK_TASK: clock hit negedge[0m
+[0;32mI (3169) CLK_TASK: clock hit negedge[0m
+[0;32mI (3179) CLK_TASK: clock hit negedge[0m
+[0;32mI (3179) CLK_TASK: clock hit negedge[0m
+[0;32mI (3189) CLK_TASK: clock hit negedge[0m
+[0;32mI (3189) CLK_TASK: clock hit negedge[0m
+[0;32mI (3189) CLK_TASK: clock hit negedge[0m
+[0;32mI (3199) CLK_TASK: clock hit negedge[0m
+[0;32mI (3199) CLK_TASK: clock hit negedge[0m
+[0;32mI (3209) CLK_TASK: clock hit negedge[0m
+[0;32mI (3209) CLK_TASK: clock hit negedge[0m
+[0;32mI (3209) CLK_TASK: clock hit negedge[0m
+[0;32mI (3219) CLK_TASK: clock hit negedge[0m
+[0;32mI (3219) CLK_TASK: clock hit negedge[0m
+[0;32mI (3229) CLK_TASK: clock hit negedge[0m
+[0;32mI (3229) CLK_TASK: clock hit negedge[0m
+[0;32mI (3239) CLK_TASK: clock hit negedge[0m
+[0;32mI (3239) CLK_TASK: clock hit negedge[0m
+[0;32mI (3239) CLK_TASK: clock hit negedge[0m
+[0;32mI (3249) CLK_TASK: clock hit negedge[0m
+[0;32mI (3249) CLK_TASK: clock hit negedge[0m
+[0;32mI (3259) CLK_TASK: clock hit negedge[0m
+[0;32mI (3259) CLK_TASK: clock hit negedge[0m
+[0;32mI (3269) CLK_TASK: clock hit negedge[0m
+[0;32mI (3269) CLK_TASK: clock hit negedge[0m
+[0;32mI (3269) CLK_TASK: clock hit negedge[0m
+[0;32mI (3279) CLK_TASK: clock hit negedge[0m
+[0;32mI (3279) CLK_TASK: clock hit negedge[0m
+[0;32mI (3289) CLK_TASK: clock hit negedge[0m
+[0;32mI (3289) CLK_TASK: clock hit negedge[0m
+[0;32mI (3299) CLK_TASK: clock hit negedge[0m
+[0;32mI (3299) CLK_TASK: clock hit negedge[0m
+[0;32mI (3299) CLK_TASK: clock hit negedge[0m
+[0;32mI (3309) CLK_TASK: clock hit negedge[0m
+[0;32mI (3309) CLK_TASK: clock hit negedge[0m
+[0;32mI (3319) CLK_TASK: clock hit negedge[0m
+[0;32mI (3319) CLK_TASK: clock hit negedge[0m
+[0;32mI (3329) CLK_TASK: clock hit negedge[0m
+[0;32mI (3329) CLK_TASK: clock hit negedge[0m
+[0;32mI (3329) CLK_TASK: clock hit negedge[0m
+[0;32mI (3339) CLK_TASK: clock hit negedge[0m
+[0;32mI (3339) CLK_TASK: clock hit negedge[0m
+[0;32mI (3349) CLK_TASK: clock hit negedge[0m
+[0;32mI (3349) CLK_TASK: clock hit negedge[0m
+[0;32mI (3359) CLK_TASK: clock hit negedge[0m
+[0;32mI (3359) CLK_TASK: clock hit negedge[0m
+[0;32mI (3359) CLK_TASK: clock hit negedge[0m
+[0;32mI (3369) CLK_TASK: clock hit negedge[0m
+[0;32mI (3369) CLK_TASK: clock hit negedge[0m
+[0;32mI (3379) CLK_TASK: clock hit negedge[0m
+[0;32mI (3379) CLK_TASK: clock hit negedge[0m
+[0;32mI (3379) CLK_TASK: clock hit negedge[0m
+[0;32mI (3389) CLK_TASK: clock hit negedge[0m
+[0;32mI (3389) CLK_TASK: clock hit negedge[0m
+[0;32mI (3399) CLK_TASK: clock hit negedge[0m
+[0;32mI (3399) CLK_TASK: clock hit negedge[0m
+[0;32mI (3409) CLK_TASK: clock hit negedge[0m
+[0;32mI (3409) CLK_TASK: clock hit negedge[0m
+[0;32mI (3409) CLK_TASK: clock hit negedge[0m
+[0;32mI (3419) CLK_TASK: clock hit negedge[0m
+[0;32mI (3419) CLK_TASK: clock hit negedge[0m
+[0;32mI (3429) CLK_TASK: clock hit negedge[0m
+[0;32mI (3429) CLK_TASK: clock hit negedge[0m
+[0;32mI (3439) CLK_TASK: clock hit negedge[0m
+[0;32mI (3439) CLK_TASK: clock hit negedge[0m
+[0;32mI (3439) CLK_TASK: clock hit negedge[0m
+[0;32mI (3449) CLK_TASK: clock hit negedge[0m
+[0;32mI (3449) CLK_TASK: clock hit negedge[0m
+[0;32mI (3459) CLK_TASK: clock hit negedge[0m
+[0;32mI (3459) CLK_TASK: clock hit negedge[0m
+[0;32mI (3469) CLK_TASK: clock hit negedge[0m
+[0;32mI (3469) CLK_TASK: clock hit negedge[0m
+[0;32mI (3469) CLK_TASK: clock hit negedge[0m
+[0;32mI (3479) CLK_TASK: clock hit negedge[0m
+[0;32mI (3479) CLK_TASK: clock hit negedge[0m
+[0;32mI (3489) CLK_TASK: clock hit negedge[0m
+[0;32mI (3489) CLK_TASK: clock hit negedge[0m
+[0;32mI (3499) CLK_TASK: clock hit negedge[0m
+[0;32mI (3499) CLK_TASK: clock hit negedge[0m
+[0;32mI (3499) CLK_TASK: clock hit negedge[0m
+[0;32mI (3509) CLK_TASK: clock hit negedge[0m
+[0;32mI (3509) CLK_TASK: clock hit negedge[0m
+[0;32mI (3519) CLK_TASK: clock hit negedge[0m
+[0;32mI (3519) CLK_TASK: clock hit negedge[0m
+[0;32mI (3529) CLK_TASK: clock hit negedge[0m
+[0;32mI (3529) CLK_TASK: clock hit negedge[0m
+[0;32mI (3529) CLK_TASK: clock hit negedge[0m
+[0;32mI (3539) CLK_TASK: clock hit negedge[0m
+[0;32mI (3539) CLK_TASK: clock hit negedge[0m
+[0;32mI (3549) CLK_TASK: clock hit negedge[0m
+[0;32mI (3549) CLK_TASK: clock hit negedge[0m
+[0;32mI (3559) CLK_TASK: clock hit negedge[0m
+[0;32mI (3559) CLK_TASK: clock hit negedge[0m
+[0;32mI (3559) CLK_TASK: clock hit negedge[0m
+[0;32mI (3569) LUNG_DETECT: Streaming Enabled[0m
+[0;32mI (3569) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (3569) CLK_TASK: clock hit negedge[0m
+[0;32mI (3579) CLK_TASK: clock hit negedge[0m
+[0;32mI (3589) CLK_TASK: clock hit negedge[0m
+[0;33mW (3589) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (3589) CLK_TASK: clock hit negedge[0m
+[0;32mI (3599) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (3599) CLK_TASK: clock hit negedge[0m
+[0;32mI (3609) CLK_TASK: clock hit negedge[0m
+[0;32mI (3609) CLK_TASK: clock hit negedge[0m
+[0;33mW (3619) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (3619) CLK_TASK: clock hit negedge[0m
+[0;32mI (3619) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (3629) CLK_TASK: clock hit negedge[0m
+[0;32mI (3639) CLK_TASK: clock hit negedge[0m
+[0;32mI (3639) CLK_TASK: clock hit negedge[0m
+[0;33mW (3639) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (3639) CLK_TASK: clock hit negedge[0m
+[0;32mI (3649) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (3659) CLK_TASK: clock hit negedge[0m
+[0;32mI (3659) CLK_TASK: clock hit negedge[0m
+[0;32mI (3669) CLK_TASK: clock hit negedge[0m
+[0;33mW (3669) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (3669) CLK_TASK: clock hit negedge[0m
+[0;32mI (3679) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (3679) CLK_TASK: clock hit negedge[0m
+[0;32mI (3689) CLK_TASK: clock hit negedge[0m
+[0;32mI (3699) CLK_TASK: clock hit negedge[0m
+[0;33mW (3699) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (3699) CLK_TASK: clock hit negedge[0m
+[0;32mI (3709) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (3709) CLK_TASK: clock hit negedge[0m
+[0;32mI (3719) CLK_TASK: clock hit negedge[0m
+[0;32mI (3719) CLK_TASK: clock hit negedge[0m
+[0;33mW (3729) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (3729) CLK_TASK: clock hit negedge[0m
+[0;32mI (3729) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (3739) CLK_TASK: clock hit negedge[0m
+[0;32mI (3749) CLK_TASK: clock hit negedge[0m
+[0;32mI (3749) CLK_TASK: clock hit negedge[0m
+[0;33mW (3749) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (3759) CLK_TASK: clock hit negedge[0m
+[0;32mI (3759) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (3769) CLK_TASK: clock hit negedge[0m
+[0;32mI (3769) CLK_TASK: clock hit negedge[0m
+[0;32mI (3779) CLK_TASK: clock hit negedge[0m
+[0;33mW (3779) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (3779) CLK_TASK: clock hit negedge[0m
+[0;32mI (3789) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (3789) CLK_TASK: clock hit negedge[0m
+[0;32mI (3799) CLK_TASK: clock hit negedge[0m
+[0;32mI (3809) CLK_TASK: clock hit negedge[0m
+[0;33mW (3809) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (3809) CLK_TASK: clock hit negedge[0m
+[0;32mI (3819) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (3819) CLK_TASK: clock hit negedge[0m
+[0;32mI (3829) CLK_TASK: clock hit negedge[0m
+[0;32mI (3829) CLK_TASK: clock hit negedge[0m
+[0;33mW (3839) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (3839) CLK_TASK: clock hit negedge[0m
+[0;32mI (3839) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (3849) CLK_TASK: clock hit negedge[0m
+[0;32mI (3859) CLK_TASK: clock hit negedge[0m
+[0;32mI (3859) CLK_TASK: clock hit negedge[0m
+[0;33mW (3869) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (3869) CLK_TASK: clock hit negedge[0m
+[0;32mI (3869) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (3879) CLK_TASK: clock hit negedge[0m
+[0;32mI (3889) CLK_TASK: clock hit negedge[0m
+[0;32mI (3889) CLK_TASK: clock hit negedge[0m
+[0;33mW (3889) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (3889) CLK_TASK: clock hit negedge[0m
+[0;32mI (3899) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (3899) CLK_TASK: clock hit negedge[0m
+[0;32mI (3909) CLK_TASK: clock hit negedge[0m
+[0;32mI (3919) CLK_TASK: clock hit negedge[0m
+[0;33mW (3919) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (3919) CLK_TASK: clock hit negedge[0m
+[0;32mI (3929) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (3929) CLK_TASK: clock hit negedge[0m
+[0;32mI (3939) CLK_TASK: clock hit negedge[0m
+[0;32mI (3949) CLK_TASK: clock hit negedge[0m
+[0;33mW (3949) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (3949) CLK_TASK: clock hit negedge[0m
+[0;32mI (3959) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (3959) CLK_TASK: clock hit negedge[0m
+[0;32mI (3969) CLK_TASK: clock hit negedge[0m
+[0;32mI (3969) CLK_TASK: clock hit negedge[0m
+[0;33mW (3979) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (3979) CLK_TASK: clock hit negedge[0m
+[0;32mI (3979) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (3989) CLK_TASK: clock hit negedge[0m
+[0;32mI (3999) CLK_TASK: clock hit negedge[0m
+[0;32mI (3999) CLK_TASK: clock hit negedge[0m
+[0;33mW (3999) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (3999) CLK_TASK: clock hit negedge[0m
+[0;32mI (4009) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4019) CLK_TASK: clock hit negedge[0m
+[0;32mI (4019) CLK_TASK: clock hit negedge[0m
+[0;32mI (4029) CLK_TASK: clock hit negedge[0m
+[0;33mW (4029) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4029) CLK_TASK: clock hit negedge[0m
+[0;32mI (4039) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4039) CLK_TASK: clock hit negedge[0m
+[0;32mI (4049) CLK_TASK: clock hit negedge[0m
+[0;32mI (4059) CLK_TASK: clock hit negedge[0m
+[0;33mW (4059) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4059) CLK_TASK: clock hit negedge[0m
+[0;32mI (4069) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4069) CLK_TASK: clock hit negedge[0m
+[0;32mI (4079) CLK_TASK: clock hit negedge[0m
+[0;32mI (4079) CLK_TASK: clock hit negedge[0m
+[0;33mW (4089) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4089) CLK_TASK: clock hit negedge[0m
+[0;32mI (4089) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4099) CLK_TASK: clock hit negedge[0m
+[0;32mI (4109) CLK_TASK: clock hit negedge[0m
+[0;32mI (4109) CLK_TASK: clock hit negedge[0m
+[0;33mW (4109) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4119) CLK_TASK: clock hit negedge[0m
+[0;32mI (4119) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4129) CLK_TASK: clock hit negedge[0m
+[0;32mI (4129) CLK_TASK: clock hit negedge[0m
+[0;32mI (4139) CLK_TASK: clock hit negedge[0m
+[0;33mW (4139) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4139) CLK_TASK: clock hit negedge[0m
+[0;32mI (4149) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4149) CLK_TASK: clock hit negedge[0m
+[0;32mI (4159) CLK_TASK: clock hit negedge[0m
+[0;32mI (4169) CLK_TASK: clock hit negedge[0m
+[0;33mW (4169) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4169) CLK_TASK: clock hit negedge[0m
+[0;32mI (4179) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4179) CLK_TASK: clock hit negedge[0m
+[0;32mI (4189) CLK_TASK: clock hit negedge[0m
+[0;32mI (4189) CLK_TASK: clock hit negedge[0m
+[0;33mW (4199) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4199) CLK_TASK: clock hit negedge[0m
+[0;32mI (4199) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4209) CLK_TASK: clock hit negedge[0m
+[0;32mI (4219) CLK_TASK: clock hit negedge[0m
+[0;32mI (4219) CLK_TASK: clock hit negedge[0m
+[0;33mW (4229) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4229) CLK_TASK: clock hit negedge[0m
+[0;32mI (4229) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4239) CLK_TASK: clock hit negedge[0m
+[0;32mI (4249) CLK_TASK: clock hit negedge[0m
+[0;32mI (4249) CLK_TASK: clock hit negedge[0m
+[0;33mW (4249) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4249) CLK_TASK: clock hit negedge[0m
+[0;32mI (4259) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4259) CLK_TASK: clock hit negedge[0m
+[0;32mI (4269) CLK_TASK: clock hit negedge[0m
+[0;32mI (4279) CLK_TASK: clock hit negedge[0m
+[0;33mW (4279) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4279) CLK_TASK: clock hit negedge[0m
+[0;32mI (4289) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4289) CLK_TASK: clock hit negedge[0m
+[0;32mI (4299) CLK_TASK: clock hit negedge[0m
+[0;32mI (4309) CLK_TASK: clock hit negedge[0m
+[0;33mW (4309) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4309) CLK_TASK: clock hit negedge[0m
+[0;32mI (4319) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4319) CLK_TASK: clock hit negedge[0m
+[0;32mI (4329) CLK_TASK: clock hit negedge[0m
+[0;32mI (4329) CLK_TASK: clock hit negedge[0m
+[0;33mW (4339) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4339) CLK_TASK: clock hit negedge[0m
+[0;32mI (4339) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4349) CLK_TASK: clock hit negedge[0m
+[0;32mI (4359) CLK_TASK: clock hit negedge[0m
+[0;32mI (4359) CLK_TASK: clock hit negedge[0m
+[0;33mW (4359) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4359) CLK_TASK: clock hit negedge[0m
+[0;32mI (4369) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4379) CLK_TASK: clock hit negedge[0m
+[0;32mI (4379) CLK_TASK: clock hit negedge[0m
+[0;32mI (4389) CLK_TASK: clock hit negedge[0m
+[0;33mW (4389) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4389) CLK_TASK: clock hit negedge[0m
+[0;32mI (4399) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4399) CLK_TASK: clock hit negedge[0m
+[0;32mI (4409) CLK_TASK: clock hit negedge[0m
+[0;32mI (4419) CLK_TASK: clock hit negedge[0m
+[0;33mW (4419) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4419) CLK_TASK: clock hit negedge[0m
+[0;32mI (4429) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4429) CLK_TASK: clock hit negedge[0m
+[0;32mI (4439) CLK_TASK: clock hit negedge[0m
+[0;32mI (4439) CLK_TASK: clock hit negedge[0m
+[0;33mW (4449) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4449) CLK_TASK: clock hit negedge[0m
+[0;32mI (4449) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4459) CLK_TASK: clock hit negedge[0m
+[0;32mI (4469) CLK_TASK: clock hit negedge[0m
+[0;32mI (4469) CLK_TASK: clock hit negedge[0m
+[0;33mW (4469) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4479) CLK_TASK: clock hit negedge[0m
+[0;32mI (4479) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4489) CLK_TASK: clock hit negedge[0m
+[0;32mI (4489) CLK_TASK: clock hit negedge[0m
+[0;32mI (4499) CLK_TASK: clock hit negedge[0m
+[0;33mW (4499) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4499) CLK_TASK: clock hit negedge[0m
+[0;32mI (4509) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4509) CLK_TASK: clock hit negedge[0m
+[0;32mI (4519) CLK_TASK: clock hit negedge[0m
+[0;32mI (4529) CLK_TASK: clock hit negedge[0m
+[0;33mW (4529) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4529) CLK_TASK: clock hit negedge[0m
+[0;32mI (4539) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4539) CLK_TASK: clock hit negedge[0m
+[0;32mI (4549) CLK_TASK: clock hit negedge[0m
+[0;32mI (4549) CLK_TASK: clock hit negedge[0m
+[0;33mW (4559) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4559) CLK_TASK: clock hit negedge[0m
+[0;32mI (4559) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4569) CLK_TASK: clock hit negedge[0m
+[0;32mI (4579) CLK_TASK: clock hit negedge[0m
+[0;32mI (4579) CLK_TASK: clock hit negedge[0m
+[0;33mW (4589) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4589) CLK_TASK: clock hit negedge[0m
+[0;32mI (4589) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (4599) CLK_TASK: clock hit negedge[0m
+[0;32mI (4609) LUNG_DETECT: Streaming Disabled[0m
+[0;32mI (4609) CLK_TASK: clock hit negedge[0m
+[0;33mW (4609) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (4609) CLK_TASK: clock hit negedge[0m
+[0;32mI (4619) CLK_TASK: clock hit negedge[0m
+[0;32mI (4629) CLK_TASK: clock hit negedge[0m
+[0;32mI (4629) CLK_TASK: clock hit negedge[0m
+[0;32mI (4639) CLK_TASK: clock hit negedge[0m
+[0;32mI (4639) CLK_TASK: clock hit negedge[0m
+[0;32mI (4649) CLK_TASK: clock hit negedge[0m
+[0;32mI (4649) CLK_TASK: clock hit negedge[0m
+[0;32mI (4649) CLK_TASK: clock hit negedge[0m
+[0;32mI (4659) CLK_TASK: clock hit negedge[0m
+[0;32mI (4659) CLK_TASK: clock hit negedge[0m
+[0;32mI (4669) CLK_TASK: clock hit negedge[0m
+[0;32mI (4669) CLK_TASK: clock hit negedge[0m
+[0;32mI (4679) CLK_TASK: clock hit negedge[0m
+[0;32mI (4679) CLK_TASK: clock hit negedge[0m
+[0;32mI (4679) CLK_TASK: clock hit negedge[0m
+[0;32mI (4689) CLK_TASK: clock hit negedge[0m
+[0;32mI (4689) CLK_TASK: clock hit negedge[0m
+[0;32mI (4699) CLK_TASK: clock hit negedge[0m
+[0;32mI (4699) CLK_TASK: clock hit negedge[0m
+[0;32mI (4709) CLK_TASK: clock hit negedge[0m
+[0;32mI (4709) CLK_TASK: clock hit negedge[0m
+[0;32mI (4709) CLK_TASK: clock hit negedge[0m
+[0;32mI (4719) CLK_TASK: clock hit negedge[0m
+[0;32mI (4719) CLK_TASK: clock hit negedge[0m
+[0;32mI (4729) CLK_TASK: clock hit negedge[0m
+[0;32mI (4729) CLK_TASK: clock hit negedge[0m
+[0;32mI (4739) CLK_TASK: clock hit negedge[0m
+[0;32mI (4739) CLK_TASK: clock hit negedge[0m
+[0;32mI (4739) CLK_TASK: clock hit negedge[0m
+[0;32mI (4749) CLK_TASK: clock hit negedge[0m
+[0;32mI (4749) CLK_TASK: clock hit negedge[0m
+[0;32mI (4759) CLK_TASK: clock hit negedge[0m
+[0;32mI (4759) CLK_TASK: clock hit negedge[0m
+[0;32mI (4769) CLK_TASK: clock hit negedge[0m
+[0;32mI (4769) CLK_TASK: clock hit negedge[0m
+[0;32mI (4769) CLK_TASK: clock hit negedge[0m
+[0;32mI (4779) CLK_TASK: clock hit negedge[0m
+[0;32mI (4779) CLK_TASK: clock hit negedge[0m
+[0;32mI (4789) CLK_TASK: clock hit negedge[0m
+[0;32mI (4789) CLK_TASK: clock hit negedge[0m
+[0;32mI (4799) CLK_TASK: clock hit negedge[0m
+[0;32mI (4799) CLK_TASK: clock hit negedge[0m
+[0;32mI (4799) CLK_TASK: clock hit negedge[0m
+[0;32mI (4809) CLK_TASK: clock hit negedge[0m
+[0;32mI (4809) CLK_TASK: clock hit negedge[0m
+[0;32mI (4819) CLK_TASK: clock hit negedge[0m
+[0;32mI (4819) CLK_TASK: clock hit negedge[0m
+[0;32mI (4819) CLK_TASK: clock hit negedge[0m
+[0;32mI (4829) CLK_TASK: clock hit negedge[0m
+[0;32mI (4829) CLK_TASK: clock hit negedge[0m
+[0;32mI (4839) CLK_TASK: clock hit negedge[0m
+[0;32mI (4839) CLK_TASK: clock hit negedge[0m
+[0;32mI (4849) CLK_TASK: clock hit negedge[0m
+[0;32mI (4849) CLK_TASK: clock hit negedge[0m
+[0;32mI (4849) CLK_TASK: clock hit negedge[0m
+[0;32mI (4859) CLK_TASK: clock hit negedge[0m
+[0;32mI (4859) CLK_TASK: clock hit negedge[0m
+[0;32mI (4869) CLK_TASK: clock hit negedge[0m
+[0;32mI (4869) CLK_TASK: clock hit negedge[0m
+[0;32mI (4879) CLK_TASK: clock hit negedge[0m
+[0;32mI (4879) CLK_TASK: clock hit negedge[0m
+[0;32mI (4879) CLK_TASK: clock hit negedge[0m
+[0;32mI (4889) CLK_TASK: clock hit negedge[0m
+[0;32mI (4889) CLK_TASK: clock hit negedge[0m
+[0;32mI (4899) CLK_TASK: clock hit negedge[0m
+[0;32mI (4899) CLK_TASK: clock hit negedge[0m
+[0;32mI (4909) CLK_TASK: clock hit negedge[0m
+[0;32mI (4909) CLK_TASK: clock hit negedge[0m
+[0;32mI (4909) CLK_TASK: clock hit negedge[0m
+[0;32mI (4919) CLK_TASK: clock hit negedge[0m
+[0;32mI (4919) CLK_TASK: clock hit negedge[0m
+[0;32mI (4929) CLK_TASK: clock hit negedge[0m
+[0;32mI (4929) CLK_TASK: clock hit negedge[0m
+[0;32mI (4939) CLK_TASK: clock hit negedge[0m
+[0;32mI (4939) CLK_TASK: clock hit negedge[0m
+[0;32mI (4939) CLK_TASK: clock hit negedge[0m
+[0;32mI (4949) CLK_TASK: clock hit negedge[0m
+[0;32mI (4949) CLK_TASK: clock hit negedge[0m
+[0;32mI (4959) CLK_TASK: clock hit negedge[0m
+[0;32mI (4959) CLK_TASK: clock hit negedge[0m
+[0;32mI (4969) CLK_TASK: clock hit negedge[0m
+[0;32mI (4969) CLK_TASK: clock hit negedge[0m
+[0;32mI (4969) CLK_TASK: clock hit negedge[0m
+[0;32mI (4979) CLK_TASK: clock hit negedge[0m
+[0;32mI (4979) CLK_TASK: clock hit negedge[0m
+[0;32mI (4989) CLK_TASK: clock hit negedge[0m
+[0;32mI (4989) CLK_TASK: clock hit negedge[0m
+[0;32mI (4989) CLK_TASK: clock hit negedge[0m
+[0;32mI (4999) CLK_TASK: clock hit negedge[0m
+[0;32mI (4999) CLK_TASK: clock hit negedge[0m
+[0;32mI (5009) CLK_TASK: clock hit negedge[0m
+[0;32mI (5009) CLK_TASK: clock hit negedge[0m
+[0;32mI (5019) CLK_TASK: clock hit negedge[0m
+[0;32mI (5019) CLK_TASK: clock hit negedge[0m
+[0;32mI (5019) CLK_TASK: clock hit negedge[0m
+[0;32mI (5029) CLK_TASK: clock hit negedge[0m
+[0;32mI (5029) CLK_TASK: clock hit negedge[0m
+[0;32mI (5039) CLK_TASK: clock hit negedge[0m
+[0;32mI (5039) CLK_TASK: clock hit negedge[0m
+[0;32mI (5049) CLK_TASK: clock hit negedge[0m
+[0;32mI (5049) CLK_TASK: clock hit negedge[0m
+[0;32mI (5049) CLK_TASK: clock hit negedge[0m
+[0;32mI (5059) CLK_TASK: clock hit negedge[0m
+[0;32mI (5059) CLK_TASK: clock hit negedge[0m
+[0;32mI (5069) CLK_TASK: clock hit negedge[0m
+[0;32mI (5069) CLK_TASK: clock hit negedge[0m
+[0;32mI (5079) CLK_TASK: clock hit negedge[0m
+[0;32mI (5079) CLK_TASK: clock hit negedge[0m
+[0;32mI (5079) CLK_TASK: clock hit negedge[0m
+[0;32mI (5089) CLK_TASK: clock hit negedge[0m
+[0;32mI (5089) CLK_TASK: clock hit negedge[0m
+[0;32mI (5099) CLK_TASK: clock hit negedge[0m
+[0;32mI (5099) CLK_TASK: clock hit negedge[0m
+[0;32mI (5109) CLK_TASK: clock hit negedge[0m
+[0;32mI (5109) CLK_TASK: clock hit negedge[0m
+[0;32mI (5109) CLK_TASK: clock hit negedge[0m
+[0;32mI (5119) CLK_TASK: clock hit negedge[0m
+[0;32mI (5119) CLK_TASK: clock hit negedge[0m
+[0;32mI (5129) CLK_TASK: clock hit negedge[0m
+[0;32mI (5129) CLK_TASK: clock hit negedge[0m
+[0;32mI (5139) CLK_TASK: clock hit negedge[0m
+[0;32mI (5139) CLK_TASK: clock hit negedge[0m
+[0;32mI (5139) CLK_TASK: clock hit negedge[0m
+[0;32mI (5149) CLK_TASK: clock hit negedge[0m
+[0;32mI (5149) CLK_TASK: clock hit negedge[0m
+[0;32mI (5159) CLK_TASK: clock hit negedge[0m
+[0;32mI (5159) CLK_TASK: clock hit negedge[0m
+[0;32mI (5169) CLK_TASK: clock hit negedge[0m
+[0;32mI (5169) CLK_TASK: clock hit negedge[0m
+[0;32mI (5169) CLK_TASK: clock hit negedge[0m
+[0;32mI (5179) CLK_TASK: clock hit negedge[0m
+[0;32mI (5179) CLK_TASK: clock hit negedge[0m
+[0;32mI (5189) CLK_TASK: clock hit negedge[0m
+[0;32mI (5189) CLK_TASK: clock hit negedge[0m
+[0;32mI (5189) CLK_TASK: clock hit negedge[0m
+[0;32mI (5199) CLK_TASK: clock hit negedge[0m
+[0;32mI (5199) CLK_TASK: clock hit negedge[0m
+[0;32mI (5209) CLK_TASK: clock hit negedge[0m
+[0;32mI (5209) CLK_TASK: clock hit negedge[0m
+[0;32mI (5219) CLK_TASK: clock hit negedge[0m
+[0;32mI (5219) CLK_TASK: clock hit negedge[0m
+[0;32mI (5219) CLK_TASK: clock hit negedge[0m
+[0;32mI (5229) CLK_TASK: clock hit negedge[0m
+[0;32mI (5229) CLK_TASK: clock hit negedge[0m
+[0;32mI (5239) CLK_TASK: clock hit negedge[0m
+[0;32mI (5239) CLK_TASK: clock hit negedge[0m
+[0;32mI (5249) CLK_TASK: clock hit negedge[0m
+[0;32mI (5249) CLK_TASK: clock hit negedge[0m
+[0;32mI (5249) CLK_TASK: clock hit negedge[0m
+[0;32mI (5259) CLK_TASK: clock hit negedge[0m
+[0;32mI (5259) CLK_TASK: clock hit negedge[0m
+[0;32mI (5269) CLK_TASK: clock hit negedge[0m
+[0;32mI (5269) CLK_TASK: clock hit negedge[0m
+[0;32mI (5279) CLK_TASK: clock hit negedge[0m
+[0;32mI (5279) CLK_TASK: clock hit negedge[0m
+[0;32mI (5279) CLK_TASK: clock hit negedge[0m
+[0;32mI (5289) CLK_TASK: clock hit negedge[0m
+[0;32mI (5289) CLK_TASK: clock hit negedge[0m
+[0;32mI (5299) CLK_TASK: clock hit negedge[0m
+[0;32mI (5299) CLK_TASK: clock hit negedge[0m
+[0;32mI (5309) CLK_TASK: clock hit negedge[0m
+[0;32mI (5309) CLK_TASK: clock hit negedge[0m
+[0;32mI (5309) CLK_TASK: clock hit negedge[0m
+[0;32mI (5319) CLK_TASK: clock hit negedge[0m
+[0;32mI (5319) CLK_TASK: clock hit negedge[0m
+[0;32mI (5329) CLK_TASK: clock hit negedge[0m
+[0;32mI (5329) CLK_TASK: clock hit negedge[0m
+[0;32mI (5339) CLK_TASK: clock hit negedge[0m
+[0;32mI (5339) CLK_TASK: clock hit negedge[0m
+[0;32mI (5339) CLK_TASK: clock hit negedge[0m
+[0;32mI (5349) CLK_TASK: clock hit negedge[0m
+[0;32mI (5349) CLK_TASK: clock hit negedge[0m
+[0;32mI (5359) CLK_TASK: clock hit negedge[0m
+[0;32mI (5359) CLK_TASK: clock hit negedge[0m
+[0;32mI (5369) CLK_TASK: clock hit negedge[0m
+[0;32mI (5369) CLK_TASK: clock hit negedge[0m
+[0;32mI (5369) CLK_TASK: clock hit negedge[0m
+[0;32mI (5379) CLK_TASK: clock hit negedge[0m
+[0;32mI (5379) CLK_TASK: clock hit negedge[0m
+[0;32mI (5389) CLK_TASK: clock hit negedge[0m
+[0;32mI (5389) CLK_TASK: clock hit negedge[0m
+[0;32mI (5389) CLK_TASK: clock hit negedge[0m
+[0;32mI (5399) CLK_TASK: clock hit negedge[0m
+[0;32mI (5399) CLK_TASK: clock hit negedge[0m
+[0;32mI (5409) CLK_TASK: clock hit negedge[0m
+[0;32mI (5409) CLK_TASK: clock hit negedge[0m
+[0;32mI (5419) CLK_TASK: clock hit negedge[0m
+[0;32mI (5419) CLK_TASK: clock hit negedge[0m
+[0;32mI (5419) CLK_TASK: clock hit negedge[0m
+[0;32mI (5429) CLK_TASK: clock hit negedge[0m
+[0;32mI (5429) CLK_TASK: clock hit negedge[0m
+[0;32mI (5439) CLK_TASK: clock hit negedge[0m
+[0;32mI (5439) CLK_TASK: clock hit negedge[0m
+[0;32mI (5449) CLK_TASK: clock hit negedge[0m
+[0;32mI (5449) CLK_TASK: clock hit negedge[0m
+[0;32mI (5449) CLK_TASK: clock hit negedge[0m
+[0;32mI (5459) CLK_TASK: clock hit negedge[0m
+[0;32mI (5459) CLK_TASK: clock hit negedge[0m
+[0;32mI (5469) CLK_TASK: clock hit negedge[0m
+[0;32mI (5469) CLK_TASK: clock hit negedge[0m
+[0;32mI (5479) CLK_TASK: clock hit negedge[0m
+[0;32mI (5479) CLK_TASK: clock hit negedge[0m
+[0;32mI (5479) CLK_TASK: clock hit negedge[0m
+[0;32mI (5489) CLK_TASK: clock hit negedge[0m
+[0;32mI (5489) CLK_TASK: clock hit negedge[0m
+[0;32mI (5499) CLK_TASK: clock hit negedge[0m
+[0;32mI (5499) CLK_TASK: clock hit negedge[0m
+[0;32mI (5509) CLK_TASK: clock hit negedge[0m
+[0;32mI (5509) CLK_TASK: clock hit negedge[0m
+[0;32mI (5509) CLK_TASK: clock hit negedge[0m
+[0;32mI (5519) CLK_TASK: clock hit negedge[0m
+[0;32mI (5519) CLK_TASK: clock hit negedge[0m
+[0;32mI (5529) CLK_TASK: clock hit negedge[0m
+[0;32mI (5529) CLK_TASK: clock hit negedge[0m
+[0;32mI (5539) CLK_TASK: clock hit negedge[0m
+[0;32mI (5539) CLK_TASK: clock hit negedge[0m
+[0;32mI (5539) CLK_TASK: clock hit negedge[0m
+[0;32mI (5549) CLK_TASK: clock hit negedge[0m
+[0;32mI (5549) CLK_TASK: clock hit negedge[0m
+[0;32mI (5559) CLK_TASK: clock hit negedge[0m
+[0;32mI (5559) CLK_TASK: clock hit negedge[0m
+[0;32mI (5559) CLK_TASK: clock hit negedge[0m
+[0;32mI (5569) CLK_TASK: clock hit negedge[0m
+[0;32mI (5569) CLK_TASK: clock hit negedge[0m
+[0;32mI (5579) LUNG_DETECT: Streaming Enabled[0m
+[0;32mI (5579) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (5579) CLK_TASK: clock hit negedge[0m
+[0;32mI (5589) CLK_TASK: clock hit negedge[0m
+[0;32mI (5599) CLK_TASK: clock hit negedge[0m
+[0;33mW (5599) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (5599) CLK_TASK: clock hit negedge[0m
+[0;32mI (5609) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (5609) CLK_TASK: clock hit negedge[0m
+[0;32mI (5619) CLK_TASK: clock hit negedge[0m
+[0;32mI (5619) CLK_TASK: clock hit negedge[0m
+[0;33mW (5629) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (5629) CLK_TASK: clock hit negedge[0m
+[0;32mI (5629) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (5639) CLK_TASK: clock hit negedge[0m
+[0;32mI (5649) CLK_TASK: clock hit negedge[0m
+[0;32mI (5649) CLK_TASK: clock hit negedge[0m
+[0;33mW (5649) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (5649) CLK_TASK: clock hit negedge[0m
+[0;32mI (5659) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (5669) CLK_TASK: clock hit negedge[0m
+[0;32mI (5669) CLK_TASK: clock hit negedge[0m
+[0;32mI (5679) CLK_TASK: clock hit negedge[0m
+[0;33mW (5679) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (5679) CLK_TASK: clock hit negedge[0m
+[0;32mI (5689) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (5689) CLK_TASK: clock hit negedge[0m
+[0;32mI (5699) CLK_TASK: clock hit negedge[0m
+[0;32mI (5709) CLK_TASK: clock hit negedge[0m
+[0;33mW (5709) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (5709) CLK_TASK: clock hit negedge[0m
+[0;32mI (5719) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (5719) CLK_TASK: clock hit negedge[0m
+[0;32mI (5729) CLK_TASK: clock hit negedge[0m
+[0;32mI (5729) CLK_TASK: clock hit negedge[0m
+[0;33mW (5739) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (5739) CLK_TASK: clock hit negedge[0m
+[0;32mI (5739) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (5749) CLK_TASK: clock hit negedge[0m
+[0;32mI (5759) CLK_TASK: clock hit negedge[0m
+[0;32mI (5759) CLK_TASK: clock hit negedge[0m
+[0;33mW (5759) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (5769) CLK_TASK: clock hit negedge[0m
+[0;32mI (5769) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (5779) CLK_TASK: clock hit negedge[0m
+[0;32mI (5779) CLK_TASK: clock hit negedge[0m
+[0;32mI (5789) CLK_TASK: clock hit negedge[0m
+[0;33mW (5789) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (5789) CLK_TASK: clock hit negedge[0m
+[0;32mI (5799) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (5799) CLK_TASK: clock hit negedge[0m
+[0;32mI (5809) CLK_TASK: clock hit negedge[0m
+[0;32mI (5819) CLK_TASK: clock hit negedge[0m
+[0;33mW (5819) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (5819) CLK_TASK: clock hit negedge[0m
+[0;32mI (5829) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (5829) CLK_TASK: clock hit negedge[0m
+[0;32mI (5839) CLK_TASK: clock hit negedge[0m
+[0;32mI (5839) CLK_TASK: clock hit negedge[0m
+[0;33mW (5849) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (5849) CLK_TASK: clock hit negedge[0m
+[0;32mI (5849) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (5859) CLK_TASK: clock hit negedge[0m
+[0;32mI (5869) CLK_TASK: clock hit negedge[0m
+[0;32mI (5869) CLK_TASK: clock hit negedge[0m
+[0;33mW (5879) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (5879) CLK_TASK: clock hit negedge[0m
+[0;32mI (5879) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (5889) CLK_TASK: clock hit negedge[0m
+[0;32mI (5899) CLK_TASK: clock hit negedge[0m
+[0;32mI (5899) CLK_TASK: clock hit negedge[0m
+[0;33mW (5899) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (5899) CLK_TASK: clock hit negedge[0m
+[0;32mI (5909) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (5909) CLK_TASK: clock hit negedge[0m
+[0;32mI (5919) CLK_TASK: clock hit negedge[0m
+[0;32mI (5929) CLK_TASK: clock hit negedge[0m
+[0;33mW (5929) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (5929) CLK_TASK: clock hit negedge[0m
+[0;32mI (5939) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (5939) CLK_TASK: clock hit negedge[0m
+[0;32mI (5949) CLK_TASK: clock hit negedge[0m
+[0;32mI (5959) CLK_TASK: clock hit negedge[0m
+[0;33mW (5959) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (5959) CLK_TASK: clock hit negedge[0m
+[0;32mI (5969) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (5969) CLK_TASK: clock hit negedge[0m
+[0;32mI (5979) CLK_TASK: clock hit negedge[0m
+[0;32mI (5979) CLK_TASK: clock hit negedge[0m
+[0;33mW (5989) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (5989) CLK_TASK: clock hit negedge[0m
+[0;32mI (5989) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (5999) CLK_TASK: clock hit negedge[0m
+[0;32mI (6009) CLK_TASK: clock hit negedge[0m
+[0;32mI (6009) CLK_TASK: clock hit negedge[0m
+[0;33mW (6009) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6009) CLK_TASK: clock hit negedge[0m
+[0;32mI (6019) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6029) CLK_TASK: clock hit negedge[0m
+[0;32mI (6029) CLK_TASK: clock hit negedge[0m
+[0;32mI (6039) CLK_TASK: clock hit negedge[0m
+[0;33mW (6039) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6039) CLK_TASK: clock hit negedge[0m
+[0;32mI (6049) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6049) CLK_TASK: clock hit negedge[0m
+[0;32mI (6059) CLK_TASK: clock hit negedge[0m
+[0;32mI (6069) CLK_TASK: clock hit negedge[0m
+[0;33mW (6069) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6069) CLK_TASK: clock hit negedge[0m
+[0;32mI (6079) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6079) CLK_TASK: clock hit negedge[0m
+[0;32mI (6089) CLK_TASK: clock hit negedge[0m
+[0;32mI (6089) CLK_TASK: clock hit negedge[0m
+[0;33mW (6099) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6099) CLK_TASK: clock hit negedge[0m
+[0;32mI (6099) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6109) CLK_TASK: clock hit negedge[0m
+[0;32mI (6119) CLK_TASK: clock hit negedge[0m
+[0;32mI (6119) CLK_TASK: clock hit negedge[0m
+[0;33mW (6119) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6129) CLK_TASK: clock hit negedge[0m
+[0;32mI (6129) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6139) CLK_TASK: clock hit negedge[0m
+[0;32mI (6139) CLK_TASK: clock hit negedge[0m
+[0;32mI (6149) CLK_TASK: clock hit negedge[0m
+[0;33mW (6149) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6149) CLK_TASK: clock hit negedge[0m
+[0;32mI (6159) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6159) CLK_TASK: clock hit negedge[0m
+[0;32mI (6169) CLK_TASK: clock hit negedge[0m
+[0;32mI (6179) CLK_TASK: clock hit negedge[0m
+[0;33mW (6179) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6179) CLK_TASK: clock hit negedge[0m
+[0;32mI (6189) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6189) CLK_TASK: clock hit negedge[0m
+[0;32mI (6199) CLK_TASK: clock hit negedge[0m
+[0;32mI (6199) CLK_TASK: clock hit negedge[0m
+[0;33mW (6209) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6209) CLK_TASK: clock hit negedge[0m
+[0;32mI (6209) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6219) CLK_TASK: clock hit negedge[0m
+[0;32mI (6229) CLK_TASK: clock hit negedge[0m
+[0;32mI (6229) CLK_TASK: clock hit negedge[0m
+[0;33mW (6239) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6239) CLK_TASK: clock hit negedge[0m
+[0;32mI (6239) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6249) CLK_TASK: clock hit negedge[0m
+[0;32mI (6259) CLK_TASK: clock hit negedge[0m
+[0;32mI (6259) CLK_TASK: clock hit negedge[0m
+[0;33mW (6259) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6259) CLK_TASK: clock hit negedge[0m
+[0;32mI (6269) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6269) CLK_TASK: clock hit negedge[0m
+[0;32mI (6279) CLK_TASK: clock hit negedge[0m
+[0;32mI (6289) CLK_TASK: clock hit negedge[0m
+[0;33mW (6289) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6289) CLK_TASK: clock hit negedge[0m
+[0;32mI (6299) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6299) CLK_TASK: clock hit negedge[0m
+[0;32mI (6309) CLK_TASK: clock hit negedge[0m
+[0;32mI (6319) CLK_TASK: clock hit negedge[0m
+[0;33mW (6319) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6319) CLK_TASK: clock hit negedge[0m
+[0;32mI (6329) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6329) CLK_TASK: clock hit negedge[0m
+[0;32mI (6339) CLK_TASK: clock hit negedge[0m
+[0;32mI (6339) CLK_TASK: clock hit negedge[0m
+[0;33mW (6349) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6349) CLK_TASK: clock hit negedge[0m
+[0;32mI (6349) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6359) CLK_TASK: clock hit negedge[0m
+[0;32mI (6369) CLK_TASK: clock hit negedge[0m
+[0;32mI (6369) CLK_TASK: clock hit negedge[0m
+[0;33mW (6369) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6369) CLK_TASK: clock hit negedge[0m
+[0;32mI (6379) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6389) CLK_TASK: clock hit negedge[0m
+[0;32mI (6389) CLK_TASK: clock hit negedge[0m
+[0;32mI (6399) CLK_TASK: clock hit negedge[0m
+[0;33mW (6399) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6399) CLK_TASK: clock hit negedge[0m
+[0;32mI (6409) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6409) CLK_TASK: clock hit negedge[0m
+[0;32mI (6419) CLK_TASK: clock hit negedge[0m
+[0;32mI (6429) CLK_TASK: clock hit negedge[0m
+[0;33mW (6429) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6429) CLK_TASK: clock hit negedge[0m
+[0;32mI (6439) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6439) CLK_TASK: clock hit negedge[0m
+[0;32mI (6449) CLK_TASK: clock hit negedge[0m
+[0;32mI (6449) CLK_TASK: clock hit negedge[0m
+[0;33mW (6459) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6459) CLK_TASK: clock hit negedge[0m
+[0;32mI (6459) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6469) CLK_TASK: clock hit negedge[0m
+[0;32mI (6479) CLK_TASK: clock hit negedge[0m
+[0;32mI (6479) CLK_TASK: clock hit negedge[0m
+[0;33mW (6479) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6489) CLK_TASK: clock hit negedge[0m
+[0;32mI (6489) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6499) CLK_TASK: clock hit negedge[0m
+[0;32mI (6499) CLK_TASK: clock hit negedge[0m
+[0;32mI (6509) CLK_TASK: clock hit negedge[0m
+[0;33mW (6509) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6509) CLK_TASK: clock hit negedge[0m
+[0;32mI (6519) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6519) CLK_TASK: clock hit negedge[0m
+[0;32mI (6529) CLK_TASK: clock hit negedge[0m
+[0;32mI (6539) CLK_TASK: clock hit negedge[0m
+[0;33mW (6539) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6539) CLK_TASK: clock hit negedge[0m
+[0;32mI (6549) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6549) CLK_TASK: clock hit negedge[0m
+[0;32mI (6559) CLK_TASK: clock hit negedge[0m
+[0;32mI (6559) CLK_TASK: clock hit negedge[0m
+[0;33mW (6569) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6569) CLK_TASK: clock hit negedge[0m
+[0;32mI (6569) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6579) CLK_TASK: clock hit negedge[0m
+[0;32mI (6589) CLK_TASK: clock hit negedge[0m
+[0;32mI (6589) CLK_TASK: clock hit negedge[0m
+[0;33mW (6599) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6599) CLK_TASK: clock hit negedge[0m
+[0;32mI (6599) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6609) CLK_TASK: clock hit negedge[0m
+[0;32mI (6619) CLK_TASK: clock hit negedge[0m
+[0;32mI (6619) CLK_TASK: clock hit negedge[0m
+[0;33mW (6619) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6619) CLK_TASK: clock hit negedge[0m
+[0;32mI (6629) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6629) CLK_TASK: clock hit negedge[0m
+[0;32mI (6639) CLK_TASK: clock hit negedge[0m
+[0;32mI (6649) CLK_TASK: clock hit negedge[0m
+[0;33mW (6649) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6649) CLK_TASK: clock hit negedge[0m
+[0;32mI (6659) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6659) CLK_TASK: clock hit negedge[0m
+[0;32mI (6669) CLK_TASK: clock hit negedge[0m
+[0;32mI (6679) CLK_TASK: clock hit negedge[0m
+[0;33mW (6679) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6679) CLK_TASK: clock hit negedge[0m
+[0;32mI (6689) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6689) CLK_TASK: clock hit negedge[0m
+[0;32mI (6699) CLK_TASK: clock hit negedge[0m
+[0;32mI (6699) CLK_TASK: clock hit negedge[0m
+[0;33mW (6709) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6709) CLK_TASK: clock hit negedge[0m
+[0;32mI (6709) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6719) CLK_TASK: clock hit negedge[0m
+[0;32mI (6729) CLK_TASK: clock hit negedge[0m
+[0;32mI (6729) CLK_TASK: clock hit negedge[0m
+[0;33mW (6729) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6729) CLK_TASK: clock hit negedge[0m
+[0;32mI (6739) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6749) CLK_TASK: clock hit negedge[0m
+[0;32mI (6749) CLK_TASK: clock hit negedge[0m
+[0;32mI (6759) CLK_TASK: clock hit negedge[0m
+[0;33mW (6759) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6759) CLK_TASK: clock hit negedge[0m
+[0;32mI (6769) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6769) CLK_TASK: clock hit negedge[0m
+[0;32mI (6779) CLK_TASK: clock hit negedge[0m
+[0;32mI (6789) CLK_TASK: clock hit negedge[0m
+[0;33mW (6789) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6789) CLK_TASK: clock hit negedge[0m
+[0;32mI (6799) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6799) CLK_TASK: clock hit negedge[0m
+[0;32mI (6809) CLK_TASK: clock hit negedge[0m
+[0;32mI (6809) CLK_TASK: clock hit negedge[0m
+[0;33mW (6819) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6819) CLK_TASK: clock hit negedge[0m
+[0;32mI (6819) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6829) CLK_TASK: clock hit negedge[0m
+[0;32mI (6839) CLK_TASK: clock hit negedge[0m
+[0;32mI (6839) CLK_TASK: clock hit negedge[0m
+[0;33mW (6839) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6849) CLK_TASK: clock hit negedge[0m
+[0;32mI (6849) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6859) CLK_TASK: clock hit negedge[0m
+[0;32mI (6859) CLK_TASK: clock hit negedge[0m
+[0;32mI (6869) CLK_TASK: clock hit negedge[0m
+[0;33mW (6869) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6869) CLK_TASK: clock hit negedge[0m
+[0;32mI (6879) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6879) CLK_TASK: clock hit negedge[0m
+[0;32mI (6889) CLK_TASK: clock hit negedge[0m
+[0;32mI (6899) CLK_TASK: clock hit negedge[0m
+[0;33mW (6899) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6899) CLK_TASK: clock hit negedge[0m
+[0;32mI (6909) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6909) CLK_TASK: clock hit negedge[0m
+[0;32mI (6919) CLK_TASK: clock hit negedge[0m
+[0;32mI (6919) CLK_TASK: clock hit negedge[0m
+[0;33mW (6929) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6929) CLK_TASK: clock hit negedge[0m
+[0;32mI (6929) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6939) CLK_TASK: clock hit negedge[0m
+[0;32mI (6949) CLK_TASK: clock hit negedge[0m
+[0;32mI (6949) CLK_TASK: clock hit negedge[0m
+[0;33mW (6959) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6959) CLK_TASK: clock hit negedge[0m
+[0;32mI (6959) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6969) CLK_TASK: clock hit negedge[0m
+[0;32mI (6979) CLK_TASK: clock hit negedge[0m
+[0;32mI (6979) CLK_TASK: clock hit negedge[0m
+[0;33mW (6979) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (6979) CLK_TASK: clock hit negedge[0m
+[0;32mI (6989) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (6989) CLK_TASK: clock hit negedge[0m
+[0;32mI (6999) CLK_TASK: clock hit negedge[0m
+[0;32mI (7009) CLK_TASK: clock hit negedge[0m
+[0;33mW (7009) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (7009) CLK_TASK: clock hit negedge[0m
+[0;32mI (7019) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (7019) CLK_TASK: clock hit negedge[0m
+[0;32mI (7029) CLK_TASK: clock hit negedge[0m
+[0;32mI (7039) CLK_TASK: clock hit negedge[0m
+[0;33mW (7039) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (7039) CLK_TASK: clock hit negedge[0m
+[0;32mI (7049) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (7049) CLK_TASK: clock hit negedge[0m
+[0;32mI (7059) CLK_TASK: clock hit negedge[0m
+[0;32mI (7059) CLK_TASK: clock hit negedge[0m
+[0;33mW (7069) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (7069) CLK_TASK: clock hit negedge[0m
+[0;32mI (7069) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (7079) CLK_TASK: clock hit negedge[0m
+[0;32mI (7089) CLK_TASK: clock hit negedge[0m
+[0;32mI (7089) CLK_TASK: clock hit negedge[0m
+[0;33mW (7089) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (7089) CLK_TASK: clock hit negedge[0m
+[0;32mI (7099) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (7109) CLK_TASK: clock hit negedge[0m
+[0;32mI (7109) CLK_TASK: clock hit negedge[0m
+[0;32mI (7119) CLK_TASK: clock hit negedge[0m
+[0;33mW (7119) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (7119) CLK_TASK: clock hit negedge[0m
+[0;32mI (7129) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (7129) CLK_TASK: clock hit negedge[0m
+[0;32mI (7139) CLK_TASK: clock hit negedge[0m
+[0;32mI (7149) CLK_TASK: clock hit negedge[0m
+[0;33mW (7149) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (7149) CLK_TASK: clock hit negedge[0m
+[0;32mI (7159) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (7159) CLK_TASK: clock hit negedge[0m
+[0;32mI (7169) CLK_TASK: clock hit negedge[0m
+[0;32mI (7169) CLK_TASK: clock hit negedge[0m
+[0;33mW (7179) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (7179) CLK_TASK: clock hit negedge[0m
+[0;32mI (7179) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (7189) CLK_TASK: clock hit negedge[0m
+[0;32mI (7199) CLK_TASK: clock hit negedge[0m
+[0;32mI (7199) CLK_TASK: clock hit negedge[0m
+[0;33mW (7199) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (7209) CLK_TASK: clock hit negedge[0m
+[0;32mI (7209) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (7219) CLK_TASK: clock hit negedge[0m
+[0;32mI (7219) CLK_TASK: clock hit negedge[0m
+[0;32mI (7229) CLK_TASK: clock hit negedge[0m
+[0;33mW (7229) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (7229) CLK_TASK: clock hit negedge[0m
+[0;32mI (7239) START: SOC pin: 0, EOC pin: 0[0m
+[0;32mI (7239) CLK_TASK: clock hit negedge[0m
+[0;32mI (7249) CLK_TASK: clock hit negedge[0m
+[0;32mI (7259) CLK_TASK: clock hit negedge[0m
+[0;33mW (7259) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (7259) CLK_TASK: clock hit negedge[0m
+[0;32mI (7269) LUNG_DETECT: Streaming Disabled[0m
+[0;32mI (7269) CLK_TASK: clock hit negedge[0m
+[0;32mI (7279) CLK_TASK: clock hit negedge[0m
+[0;32mI (7279) CLK_TASK: clock hit negedge[0m
+[0;32mI (7289) CLK_TASK: clock hit negedge[0m
+[0;32mI (7289) CLK_TASK: clock hit negedge[0m
+[0;32mI (7299) CLK_TASK: clock hit negedge[0m
+[0;32mI (7299) CLK_TASK: clock hit negedge[0m
+[0;32mI (7309) CLK_TASK: clock hit negedge[0m
+[0;32mI (7309) CLK_TASK: clock hit negedge[0m
+[0;32mI (7309) CLK_TASK: clock hit negedge[0m
+[0;32mI (7319) CLK_TASK: clock hit negedge[0m
+[0;32mI (7319) CLK_TASK: clock hit negedge[0m
+[0;32mI (7329) CLK_TASK: clock hit negedge[0m
+[0;32mI (7329) CLK_TASK: clock hit negedge[0m
+[0;32mI (7339) CLK_TASK: clock hit negedge[0m
+[0;32mI (7339) CLK_TASK: clock hit negedge[0m
+[0;32mI (7339) CLK_TASK: clock hit negedge[0m
+[0;32mI (7349) CLK_TASK: clock hit negedge[0m
+[0;32mI (7349) CLK_TASK: clock hit negedge[0m
+[0;32mI (7359) CLK_TASK: clock hit negedge[0m
+[0;32mI (7359) CLK_TASK: clock hit negedge[0m
+[0;32mI (7369) CLK_TASK: clock hit negedge[0m
+[0;32mI (7369) CLK_TASK: clock hit negedge[0m
+[0;32mI (7369) CLK_TASK: clock hit negedge[0m
+[0;32mI (7379) CLK_TASK: clock hit negedge[0m
+[0;32mI (7379) CLK_TASK: clock hit negedge[0m
+[0;32mI (7389) CLK_TASK: clock hit negedge[0m
+[0;32mI (7389) CLK_TASK: clock hit negedge[0m
+[0;32mI (7399) CLK_TASK: clock hit negedge[0m
+[0;32mI (7399) CLK_TASK: clock hit negedge[0m
+[0;32mI (7399) CLK_TASK: clock hit negedge[0m
+[0;32mI (7409) CLK_TASK: clock hit negedge[0m
+[0;32mI (7409) CLK_TASK: clock hit negedge[0m
+[0;32mI (7419) CLK_TASK: clock hit negedge[0m
+[0;32mI (7419) CLK_TASK: clock hit negedge[0m
+[0;32mI (7419) CLK_TASK: clock hit negedge[0m
+[0;32mI (7429) CLK_TASK: clock hit negedge[0m
+[0;32mI (7429) CLK_TASK: clock hit negedge[0m
+[0;32mI (7439) CLK_TASK: clock hit negedge[0m
+[0;32mI (7439) CLK_TASK: clock hit negedge[0m
+[0;32mI (7449) CLK_TASK: clock hit negedge[0m
+[0;32mI (7449) CLK_TASK: clock hit negedge[0m
+[0;32mI (7449) CLK_TASK: clock hit negedge[0m
+[0;32mI (7459) CLK_TASK: clock hit negedge[0m
+[0;32mI (7459) CLK_TASK: clock hit negedge[0m
+[0;32mI (7469) CLK_TASK: clock hit negedge[0m
+[0;32mI (7469) CLK_TASK: clock hit negedge[0m
+[0;32mI (7479) CLK_TASK: clock hit negedge[0m
+[0;32mI (7479) CLK_TASK: clock hit negedge[0m
+[0;32mI (7479) CLK_TASK: clock hit negedge[0m
+[0;32mI (7489) CLK_TASK: clock hit negedge[0m
+[0;32mI (7489) CLK_TASK: clock hit negedge[0m
+[0;32mI (7499) CLK_TASK: clock hit negedge[0m
+[0;32mI (7499) CLK_TASK: clock hit negedge[0m
+[0;32mI (7509) CLK_TASK: clock hit negedge[0m
+[0;32mI (7509) CLK_TASK: clock hit negedge[0m
+[0;32mI (7509) CLK_TASK: clock hit negedge[0m
+[0;32mI (7519) CLK_TASK: clock hit negedge[0m
+[0;32mI (7519) CLK_TASK: clock hit negedge[0m
+[0;32mI (7529) CLK_TASK: clock hit negedge[0m
+[0;32mI (7529) CLK_TASK: clock hit negedge[0m
+[0;32mI (7539) CLK_TASK: clock hit negedge[0m
+[0;32mI (7539) CLK_TASK: clock hit negedge[0m
+[0;32mI (7539) CLK_TASK: clock hit negedge[0m
+[0;32mI (7549) CLK_TASK: clock hit negedge[0m
+[0;32mI (7549) CLK_TASK: clock hit negedge[0m
+[0;32mI (7559) CLK_TASK: clock hit negedge[0m
+[0;32mI (7559) CLK_TASK: clock hit negedge[0m
+[0;32mI (7569) CLK_TASK: clock hit negedge[0m
+[0;32mI (7569) CLK_TASK: clock hit negedge[0m
+[0;32mI (7569) CLK_TASK: clock hit negedge[0m
+[0;32mI (7579) CLK_TASK: clock hit negedge[0m
+[0;32mI (7579) CLK_TASK: clock hit negedge[0m
+[0;32mI (7589) CLK_TASK: clock hit negedge[0m
+[0;32mI (7589) CLK_TASK: clock hit negedge[0m
+[0;32mI (7589) CLK_TASK: clock hit negedge[0m
+[0;32mI (7599) CLK_TASK: clock hit negedge[0m
+[0;32mI (7599) CLK_TASK: clock hit negedge[0m
+[0;32mI (7609) CLK_TASK: clock hit negedge[0m
+[0;32mI (7609) CLK_TASK: clock hit negedge[0m
+[0;32mI (7619) CLK_TASK: clock hit negedge[0m
+[0;32mI (7619) CLK_TASK: clock hit negedge[0m
+[0;32mI (7619) CLK_TASK: clock hit negedge[0m
+[0;32mI (7629) CLK_TASK: clock hit negedge[0m
+[0;32mI (7629) CLK_TASK: clock hit negedge[0m
+[0;32mI (7639) CLK_TASK: clock hit negedge[0m
+[0;32mI (7639) CLK_TASK: clock hit negedge[0m
+[0;32mI (7649) CLK_TASK: clock hit negedge[0m
+[0;32mI (7649) CLK_TASK: clock hit negedge[0m
+[0;32mI (7649) CLK_TASK: clock hit negedge[0m
+[0;32mI (7659) CLK_TASK: clock hit negedge[0m
+[0;32mI (7659) CLK_TASK: clock hit negedge[0m
+[0;32mI (7669) CLK_TASK: clock hit negedge[0m
+[0;32mI (7669) CLK_TASK: clock hit negedge[0m
+[0;32mI (7679) CLK_TASK: clock hit negedge[0m
+[0;32mI (7679) CLK_TASK: clock hit negedge[0m
+[0;32mI (7679) CLK_TASK: clock hit negedge[0m
+[0;32mI (7689) CLK_TASK: clock hit negedge[0m
+[0;32mI (7689) CLK_TASK: clock hit negedge[0m
+[0;32mI (7699) CLK_TASK: clock hit negedge[0m
+[0;32mI (7699) CLK_TASK: clock hit negedge[0m
+[0;32mI (7709) CLK_TASK: clock hit negedge[0m
+[0;32mI (7709) CLK_TASK: clock hit negedge[0m
+[0;32mI (7709) CLK_TASK: clock hit negedge[0m
+[0;32mI (7719) CLK_TASK: clock hit negedge[0m
+[0;32mI (7719) CLK_TASK: clock hit negedge[0m
+[0;32mI (7729) CLK_TASK: clock hit negedge[0m
+[0;32mI (7729) CLK_TASK: clock hit negedge[0m
+[0;32mI (7739) CLK_TASK: clock hit negedge[0m
+[0;32mI (7739) CLK_TASK: clock hit negedge[0m
+[0;32mI (7739) CLK_TASK: clock hit negedge[0m
+[0;32mI (7749) CLK_TASK: clock hit negedge[0m
+[0;32mI (7749) CLK_TASK: clock hit negedge[0m
+[0;32mI (7759) CLK_TASK: clock hit negedge[0m
+[0;32mI (7759) CLK_TASK: clock hit negedge[0m
+[0;32mI (7769) CLK_TASK: clock hit negedge[0m
+[0;32mI (7769) CLK_TASK: clock hit negedge[0m
+[0;32mI (7769) CLK_TASK: clock hit negedge[0m
+[0;32mI (7779) CLK_TASK: clock hit negedge[0m
+[0;32mI (7779) CLK_TASK: clock hit negedge[0m
+[0;32mI (7789) CLK_TASK: clock hit negedge[0m
+[0;32mI (7789) CLK_TASK: clock hit negedge[0m
+[0;32mI (7789) CLK_TASK: clock hit negedge[0m
+[0;32mI (7799) CLK_TASK: clock hit negedge[0m
+[0;32mI (7799) CLK_TASK: clock hit negedge[0m
+[0;32mI (7809) CLK_TASK: clock hit negedge[0m
+[0;32mI (7809) CLK_TASK: clock hit negedge[0m
+[0;32mI (7819) CLK_TASK: clock hit negedge[0m
+[0;32mI (7819) CLK_TASK: clock hit negedge[0m
+[0;32mI (7819) CLK_TASK: clock hit negedge[0m
+[0;32mI (7829) CLK_TASK: clock hit negedge[0m
+[0;32mI (7829) CLK_TASK: clock hit negedge[0m
+[0;32mI (7839) CLK_TASK: clock hit negedge[0m
+[0;32mI (7839) CLK_TASK: clock hit negedge[0m
+[0;32mI (7849) CLK_TASK: clock hit negedge[0m
+[0;32mI (7849) CLK_TASK: clock hit negedge[0m
+[0;32mI (7849) CLK_TASK: clock hit negedge[0m
+[0;32mI (7859) CLK_TASK: clock hit negedge[0m
+[0;32mI (7859) CLK_TASK: clock hit negedge[0m
+[0;32mI (7869) CLK_TASK: clock hit negedge[0m
+[0;32mI (7869) CLK_TASK: clock hit negedge[0m
+[0;32mI (7879) CLK_TASK: clock hit negedge[0m
+[0;32mI (7879) CLK_TASK: clock hit negedge[0m
+[0;32mI (7879) CLK_TASK: clock hit negedge[0m
+[0;32mI (7889) CLK_TASK: clock hit negedge[0m
+[0;32mI (7889) CLK_TASK: clock hit negedge[0m
+[0;32mI (7899) CLK_TASK: clock hit negedge[0m
+[0;32mI (7899) CLK_TASK: clock hit negedge[0m
+[0;32mI (7909) CLK_TASK: clock hit negedge[0m
+[0;32mI (7909) CLK_TASK: clock hit negedge[0m
+[0;32mI (7909) CLK_TASK: clock hit negedge[0m
+[0;32mI (7919) CLK_TASK: clock hit negedge[0m
+[0;32mI (7919) CLK_TASK: clock hit negedge[0m
+[0;32mI (7929) CLK_TASK: clock hit negedge[0m
+[0;32mI (7929) CLK_TASK: clock hit negedge[0m
+[0;32mI (7939) CLK_TASK: clock hit negedge[0m
+[0;32mI (7939) CLK_TASK: clock hit negedge[0m
+[0;32mI (7939) CLK_TASK: clock hit negedge[0m
+[0;32mI (7949) CLK_TASK: clock hit negedge[0m
+[0;32mI (7949) CLK_TASK: clock hit negedge[0m
+[0;32mI (7959) CLK_TASK: clock hit negedge[0m
+[0;32mI (7959) CLK_TASK: clock hit negedge[0m
+[0;32mI (7959) CLK_TASK: clock hit negedge[0m
+[0;32mI (7969) CLK_TASK: clock hit negedge[0m
+[0;32mI (7969) CLK_TASK: clock hit negedge[0m
+[0;32mI (7979) CLK_TASK: clock hit negedge[0m
+[0;32mI (7979) CLK_TASK: clock hit negedge[0m
+[0;32mI (7989) CLK_TASK: clock hit negedge[0m
+[0;32mI (7989) CLK_TASK: clock hit negedge[0m
+[0;32mI (7989) CLK_TASK: clock hit negedge[0m
+[0;32mI (7999) CLK_TASK: clock hit negedge[0m
+[0;32mI (7999) CLK_TASK: clock hit negedge[0m
+[0;32mI (8009) CLK_TASK: clock hit negedge[0m
+[0;32mI (8009) CLK_TASK: clock hit negedge[0m
+[0;32mI (8019) CLK_TASK: clock hit negedge[0m
+[0;32mI (8019) CLK_TASK: clock hit negedge[0m
+[0;32mI (8019) CLK_TASK: clock hit negedge[0m
+[0;32mI (8029) CLK_TASK: clock hit negedge[0m
+[0;32mI (8029) CLK_TASK: clock hit negedge[0m
+[0;32mI (8039) CLK_TASK: clock hit negedge[0m
+[0;32mI (8039) CLK_TASK: clock hit negedge[0m
+[0;32mI (8049) CLK_TASK: clock hit negedge[0m
+[0;32mI (8049) CLK_TASK: clock hit negedge[0m
+[0;32mI (8049) CLK_TASK: clock hit negedge[0m
+[0;32mI (8059) CLK_TASK: clock hit negedge[0m
+[0;32mI (8059) CLK_TASK: clock hit negedge[0m
+[0;32mI (8069) CLK_TASK: clock hit negedge[0m
+[0;32mI (8069) CLK_TASK: clock hit negedge[0m
+[0;32mI (8079) CLK_TASK: clock hit negedge[0m
+[0;32mI (8079) CLK_TASK: clock hit negedge[0m
+[0;32mI (8079) CLK_TASK: clock hit negedge[0m
+[0;32mI (8089) CLK_TASK: clock hit negedge[0m
+[0;32mI (8089) CLK_TASK: clock hit negedge[0m
+[0;32mI (8099) CLK_TASK: clock hit negedge[0m
+[0;32mI (8099) CLK_TASK: clock hit negedge[0m
+[0;32mI (8109) CLK_TASK: clock hit negedge[0m
+[0;32mI (8109) CLK_TASK: clock hit negedge[0m
+[0;32mI (8109) CLK_TASK: clock hit negedge[0m
+[0;32mI (8119) CLK_TASK: clock hit negedge[0m
+[0;32mI (8119) CLK_TASK: clock hit negedge[0m
+[0;32mI (8129) CLK_TASK: clock hit negedge[0m
+[0;32mI (8129) CLK_TASK: clock hit negedge[0m
+[0;32mI (8139) CLK_TASK: clock hit negedge[0m
+[0;32mI (8139) CLK_TASK: clock hit negedge[0m
+[0;32mI (8139) CLK_TASK: clock hit negedge[0m
+[0;32mI (8149) CLK_TASK: clock hit negedge[0m
+[0;32mI (8149) CLK_TASK: clock hit negedge[0m
+[0;32mI (8159) CLK_TASK: clock hit negedge[0m
+[0;32mI (8159) CLK_TASK: clock hit negedge[0m
+[0;32mI (8159) CLK_TASK: clock hit negedge[0m
+[0;32mI (8169) CLK_TASK: clock hit negedge[0m
+[0;32mI (8169) CLK_TASK: clock hit negedge[0m
+[0;32mI (8179) CLK_TASK: clock hit negedge[0m
+[0;32mI (8179) CLK_TASK: clock hit negedge[0m
+[0;32mI (8189) CLK_TASK: clock hit negedge[0m
+[0;32mI (8189) CLK_TASK: clock hit negedge[0m
+[0;32mI (8189) CLK_TASK: clock hit negedge[0m
+[0;32mI (8199) CLK_TASK: clock hit negedge[0m
+[0;32mI (8199) CLK_TASK: clock hit negedge[0m
+[0;32mI (8209) CLK_TASK: clock hit negedge[0m
+[0;32mI (8209) CLK_TASK: clock hit negedge[0m
+[0;32mI (8219) CLK_TASK: clock hit negedge[0m
+[0;32mI (8219) CLK_TASK: clock hit negedge[0m
+[0;32mI (8219) CLK_TASK: clock hit negedge[0m
+[0;32mI (8229) CLK_TASK: clock hit negedge[0m
+[0;32mI (8229) CLK_TASK: clock hit negedge[0m
+[0;32mI (8239) CLK_TASK: clock hit negedge[0m
+[0;32mI (8239) CLK_TASK: clock hit negedge[0m
+[0;32mI (8249) CLK_TASK: clock hit negedge[0m
+[0;32mI (8249) CLK_TASK: clock hit negedge[0m
+[0;32mI (8249) CLK_TASK: clock hit negedge[0m
+[0;32mI (8259) CLK_TASK: clock hit negedge[0m
+[0;32mI (8259) CLK_TASK: clock hit negedge[0m
+[0;32mI (8269) CLK_TASK: clock hit negedge[0m
+[0;32mI (8269) CLK_TASK: clock hit negedge[0m
+[0;32mI (8279) CLK_TASK: clock hit negedge[0m
+[0;32mI (8279) CLK_TASK: clock hit negedge[0m
+[0;32mI (8279) CLK_TASK: clock hit negedge[0m
+[0;32mI (8289) CLK_TASK: clock hit negedge[0m
+[0;32mI (8289) CLK_TASK: clock hit negedge[0m
+[0;32mI (8299) CLK_TASK: clock hit negedge[0m
+[0;32mI (8299) CLK_TASK: clock hit negedge[0m
+[0;32mI (8309) CLK_TASK: clock hit negedge[0m
+[0;32mI (8309) CLK_TASK: clock hit negedge[0m
+[0;32mI (8309) CLK_TASK: clock hit negedge[0m
+[0;32mI (8319) CLK_TASK: clock hit negedge[0m
+[0;32mI (8319) CLK_TASK: clock hit negedge[0m
+[0;32mI (8329) CLK_TASK: clock hit negedge[0m
+[0;32mI (8329) CLK_TASK: clock hit negedge[0m
+
+***ERROR*** A stack overflow in task clk_task has been detected.
+
+
+Backtrace: 0x400818a1:0x3ffb6750 0x40085931:0x3ffb6770 0x40086592:0x3ffb6790 0x400875f7:0x3ffb6810 0x4008669c:0x3ffb6830 0x4008664e:0xa5a5a5a5 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 73a433dd7
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7112
+load:0x40078000,len:15788
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.4-dev-2744-g59e1838270 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Feb 24 2025 18:52:52[0m
+[0;32mI (33) boot: Multicore bootloader[0m
+[0;32mI (37) boot: chip revision: v1.0[0m
+[0;32mI (41) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (45) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (50) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (60) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (71) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (78) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (86) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (97) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a428h ( 42024) map[0m
+[0;32mI (120) esp_image: segment 1: paddr=0001a450 vaddr=3ffb0000 size=02364h (  9060) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=0001c7bc vaddr=40080000 size=0385ch ( 14428) load[0m
+[0;32mI (132) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=15770h ( 87920) map[0m
+[0;32mI (165) esp_image: segment 4: paddr=00035798 vaddr=4008385c size=09638h ( 38456) load[0m
+[0;32mI (186) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (186) boot: Disabling RNG early entropy source...[0m
+[0;32mI (199) cpu_start: Multicore app[0m
+[0;32mI (207) cpu_start: Pro cpu start user code[0m
+[0;32mI (207) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (207) app_init: Application information:[0m
+[0;32mI (210) app_init: Project name:     lung-detect[0m
+[0;32mI (215) app_init: App version:      d333ba4-dirty[0m
+[0;32mI (221) app_init: Compile time:     Feb 24 2025 18:52:46[0m
+[0;32mI (227) app_init: ELF file SHA256:  73a433dd7...[0m
+[0;32mI (232) app_init: ESP-IDF:          v5.4-dev-2744-g59e1838270[0m
+[0;32mI (238) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (243) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (248) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (253) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (260) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 3FFB2C28 len 0002D3D8 (180 KiB): DRAM[0m
+[0;32mI (272) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (279) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (285) heap_init: At 4008CE94 len 0001316C (76 KiB): IRAM[0m
+[0;32mI (293) spi_flash: detected chip: gd[0m
+[0;32mI (296) spi_flash: flash io: dio[0m
+[0;32mI (300) main_task: Started on CPU0[0m
+[0;32mI (310) main_task: Calling app_main()[0m
+[0;32mI (310) LUNG_DETECT: Initializing...[0m
+[0;32mI (310) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (320) LUNG_DETECT: Finished GPIO config[0m
+[0;32mI (320) LUNG_DETECT: Starting task functions[0m
+[0;32mI (330) SWITCH_TASK: switch task started[0m
+[0;32mI (330) ADC_TASK: adc sample task started[0m
+[0;32mI (340) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (350) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (350) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (360) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (360) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (370) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (370) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (390) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (390) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (400) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (400) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (410) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (410) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (420) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (420) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (430) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (430) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (440) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (440) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (460) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (460) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (470) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (470) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (480) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (480) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (490) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (490) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (500) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (500) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (510) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (510) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (530) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (530) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (540) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (540) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (550) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (550) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (560) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (560) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (570) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (570) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (580) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (580) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (600) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (600) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (610) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (610) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (620) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (620) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (630) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (630) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (640) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (640) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (650) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (650) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (670) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (670) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (680) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (680) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (690) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (690) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (700) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (700) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (710) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (710) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (720) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (720) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (740) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (740) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (750) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (750) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (760) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (760) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (770) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (770) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (780) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (780) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (790) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (790) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (810) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (810) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (820) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (820) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (830) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (830) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (840) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (840) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (850) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (850) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (860) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (860) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (880) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (880) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (890) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (890) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (900) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (900) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (910) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (910) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (920) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (920) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (930) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (930) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (950) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (950) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (960) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (960) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (970) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (970) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (980) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (980) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (990) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (990) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1000) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1000) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1020) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1020) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1030) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1030) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1040) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1040) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1050) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1050) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1060) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1060) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1070) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1070) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1090) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1090) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1100) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1100) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1110) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1110) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1120) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1120) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1130) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1130) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1150) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1150) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1160) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1160) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1170) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1170) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1180) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1180) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1190) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1190) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1200) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1200) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1220) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1220) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1230) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1230) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1240) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1240) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1250) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1250) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1260) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1260) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1270) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1270) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1290) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1290) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1300) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1300) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1310) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1310) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1320) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1320) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1330) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1330) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1350) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1350) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1360) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1360) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1370) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1370) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1380) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1380) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1390) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1390) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1400) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1400) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1420) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1420) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1430) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1430) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1440) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1440) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1450) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1450) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1460) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1460) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1480) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1480) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1490) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1490) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1500) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1500) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1510) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1510) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1520) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1520) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1530) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1530) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1550) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1550) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1560) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1560) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1570) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1570) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1580) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1580) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1590) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1590) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1600) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1600) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1620) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1620) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1630) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1630) START: SOC pin: 0, EOC pin: 0[0m
+[0;33mW (1640) ADC_TASK: Timeout waiting for EOC, skipping sample[0m
+[0;32mI (1640) START: SOC pin: 0, EOC pin: 0[0m

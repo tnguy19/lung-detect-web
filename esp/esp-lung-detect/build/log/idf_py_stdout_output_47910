@@ -1,0 +1,359 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/bootloader/esp-idf/esptool_py && /Users/hilariogonzalez/.espressif/python_env/idf5.4_py3.13_env/bin/python /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/bootloader/bootloader.bin
+Bootloader binary size 0x6920 bytes. 0x6e0 bytes (6%) free.
+[2/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/lung_detect.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/lung_detect.c.obj 
+/Users/hilariogonzalez/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.4-dev-2744-g59e1838270\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -DUNITY_INCLUDE_CONFIG_H -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/build/config -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/newlib/platform_include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/config/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/config/include/freertos -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/config/xtensa/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/freertos/esp_additions/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_hw_support/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_hw_support/include/soc -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_hw_support/include/soc/esp32 -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_hw_support/dma/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_hw_support/ldo/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_hw_support/debug_probe/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_hw_support/port/esp32/. -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_hw_support/port/esp32/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/heap/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/soc/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/soc/esp32 -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/soc/esp32/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/hal/platform_port/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/hal/esp32/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/hal/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_rom/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_rom/esp32/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_rom/esp32/include/esp32 -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_rom/esp32 -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_common/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/port/soc -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_system/port/include/private -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/esp32/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/xtensa/deprecated_include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/lwip/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/lwip/include/apps -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/lwip/include/apps/sntp -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/lwip/lwip/src/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/lwip/port/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/lwip/port/freertos/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/lwip/port/esp32xx/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/lwip/port/esp32xx/include/arch -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/lwip/port/esp32xx/include/sys -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_gpio/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_pm/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/mbedtls/port/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/mbedtls/mbedtls/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/mbedtls/mbedtls/library -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/mbedtls/esp_crt_bundle/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/everest/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m/p256-m -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_app_format/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_bootloader_format/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/app_update/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/bootloader_support/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/bootloader_support/bootloader_flash/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_partition/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/efuse/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/efuse/esp32/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_mm/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/spi_flash/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_security/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/pthread/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_timer/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_gptimer/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_ringbuf/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_uart/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/vfs/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/app_trace/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_event/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/nvs_flash/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_pcnt/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_spi/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_mcpwm/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_ana_cmpr/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_i2s/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/sdmmc/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_sdmmc/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_sdspi/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_sdio/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_dac/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_rmt/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_tsens/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_sdm/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_i2c/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_ledc/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_parlio/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_usb_serial_jtag/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/driver/deprecated -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/driver/i2c/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/driver/touch_sensor/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/driver/twai/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/driver/touch_sensor/esp32/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_phy/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_phy/esp32/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_vfs_console/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_netif/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/wpa_supplicant/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/wpa_supplicant/port/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/wpa_supplicant/esp_supplicant/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_coex/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_wifi/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_wifi/wifi_apps/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_wifi/wifi_apps/nan_app/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_wifi/include/local -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/unity/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/unity/unity/src -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/cmock/CMock/src -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/console -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/http_parser -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp-tls -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp-tls/esp-tls-crypto -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_adc/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_adc/interface -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_adc/esp32/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_adc/deprecated/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_isp/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_cam/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_cam/interface -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_jpeg/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_driver_ppa/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_eth/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_gdbstub/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_hid/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/tcp_transport/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_http_client/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_http_server/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_https_ota/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_https_server/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_psram/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_lcd/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_lcd/interface -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/protobuf-c/protobuf-c -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/protocomm/include/common -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/protocomm/include/security -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/protocomm/include/transports -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/protocomm/include/crypto/srp6a -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/protocomm/proto-c -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/esp_local_ctrl/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/espcoredump/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/espcoredump/include/port/xtensa -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/wear_levelling/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/fatfs/diskio -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/fatfs/src -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/fatfs/vfs -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/idf_test/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/idf_test/include/esp32 -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/ieee802154/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/json/cJSON -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/mqtt/esp-mqtt/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/nvs_sec_provider/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/perfmon/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/rt/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/spiffs/include -I/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/wifi_provisioning/include -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect=. -fmacro-prefix-map=/Users/hilariogonzalez/School/EC444/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/lung_detect.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/lung_detect.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/lung_detect.c.obj -c /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c
+In file included from /Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:205:
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c: In function 'adc_sampling_task':
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:28: error: expected expression before 'char'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |                            ^~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:62:88: note: in definition of macro 'LOG_FORMAT'
+   62 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                                                        ^~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+In file included from /Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:15:
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:43:69: error: called object is not a function or function pointer
+   43 | #define LOG_ANSI_COLOR(TEXT_COLOR)                                  "\033[" TEXT_COLOR "m"
+      |                                                                     ^~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:47:69: note: in expansion of macro 'LOG_ANSI_COLOR'
+   47 | #define LOG_ANSI_COLOR_REGULAR(COLOR)                               LOG_ANSI_COLOR(LOG_ANSI_COLOR_STYLE_RESET ";" COLOR)
+      |                                                                     ^~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:91:31: note: in expansion of macro 'LOG_ANSI_COLOR_REGULAR'
+   91 | #define LOG_COLOR_E           LOG_ANSI_COLOR_REGULAR(LOG_COLOR_RED)
+      |                               ^~~~~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:62:37: note: in expansion of macro 'LOG_COLOR_E'
+   62 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                     ^~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:182:86: note: in expansion of macro 'LOG_FORMAT'
+  182 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                      ^~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:45:69: error: expected ')' before string constant
+   45 | #define LOG_ANSI_COLOR_RESET                                        "\033[" LOG_ANSI_COLOR_STYLE_RESET "m"
+      |                                                                     ^~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:90:31: note: in expansion of macro 'LOG_ANSI_COLOR_RESET'
+   90 | #define LOG_RESET_COLOR       LOG_ANSI_COLOR_RESET
+      |                               ^~~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:62:95: note: in expansion of macro 'LOG_RESET_COLOR'
+   62 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                                                               ^~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:182:86: note: in expansion of macro 'LOG_FORMAT'
+  182 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                      ^~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:182:60: note: to match this '('
+  182 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                            ^
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:28: error: expected expression before 'char'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |                            ^~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:62:88: note: in definition of macro 'LOG_FORMAT'
+   62 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                                                        ^~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:43:69: error: called object is not a function or function pointer
+   43 | #define LOG_ANSI_COLOR(TEXT_COLOR)                                  "\033[" TEXT_COLOR "m"
+      |                                                                     ^~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:47:69: note: in expansion of macro 'LOG_ANSI_COLOR'
+   47 | #define LOG_ANSI_COLOR_REGULAR(COLOR)                               LOG_ANSI_COLOR(LOG_ANSI_COLOR_STYLE_RESET ";" COLOR)
+      |                                                                     ^~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:92:31: note: in expansion of macro 'LOG_ANSI_COLOR_REGULAR'
+   92 | #define LOG_COLOR_W           LOG_ANSI_COLOR_REGULAR(LOG_COLOR_YELLOW)
+      |                               ^~~~~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:62:37: note: in expansion of macro 'LOG_COLOR_W'
+   62 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                     ^~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:183:86: note: in expansion of macro 'LOG_FORMAT'
+  183 |         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                      ^~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:45:69: error: expected ')' before string constant
+   45 | #define LOG_ANSI_COLOR_RESET                                        "\033[" LOG_ANSI_COLOR_STYLE_RESET "m"
+      |                                                                     ^~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:90:31: note: in expansion of macro 'LOG_ANSI_COLOR_RESET'
+   90 | #define LOG_RESET_COLOR       LOG_ANSI_COLOR_RESET
+      |                               ^~~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:62:95: note: in expansion of macro 'LOG_RESET_COLOR'
+   62 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                                                               ^~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:183:86: note: in expansion of macro 'LOG_FORMAT'
+  183 |         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                      ^~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:183:60: note: to match this '('
+  183 |         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                            ^
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:28: error: expected expression before 'char'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |                            ^~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:62:88: note: in definition of macro 'LOG_FORMAT'
+   62 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                                                        ^~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:94:31: error: called object is not a function or function pointer
+   94 | #define LOG_COLOR_D           ""
+      |                               ^~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:62:37: note: in expansion of macro 'LOG_COLOR_D'
+   62 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                     ^~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:184:86: note: in expansion of macro 'LOG_FORMAT'
+  184 |         else if (level==ESP_LOG_DEBUG )     { esp_log_write(ESP_LOG_DEBUG,      tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                      ^~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:45:69: error: expected ')' before string constant
+   45 | #define LOG_ANSI_COLOR_RESET                                        "\033[" LOG_ANSI_COLOR_STYLE_RESET "m"
+      |                                                                     ^~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:90:31: note: in expansion of macro 'LOG_ANSI_COLOR_RESET'
+   90 | #define LOG_RESET_COLOR       LOG_ANSI_COLOR_RESET
+      |                               ^~~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:62:95: note: in expansion of macro 'LOG_RESET_COLOR'
+   62 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                                                               ^~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:184:86: note: in expansion of macro 'LOG_FORMAT'
+  184 |         else if (level==ESP_LOG_DEBUG )     { esp_log_write(ESP_LOG_DEBUG,      tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                      ^~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:184:60: note: to match this '('
+  184 |         else if (level==ESP_LOG_DEBUG )     { esp_log_write(ESP_LOG_DEBUG,      tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                            ^
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:28: error: expected expression before 'char'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |                            ^~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:62:88: note: in definition of macro 'LOG_FORMAT'
+   62 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                                                        ^~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:95:31: error: called object is not a function or function pointer
+   95 | #define LOG_COLOR_V           ""
+      |                               ^~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:62:37: note: in expansion of macro 'LOG_COLOR_V'
+   62 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                     ^~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:185:86: note: in expansion of macro 'LOG_FORMAT'
+  185 |         else if (level==ESP_LOG_VERBOSE )   { esp_log_write(ESP_LOG_VERBOSE,    tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                      ^~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:45:69: error: expected ')' before string constant
+   45 | #define LOG_ANSI_COLOR_RESET                                        "\033[" LOG_ANSI_COLOR_STYLE_RESET "m"
+      |                                                                     ^~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:90:31: note: in expansion of macro 'LOG_ANSI_COLOR_RESET'
+   90 | #define LOG_RESET_COLOR       LOG_ANSI_COLOR_RESET
+      |                               ^~~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:62:95: note: in expansion of macro 'LOG_RESET_COLOR'
+   62 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                                                               ^~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:185:86: note: in expansion of macro 'LOG_FORMAT'
+  185 |         else if (level==ESP_LOG_VERBOSE )   { esp_log_write(ESP_LOG_VERBOSE,    tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                      ^~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:185:60: note: to match this '('
+  185 |         else if (level==ESP_LOG_VERBOSE )   { esp_log_write(ESP_LOG_VERBOSE,    tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                            ^
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:28: error: expected expression before 'char'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |                            ^~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:62:88: note: in definition of macro 'LOG_FORMAT'
+   62 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                                                        ^~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:43:69: error: called object is not a function or function pointer
+   43 | #define LOG_ANSI_COLOR(TEXT_COLOR)                                  "\033[" TEXT_COLOR "m"
+      |                                                                     ^~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:47:69: note: in expansion of macro 'LOG_ANSI_COLOR'
+   47 | #define LOG_ANSI_COLOR_REGULAR(COLOR)                               LOG_ANSI_COLOR(LOG_ANSI_COLOR_STYLE_RESET ";" COLOR)
+      |                                                                     ^~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:93:31: note: in expansion of macro 'LOG_ANSI_COLOR_REGULAR'
+   93 | #define LOG_COLOR_I           LOG_ANSI_COLOR_REGULAR(LOG_COLOR_GREEN)
+      |                               ^~~~~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:62:37: note: in expansion of macro 'LOG_COLOR_I'
+   62 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                     ^~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:186:86: note: in expansion of macro 'LOG_FORMAT'
+  186 |         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                      ^~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:45:69: error: expected ')' before string constant
+   45 | #define LOG_ANSI_COLOR_RESET                                        "\033[" LOG_ANSI_COLOR_STYLE_RESET "m"
+      |                                                                     ^~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log_color.h:90:31: note: in expansion of macro 'LOG_ANSI_COLOR_RESET'
+   90 | #define LOG_RESET_COLOR       LOG_ANSI_COLOR_RESET
+      |                               ^~~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:62:95: note: in expansion of macro 'LOG_RESET_COLOR'
+   62 | #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%" PRIu32 ") %s: " format LOG_RESET_COLOR "\n"
+      |                                                                                               ^~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:186:86: note: in expansion of macro 'LOG_FORMAT'
+  186 |         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                      ^~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:186:60: note: to match this '('
+  186 |         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                            ^
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:205:38: note: in expansion of macro 'ESP_LOG_LEVEL'
+  205 |         if (_ESP_LOG_ENABLED(level)) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+      |                                      ^~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC444/esp/esp-idf/components/log/include/esp_log.h:114:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  114 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/hilariogonzalez/School/EC463/lung-detect-web/esp/esp-lung-detect/main/lung_detect.c:332:13: note: in expansion of macro 'ESP_LOGI'
+  332 |             ESP_LOGI(TAG, (char*)&data);
+      |             ^~~~~~~~
+[3/9] No install step for 'bootloader'
+ninja: build stopped: subcommand failed.

@@ -1,0 +1,2091 @@
+02D3D8 (180 KiB): DRAM[0m
+[0;32mI (271) heap_init: At 3FFE044en 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (278) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (284) heap_init: At 4008CE94 len 0001316C (76 KiB): IRAM[0m
+[0;32�ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7112
+load:0x40078000,len:15788
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (30) boot: ESP-IDF v5.4-dev-2744-g59e1838270 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Feb 24 2025 18:52:52[0m
+[0;32mI (32) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v1.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a308h ( 41736) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0001a330 vaddr=3ffb0000 size=02364h (  9060) load[0m
+[0;32mI (123) esp_image: segment 2: paddr=0001c69c vaddr=40080000 size=0397ch ( 14716) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=156a0h ( 87712) map[0m
+[0;32mI (164) esp_image: segment 4: paddr=000356c8 vaddr=4008397c size=09518h ( 38168) load[0m
+[0;32mI (185) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (185) boot: Disabling RNG early entropy source...[0m
+[0;32mI (198) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (209) app_init: Project name:     lung-detect[0m
+[0;32mI (214) app_init: App version:      d333ba4-dirty[0m
+[0;32mI (220) app_init: Compile time:     Feb 24 2025 18:52:46[0m
+[0;32mI (226) app_init: ELF file SHA256:  a292190a0...[0m
+[0;32mI (231) app_init: ESP-IDF:          v5.4-dev-2744-g59e1838270[0m
+[0;32mI (237) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (242) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (247) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (252) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (259) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (265) heap_init: At 3FFB2C28 len 0002D3D8 (180 KiB): DRAM[0m
+[0;32mI (271) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (278) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (284) heap_init: At 4008CE94 len 0001316C (76 KiB): IRAM[0m
+[0;32mI (292) spi_flash: detected chip: gd[0m
+[0;32mI (295) spi_flash: flash io: dio[0m
+[0;32mI (299) main_task: Started on CPU0[0m
+[0;32mI (309) main_task: Calling app_main()[0m
+[0;32mI (309) LUNG_DETECT: Initializing...[0m
+[0;32mI (309) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (319) LUNG_DETECT: Finished GPIO config[0m
+[0;31mE (5309) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (5309) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (5309) task_wdt: Tasks currently running:[0m
+[0;31mE (5309) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (5309) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (5309) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8EF7:0x3FFB0F80 0x400D92BC:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C11:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;32mI (6189) LUNG_DETECT: Streaming Enabled[0m
+[0;32mI (6189) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6189) EOC_TEST: EOC recieved[0m
+[0;32mI (6189) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6189) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6199) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6209) LUNG_DETECT: Num: 127[0m
+[0;32mI (6209) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6209) EOC_TEST: EOC recieved[0m
+[0;32mI (6219) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6219) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6229) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6239) LUNG_DETECT: Num: 127[0m
+[0;32mI (6239) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6249) EOC_TEST: EOC recieved[0m
+[0;32mI (6249) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6249) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6259) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6269) LUNG_DETECT: Num: 127[0m
+[0;32mI (6269) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6279) EOC_TEST: EOC recieved[0m
+[0;32mI (6279) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6279) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6289) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6299) LUNG_DETECT: Num: 127[0m
+[0;32mI (6299) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6309) EOC_TEST: EOC recieved[0m
+[0;32mI (6309) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6309) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6319) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6329) LUNG_DETECT: Num: 127[0m
+[0;32mI (6329) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6339) EOC_TEST: EOC recieved[0m
+[0;32mI (6339) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6339) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6349) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6359) LUNG_DETECT: Num: 127[0m
+[0;32mI (6359) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6369) EOC_TEST: EOC recieved[0m
+[0;32mI (6369) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6379) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6379) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6389) LUNG_DETECT: Num: 127[0m
+[0;32mI (6389) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6399) EOC_TEST: EOC recieved[0m
+[0;32mI (6399) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6409) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6409) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6419) LUNG_DETECT: Num: 127[0m
+[0;32mI (6419) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6429) EOC_TEST: EOC recieved[0m
+[0;32mI (6429) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6439) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6439) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6449) LUNG_DETECT: Num: 127[0m
+[0;32mI (6449) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6459) EOC_TEST: EOC recieved[0m
+[0;32mI (6459) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6469) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6469) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6479) LUNG_DETECT: Num: 127[0m
+[0;32mI (6479) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6489) EOC_TEST: EOC recieved[0m
+[0;32mI (6489) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6499) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6499) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6509) LUNG_DETECT: Num: 127[0m
+[0;32mI (6509) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6519) EOC_TEST: EOC recieved[0m
+[0;32mI (6519) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6529) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6539) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6539) LUNG_DETECT: Num: 127[0m
+[0;32mI (6549) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6549) EOC_TEST: EOC recieved[0m
+[0;32mI (6549) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6559) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6569) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6569) LUNG_DETECT: Num: 127[0m
+[0;32mI (6579) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6579) EOC_TEST: EOC recieved[0m
+[0;32mI (6589) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6589) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6599) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6599) LUNG_DETECT: Num: 127[0m
+[0;32mI (6609) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6609) EOC_TEST: EOC recieved[0m
+[0;32mI (6619) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6619) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6629) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6629) LUNG_DETECT: Num: 127[0m
+[0;32mI (6639) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6639) EOC_TEST: EOC recieved[0m
+[0;32mI (6649) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6649) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6659) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6659) LUNG_DETECT: Num: 127[0m
+[0;32mI (6669) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6669) EOC_TEST: EOC recieved[0m
+[0;32mI (6679) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6679) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6689) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6689) LUNG_DETECT: Num: 127[0m
+[0;32mI (6699) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6699) EOC_TEST: EOC recieved[0m
+[0;32mI (6709) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6709) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6719) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6719) LUNG_DETECT: Num: 127[0m
+[0;32mI (6729) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6729) EOC_TEST: EOC recieved[0m
+[0;32mI (6739) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6739) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6749) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6759) LUNG_DETECT: Num: 127[0m
+[0;32mI (6759) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6759) EOC_TEST: EOC recieved[0m
+[0;32mI (6769) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6769) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6779) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6789) LUNG_DETECT: Num: 127[0m
+[0;32mI (6789) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6799) EOC_TEST: EOC recieved[0m
+[0;32mI (6799) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6799) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6809) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6819) LUNG_DETECT: Num: 127[0m
+[0;32mI (6819) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6829) EOC_TEST: EOC recieved[0m
+[0;32mI (6829) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6829) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6839) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6849) LUNG_DETECT: Num: 127[0m
+[0;32mI (6849) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6859) EOC_TEST: EOC recieved[0m
+[0;32mI (6859) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6859) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6869) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6879) LUNG_DETECT: Num: 127[0m
+[0;32mI (6879) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6889) EOC_TEST: EOC recieved[0m
+[0;32mI (6889) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6889) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6899) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6909) LUNG_DETECT: Num: 127[0m
+[0;32mI (6909) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6919) EOC_TEST: EOC recieved[0m
+[0;32mI (6919) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6929) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6929) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6939) LUNG_DETECT: Num: 127[0m
+[0;32mI (6939) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6949) EOC_TEST: EOC recieved[0m
+[0;32mI (6949) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6959) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6959) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6969) LUNG_DETECT: Num: 127[0m
+[0;32mI (6969) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (6979) EOC_TEST: EOC recieved[0m
+[0;32mI (6979) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (6989) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (6989) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (6999) LUNG_DETECT: Num: 127[0m
+[0;32mI (6999) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7009) EOC_TEST: EOC recieved[0m
+[0;32mI (7009) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7019) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7019) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7029) LUNG_DETECT: Num: 127[0m
+[0;32mI (7029) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7039) EOC_TEST: EOC recieved[0m
+[0;32mI (7039) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7049) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7049) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7059) LUNG_DETECT: Num: 127[0m
+[0;32mI (7059) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7069) EOC_TEST: EOC recieved[0m
+[0;32mI (7069) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7079) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7089) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7089) LUNG_DETECT: Num: 127[0m
+[0;32mI (7099) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7099) EOC_TEST: EOC recieved[0m
+[0;32mI (7099) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7109) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7119) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7119) LUNG_DETECT: Num: 127[0m
+[0;32mI (7129) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7129) EOC_TEST: EOC recieved[0m
+[0;32mI (7139) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7139) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7149) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7149) LUNG_DETECT: Num: 127[0m
+[0;32mI (7159) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7159) EOC_TEST: EOC recieved[0m
+[0;32mI (7169) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7169) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7179) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7179) LUNG_DETECT: Num: 127[0m
+[0;32mI (7189) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7189) EOC_TEST: EOC recieved[0m
+[0;32mI (7199) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7199) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7209) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7209) LUNG_DETECT: Num: 127[0m
+[0;32mI (7219) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7219) EOC_TEST: EOC recieved[0m
+[0;32mI (7229) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7229) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7239) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7239) LUNG_DETECT: Num: 127[0m
+[0;32mI (7249) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7249) EOC_TEST: EOC recieved[0m
+[0;32mI (7259) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7259) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7269) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7269) LUNG_DETECT: Num: 127[0m
+[0;32mI (7279) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7279) EOC_TEST: EOC recieved[0m
+[0;32mI (7289) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7289) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7299) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7309) LUNG_DETECT: Num: 127[0m
+[0;32mI (7309) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7309) EOC_TEST: EOC recieved[0m
+[0;32mI (7319) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7319) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7329) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7339) LUNG_DETECT: Num: 127[0m
+[0;32mI (7339) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7349) EOC_TEST: EOC recieved[0m
+[0;32mI (7349) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7349) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7359) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7369) LUNG_DETECT: Num: 127[0m
+[0;32mI (7369) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7379) EOC_TEST: EOC recieved[0m
+[0;32mI (7379) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7379) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7389) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7399) LUNG_DETECT: Num: 127[0m
+[0;32mI (7399) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7409) EOC_TEST: EOC recieved[0m
+[0;32mI (7409) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7409) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7419) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7429) LUNG_DETECT: Num: 127[0m
+[0;32mI (7429) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7439) EOC_TEST: EOC recieved[0m
+[0;32mI (7439) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7439) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7449) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7459) LUNG_DETECT: Num: 127[0m
+[0;32mI (7459) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7469) EOC_TEST: EOC recieved[0m
+[0;32mI (7469) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7479) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7479) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7489) LUNG_DETECT: Num: 127[0m
+[0;32mI (7489) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7499) EOC_TEST: EOC recieved[0m
+[0;32mI (7499) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7509) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7509) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7519) LUNG_DETECT: Num: 127[0m
+[0;32mI (7519) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7529) EOC_TEST: EOC recieved[0m
+[0;32mI (7529) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7539) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7539) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7549) LUNG_DETECT: Num: 127[0m
+[0;32mI (7549) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7559) EOC_TEST: EOC recieved[0m
+[0;32mI (7559) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7569) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7569) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7579) LUNG_DETECT: Num: 127[0m
+[0;32mI (7579) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7589) EOC_TEST: EOC recieved[0m
+[0;32mI (7589) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7599) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7599) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7609) LUNG_DETECT: Num: 127[0m
+[0;32mI (7609) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7619) EOC_TEST: EOC recieved[0m
+[0;32mI (7619) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7629) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7639) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7639) LUNG_DETECT: Num: 127[0m
+[0;32mI (7649) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7649) EOC_TEST: EOC recieved[0m
+[0;32mI (7649) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7659) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7669) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7669) LUNG_DETECT: Num: 127[0m
+[0;32mI (7679) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7679) EOC_TEST: EOC recieved[0m
+[0;32mI (7689) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7689) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7699) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7699) LUNG_DETECT: Num: 127[0m
+[0;32mI (7709) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7709) EOC_TEST: EOC recieved[0m
+[0;32mI (7719) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7719) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7729) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7729) LUNG_DETECT: Num: 127[0m
+[0;32mI (7739) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7739) EOC_TEST: EOC recieved[0m
+[0;32mI (7749) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7749) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7759) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7759) LUNG_DETECT: Num: 127[0m
+[0;32mI (7769) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7769) EOC_TEST: EOC recieved[0m
+[0;32mI (7779) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7779) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7789) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7789) LUNG_DETECT: Num: 127[0m
+[0;32mI (7799) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7799) EOC_TEST: EOC recieved[0m
+[0;32mI (7809) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7809) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7819) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7819) LUNG_DETECT: Num: 127[0m
+[0;32mI (7829) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7829) EOC_TEST: EOC recieved[0m
+[0;32mI (7839) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7839) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7849) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7859) LUNG_DETECT: Num: 127[0m
+[0;32mI (7859) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7859) EOC_TEST: EOC recieved[0m
+[0;32mI (7869) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7869) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7879) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7889) LUNG_DETECT: Num: 127[0m
+[0;32mI (7889) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7899) EOC_TEST: EOC recieved[0m
+[0;32mI (7899) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7899) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7909) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7919) LUNG_DETECT: Num: 127[0m
+[0;32mI (7919) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7929) EOC_TEST: EOC recieved[0m
+[0;32mI (7929) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7929) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7939) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7949) LUNG_DETECT: Num: 127[0m
+[0;32mI (7949) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7959) EOC_TEST: EOC recieved[0m
+[0;32mI (7959) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7959) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7969) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (7979) LUNG_DETECT: Num: 127[0m
+[0;32mI (7979) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (7989) EOC_TEST: EOC recieved[0m
+[0;32mI (7989) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (7989) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (7999) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8009) LUNG_DETECT: Num: 127[0m
+[0;32mI (8009) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8019) EOC_TEST: EOC recieved[0m
+[0;32mI (8019) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8029) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8029) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8039) LUNG_DETECT: Num: 127[0m
+[0;32mI (8039) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8049) EOC_TEST: EOC recieved[0m
+[0;32mI (8049) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8059) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8059) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8069) LUNG_DETECT: Num: 127[0m
+[0;32mI (8069) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8079) EOC_TEST: EOC recieved[0m
+[0;32mI (8079) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8089) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8089) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8099) LUNG_DETECT: Num: 127[0m
+[0;32mI (8099) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8109) EOC_TEST: EOC recieved[0m
+[0;32mI (8109) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8119) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8119) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8129) LUNG_DETECT: Num: 127[0m
+[0;32mI (8129) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8139) EOC_TEST: EOC recieved[0m
+[0;32mI (8139) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8149) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8149) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8159) LUNG_DETECT: Num: 127[0m
+[0;32mI (8159) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8169) EOC_TEST: EOC recieved[0m
+[0;32mI (8169) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8179) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8189) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8189) LUNG_DETECT: Num: 127[0m
+[0;32mI (8199) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8199) EOC_TEST: EOC recieved[0m
+[0;32mI (8199) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8209) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8219) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8219) LUNG_DETECT: Num: 127[0m
+[0;32mI (8229) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8229) EOC_TEST: EOC recieved[0m
+[0;32mI (8239) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8239) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8249) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8249) LUNG_DETECT: Num: 127[0m
+[0;32mI (8259) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8259) EOC_TEST: EOC recieved[0m
+[0;32mI (8269) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8269) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8279) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8279) LUNG_DETECT: Num: 127[0m
+[0;32mI (8289) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8289) EOC_TEST: EOC recieved[0m
+[0;32mI (8299) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8299) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8309) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8309) LUNG_DETECT: Num: 127[0m
+[0;32mI (8319) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8319) EOC_TEST: EOC recieved[0m
+[0;32mI (8329) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8329) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8339) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8339) LUNG_DETECT: Num: 127[0m
+[0;32mI (8349) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8349) EOC_TEST: EOC recieved[0m
+[0;32mI (8359) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8359) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8369) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8369) LUNG_DETECT: Num: 127[0m
+[0;32mI (8379) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8379) EOC_TEST: EOC recieved[0m
+[0;32mI (8389) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8389) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8399) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8409) LUNG_DETECT: Num: 127[0m
+[0;32mI (8409) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8409) EOC_TEST: EOC recieved[0m
+[0;32mI (8419) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8419) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8429) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8439) LUNG_DETECT: Num: 127[0m
+[0;32mI (8439) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8449) EOC_TEST: EOC recieved[0m
+[0;32mI (8449) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8449) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8459) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8469) LUNG_DETECT: Num: 127[0m
+[0;32mI (8469) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8479) EOC_TEST: EOC recieved[0m
+[0;32mI (8479) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8479) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8489) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8499) LUNG_DETECT: Num: 127[0m
+[0;32mI (8499) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8509) EOC_TEST: EOC recieved[0m
+[0;32mI (8509) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8509) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8519) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8529) LUNG_DETECT: Num: 127[0m
+[0;32mI (8529) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8539) EOC_TEST: EOC recieved[0m
+[0;32mI (8539) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8539) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8549) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8559) LUNG_DETECT: Num: 127[0m
+[0;32mI (8559) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8569) EOC_TEST: EOC recieved[0m
+[0;32mI (8569) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8579) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8579) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8589) LUNG_DETECT: Num: 127[0m
+[0;32mI (8589) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8599) EOC_TEST: EOC recieved[0m
+[0;32mI (8599) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8609) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8609) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8619) LUNG_DETECT: Num: 127[0m
+[0;32mI (8619) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8629) EOC_TEST: EOC recieved[0m
+[0;32mI (8629) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8639) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8639) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8649) LUNG_DETECT: Num: 127[0m
+[0;32mI (8649) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8659) EOC_TEST: EOC recieved[0m
+[0;32mI (8659) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8669) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8669) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8679) LUNG_DETECT: Num: 127[0m
+[0;32mI (8679) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8689) EOC_TEST: EOC recieved[0m
+[0;32mI (8689) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8699) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8699) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8709) LUNG_DETECT: Num: 127[0m
+[0;32mI (8709) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8719) EOC_TEST: EOC recieved[0m
+[0;32mI (8719) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8729) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8739) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8739) LUNG_DETECT: Num: 127[0m
+[0;32mI (8749) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8749) EOC_TEST: EOC recieved[0m
+[0;32mI (8749) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8759) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8769) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8769) LUNG_DETECT: Num: 127[0m
+[0;32mI (8779) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8779) EOC_TEST: EOC recieved[0m
+[0;32mI (8789) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8789) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8799) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8799) LUNG_DETECT: Num: 127[0m
+[0;32mI (8809) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8809) EOC_TEST: EOC recieved[0m
+[0;32mI (8819) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8819) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8829) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8829) LUNG_DETECT: Num: 127[0m
+[0;32mI (8839) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8839) EOC_TEST: EOC recieved[0m
+[0;32mI (8849) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8849) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8859) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8859) LUNG_DETECT: Num: 127[0m
+[0;32mI (8869) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8869) EOC_TEST: EOC recieved[0m
+[0;32mI (8879) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8879) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8889) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8889) LUNG_DETECT: Num: 127[0m
+[0;32mI (8899) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8899) EOC_TEST: EOC recieved[0m
+[0;32mI (8909) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8909) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8919) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8919) LUNG_DETECT: Num: 127[0m
+[0;32mI (8929) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8929) EOC_TEST: EOC recieved[0m
+[0;32mI (8939) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8939) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8949) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8959) LUNG_DETECT: Num: 127[0m
+[0;32mI (8959) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8959) EOC_TEST: EOC recieved[0m
+[0;32mI (8969) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8969) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (8979) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (8989) LUNG_DETECT: Num: 127[0m
+[0;32mI (8989) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (8999) EOC_TEST: EOC recieved[0m
+[0;32mI (8999) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (8999) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (9009) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9019) LUNG_DETECT: Num: 127[0m
+[0;32mI (9019) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (9029) EOC_TEST: EOC recieved[0m
+[0;32mI (9029) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9029) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (9039) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9049) LUNG_DETECT: Num: 127[0m
+[0;32mI (9049) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (9059) EOC_TEST: EOC recieved[0m
+[0;32mI (9059) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9059) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (9069) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9079) LUNG_DETECT: Num: 127[0m
+[0;32mI (9079) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (9089) EOC_TEST: EOC recieved[0m
+[0;32mI (9089) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9089) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (9099) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9109) LUNG_DETECT: Num: 127[0m
+[0;32mI (9109) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (9119) LUNG_DETECT: Streaming Disabled[0m
+[0;32mI (9119) EOC_TEST: EOC recieved[0m
+[0;32mI (9129) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (9129) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (9139) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (9139) LUNG_DETECT: Num: 127[0m
+[0;31mE (14119) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (14119) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (14119) task_wdt: Tasks currently running:[0m
+[0;31mE (14119) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (14119) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (14119) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8EF7:0x3FFB0F80 0x400D92BC:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C11:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;32mI (18539) LUNG_DETECT: Streaming Enabled[0m
+[0;32mI (18539) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18539) EOC_TEST: EOC recieved[0m
+[0;32mI (18539) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18539) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18549) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18559) LUNG_DETECT: Num: 127[0m
+[0;32mI (18559) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18569) EOC_TEST: EOC recieved[0m
+[0;32mI (18569) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18569) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18579) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18589) LUNG_DETECT: Num: 127[0m
+[0;32mI (18589) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18599) EOC_TEST: EOC recieved[0m
+[0;32mI (18599) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18599) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18609) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18619) LUNG_DETECT: Num: 127[0m
+[0;32mI (18619) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18629) EOC_TEST: EOC recieved[0m
+[0;32mI (18629) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18639) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18639) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18649) LUNG_DETECT: Num: 127[0m
+[0;32mI (18649) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18659) EOC_TEST: EOC recieved[0m
+[0;32mI (18659) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18669) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18669) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18679) LUNG_DETECT: Num: 127[0m
+[0;32mI (18679) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18689) EOC_TEST: EOC recieved[0m
+[0;32mI (18689) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18699) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18709) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18709) LUNG_DETECT: Num: 127[0m
+[0;32mI (18719) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18719) EOC_TEST: EOC recieved[0m
+[0;32mI (18719) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18729) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18739) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18739) LUNG_DETECT: Num: 127[0m
+[0;32mI (18749) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18749) EOC_TEST: EOC recieved[0m
+[0;32mI (18759) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18759) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18769) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18769) LUNG_DETECT: Num: 127[0m
+[0;32mI (18779) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18779) EOC_TEST: EOC recieved[0m
+[0;32mI (18789) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18789) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18799) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18799) LUNG_DETECT: Num: 127[0m
+[0;32mI (18809) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18809) EOC_TEST: EOC recieved[0m
+[0;32mI (18819) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18819) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18829) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18839) LUNG_DETECT: Num: 127[0m
+[0;32mI (18839) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18839) EOC_TEST: EOC recieved[0m
+[0;32mI (18849) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18849) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18859) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18869) LUNG_DETECT: Num: 127[0m
+[0;32mI (18869) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18879) EOC_TEST: EOC recieved[0m
+[0;32mI (18879) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18879) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18889) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18899) LUNG_DETECT: Num: 127[0m
+[0;32mI (18899) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18909) EOC_TEST: EOC recieved[0m
+[0;32mI (18909) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18919) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18919) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18929) LUNG_DETECT: Num: 127[0m
+[0;32mI (18929) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18939) EOC_TEST: EOC recieved[0m
+[0;32mI (18939) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18949) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18949) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18959) LUNG_DETECT: Num: 127[0m
+[0;32mI (18959) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18969) EOC_TEST: EOC recieved[0m
+[0;32mI (18969) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (18979) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (18979) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (18989) LUNG_DETECT: Num: 127[0m
+[0;32mI (18989) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (18999) EOC_TEST: EOC recieved[0m
+[0;32mI (18999) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19009) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19019) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19019) LUNG_DETECT: Num: 127[0m
+[0;32mI (19029) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19029) EOC_TEST: EOC recieved[0m
+[0;32mI (19039) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19039) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19049) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19049) LUNG_DETECT: Num: 127[0m
+[0;32mI (19059) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19059) EOC_TEST: EOC recieved[0m
+[0;32mI (19069) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19069) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19079) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19079) LUNG_DETECT: Num: 127[0m
+[0;32mI (19089) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19089) EOC_TEST: EOC recieved[0m
+[0;32mI (19099) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19099) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19109) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19119) LUNG_[0;31mE (19119) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (19119) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (19119) task_wdt: Tasks currently running:[0m
+[0;31mE (19119) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (19119) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (19119) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8EF7:0x3FFB0F80 0x400D92BC:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400D4719:0x3FFB5830 0x400D4EDB:0x3FFB5860 0x400D5F8D:0x3FFB5880 0x4000BD83:0x3FFB58A0 0x4000182A:0x3FFB58C0 0x400D5AF9:0x3FFB58E0 0x400D5F8D:0x3FFB5900 0x4000BD83:0x3FFB5920 0x4000117D:0x3FFB5940 0x400592FE:0x3FFB5960 0x4005937A:0x3FFB5980 0x400DA3F5:0x3FFB59A0 0x400DE2AF:0x3FFB59D0 0x400DDC8D:0x3FFB59F0 0x400DA49D:0x3FFB5D10 0x400E5639:0x3FFB5D40 0x4008B6DD:0x3FFB5D70 0x400D6C0C:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+DETECT: Num: 127[0m
+[0;32mI (19199) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19199) EOC_TEST: EOC recieved[0m
+[0;32mI (19209) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19209) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19219) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19219) LUNG_DETECT: Num: 127[0m
+[0;32mI (19229) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19229) EOC_TEST: EOC recieved[0m
+[0;32mI (19239) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19239) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19249) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19259) LUNG_DETECT: Num: 127[0m
+[0;32mI (19259) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19259) EOC_TEST: EOC recieved[0m
+[0;32mI (19269) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19269) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19279) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19289) LUNG_DETECT: Num: 127[0m
+[0;32mI (19289) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19299) EOC_TEST: EOC recieved[0m
+[0;32mI (19299) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19299) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19309) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19319) LUNG_DETECT: Num: 127[0m
+[0;32mI (19319) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19329) EOC_TEST: EOC recieved[0m
+[0;32mI (19329) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19329) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19339) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19349) LUNG_DETECT: Num: 127[0m
+[0;32mI (19349) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19359) EOC_TEST: EOC recieved[0m
+[0;32mI (19359) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19369) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19369) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19379) LUNG_DETECT: Num: 127[0m
+[0;32mI (19379) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19389) EOC_TEST: EOC recieved[0m
+[0;32mI (19389) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19399) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19399) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19409) LUNG_DETECT: Num: 127[0m
+[0;32mI (19409) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19419) EOC_TEST: EOC recieved[0m
+[0;32mI (19419) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19429) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19439) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19439) LUNG_DETECT: Num: 127[0m
+[0;32mI (19449) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19449) EOC_TEST: EOC recieved[0m
+[0;32mI (19459) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19459) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19469) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19469) LUNG_DETECT: Num: 127[0m
+[0;32mI (19479) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19479) EOC_TEST: EOC recieved[0m
+[0;32mI (19489) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19489) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19499) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19499) LUNG_DETECT: Num: 127[0m
+[0;32mI (19509) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19509) EOC_TEST: EOC recieved[0m
+[0;32mI (19519) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19519) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19529) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19529) LUNG_DETECT: Num: 127[0m
+[0;32mI (19539) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19539) EOC_TEST: EOC recieved[0m
+[0;32mI (19549) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19549) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19559) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19569) LUNG_DETECT: Num: 127[0m
+[0;32mI (19569) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19579) EOC_TEST: EOC recieved[0m
+[0;32mI (19579) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19579) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19589) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19599) LUNG_DETECT: Num: 127[0m
+[0;32mI (19599) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19609) EOC_TEST: EOC recieved[0m
+[0;32mI (19609) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19609) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19619) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19629) LUNG_DETECT: Num: 127[0m
+[0;32mI (19629) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19639) EOC_TEST: EOC recieved[0m
+[0;32mI (19639) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19649) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19649) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19659) LUNG_DETECT: Num: 127[0m
+[0;32mI (19659) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19669) EOC_TEST: EOC recieved[0m
+[0;32mI (19669) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19679) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19679) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19689) LUNG_DETECT: Num: 127[0m
+[0;32mI (19689) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19699) EOC_TEST: EOC recieved[0m
+[0;32mI (19699) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19709) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19719) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19719) LUNG_DETECT: Num: 127[0m
+[0;32mI (19729) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19729) EOC_TEST: EOC recieved[0m
+[0;32mI (19729) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19739) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19749) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19749) LUNG_DETECT: Num: 127[0m
+[0;32mI (19759) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19759) EOC_TEST: EOC recieved[0m
+[0;32mI (19769) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19769) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19779) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19779) LUNG_DETECT: Num: 127[0m
+[0;32mI (19789) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19789) EOC_TEST: EOC recieved[0m
+[0;32mI (19799) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19799) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19809) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19809) LUNG_DETECT: Num: 127[0m
+[0;32mI (19819) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19819) EOC_TEST: EOC recieved[0m
+[0;32mI (19829) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19829) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19839) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19849) LUNG_DETECT: Num: 127[0m
+[0;32mI (19849) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19859) EOC_TEST: EOC recieved[0m
+[0;32mI (19859) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19859) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19869) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19879) LUNG_DETECT: Num: 127[0m
+[0;32mI (19879) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19889) EOC_TEST: EOC recieved[0m
+[0;32mI (19889) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19889) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19899) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19909) LUNG_DETECT: Num: 127[0m
+[0;32mI (19909) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19919) EOC_TEST: EOC recieved[0m
+[0;32mI (19919) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19929) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19929) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19939) LUNG_DETECT: Num: 127[0m
+[0;32mI (19939) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19949) EOC_TEST: EOC recieved[0m
+[0;32mI (19949) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19959) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19959) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19969) LUNG_DETECT: Num: 127[0m
+[0;32mI (19969) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (19979) EOC_TEST: EOC recieved[0m
+[0;32mI (19979) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (19989) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (19989) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (19999) LUNG_DETECT: Num: 127[0m
+[0;32mI (19999) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20009) EOC_TEST: EOC recieved[0m
+[0;32mI (20009) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20019) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20029) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20029) LUNG_DETECT: Num: 127[0m
+[0;32mI (20039) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20039) EOC_TEST: EOC recieved[0m
+[0;32mI (20049) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20049) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20059) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20059) LUNG_DETECT: Num: 127[0m
+[0;32mI (20069) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20069) EOC_TEST: EOC recieved[0m
+[0;32mI (20079) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20079) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20089) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20089) LUNG_DETECT: Num: 127[0m
+[0;32mI (20099) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20099) EOC_TEST: EOC recieved[0m
+[0;32mI (20109) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20109) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20119) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20129) LUNG_DETECT: Num: 127[0m
+[0;32mI (20129) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20129) EOC_TEST: EOC recieved[0m
+[0;32mI (20139) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20139) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20149) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20159) LUNG_DETECT: Num: 127[0m
+[0;32mI (20159) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20169) EOC_TEST: EOC recieved[0m
+[0;32mI (20169) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20169) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20179) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20189) LUNG_DETECT: Num: 127[0m
+[0;32mI (20189) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20199) EOC_TEST: EOC recieved[0m
+[0;32mI (20199) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20209) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20209) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20219) LUNG_DETECT: Num: 127[0m
+[0;32mI (20219) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20229) EOC_TEST: EOC recieved[0m
+[0;32mI (20229) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20239) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20239) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20249) LUNG_DETECT: Num: 127[0m
+[0;32mI (20249) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20259) EOC_TEST: EOC recieved[0m
+[0;32mI (20259) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20269) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20269) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20279) LUNG_DETECT: Num: 127[0m
+[0;32mI (20279) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20289) EOC_TEST: EOC recieved[0m
+[0;32mI (20289) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20299) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20309) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20309) LUNG_DETECT: Num: 127[0m
+[0;32mI (20319) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20319) EOC_TEST: EOC recieved[0m
+[0;32mI (20329) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20329) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20339) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20339) LUNG_DETECT: Num: 127[0m
+[0;32mI (20349) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20349) EOC_TEST: EOC recieved[0m
+[0;32mI (20359) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20359) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20369) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20369) LUNG_DETECT: Num: 127[0m
+[0;32mI (20379) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20379) EOC_TEST: EOC recieved[0m
+[0;32mI (20389) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20389) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20399) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20409) LUNG_DETECT: Num: 127[0m
+[0;32mI (20409) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20409) EOC_TEST: EOC recieved[0m
+[0;32mI (20419) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20419) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20429) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20439) LUNG_DETECT: Num: 127[0m
+[0;32mI (20439) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20449) EOC_TEST: EOC recieved[0m
+[0;32mI (20449) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20449) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20459) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20469) LUNG_DETECT: Num: 127[0m
+[0;32mI (20469) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20479) EOC_TEST: EOC recieved[0m
+[0;32mI (20479) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20479) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20489) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20499) LUNG_DETECT: Num: 127[0m
+[0;32mI (20499) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20509) EOC_TEST: EOC recieved[0m
+[0;32mI (20509) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20519) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20519) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20529) LUNG_DETECT: Num: 127[0m
+[0;32mI (20529) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20539) EOC_TEST: EOC recieved[0m
+[0;32mI (20539) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20549) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20549) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20559) LUNG_DETECT: Num: 127[0m
+[0;32mI (20559) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20569) EOC_TEST: EOC recieved[0m
+[0;32mI (20569) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20579) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20589) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20589) LUNG_DETECT: Num: 127[0m
+[0;32mI (20599) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20599) EOC_TEST: EOC recieved[0m
+[0;32mI (20599) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20609) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20619) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20619) LUNG_DETECT: Num: 127[0m
+[0;32mI (20629) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20629) EOC_TEST: EOC recieved[0m
+[0;32mI (20639) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20639) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20649) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20649) LUNG_DETECT: Num: 127[0m
+[0;32mI (20659) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20659) EOC_TEST: EOC recieved[0m
+[0;32mI (20669) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20669) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20679) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20679) LUNG_DETECT: Num: 127[0m
+[0;32mI (20689) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (20689) EOC_TEST: EOC recieved[0m
+[0;32mI (20699) LUNG_DETECT: Streaming Disabled[0m
+[0;32mI (20699) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (20709) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (20709) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (20719) LUNG_DETECT: Num: 127[0m
+[0;32mI (24129) LUNG_DETECT: Streaming Enabled[0m
+[0;32mI (24129) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24129) EOC_TEST: EOC recieved[0m
+[0;32mI (24129) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24129) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24139) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24149) LUNG_DETECT: Num: 127[0m
+[0;32mI (24149) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24159) EOC_TEST: EOC recieved[0m
+[0;32mI (24159) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24159) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24169) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24179) LUNG_DETECT: Num: 127[0m
+[0;32mI (24179) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24189) EOC_TEST: EOC recieved[0m
+[0;32mI (24189) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24189) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24199) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24209) LUNG_DETECT: Num: 127[0m
+[0;32mI (24209) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24219) EOC_TEST: EOC recieved[0m
+[0;32mI (24219) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24229) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24229) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24239) LUNG_DETECT: Num: 127[0m
+[0;32mI (24239) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24249) EOC_TEST: EOC recieved[0m
+[0;32mI (24249) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24259) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24259) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24269) LUNG_DETECT: Num: 127[0m
+[0;32mI (24269) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24279) EOC_TEST: EOC recieved[0m
+[0;32mI (24279) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24289) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24299) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24299) LUNG_DETECT: Num: 127[0m
+[0;32mI (24309) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24309) EOC_TEST: EOC recieved[0m
+[0;32mI (24309) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24319) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24329) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24329) LUNG_DETECT: Num: 127[0m
+[0;32mI (24339) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24339) EOC_TEST: EOC recieved[0m
+[0;32mI (24349) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24349) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24359) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24359) LUNG_DETECT: Num: 127[0m
+[0;32mI (24369) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24369) EOC_TEST: EOC recieved[0m
+[0;32mI (24379) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24379) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24389) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24389) LUNG_DETECT: Num: 127[0m
+[0;32mI (24399) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24399) EOC_TEST: EOC recieved[0m
+[0;32mI (24409) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24409) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24419) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24429) LUNG_DETECT: Num: 127[0m
+[0;32mI (24429) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24429) EOC_TEST: EOC recieved[0m
+[0;32mI (24439) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24439) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24449) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24459) LUNG_DETECT: Num: 127[0m
+[0;32mI (24459) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24469) EOC_TEST: EOC recieved[0m
+[0;32mI (24469) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24469) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24479) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24489) LUNG_DETECT: Num: 127[0m
+[0;32mI (24489) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24499) EOC_TEST: EOC recieved[0m
+[0;32mI (24499) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24509) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24509) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24519) LUNG_DETECT: Num: 127[0m
+[0;32mI (24519) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24529) EOC_TEST: EOC recieved[0m
+[0;32mI (24529) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24539) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24539) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24549) LUNG_DETECT: Num: 127[0m
+[0;32mI (24549) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24559) EOC_TEST: EOC recieved[0m
+[0;32mI (24559) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24569) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24569) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24579) LUNG_DETECT: Num: 127[0m
+[0;32mI (24579) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24589) EOC_TEST: EOC recieved[0m
+[0;32mI (24589) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24599) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24609) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24609) LUNG_DETECT: Num: 127[0m
+[0;32mI (24619) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24619) EOC_TEST: EOC recieved[0m
+[0;32mI (24629) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24629) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24639) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24639) LUNG_DETECT: Num: 127[0m
+[0;32mI (24649) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24649) EOC_TEST: EOC recieved[0m
+[0;32mI (24659) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24659) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24669) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24669) LUNG_DETECT: Num: 127[0m
+[0;32mI (24679) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24679) EOC_TEST: EOC recieved[0m
+[0;32mI (24689) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24689) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24699) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24709) LUNG_DETECT: Num: 127[0m
+[0;32mI (24709) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24709) EOC_TEST: EOC recieved[0m
+[0;32mI (24719) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24719) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24729) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24739) LUNG_DETECT: Num: 127[0m
+[0;32mI (24739) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24749) EOC_TEST: EOC recieved[0m
+[0;32mI (24749) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24749) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24759) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24769) LUNG_DETECT: Num: 127[0m
+[0;32mI (24769) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24779) EOC_TEST: EOC recieved[0m
+[0;32mI (24779) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24779) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24789) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24799) LUNG_DETECT: Num: 127[0m
+[0;32mI (24799) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24809) EOC_TEST: EOC recieved[0m
+[0;32mI (24809) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24819) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24819) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24829) LUNG_DETECT: Num: 127[0m
+[0;32mI (24829) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24839) EOC_TEST: EOC recieved[0m
+[0;32mI (24839) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24849) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24849) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24859) LUNG_DETECT: Num: 127[0m
+[0;32mI (24859) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24869) EOC_TEST: EOC recieved[0m
+[0;32mI (24869) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24879) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24889) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24889) LUNG_DETECT: Num: 127[0m
+[0;32mI (24899) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24899) EOC_TEST: EOC recieved[0m
+[0;32mI (24909) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24909) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24919) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24919) LUNG_DETECT: Num: 127[0m
+[0;32mI (24929) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24929) EOC_TEST: EOC recieved[0m
+[0;32mI (24939) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24939) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24949) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24949) LUNG_DETECT: Num: 127[0m
+[0;32mI (24959) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24959) EOC_TEST: EOC recieved[0m
+[0;32mI (24969) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24969) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (24979) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (24979) LUNG_DETECT: Num: 127[0m
+[0;32mI (24989) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (24989) EOC_TEST: EOC recieved[0m
+[0;32mI (24999) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (24999) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (25009) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (25019) LUNG_DETECT: Num: 127[0m
+[0;32mI (25019) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (25029) EOC_TEST: EOC recieved[0m
+[0;32mI (25029) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (25029) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (25039) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (25049) LUNG_DETECT: Num: 127[0m
+[0;32mI (25049) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (25059) EOC_TEST: EOC recieved[0m
+[0;32mI (25059) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (25059) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (25069) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (25079) LUNG_DETECT: Num: 127[0m
+[0;32mI (25079) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (25089) EOC_TEST: EOC recieved[0m
+[0;32mI (25089) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (25099) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (25099) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (25109) LUNG_DETECT: Num: 127[0m
+[0;32mI (25109) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (25119) EOC_TEST: EOC recieved[0m
+[0;32mI (25119) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (25129) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (25129) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (25139) LUNG_DETECT: Num: 127[0m
+[0;32mI (25139) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (25149) EOC_TEST: EOC recieved[0m
+[0;32mI (25149) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (25159) LUNG_DETECT: Streaming Disabled[0m
+[0;32mI (25159) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (25169) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (25179) LUNG_DETECT: Num: 127[0m
+[0;31mE (30159) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (30159) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (30159) task_wdt: Tasks currently running:[0m
+[0;31mE (30159) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (30159) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (30159) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8EF7:0x3FFB0F80 0x400D92BC:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C11:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (35159) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (35159) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (35159) task_wdt: Tasks currently running:[0m
+[0;31mE (35159) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (35159) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (35159) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8EF7:0x3FFB0F80 0x400D92BC:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C11:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (40159) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (40159) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (40159) task_wdt: Tasks currently running:[0m
+[0;31mE (40159) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (40159) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (40159) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8EF7:0x3FFB0F80 0x400D92BC:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C11:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (45159) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (45159) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (45159) task_wdt: Tasks currently running:[0m
+[0;31mE (45159) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (45159) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (45159) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8EF7:0x3FFB0F80 0x400D92BC:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C11:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (50159) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (50159) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (50159) task_wdt: Tasks currently running:[0m
+[0;31mE (50159) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (50159) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (50159) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8EF7:0x3FFB0F80 0x400D92BC:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C11:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (55159) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (55159) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (55159) task_wdt: Tasks currently running:[0m
+[0;31mE (55159) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (55159) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (55159) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8EF7:0x3FFB0F80 0x400D92BC:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C11:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (60159) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (60159) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (60159) task_wdt: Tasks currently running:[0m
+[0;31mE (60159) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (60159) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (60159) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8EF7:0x3FFB0F80 0x400D92BC:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C11:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (65159) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (65159) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (65159) task_wdt: Tasks currently running:[0m
+[0;31mE (65159) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (65159) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (65159) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8EF7:0x3FFB0F80 0x400D92BC:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C11:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;32mI (68149) LUNG_DETECT: Streaming Enabled[0m
+[0;32mI (68149) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68149) EOC_TEST: EOC recieved[0m
+[0;32mI (68149) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68149) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68159) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68169) LUNG_DETECT: Num: 127[0m
+[0;32mI (68169) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68179) EOC_TEST: EOC recieved[0m
+[0;32mI (68179) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68179) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68189) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68199) LUNG_DETECT: Num: 127[0m
+[0;32mI (68199) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68209) EOC_TEST: EOC recieved[0m
+[0;32mI (68209) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68209) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68219) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68229) LUNG_DETECT: Num: 127[0m
+[0;32mI (68229) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68239) EOC_TEST: EOC recieved[0m
+[0;32mI (68239) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68249) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68249) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68259) LUNG_DETECT: Num: 127[0m
+[0;32mI (68259) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68269) EOC_TEST: EOC recieved[0m
+[0;32mI (68269) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68279) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68279) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68289) LUNG_DETECT: Num: 127[0m
+[0;32mI (68289) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68299) EOC_TEST: EOC recieved[0m
+[0;32mI (68299) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68309) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68319) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68319) LUNG_DETECT: Num: 127[0m
+[0;32mI (68329) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68329) EOC_TEST: EOC recieved[0m
+[0;32mI (68329) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68339) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68349) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68349) LUNG_DETECT: Num: 127[0m
+[0;32mI (68359) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68359) EOC_TEST: EOC recieved[0m
+[0;32mI (68369) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68369) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68379) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68379) LUNG_DETECT: Num: 127[0m
+[0;32mI (68389) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68389) EOC_TEST: EOC recieved[0m
+[0;32mI (68399) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68399) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68409) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68409) LUNG_DETECT: Num: 127[0m
+[0;32mI (68419) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68419) EOC_TEST: EOC recieved[0m
+[0;32mI (68429) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68429) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68439) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68449) LUNG_DETECT: Num: 127[0m
+[0;32mI (68449) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68449) EOC_TEST: EOC recieved[0m
+[0;32mI (68459) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68459) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68469) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68479) LUNG_DETECT: Num: 127[0m
+[0;32mI (68479) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68489) EOC_TEST: EOC recieved[0m
+[0;32mI (68489) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68489) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68499) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68509) LUNG_DETECT: Num: 127[0m
+[0;32mI (68509) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68519) EOC_TEST: EOC recieved[0m
+[0;32mI (68519) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68529) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68529) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68539) LUNG_DETECT: Num: 127[0m
+[0;32mI (68539) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68549) EOC_TEST: EOC recieved[0m
+[0;32mI (68549) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68559) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68559) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68569) LUNG_DETECT: Num: 127[0m
+[0;32mI (68569) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68579) EOC_TEST: EOC recieved[0m
+[0;32mI (68579) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68589) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68589) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68599) LUNG_DETECT: Num: 127[0m
+[0;32mI (68599) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68609) EOC_TEST: EOC recieved[0m
+[0;32mI (68609) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68619) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68629) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68629) LUNG_DETECT: Num: 127[0m
+[0;32mI (68639) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68639) EOC_TEST: EOC recieved[0m
+[0;32mI (68649) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68649) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68659) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68659) LUNG_DETECT: Num: 127[0m
+[0;32mI (68669) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68669) EOC_TEST: EOC recieved[0m
+[0;32mI (68679) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68679) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68689) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68689) LUNG_DETECT: Num: 127[0m
+[0;32mI (68699) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68699) EOC_TEST: EOC recieved[0m
+[0;32mI (68709) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68709) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68719) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68729) LUNG_DETECT: Num: 127[0m
+[0;32mI (68729) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68729) EOC_TEST: EOC recieved[0m
+[0;32mI (68739) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68739) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68749) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68759) LUNG_DETECT: Num: 127[0m
+[0;32mI (68759) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68769) EOC_TEST: EOC recieved[0m
+[0;32mI (68769) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68769) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68779) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68789) LUNG_DETECT: Num: 127[0m
+[0;32mI (68789) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68799) EOC_TEST: EOC recieved[0m
+[0;32mI (68799) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68799) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68809) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68819) LUNG_DETECT: Num: 127[0m
+[0;32mI (68819) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68829) EOC_TEST: EOC recieved[0m
+[0;32mI (68829) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68839) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68839) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68849) LUNG_DETECT: Num: 127[0m
+[0;32mI (68849) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68859) EOC_TEST: EOC recieved[0m
+[0;32mI (68859) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68869) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68869) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68879) LUNG_DETECT: Num: 127[0m
+[0;32mI (68879) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68889) EOC_TEST: EOC recieved[0m
+[0;32mI (68889) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68899) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68909) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68909) LUNG_DETECT: Num: 127[0m
+[0;32mI (68919) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68919) EOC_TEST: EOC recieved[0m
+[0;32mI (68929) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68929) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68939) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68939) LUNG_DETECT: Num: 127[0m
+[0;32mI (68949) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68949) EOC_TEST: EOC recieved[0m
+[0;32mI (68959) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68959) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68969) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68969) LUNG_DETECT: Num: 127[0m
+[0;32mI (68979) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (68979) EOC_TEST: EOC recieved[0m
+[0;32mI (68989) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (68989) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (68999) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (68999) LUNG_DETECT: Num: 127[0m
+[0;32mI (69009) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (69009) EOC_TEST: EOC recieved[0m
+[0;32mI (69019) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (69019) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (69029) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (69039) LUNG_DETECT: Num: 127[0m
+[0;32mI (69039) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (69049) EOC_TEST: EOC recieved[0m
+[0;32mI (69049) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (69049) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (69059) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (69069) LUNG_DETECT: Num: 127[0m
+[0;32mI (69069) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (69079) EOC_TEST: EOC recieved[0m
+[0;32mI (69079) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (69079) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (69089) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (69099) LUNG_DETECT: Num: 127[0m
+[0;32mI (69099) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (69109) EOC_TEST: EOC recieved[0m
+[0;32mI (69109) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (69119) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (69119) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (69129) LUNG_DETECT: Num: 127[0m
+[0;32mI (69129) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (69139) LUNG_DETECT: Streaming Disabled[0m
+[0;32mI (69139) EOC_TEST: EOC recieved[0m
+[0;32mI (69149) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (69149) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (69159) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (69159) LUNG_DETECT: Num: 127[0m
+[0;32mI (71619) LUNG_DETECT: Streaming Enabled[0m
+[0;32mI (71619) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (71619) EOC_TEST: EOC recieved[0m
+[0;32mI (71619) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (71619) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (71629) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (71639) LUNG_DETECT: Num: 127[0m
+[0;32mI (71639) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (71649) EOC_TEST: EOC recieved[0m
+[0;32mI (71649) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (71649) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (71659) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (71669) LUNG_DETECT: Num: 127[0m
+[0;32mI (71669) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (71679) EOC_TEST: EOC recieved[0m
+[0;32mI (71679) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (71679) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (71689) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (71699) LUNG_DETECT: Num: 127[0m
+[0;32mI (71699) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (71709) EOC_TEST: EOC recieved[0m
+[0;32mI (71709) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (71719) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (71719) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (71729) LUNG_DETECT: Num: 127[0m
+[0;32mI (71729) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (71739) EOC_TEST: EOC recieved[0m
+[0;32mI (71739) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (71749) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (71749) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (71759) LUNG_DETECT: Num: 127[0m
+[0;32mI (71759) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (71769) EOC_TEST: EOC recieved[0m
+[0;32mI (71769) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (71779) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (71789) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (71789) LUNG_DETECT: Num: 127[0m
+[0;32mI (71799) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (71799) EOC_TEST: EOC recieved[0m
+[0;32mI (71799) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (71809) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (71819) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (71819) LUNG_DETECT: Num: 127[0m
+[0;32mI (71829) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (71829) EOC_TEST: EOC recieved[0m
+[0;32mI (71839) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (71839) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (71849) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (71849) LUNG_DETECT: Num: 127[0m
+[0;32mI (71859) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (71859) EOC_TEST: EOC recieved[0m
+[0;32mI (71869) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (71869) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (71879) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (71879) LUNG_DETECT: Num: 127[0m
+[0;32mI (71889) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (71889) EOC_TEST: EOC recieved[0m
+[0;32mI (71899) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (71899) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (71909) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (71919) LUNG_DETECT: Num: 127[0m
+[0;32mI (71919) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (71919) EOC_TEST: EOC recieved[0m
+[0;32mI (71929) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (71929) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (71939) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (71949) LUNG_DETECT: Num: 127[0m
+[0;32mI (71949) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (71959) EOC_TEST: EOC recieved[0m
+[0;32mI (71959) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (71959) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (71969) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (71979) LUNG_DETECT: Num: 127[0m
+[0;32mI (71979) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (71989) EOC_TEST: EOC recieved[0m
+[0;32mI (71989) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (71999) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (71999) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72009) LUNG_DETECT: Num: 127[0m
+[0;32mI (72009) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72019) EOC_TEST: EOC recieved[0m
+[0;32mI (72019) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72029) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72029) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72039) LUNG_DETECT: Num: 127[0m
+[0;32mI (72039) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72049) EOC_TEST: EOC recieved[0m
+[0;32mI (72049) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72059) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72059) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72069) LUNG_DETECT: Num: 127[0m
+[0;32mI (72069) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72079) EOC_TEST: EOC recieved[0m
+[0;32mI (72079) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72089) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72099) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72099) LUNG_DETECT: Num: 127[0m
+[0;32mI (72109) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72109) EOC_TEST: EOC recieved[0m
+[0;32mI (72119) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72119) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72129) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72129) LUNG_DETECT: Num: 127[0m
+[0;32mI (72139) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72139) EOC_TEST: EOC recieved[0m
+[0;32mI (72149) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72149) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72159) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72159) LUNG_DETECT: Num: 127[0m
+[0;32mI (72169) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72169) EOC_TEST: EOC recieved[0m
+[0;32mI (72179) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72179) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72189) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72199) LUNG_DETECT: Num: 127[0m
+[0;32mI (72199) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72199) EOC_TEST: EOC recieved[0m
+[0;32mI (72209) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72209) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72219) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72229) LUNG_DETECT: Num: 127[0m
+[0;32mI (72229) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72239) EOC_TEST: EOC recieved[0m
+[0;32mI (72239) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72239) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72249) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72259) LUNG_DETECT: Num: 127[0m
+[0;32mI (72259) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72269) EOC_TEST: EOC recieved[0m
+[0;32mI (72269) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72269) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72279) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72289) LUNG_DETECT: Num: 127[0m
+[0;32mI (72289) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72299) EOC_TEST: EOC recieved[0m
+[0;32mI (72299) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72309) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72309) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72319) LUNG_DETECT: Num: 127[0m
+[0;32mI (72319) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72329) EOC_TEST: EOC recieved[0m
+[0;32mI (72329) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72339) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72339) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72349) LUNG_DETECT: Num: 127[0m
+[0;32mI (72349) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72359) EOC_TEST: EOC recieved[0m
+[0;32mI (72359) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72369) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72379) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72379) LUNG_DETECT: Num: 127[0m
+[0;32mI (72389) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72389) EOC_TEST: EOC recieved[0m
+[0;32mI (72399) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72399) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72409) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72409) LUNG_DETECT: Num: 127[0m
+[0;32mI (72419) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72419) EOC_TEST: EOC recieved[0m
+[0;32mI (72429) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72429) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72439) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72439) LUNG_DETECT: Num: 127[0m
+[0;32mI (72449) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72449) EOC_TEST: EOC recieved[0m
+[0;32mI (72459) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72459) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72469) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72469) LUNG_DETECT: Num: 127[0m
+[0;32mI (72479) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72479) EOC_TEST: EOC recieved[0m
+[0;32mI (72489) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72489) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72499) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72509) LUNG_DETECT: Num: 127[0m
+[0;32mI (72509) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72519) EOC_TEST: EOC recieved[0m
+[0;32mI (72519) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72519) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72529) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72539) LUNG_DETECT: Num: 127[0m
+[0;32mI (72539) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72549) EOC_TEST: EOC recieved[0m
+[0;32mI (72549) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72549) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72559) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72569) LUNG_DETECT: Num: 127[0m
+[0;32mI (72569) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72579) EOC_TEST: EOC recieved[0m
+[0;32mI (72579) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72589) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72589) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72599) LUNG_DETECT: Num: 127[0m
+[0;32mI (72599) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72609) EOC_TEST: EOC recieved[0m
+[0;32mI (72609) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72619) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72619) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72629) LUNG_DETECT: Num: 127[0m
+[0;32mI (72629) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72639) EOC_TEST: EOC recieved[0m
+[0;32mI (72639) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72649) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;31mE (72659) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72659) LUNG_DETECT: Num: 127[0m
+[0;32mI (72669) START: SOC pin == 0?: 1 
+EOC pin == 0?: 0[0m
+[0;32mI (72669) EOC_TEST: EOC recieved[0m
+[0;32mI (72669) ADC_READ: ADC Raw Data: 0[0m
+[0;32mI (72679) LUNG_DETECT: got eoc from adc, attempting to transmit over uart[0m
+[0;32mI (72689) LUNG_DETECT: Streaming Disabled[0m
+[0;31mE (72689) uart: uart_write_bytes(1460): uart driver error[0m
+[0;32mI (72699) LUNG_DETECT: Num: 127[0m
+[0;31mE (77689) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (77689) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (77689) task_wdt: Tasks currently running:[0m
+[0;31mE (77689) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (77689) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (77689) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8EF7:0x3FFB0F80 0x400D92BC:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C11:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (82689) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (82689) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (82689) task_wdt: Tasks currently running:[0m
+[0;31mE (82689) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (82689) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (82689) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8EF7:0x3FFB0F80 0x400D92BC:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C11:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (87689) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (87689) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (87689) task_wdt: Tasks currently running:[0m
+[0;31mE (87689) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (87689) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (87689) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8EF7:0x3FFB0F80 0x400D92BC:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C11:0x3FFB5DC0 0x40086195:0x3FFB5E00
+
+[0;31mE (92689) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (92689) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (92689) task_wdt: Tasks currently running:[0m
+[0;31mE (92689) task_wdt: CPU 0: ADC_Sampling[0m
+[0;31mE (92689) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (92689) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8EF7:0x3FFB0F80 0x400D92BC:0x3FFB0FA0 0x40082E0D:0x3FFB0FD0 0x400844C5:0x3FFB5D80 0x40087C4E:0x3FFB5DA0 0x400D6C11:0x3FFB5DC0 0x40086195:0x3FFB5E00
+

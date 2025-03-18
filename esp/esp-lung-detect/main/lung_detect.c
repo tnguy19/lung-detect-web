@@ -1,51 +1,215 @@
-// #include "driver/i2s.h"
-// #include "driver/i2s_std.h"
-// #include "freertos/FreeRTOS.h"
-// #include "freertos/task.h"
+// // #include "driver/i2s.h"
+// // #include "driver/i2s_std.h"
+// // #include "freertos/FreeRTOS.h"
+// // #include "freertos/task.h"
 
-// #define I2S_NUM        I2S_NUM_0
-// #define I2S_BCLK       26  // GPIO for Bit Clock
-// #define I2S_LRCLK      25  // GPIO for Word Clock
-// #define I2S_DIN        33  // GPIO for Data Input
-// #define SAMPLE_RATE    48000  // Set sample rate
+// // #define I2S_NUM        I2S_NUM_0
+// // #define I2S_BCLK       26  // GPIO for Bit Clock
+// // #define I2S_LRCLK      25  // GPIO for Word Clock
+// // #define I2S_DIN        33  // GPIO for Data Input
+// // #define SAMPLE_RATE    48000  // Set sample rate
 
-// void i2s_setup() {
-//     i2s_config_t i2s_config = {
-//         .mode = I2S_MODE_SLAVE | I2S_MODE_RX,
-//         .sample_rate = SAMPLE_RATE,
-//         .bits_per_sample = I2S_BITS_PER_SAMPLE_24BIT,
-//         .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,
-//         .communication_format = I2S_COMM_FORMAT_I2S,
-//         .dma_buf_count = 8,
-//         .dma_buf_len = 1024,
-//         .intr_alloc_flags = ESP_INTR_FLAG_LEVEL1
+// // void i2s_setup() {
+// //     i2s_config_t i2s_config = {
+// //         .mode = I2S_MODE_SLAVE | I2S_MODE_RX,
+// //         .sample_rate = SAMPLE_RATE,
+// //         .bits_per_sample = I2S_BITS_PER_SAMPLE_24BIT,
+// //         .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,
+// //         .communication_format = I2S_COMM_FORMAT_I2S,
+// //         .dma_buf_count = 8,
+// //         .dma_buf_len = 1024,
+// //         .intr_alloc_flags = ESP_INTR_FLAG_LEVEL1
+// //     };
+
+// //     i2s_pin_config_t pin_config = {
+// //         .bck_io_num = I2S_BCLK,
+// //         .ws_io_num = I2S_LRCLK,
+// //         .data_in_num = I2S_DIN,
+// //         .data_out_num = I2S_PIN_NO_CHANGE
+// //     };
+
+// //     i2s_driver_install(I2S_NUM, &i2s_config, 0, NULL);
+// //     i2s_set_pin(I2S_NUM, &pin_config);
+// // }
+
+// // void app_main() {
+// //     i2s_setup();
+// //     while (1) {
+// //         vTaskDelay(pdMS_TO_TICKS(1000)); // Keep the task alive
+// //     }
+// // }
+// #include <stdio.h>
+// #include <string.h>
+// #include "esp_timer.h"
+// #include "driver/spi_master.h"
+// #include "driver/gpio.h"
+// #include "esp_log.h"
+// #include "esp_err.h"
+// #include "esp_rom_sys.h"
+
+// // ADC Control Pins
+// #define SOC_PIN   16  // Start Conversion
+// #define EOC_PIN   5   // End of Conversion
+// #define CLK_PIN   17  // Clock Signal
+// #define ADDR_A    21  
+// #define ADDR_B    22  
+// #define ADDR_C    23  
+
+// // ADC Parallel Data Pins
+// #define ADC_D0   32  // LSB
+// #define ADC_D1   33
+// #define ADC_D2   34
+// #define ADC_D3    4
+// #define ADC_D4   36
+// #define ADC_D5   39
+// #define ADC_D6   25
+// #define ADC_D7   26  // MSB
+
+// // SPI Interface Pins (ESP32 <-> Raspberry Pi)
+// #define SPI_MOSI 18  // To Pi GP25
+// #define SPI_MISO 19  // To Pi GP16
+// #define SPI_SCLK 14  // To Pi GP24
+// #define SPI_CS   15  // To Pi GP17
+
+// #define SAMPLE_RATE 40000  // 40kHz sampling
+// #define SAMPLE_PERIOD (1000000 / SAMPLE_RATE) // Microseconds per sample
+
+// static const char *TAG = "ADC_SPI";
+// spi_device_handle_t spi;
+
+// // Function to configure a GPIO pin
+// void configure_gpio(int pin, gpio_mode_t mode, gpio_pull_mode_t pull_mode) {
+//     gpio_config_t io_conf = {
+//         .pin_bit_mask = (1ULL << pin),
+//         .mode = mode,
+//         .pull_up_en = (pull_mode == GPIO_PULLUP_ONLY) ? GPIO_PULLUP_ENABLE : GPIO_PULLUP_DISABLE,
+//         .pull_down_en = (pull_mode == GPIO_PULLDOWN_ONLY) ? GPIO_PULLDOWN_ENABLE : GPIO_PULLDOWN_DISABLE,
+//         .intr_type = GPIO_INTR_DISABLE
 //     };
-
-//     i2s_pin_config_t pin_config = {
-//         .bck_io_num = I2S_BCLK,
-//         .ws_io_num = I2S_LRCLK,
-//         .data_in_num = I2S_DIN,
-//         .data_out_num = I2S_PIN_NO_CHANGE
-//     };
-
-//     i2s_driver_install(I2S_NUM, &i2s_config, 0, NULL);
-//     i2s_set_pin(I2S_NUM, &pin_config);
+//     gpio_config(&io_conf);
 // }
 
+// // Initialize GPIO for ADC and SPI
+// void setup_gpio() {
+//     // Configure ADC Control Pins
+//     configure_gpio(SOC_PIN, GPIO_MODE_OUTPUT, GPIO_FLOATING);
+//     configure_gpio(EOC_PIN, GPIO_MODE_INPUT, GPIO_FLOATING);
+//     configure_gpio(CLK_PIN, GPIO_MODE_OUTPUT, GPIO_FLOATING);
+//     configure_gpio(ADDR_A, GPIO_MODE_OUTPUT, GPIO_FLOATING);
+//     configure_gpio(ADDR_B, GPIO_MODE_OUTPUT, GPIO_FLOATING);
+//     configure_gpio(ADDR_C, GPIO_MODE_OUTPUT, GPIO_FLOATING);
+
+//     // Set ADC Address to Read from IN0 (ADDR = 000)
+//     gpio_set_level(ADDR_A, 0);
+//     gpio_set_level(ADDR_B, 0);
+//     gpio_set_level(ADDR_C, 0);
+
+//     // Configure ADC Data Pins as INPUT
+//     configure_gpio(ADC_D0, GPIO_MODE_INPUT, GPIO_FLOATING);
+//     configure_gpio(ADC_D1, GPIO_MODE_INPUT, GPIO_FLOATING);
+//     configure_gpio(ADC_D2, GPIO_MODE_INPUT, GPIO_FLOATING);
+//     configure_gpio(ADC_D3, GPIO_MODE_INPUT, GPIO_FLOATING);
+//     configure_gpio(ADC_D4, GPIO_MODE_INPUT, GPIO_FLOATING);
+//     configure_gpio(ADC_D5, GPIO_MODE_INPUT, GPIO_FLOATING);
+//     configure_gpio(ADC_D6, GPIO_MODE_INPUT, GPIO_FLOATING);
+//     configure_gpio(ADC_D7, GPIO_MODE_INPUT, GPIO_FLOATING);
+// }
+
+// // Initialize SPI
+// void setup_spi() {
+//     spi_bus_config_t buscfg = {
+//         .miso_io_num = SPI_MISO,
+//         .mosi_io_num = SPI_MOSI,
+//         .sclk_io_num = SPI_SCLK,
+//         .quadwp_io_num = -1,
+//         .quadhd_io_num = -1,
+//     };
+
+//     spi_device_interface_config_t devcfg = {
+//         .clock_speed_hz = 1000000,  // 1 MHz SPI speed
+//         .mode = 0,                  // SPI mode 0
+//         .spics_io_num = SPI_CS,      // Chip Select
+//         .queue_size = 1,
+//     };
+
+//     esp_err_t ret;
+//     ret = spi_bus_initialize(SPI2_HOST, &buscfg, SPI_DMA_CH_AUTO);
+//     ESP_ERROR_CHECK(ret);
+//     ret = spi_bus_add_device(SPI2_HOST, &devcfg, &spi);
+//     ESP_ERROR_CHECK(ret);
+
+//     ESP_LOGI(TAG, "SPI Initialized.");
+// }
+
+// // Read ADC value
+// uint8_t read_adc() {
+//     // Start ADC Conversion
+//     gpio_set_level(SOC_PIN, 1);
+//     esp_rom_delay_us(5);
+//     gpio_set_level(SOC_PIN, 0);
+
+//     // Wait for EOC to go HIGH and then LOW (conversion complete)
+//     while (gpio_get_level(EOC_PIN) == 0);
+//     while (gpio_get_level(EOC_PIN) == 1);
+
+//     // Read 8-bit parallel data
+//     uint8_t value = (gpio_get_level(ADC_D7) << 7) |
+//                     (gpio_get_level(ADC_D6) << 6) |
+//                     (gpio_get_level(ADC_D5) << 5) |
+//                     (gpio_get_level(ADC_D4) << 4) |
+//                     (gpio_get_level(ADC_D3) << 3) |
+//                     (gpio_get_level(ADC_D2) << 2) |
+//                     (gpio_get_level(ADC_D1) << 1) |
+//                     (gpio_get_level(ADC_D0) << 0);
+
+//     return value;
+// }
+
+// // Send data over SPI
+// void send_spi(uint8_t data) {
+//     spi_transaction_t t;
+//     memset(&t, 0, sizeof(t));
+//     t.length = 8;        // 8-bit data
+//     t.tx_buffer = &data; // Pointer to data
+//     esp_err_t ret = spi_device_transmit(spi, &t);
+//     ESP_ERROR_CHECK(ret);
+// }
+
+// // Main loop function
 // void app_main() {
-//     i2s_setup();
+//     setup_gpio();
+//     setup_spi();
+
+//     ESP_LOGI(TAG, "ADC and SPI Initialized.");
+
 //     while (1) {
-//         vTaskDelay(pdMS_TO_TICKS(1000)); // Keep the task alive
+//         uint32_t start_time = esp_timer_get_time(); // Get current time in microseconds
+
+//         uint8_t adc_value = read_adc();  // Read ADC data
+//         send_spi(adc_value);             // Send to Raspberry Pi via SPI
+
+//         uint32_t elapsed_time = esp_timer_get_time() - start_time;
+//         if (elapsed_time < SAMPLE_PERIOD) {
+//             esp_rom_delay_us(SAMPLE_PERIOD - elapsed_time);
+//         }
 //     }
 // }
+
 #include <stdio.h>
 #include <string.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "esp_attr.h"
 #include "esp_timer.h"
-#include "driver/spi_master.h"
 #include "driver/gpio.h"
 #include "esp_log.h"
 #include "esp_err.h"
 #include "esp_rom_sys.h"
+#include "driver/uart.h"
+
+#define UART_PORT UART_NUM_1
+#define UART_TX_PIN 1
+#define UART_RX_PIN 3  // Not used
 
 // ADC Control Pins
 #define SOC_PIN   16  // Start Conversion
@@ -65,133 +229,161 @@
 #define ADC_D6   25
 #define ADC_D7   26  // MSB
 
-// SPI Interface Pins (ESP32 <-> Raspberry Pi)
-#define SPI_MOSI 18  // To Pi GP25
-#define SPI_MISO 19  // To Pi GP16
-#define SPI_SCLK 14  // To Pi GP24
-#define SPI_CS   15  // To Pi GP17
+#define SWITCH_GPIO 27  // Toggle switch for data streaming
+static const char *TAG = "LUNG_DETECT";
 
-#define SAMPLE_RATE 40000  // 40kHz sampling
-#define SAMPLE_PERIOD (1000000 / SAMPLE_RATE) // Microseconds per sample
+void adc_sampling_task(void *arg);
+void clk_task(void *arg);
+void switch_task(void *arg);
 
-static const char *TAG = "ADC_SPI";
-spi_device_handle_t spi;
+volatile bool streaming_enabled = false;  // Streaming toggle
+volatile bool switch_pressed = false;  // Flag to signal main task for debouncing
 
-// Function to configure a GPIO pin
-void configure_gpio(int pin, gpio_mode_t mode, gpio_pull_mode_t pull_mode) {
+//switch handler
+void IRAM_ATTR switch_isr_handler(void *arg) {
+    switch_pressed = true;  // Set flag instead of doing work here
+}
+
+//config functions
+void configure_gpio() {
+    // Configure ADC control pins as outputs
+    int control_pins[] = {SOC_PIN, CLK_PIN, ADDR_A, ADDR_B, ADDR_C};
+    for (int i = 0; i < 5; i++) {
+        esp_rom_gpio_pad_select_gpio(control_pins[i]);
+        gpio_set_direction(control_pins[i], GPIO_MODE_OUTPUT);
+    }
+    
+    // Configure ADC data pins as inputs
+    int data_pins[] = {ADC_D0, ADC_D1, ADC_D2, ADC_D3, ADC_D4, ADC_D5, ADC_D6, ADC_D7};
+    for (int i = 0; i < 8; i++) {
+        esp_rom_gpio_pad_select_gpio(data_pins[i]);
+        gpio_set_direction(data_pins[i], GPIO_MODE_INPUT);
+    }
+
+    // Configure End of Conversion (EOC) as input
+    esp_rom_gpio_pad_select_gpio(EOC_PIN);
+    gpio_set_direction(EOC_PIN, GPIO_MODE_INPUT);
+     
+    //config switch pin
     gpio_config_t io_conf = {
-        .pin_bit_mask = (1ULL << pin),
-        .mode = mode,
-        .pull_up_en = (pull_mode == GPIO_PULLUP_ONLY) ? GPIO_PULLUP_ENABLE : GPIO_PULLUP_DISABLE,
-        .pull_down_en = (pull_mode == GPIO_PULLDOWN_ONLY) ? GPIO_PULLDOWN_ENABLE : GPIO_PULLDOWN_DISABLE,
-        .intr_type = GPIO_INTR_DISABLE
+        .pin_bit_mask = (1ULL << SWITCH_GPIO),
+        .mode = GPIO_MODE_INPUT,
+        .pull_up_en = GPIO_PULLUP_ENABLE,  // Ensure it's not floating
+        .pull_down_en = GPIO_PULLDOWN_DISABLE,
+        .intr_type = GPIO_INTR_NEGEDGE  // Detect button press (falling edge)
     };
     gpio_config(&io_conf);
+    gpio_install_isr_service(0);
+    gpio_isr_handler_add(SWITCH_GPIO, switch_isr_handler, NULL);
+    ESP_LOGI(TAG, "Finished GPIO config");
 }
 
-// Initialize GPIO for ADC and SPI
-void setup_gpio() {
-    // Configure ADC Control Pins
-    configure_gpio(SOC_PIN, GPIO_MODE_OUTPUT, GPIO_FLOATING);
-    configure_gpio(EOC_PIN, GPIO_MODE_INPUT, GPIO_FLOATING);
-    configure_gpio(CLK_PIN, GPIO_MODE_OUTPUT, GPIO_FLOATING);
-    configure_gpio(ADDR_A, GPIO_MODE_OUTPUT, GPIO_FLOATING);
-    configure_gpio(ADDR_B, GPIO_MODE_OUTPUT, GPIO_FLOATING);
-    configure_gpio(ADDR_C, GPIO_MODE_OUTPUT, GPIO_FLOATING);
-
-    // Set ADC Address to Read from IN0 (ADDR = 000)
-    gpio_set_level(ADDR_A, 0);
-    gpio_set_level(ADDR_B, 0);
-    gpio_set_level(ADDR_C, 0);
-
-    // Configure ADC Data Pins as INPUT
-    configure_gpio(ADC_D0, GPIO_MODE_INPUT, GPIO_FLOATING);
-    configure_gpio(ADC_D1, GPIO_MODE_INPUT, GPIO_FLOATING);
-    configure_gpio(ADC_D2, GPIO_MODE_INPUT, GPIO_FLOATING);
-    configure_gpio(ADC_D3, GPIO_MODE_INPUT, GPIO_FLOATING);
-    configure_gpio(ADC_D4, GPIO_MODE_INPUT, GPIO_FLOATING);
-    configure_gpio(ADC_D5, GPIO_MODE_INPUT, GPIO_FLOATING);
-    configure_gpio(ADC_D6, GPIO_MODE_INPUT, GPIO_FLOATING);
-    configure_gpio(ADC_D7, GPIO_MODE_INPUT, GPIO_FLOATING);
-}
-
-// Initialize SPI
-void setup_spi() {
-    spi_bus_config_t buscfg = {
-        .miso_io_num = SPI_MISO,
-        .mosi_io_num = SPI_MOSI,
-        .sclk_io_num = SPI_SCLK,
-        .quadwp_io_num = -1,
-        .quadhd_io_num = -1,
+void configure_uart() {
+    uart_config_t uart_config = {
+        .baud_rate = 115200,
+        .data_bits = UART_DATA_8_BITS,
+        .parity = UART_PARITY_DISABLE,
+        .stop_bits = UART_STOP_BITS_1,
+        .flow_ctrl = UART_HW_FLOWCTRL_DISABLE
     };
-
-    spi_device_interface_config_t devcfg = {
-        .clock_speed_hz = 1000000,  // 1 MHz SPI speed
-        .mode = 0,                  // SPI mode 0
-        .spics_io_num = SPI_CS,      // Chip Select
-        .queue_size = 1,
-    };
-
-    esp_err_t ret;
-    ret = spi_bus_initialize(SPI2_HOST, &buscfg, SPI_DMA_CH_AUTO);
-    ESP_ERROR_CHECK(ret);
-    ret = spi_bus_add_device(SPI2_HOST, &devcfg, &spi);
-    ESP_ERROR_CHECK(ret);
-
-    ESP_LOGI(TAG, "SPI Initialized.");
+    uart_param_config(UART_PORT, &uart_config);
+    uart_set_pin(UART_PORT, UART_TX_PIN, UART_RX_PIN, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
+    uart_driver_install(UART_PORT, 1024, 0, 0, NULL, 0);
 }
 
-// Read ADC value
-uint8_t read_adc() {
-    // Start ADC Conversion
-    gpio_set_level(SOC_PIN, 1);
-    esp_rom_delay_us(5);
-    gpio_set_level(SOC_PIN, 0);
-
-    // Wait for EOC to go HIGH and then LOW (conversion complete)
-    while (gpio_get_level(EOC_PIN) == 0);
-    while (gpio_get_level(EOC_PIN) == 1);
-
-    // Read 8-bit parallel data
-    uint8_t value = (gpio_get_level(ADC_D7) << 7) |
-                    (gpio_get_level(ADC_D6) << 6) |
-                    (gpio_get_level(ADC_D5) << 5) |
-                    (gpio_get_level(ADC_D4) << 4) |
-                    (gpio_get_level(ADC_D3) << 3) |
-                    (gpio_get_level(ADC_D2) << 2) |
-                    (gpio_get_level(ADC_D1) << 1) |
-                    (gpio_get_level(ADC_D0) << 0);
-
-    return value;
+// ADC task
+uint8_t read_adc_data() {
+    uint8_t data = 0;
+    data |= gpio_get_level(ADC_D0) << 0;
+    data |= gpio_get_level(ADC_D1) << 1;
+    data |= gpio_get_level(ADC_D2) << 2;
+    data |= gpio_get_level(ADC_D3) << 3;
+    data |= gpio_get_level(ADC_D4) << 4;
+    data |= gpio_get_level(ADC_D5) << 5;
+    data |= gpio_get_level(ADC_D6) << 6;
+    data |= gpio_get_level(ADC_D7) << 7;
+    ESP_LOGI("ADC_READ", "ADC Raw Data: %d", data);
+    return data;
 }
 
-// Send data over SPI
-void send_spi(uint8_t data) {
-    spi_transaction_t t;
-    memset(&t, 0, sizeof(t));
-    t.length = 8;        // 8-bit data
-    t.tx_buffer = &data; // Pointer to data
-    esp_err_t ret = spi_device_transmit(spi, &t);
-    ESP_ERROR_CHECK(ret);
-}
-
-// Main loop function
-void app_main() {
-    setup_gpio();
-    setup_spi();
-
-    ESP_LOGI(TAG, "ADC and SPI Initialized.");
-
+void adc_sampling_task(void *arg) {
+    ESP_LOGI("ADC_TASK", "adc sample task started");
     while (1) {
-        uint32_t start_time = esp_timer_get_time(); // Get current time in microseconds
-
-        uint8_t adc_value = read_adc();  // Read ADC data
-        send_spi(adc_value);             // Send to Raspberry Pi via SPI
-
-        uint32_t elapsed_time = esp_timer_get_time() - start_time;
-        if (elapsed_time < SAMPLE_PERIOD) {
-            esp_rom_delay_us(SAMPLE_PERIOD - elapsed_time);
+        if (streaming_enabled) {
+            // Start ADC conversion
+            gpio_set_level(SOC_PIN, 1);
+            esp_rom_delay_us(2);
+            gpio_set_level(SOC_PIN, 0);
+            ESP_LOGI("START", "SOC pin: %d, EOC pin: %d",
+                     gpio_get_level(SOC_PIN), gpio_get_level(EOC_PIN));
+           
+            // Wait for End of Conversion (EOC) with a timeout
+            uint32_t timeout = 1000; // Timeout count (adjust based on expected conversion time)
+            while (gpio_get_level(EOC_PIN) == 0 && timeout > 0) {
+                vTaskDelay(pdMS_TO_TICKS(1));  // Yield for 1ms
+                timeout--;
+            }
+            if (timeout == 0) {
+                ESP_LOGW("ADC_TASK", "Timeout waiting for EOC, skipping sample");
+                // Skip the sample if no EOC; continue to next iteration
+                continue;
+            }
+            ESP_LOGI("ADC_TASK", "EOC received");
+           
+            // Read ADC data
+            uint8_t data = read_adc_data();
+           
+            // Transmit over UART (if enabled)
+            ESP_LOGI("ADC_TASK", "Transmitting ADC value: %d", data);
+            uart_write_bytes(UART_PORT, (const char *)&data, 1);
         }
+        vTaskDelay(pdMS_TO_TICKS(1));  // Small delay to avoid hogging the CPU
     }
 }
 
+// Clock Task (50 kHz)
+void clk_task(void *arg) {
+    ESP_LOGI("CLK_TASK", "clk task started");
+    while (1) {
+        gpio_set_level(CLK_PIN, 1);
+        esp_rom_delay_us(10); // Clock high for 10 µs (50 kHz period = 20 µs total)
+        ESP_LOGI("CLK_TASK", "clock hit negedge");
+        gpio_set_level(CLK_PIN, 0);
+        esp_rom_delay_us(10); // Clock low for 10 µs
+       
+        // Yield to allow other tasks to run
+        taskYIELD();
+    }
+}
+
+// Switch Task
+void switch_task(void *arg) {
+    ESP_LOGI("SWITCH_TASK", "switch task started");
+    while (1) {
+        if (switch_pressed) {
+            vTaskDelay(pdMS_TO_TICKS(50));  // Debounce delay
+            if (gpio_get_level(SWITCH_GPIO) == 0) {  // Confirm button press
+                streaming_enabled = !streaming_enabled;
+                ESP_LOGI(TAG, "Streaming %s", streaming_enabled ? "Enabled" : "Disabled");
+            }
+            switch_pressed = false;  // Reset flag
+        }
+        vTaskDelay(pdMS_TO_TICKS(10));
+    }
+}
+
+void app_main() {
+    ESP_LOGI(TAG, "Initializing...");
+
+    configure_gpio();
+    // Uncomment if UART is needed:
+    // configure_uart();
+    streaming_enabled = 1;
+    ESP_LOGI(TAG, "Starting task functions");
+    xTaskCreate(switch_task, "switch_task", 2048, NULL, 5, NULL);
+    xTaskCreate(adc_sampling_task, "ADC_Sampling", 4096, NULL, 5, NULL);
+    xTaskCreate(clk_task, "clk_task", 2048, NULL, 5, NULL);
+   
+    ESP_LOGI(TAG, "finished starting task functions");
+    ESP_LOGI("END_MAIN", "System Ready. Press switch to toggle data streaming.");
+}
