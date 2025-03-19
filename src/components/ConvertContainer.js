@@ -44,8 +44,8 @@ export default function ConvertContainer() {
     <div>
       <form onSubmit={handleSubmit}>
         <div className="upload-buttons-container">
-          <input type="file" onChange={handleFileChange} />
-          <button type="submit">Convert to .wav format</button>
+          <input type="file" onChange={handleFileChange} class="form-control" />
+          <button type="submit" class="btn btn-primary">Convert</button>
         </div>
       </form>
     </div>

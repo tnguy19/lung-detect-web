@@ -63,7 +63,7 @@ export default function LungVisualization({ data }) {
 
     if (!canvas || !image) return;
 
-    const gridSize = 100; // Grid size in pixels
+    const gridSize = 98; // Grid size in pixels
     const canvasWidth = image.width;
     const canvasHeight = image.height;
 
@@ -111,19 +111,19 @@ export default function LungVisualization({ data }) {
         {/* Canvas Overlay */}
         <canvas ref={canvasRef} className="lung-canvas" />
 
-        {/* Detected Points */}
-        <div className={`lung-point top-left ${topLeftDetected ? "detected" : "not-detected"}`}>
+        {/* Detected Points as Buttons */}
+        <button type="button" className={`btn ${topLeftDetected ? "btn-danger" : "btn-primary"} lung-point top-left`}>
           {topLeftDetected ? "Sound" : "No Sound"}
-        </div>
-        <div className={`lung-point top-right ${topRightDetected ? "detected" : "not-detected"}`}>
+        </button>
+        <button type="button" className={`btn ${topRightDetected ? "btn-danger" : "btn-primary"} lung-point top-right`}>
           {topRightDetected ? "Sound" : "No Sound"}
-        </div>
-        <div className={`lung-point mid-left ${midLeftDetected ? "detected" : "not-detected"}`}>
+        </button>
+        <button type="button" className={`btn ${midLeftDetected ? "btn-danger" : "btn-primary"} lung-point mid-left`}>
           {midLeftDetected ? "Sound" : "No Sound"}
-        </div>
-        <div className={`lung-point mid-right ${midRightDetected ? "detected" : "not-detected"}`}>
+        </button>
+        <button type="button" className={`btn ${midRightDetected ? "btn-danger" : "btn-primary"} lung-point mid-right`}>
           {midRightDetected ? "Sound" : "No Sound"}
-        </div>
+        </button>
       </div>
 
       <div className="table-container">

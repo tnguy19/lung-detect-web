@@ -1,8 +1,10 @@
 import "./App.css";
+import "./bootstrap.css";
 import UploadContainer from "./components/UploadContainer";
 import LungVisualization from "./components/LungVisualization";
 import { useState } from "react";
 import ConvertContainer from "./components/ConvertContainer";
+import NavBar from "./components/NavBar";
 
 function App() {
   const [dataComputed, isDataComputed] = useState(false); // default == false!
@@ -18,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Lung Detect</h1>
+      <NavBar/>
       <div className={!dataComputed && "analysis-container"}>
         {!dataComputed && (
           <UploadContainer
