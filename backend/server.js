@@ -59,6 +59,45 @@ app.post('/compute', upload.single('uploaded_file'), (req, res) => {
     
 });
 
+//to process data and convert them to .wav format
+app.post('/convert', upload.single('uploaded_file'), (req, res) => {
+    // Check if a file was uploaded
+    if (!req.file) {
+        return res.status(400).send('No file uploaded');
+    }
+
+    console.log(`File uploaded: ${req.file.originalname}`);
+    console.log(`File path: ${req.file.path}`);
+    console.log(`File size: ${req.file.size} bytes`);
+    console.log(`File mime type: ${req.file.mimetype}`);
+
+    const filePath = req.file.path; // Access the uploaded file path
+
+    // // Run the Python script with the uploaded file as an argument
+    // execFile('python3', ['./audio_process.py', filePath], (error, stdout, stderr) => {
+    //     if (error) {
+    //         console.error(`Python script error: ${stderr}`);
+    //         return res.status(500).send(`Error executing Python script: ${stderr}`);
+    //     }
+    
+    //     // Log the raw output from Python for debugging
+    //     console.log("Raw Python output:", stdout);
+    
+    //     // Remove any unnecessary outer arrays (if present)
+    //     const cleanedOutput = stdout.replace(/^\[{/, '[').replace(/\}]$/, ']');
+    
+    //     try {
+    //         const jsonResponse = JSON.parse(cleanedOutput);
+    //         console.log("Parsed JSON response:", jsonResponse);
+    //         res.json(jsonResponse);
+    //     } catch (parseError) {
+    //         console.error('Error parsing Python response:', parseError);
+    //         return res.status(500).send('Error parsing Python response');
+    //     }
+    // });
+    
+});
+
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 });

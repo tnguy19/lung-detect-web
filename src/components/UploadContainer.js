@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import LungVisualization from './LungVisualization';
 
 export default function UploadContainer({ updateComputeState, setData }) {
   const [file, setFile] = useState(null);
