@@ -1,33 +1,12 @@
 import { AgGridReact } from 'ag-grid-react';
 import React, { useState } from 'react';
-import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community'; 
+import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community';
 
 // Register all Community features
 ModuleRegistry.registerModules([AllCommunityModule]);
 
-/* Template to pass in data
-const GridExample = () => {
-  // Row Data: The data to be displayed.
-  const [rowData, setRowData] = useState([
-      { make: "Tesla", model: "Model Y", price: 64950, electric: true },
-      { make: "Ford", model: "F-Series", price: 33850, electric: false },
-      { make: "Toyota", model: "Corolla", price: 29600, electric: false },
-  ]);
-
-  // Column Definitions: Defines the columns to be displayed.
-  const [colDefs, setColDefs] = useState([
-      { field: "make" },
-      { field: "model" },
-      { field: "price" },
-      { field: "electric" }
-  ]);
-
-  // ...
-}
-*/
-
 export default function DataTable({ data }) {
-  // Ensure delay values are absolute before setting state and at most 2 decimals place only 
+  // Ensure delay values are absolute before setting state and limit to 2 decimal places
   const processedData = data.map(item => ({
     ...item,
     channel: item.channel,
@@ -39,18 +18,18 @@ export default function DataTable({ data }) {
   const [rowData, setRowData] = useState(processedData);
 
   const [colDefs, setColDefs] = useState([
-    { field: "channel"},
-    { field: "delay"},
-    { field: "transmission_coefficient" },
+    { field: "channel", headerName: "Channel" },
+    { field: "delay", headerName: "Delay" },
+    { field: "transmission_coefficient", headerName: "Transmission Coefficient" },
   ]);
 
   return (
     <div style={{ height: 200, width: '100%' }}>
-        <AgGridReact
-            rowData={rowData}
-            columnDefs={colDefs}
-            domLayout='autoHeight' 
-        />
+      <AgGridReact
+        rowData={rowData}
+        columnDefs={colDefs}
+        domLayout='autoHeight' 
+      />
     </div>
   );
 }

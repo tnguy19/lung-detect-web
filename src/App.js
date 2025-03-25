@@ -1,8 +1,11 @@
 import "./App.css";
+import "./bootstrap.css";
 import UploadContainer from "./components/UploadContainer";
 import LungVisualization from "./components/LungVisualization";
 import { useState } from "react";
-import Header from "./components/Header";
+import ConvertContainer from "./components/ConvertContainer";
+import NavBar from "./components/NavBar";
+
 function App() {
   const [dataComputed, isDataComputed] = useState(false); // default == false!
   const [data, isData] = useState(null); // default == true
@@ -17,8 +20,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Lung Detect</h1>
-      <div className='analysis-container'>
+      <NavBar/>
+      <div className={!dataComputed && "analysis-container"}>
         {!dataComputed && (
           <UploadContainer
             updateComputeState={updateComputeState}
@@ -27,7 +30,11 @@ function App() {
         )}
         {dataComputed && data && <LungVisualization data={data} />}
       </div>
-      
+      <div className={!dataComputed && "convert-container"}>
+      {!dataComputed && (
+          <ConvertContainer/>
+        )}
+      </div>
     </div>
   );
 }

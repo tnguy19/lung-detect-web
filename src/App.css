@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   flex: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-logo {
@@ -38,6 +40,14 @@
    gap: 10px; /*Space between visualization and table */
   width: 100%;
   padding: 10px;
+}
+
+.table-container {
+  flex: 1;
+  max-width: 600px; 
+  min-width: 200px;
+  min-height: 200px;
+  margin-left: 30px; /* Extra space if needed */
 }
 
 
@@ -115,12 +125,29 @@
 
 .analysis-container {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 100px;
+  width: 60%;      /* Adjust this percentage or use max-width as needed */
+  margin: 20px auto 20px; /* top: 0, sides: auto, bottom: 20px */
+}
+
+.convert-container {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  border: 2px solid black;
   min-height: 100px;
   width: 60%;      /* Adjust this percentage or use max-width as needed */
   margin: 0 auto;
+}
+
+.upload-buttons-container {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  gap: 10px; /* Adds space between the input and button */
 }
