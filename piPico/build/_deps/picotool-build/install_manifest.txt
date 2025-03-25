@@ -1,0 +1,5 @@
+/Users/hilariogonzalez/School/EC463/lung-detect-web/piPico/build/_deps/picotool/picotool
+/Users/hilariogonzalez/School/EC463/lung-detect-web/piPico/build/_deps/picotool/picotoolTargets.cmake
+/Users/hilariogonzalez/School/EC463/lung-detect-web/piPico/build/_deps/picotool/picotoolTargets-release.cmake
+/Users/hilariogonzalez/School/EC463/lung-detect-web/piPico/build/_deps/picotool/picotoolConfig.cmake
+/Users/hilariogonzalez/School/EC463/lung-detect-web/piPico/build/_deps/picotool/picotoolConfigVersion.cmake
