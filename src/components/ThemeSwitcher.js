@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
+// Component for theme switching
 function ThemeSwitcher() {
   const themes = [
     { name: 'Cerulean', value: 'cerulean' },
@@ -27,75 +28,50 @@ function ThemeSwitcher() {
 
   // Get theme from localStorage or use cerulean as default
   const [currentTheme, setCurrentTheme] = useState(
-    localStorage.getItem('theme') || 'cosmo'
+    localStorage.getItem('theme') || 'cerulean'
   );
-  
-  // For dropdown toggle functionality
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef(null);
 
-  // Close dropdown when clicking outside
+  // Force the theme to be applied on component mount and when theme changes
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
+    // Remove any existing theme link with id 'bootswatch-theme'
+    const existingLink = document.getElementById('bootswatch-theme');
+    if (existingLink) {
+      existingLink.remove();
     }
     
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [dropdownRef]);
-
-  // Apply theme change
-  useEffect(() => {
-    const themeLink = document.getElementById('theme-link');
-    if (themeLink) {
-      themeLink.href = `https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/${currentTheme}/bootstrap.min.css`;
-      localStorage.setItem('theme', currentTheme);
-    }
+    // Create and append a new link element
+    const link = document.createElement('link');
+    link.id = 'bootswatch-theme';
+    link.rel = 'stylesheet';
+    link.href = `https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/${currentTheme}/bootstrap.min.css`;
+    document.head.appendChild(link);
+    
+    // // Save to localStorage
+    // localStorage.setItem('theme', currentTheme);
+    
+    // // Log for debugging
+    // console.log(`Applied theme: ${currentTheme}`);
+    
   }, [currentTheme]);
 
-  const handleThemeChange = (themeValue) => {
-    setCurrentTheme(themeValue);
-    setIsOpen(false); // Close dropdown after selection
+  const handleThemeChange = (e) => {
+    setCurrentTheme(e.target.value);
   };
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  // Find current theme name
-  const currentThemeName = themes.find(theme => theme.value === currentTheme)?.name || 'Cerulean';
 
   return (
-    <div className="position-relative" ref={dropdownRef}>
-      <button 
-        className="btn btn-secondary" 
-        type="button" 
-        onClick={toggleDropdown}
-      >
-        Theme: {currentThemeName}
-      </button>
-      
-      {isOpen && (
-        <div className="position-absolute end-0 mt-1" style={{ zIndex: 1000, width: '200px' }}>
-          <ul className="list-group shadow">
-            {themes.map(theme => (
-              <li 
-                key={theme.value} 
-                className={`list-group-item ${currentTheme === theme.value ? 'active' : ''}`}
-                onClick={() => handleThemeChange(theme.value)}
-                style={{ cursor: 'pointer' }}
-              >
-                {theme.name}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
+    <select 
+      className="form-select form-select-sm bg-transparent text-white border-0 mx-2" 
+      style={{ maxWidth: '120px' }}
+      value={currentTheme}
+      onChange={handleThemeChange}
+      aria-label="Select theme"
+    >
+      {themes.map(theme => (
+        <option key={theme.value} value={theme.value}>
+          {theme.name}
+        </option>
+      ))}
+    </select>
   );
 }
 

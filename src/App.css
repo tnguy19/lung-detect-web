@@ -88,26 +88,38 @@
 }
 
 .top-left {
-  top: 43%;
-  left: 30%;
+  top: 35%;
+  left: 36%;
   transform: translate(-50%, -50%);
 }
 
 .top-right {
-  top: 43%;
-  right: 30%;
+  top: 35%;
+  right:36%;
   transform: translate(50%, -50%);
 }
 
 .mid-left {
-  top: 60%;
-  left: 30%;
+  top: 50%;
+  left: 36%;
   transform: translate(-50%, -50%);
 }
 
 .mid-right {
-  top: 60%;
-  right: 30%;
+  top: 50%;
+  right: 36%;
+  transform: translate(50%, -50%);
+}
+
+.bottom-left {
+  top: 65%;
+  left: 36%;
+  transform: translate(-50%, -50%);
+}
+
+.bottom-right {
+  top: 65%;
+  right: 36%;
   transform: translate(50%, -50%);
 }
 
@@ -199,4 +211,121 @@
     height: 40px;
     font-size: 12px;
   }
+}
+
+.back-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 15px;
+  margin-top: 10px;
+}
+
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+/* Add these styles to your App.css file */
+
+/* Style for the theme button icon */
+.btn-icon {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.btn-icon:hover, 
+.btn-icon:focus {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Add these styles to your App.css file */
+
+/* Container for the theme switcher */
+.theme-switcher-container {
+  position: relative;
+}
+
+/* Style for the theme button icon */
+.btn-icon {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.btn-icon:hover, 
+.btn-icon:focus {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Custom dropdown menu */
+.theme-dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  min-width: 180px;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+/* Header for dropdown */
+.theme-dropdown-header {
+  padding: 0.5rem 1rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+/* Container for dropdown items */
+.theme-dropdown-items {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Individual dropdown items */
+.theme-dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  clear: both;
+  font-weight: 400;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.theme-dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+.theme-dropdown-item.active {
+  background-color: var(--bs-primary, #0d6efd);
+  color: white;
 }

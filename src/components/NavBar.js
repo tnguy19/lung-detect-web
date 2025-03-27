@@ -53,7 +53,8 @@ export default function NavBar({ onNavigate, activePage }) {
                             </a>
                         </li>
                     </ul>
-                    <div className="d-flex">
+                    <div className="d-flex align-items-center">
+                        <i className="fas fa-palette text-white me-1"></i>
                         <ThemeSwitcher />
                     </div>
                 </div>

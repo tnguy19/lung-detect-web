@@ -84,7 +84,8 @@ for family_id, crackle_family in enumerate(crackle_families):
             one_family_cross_correlation.append({
                 'channel': int(channel),
                 'delay': 0.0,
-                'transmission_coefficient': 1.0
+                'transmission_coefficient': 1.0,
+                'time': float(time)  # Add the time information
             })
             continue  # Skip autocorrelation (already computed)
 
@@ -106,7 +107,8 @@ for family_id, crackle_family in enumerate(crackle_families):
         one_family_cross_correlation.append({
             'channel': int(channel),
             'delay': float(delay),
-            'transmission_coefficient': float(transmission_coefficient)
+            'transmission_coefficient': float(transmission_coefficient),
+            'time': float(time)  # Add the time information
         })
 
     cross_correlation_families.append(one_family_cross_correlation)

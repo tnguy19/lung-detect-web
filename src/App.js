@@ -1,6 +1,4 @@
 import "./App.css";
-// We'll use the dynamic theme loader instead of a static import
-// import "./bootstrap.css";
 import UploadContainer from "./components/UploadContainer";
 import LungVisualization from "./components/LungVisualization";
 import { useState } from "react";
@@ -25,6 +23,12 @@ function App() {
     setActivePage(page);
   }
 
+  // Function to reset to initial state
+  function handleReset() {
+    isDataComputed(false);
+    isData(null);
+  }
+
   return (
     <div className="App">
       <NavBar onNavigate={handleNavigation} activePage={activePage} />
@@ -38,10 +42,24 @@ function App() {
                 setData={setData}
               />
             )}
-            {dataComputed && data && <LungVisualization data={data} />}
+            {dataComputed && data && (
+              <>
+                <div className="back-button-container mb-3">
+                  <button 
+                    className="btn btn-primary" 
+                    onClick={handleReset}
+                  >
+                    <i className="fas fa-arrow-left mr-1"></i> Back to Upload
+                  </button>
+                </div>
+                <LungVisualization data={data} />
+              </>
+            )}
           </div>
           <div className={!dataComputed && "convert-container"}>
-            {!dataComputed && <ConvertContainer />}
+            {!dataComputed && (
+              <ConvertContainer/>
+            )}
           </div>
         </>
       )}

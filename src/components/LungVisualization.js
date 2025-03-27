@@ -3,9 +3,10 @@ import HumanBack from "../images/human_back.jpg";
 import DataTable from "./DataTable";
 import React from "react";
 
-export default function LungVisualization({ data }) {
+export default function LungVisualization({ data, initialShowChannelNumbers }) {
   const [selectedFamily, setSelectedFamily] = useState(0);
   const [familyData, setFamilyData] = useState([]);
+  const [showChannelNumbers, setShowChannelNumbers] = useState(initialShowChannelNumbers);
 
   // Initialize detection state arrays, one per family
   const [detectionStates, setDetectionStates] = useState([]);
@@ -20,7 +21,17 @@ export default function LungVisualization({ data }) {
         topLeft: false,
         topRight: false,
         midLeft: false,
-        midRight: false
+        midRight: false,
+        bottomLeft: false,
+        bottomRight: false,
+        times: {
+          topLeft: null,
+          topRight: null,
+          midLeft: null,
+          midRight: null,
+          bottomLeft: null,
+          bottomRight: null
+        }
       }));
       
       setDetectionStates(initialDetectionStates);
@@ -34,43 +45,70 @@ export default function LungVisualization({ data }) {
 
   function analyzeCrackleFamily(family, familyIndex) {
     let delays = {
-      midLeft: Infinity,
-      midRight: Infinity,
       topLeft: Infinity,
       topRight: Infinity,
+      midLeft: Infinity,
+      midRight: Infinity,
+      bottomLeft: Infinity,
+      bottomRight: Infinity
+    };
+    
+    let times = {
+      topLeft: null,
+      topRight: null,
+      midLeft: null,
+      midRight: null,
+      bottomLeft: null,
+      bottomRight: null
     };
 
-    // Extract delays for each channel in this family
+    // Extract delays and times for each channel in this family
     for (let i = 0; i < family.length; i++) {
       let dataPoint = family[i];
 
+      // Map channels 0-5 to specific positions
       if (dataPoint.channel === 0) {
-        delays.midLeft = dataPoint.delay;
-      } else if (dataPoint.channel === 1) {
-        delays.midRight = dataPoint.delay;
-      } else if (dataPoint.channel === 2) {
         delays.topLeft = dataPoint.delay;
-      } else if (dataPoint.channel === 3) {
+        times.topLeft = dataPoint.time;
+      } else if (dataPoint.channel === 1) {
         delays.topRight = dataPoint.delay;
+        times.topRight = dataPoint.time;
+      } else if (dataPoint.channel === 2) {
+        delays.midLeft = dataPoint.delay;
+        times.midLeft = dataPoint.time;
+      } else if (dataPoint.channel === 3) {
+        delays.midRight = dataPoint.delay;
+        times.midRight = dataPoint.time;
+      } else if (dataPoint.channel === 4) {
+        delays.bottomLeft = dataPoint.delay;
+        times.bottomLeft = dataPoint.time;
+      } else if (dataPoint.channel === 5) {
+        delays.bottomRight = dataPoint.delay;
+        times.bottomRight = dataPoint.time;
       }
     }
 
     // Find the minimum delay
     let minDelay = Math.min(
+      Math.abs(delays.topLeft),
+      Math.abs(delays.topRight),
       Math.abs(delays.midLeft),
       Math.abs(delays.midRight),
-      Math.abs(delays.topLeft),
-      Math.abs(delays.topRight)
+      Math.abs(delays.bottomLeft),
+      Math.abs(delays.bottomRight)
     );
 
     // Update detection states for this family
     setDetectionStates(prevStates => {
       const newStates = [...prevStates];
       newStates[familyIndex] = {
+        topLeft: Math.abs(delays.topLeft) === minDelay,
+        topRight: Math.abs(delays.topRight) === minDelay,
         midLeft: Math.abs(delays.midLeft) === minDelay,
         midRight: Math.abs(delays.midRight) === minDelay,
-        topLeft: Math.abs(delays.topLeft) === minDelay,
-        topRight: Math.abs(delays.topRight) === minDelay
+        bottomLeft: Math.abs(delays.bottomLeft) === minDelay,
+        bottomRight: Math.abs(delays.bottomRight) === minDelay,
+        times: times
       };
       return newStates;
     });
@@ -104,32 +142,38 @@ export default function LungVisualization({ data }) {
     if (!canvas || !image) return;
 
     const context = canvas.getContext("2d");
-    const gridSize = 98; // Grid size in pixels
-    const canvasWidth = image.width;
-    const canvasHeight = image.height;
+    
+    // Calculate grid size based on image dimensions
+    // We'll create a consistent grid with 8 columns and 10 rows
+    const numCols = 8;
+    const numRows = 10;
+    const colWidth = image.width / numCols;
+    const rowHeight = image.height / numRows;
 
     // Set the canvas size to match the image size
-    canvas.width = canvasWidth;
-    canvas.height = canvasHeight;
+    canvas.width = image.width;
+    canvas.height = image.height;
 
     // Draw grid lines
-    context.clearRect(0, 0, canvasWidth, canvasHeight);
+    context.clearRect(0, 0, canvas.width, canvas.height);
     context.strokeStyle = "black";
     context.lineWidth = 0.8;
 
     // Draw vertical grid lines
-    for (let x = 0; x < canvasWidth; x += gridSize) {
+    for (let i = 0; i <= numCols; i++) {
+      const x = i * colWidth;
       context.beginPath();
       context.moveTo(x, 0);
-      context.lineTo(x, canvasHeight);
+      context.lineTo(x, canvas.height);
       context.stroke();
     }
 
     // Draw horizontal grid lines
-    for (let y = 0; y < canvasHeight; y += gridSize) {
+    for (let j = 0; j <= numRows; j++) {
+      const y = j * rowHeight;
       context.beginPath();
       context.moveTo(0, y);
-      context.lineTo(canvasWidth, y);
+      context.lineTo(canvas.width, y);
       context.stroke();
     }
   }, []);
@@ -167,6 +211,19 @@ export default function LungVisualization({ data }) {
               </option>
             ))}
           </select>
+          
+          <div className="form-check mt-2">
+            <input
+              className="form-check-input"
+              type="checkbox"
+              id="showChannelNumbers"
+              checked={showChannelNumbers}
+              onChange={() => setShowChannelNumbers(!showChannelNumbers)}
+            />
+            <label className="form-check-label" htmlFor="showChannelNumbers">
+              Show Channel Numbers
+            </label>
+          </div>
         </div>
       )}
       
@@ -205,32 +262,73 @@ export default function LungVisualization({ data }) {
                     {/* Canvas Overlay */}
                     <canvas ref={createCanvasRef(index)} className="lung-canvas" />
 
-                    {/* Detected Points as Buttons */}
+                    {/* Detected Points as Buttons with Time Information Tooltips */}
                     {detectionStates[index] && (
                       <>
+                        {/* Top Row */}
                         <button 
                           type="button" 
-                          className={`btn ${detectionStates[index].topLeft ? "btn-danger" : "btn-primary"} lung-point top-left`}
+                          className={`btn ${detectionStates[index].topLeft ? "btn-danger" : "btn-success"} lung-point top-left`}
+                          title={detectionStates[index].times?.topLeft ? 
+                            `Channel 0 - Detection Time: ${detectionStates[index].times.topLeft.toFixed(2)} ms` : 
+                            "Channel 0 - No time data available"}
                         >
+                          {showChannelNumbers ? "Ch 0: " : ""}
                           {detectionStates[index].topLeft ? "Sound" : "No Sound"}
                         </button>
                         <button 
                           type="button" 
-                          className={`btn ${detectionStates[index].topRight ? "btn-danger" : "btn-primary"} lung-point top-right`}
+                          className={`btn ${detectionStates[index].topRight ? "btn-danger" : "btn-success"} lung-point top-right`}
+                          title={detectionStates[index].times?.topRight ? 
+                            `Channel 1 - Detection Time: ${detectionStates[index].times.topRight.toFixed(2)} ms` : 
+                            "Channel 1 - No time data available"}
                         >
+                          {showChannelNumbers ? "Ch 1: " : ""}
                           {detectionStates[index].topRight ? "Sound" : "No Sound"}
                         </button>
+                        
+                        {/* Middle Row */}
                         <button 
                           type="button" 
-                          className={`btn ${detectionStates[index].midLeft ? "btn-danger" : "btn-primary"} lung-point mid-left`}
+                          className={`btn ${detectionStates[index].midLeft ? "btn-danger" : "btn-success"} lung-point mid-left`}
+                          title={detectionStates[index].times?.midLeft ? 
+                            `Channel 2 - Detection Time: ${detectionStates[index].times.midLeft.toFixed(2)} ms` : 
+                            "Channel 2 - No time data available"}
                         >
+                          {showChannelNumbers ? "Ch 2: " : ""}
                           {detectionStates[index].midLeft ? "Sound" : "No Sound"}
                         </button>
                         <button 
                           type="button" 
-                          className={`btn ${detectionStates[index].midRight ? "btn-danger" : "btn-primary"} lung-point mid-right`}
+                          className={`btn ${detectionStates[index].midRight ? "btn-danger" : "btn-success"} lung-point mid-right`}
+                          title={detectionStates[index].times?.midRight ? 
+                            `Channel 3 - Detection Time: ${detectionStates[index].times.midRight.toFixed(2)} ms` : 
+                            "Channel 3 - No time data available"}
                         >
+                          {showChannelNumbers ? "Ch 3: " : ""}
                           {detectionStates[index].midRight ? "Sound" : "No Sound"}
+                        </button>
+                        
+                        {/* Bottom Row */}
+                        <button 
+                          type="button" 
+                          className={`btn ${detectionStates[index].bottomLeft ? "btn-danger" : "btn-success"} lung-point bottom-left`}
+                          title={detectionStates[index].times?.bottomLeft ? 
+                            `Channel 4 - Detection Time: ${detectionStates[index].times.bottomLeft.toFixed(2)} ms` : 
+                            "Channel 4 - No time data available"}
+                        >
+                          {showChannelNumbers ? "Ch 4: " : ""}
+                          {detectionStates[index].bottomLeft ? "Sound" : "No Sound"}
+                        </button>
+                        <button 
+                          type="button" 
+                          className={`btn ${detectionStates[index].bottomRight ? "btn-danger" : "btn-success"} lung-point bottom-right`}
+                          title={detectionStates[index].times?.bottomRight ? 
+                            `Channel 5 - Detection Time: ${detectionStates[index].times.bottomRight.toFixed(2)} ms` : 
+                            "Channel 5 - No time data available"}
+                        >
+                          {showChannelNumbers ? "Ch 5: " : ""}
+                          {detectionStates[index].bottomRight ? "Sound" : "No Sound"}
                         </button>
                       </>
                     )}
