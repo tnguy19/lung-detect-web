@@ -79,7 +79,7 @@ for family_id, crackle_family in enumerate(crackle_families):
     # Convert time to sample index
     mother_sample = int(mother_time * sample_rate / 1000)
     
-    slice_duration = 18  # Match original value
+    slice_duration = 18  
     
     # Extract slices around peaks for cross-correlation
     slice_length = int((sample_rate * slice_duration) / 1000)  # Convert ms to samples
@@ -88,7 +88,7 @@ for family_id, crackle_family in enumerate(crackle_families):
     start_idx = max(0, mother_sample - slice_length // 2)
     end_idx = min(audio_data.shape[1], mother_sample + slice_length // 2)
     
-    if start_idx >= end_idx or end_idx - start_idx < 5:  # Ensure we have enough samples
+    if start_idx >= end_idx or end_idx - start_idx < 5:  
         continue
         
     mother_slice = audio_data[mother_channel][start_idx:end_idx]
