@@ -177,9 +177,8 @@
 
 /* Family selector styles */
 .family-selector {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto 20px;
+  width: 250px;
+  margin: 10px auto;
 }
 
 /* Media queries for responsive design */

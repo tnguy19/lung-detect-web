@@ -151,8 +151,10 @@ export default function LungVisualization({ data }) {
   return (
     <div className="visualization-container">
       {familyData.length > 1 && (
-        <div className="family-selector mb-4" style={{width: '100%', maxWidth: '400px', margin: '0 auto 20px'}}>
-          <label htmlFor="familySelect" className="form-label">Select Crackle Family: </label>
+        <div className="family-selector">
+          <label htmlFor="familySelect" className="form-label">
+            Select Crackle Family:
+          </label>
           <select 
             id="familySelect" 
             className="form-select" 
@@ -168,9 +170,9 @@ export default function LungVisualization({ data }) {
         </div>
       )}
       
-      <div className="accordion" id="crackleFamiliesAccordion" style={{width: '100%'}}>
+      <div className="accordion" id="crackleFamiliesAccordion">
         {familyData.map((family, index) => (
-          <div className="accordion-item" key={index} style={{marginBottom: '15px', border: '1px solid rgba(0,0,0,0.125)', borderRadius: '5px', overflow: 'hidden'}}>
+          <div className="accordion-item" key={index}>
             <h2 className="accordion-header">
               <button 
                 className={`accordion-button ${index !== selectedFamily ? 'collapsed' : ''}`} 
@@ -180,7 +182,6 @@ export default function LungVisualization({ data }) {
                 aria-expanded={index === selectedFamily} 
                 aria-controls={`family${index}`}
                 onClick={() => setSelectedFamily(index)}
-                style={{fontWeight: '500', padding: '15px 20px'}}
               >
                 Crackle Family {index + 1}
               </button>
@@ -190,7 +191,7 @@ export default function LungVisualization({ data }) {
               className={`accordion-collapse collapse ${index === selectedFamily ? 'show' : ''}`}
               data-bs-parent="#crackleFamiliesAccordion"
             >
-              <div className="accordion-body" style={{padding: '20px'}}>
+              <div className="accordion-body">
                 <div className="visualization-container" style={{padding: '0'}}>
                   <div className="lung-container">
                     {/* Human Back Image */}

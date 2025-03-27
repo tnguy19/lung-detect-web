@@ -27,7 +27,7 @@ function ThemeSwitcher() {
 
   // Get theme from localStorage or use cerulean as default
   const [currentTheme, setCurrentTheme] = useState(
-    localStorage.getItem('theme') || 'cerulean'
+    localStorage.getItem('theme') || 'cosmo'
   );
   
   // For dropdown toggle functionality

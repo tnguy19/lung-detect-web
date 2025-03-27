@@ -29,7 +29,6 @@ spike_times_ms = spike_times / sample_rate * 1000
 spike_data = np.column_stack((spike_times_ms, spike_channels))
 
 # Use DBSCAN for more robust clustering of crackle families
-# This algorithm groups spikes by density and can identify multiple distinct clusters
 eps = 500  # Maximum distance between two samples (in ms)
 min_samples = max(2, audio_data.shape[0] // 2)  # Require at least half of channels to be present
 
@@ -72,7 +71,7 @@ for cluster in filtered_clusters:
         crackle_families.append(refined_cluster)
 
 # Calculate cross-correlation for each crackle family
-cross_correlation_families = []
+families_data = []
 
 for family_id, crackle_family in enumerate(crackle_families):
     # Find the mother crackle (earliest peak)
@@ -98,11 +97,13 @@ for family_id, crackle_family in enumerate(crackle_families):
     autocorrelation = signal.correlate(mother_slice, mother_slice, mode='full')
     autocorrelation_peak = np.max(autocorrelation)
     
-    one_family_cross_correlation = []
+    # Create family data structure
+    family_correlations = []
     
     for channel, time in crackle_family:
         if channel == mother_channel:
-            one_family_cross_correlation.append({
+            # Mother channel (reference channel)
+            family_correlations.append({
                 'channel': int(channel),
                 'delay': 0.0,
                 'transmission_coefficient': 1.0
@@ -145,15 +146,15 @@ for family_id, crackle_family in enumerate(crackle_families):
         # Calculate transmission coefficient
         transmission_coefficient = float(cross_correlation_peak / autocorrelation_peak if autocorrelation_peak > 0 else 0)
         
-        one_family_cross_correlation.append({
+        family_correlations.append({
             'channel': int(channel),
             'delay': float(delay),
             'transmission_coefficient': transmission_coefficient
         })
     
     # Add family only if it has data
-    if one_family_cross_correlation:
-        cross_correlation_families.append(one_family_cross_correlation)
+    if family_correlations:
+        families_data.append(family_correlations)
 
 # Convert numpy types to Python native types for JSON serialization
 def convert_numpy_types(data):
@@ -169,12 +170,12 @@ def convert_numpy_types(data):
     else:
         return data
 
-# Convert cross_correlation_families to a JSON-serializable format
-cross_correlation_families_serializable = convert_numpy_types(cross_correlation_families)
+# Convert families_data to a JSON-serializable format
+families_data_serializable = convert_numpy_types(families_data)
 
 try:
-    # Convert to JSON and write to stdout (direct array format to match original)
-    json_response = json.dumps(cross_correlation_families_serializable)
+    # Output JSON response
+    json_response = json.dumps(families_data_serializable)
     sys.stdout.write(json_response)
 except Exception as e:
     error_response = json.dumps({"error": str(e)})
