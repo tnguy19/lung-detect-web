@@ -11,6 +11,14 @@
 # production
 /build
 
+# Ignore uploaded files
+/public/data/uploads/*
+# Keep the uploads directory itself
+!/public/data/uploads/.gitkeep
+
+# Ignore all log files anywhere in the project
+*.log
+
 # misc
 .DS_Store
 .env.local
