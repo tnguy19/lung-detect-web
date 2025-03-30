@@ -1,0 +1,36 @@
+Loaded audio data with shape: (4, 1357617), type: <class 'numpy.ndarray'>
+Channel maximums: [1.        1.        0.9678955 1.       ]
+Threshold: [0.4        0.4        0.38715822 0.4       ]
+Detected 3287 spikes across 4 channels
+Found 14 initial clusters
+After filtering, 0 clusters remain
+Found 0 crackle families
+Generated 0 cross-correlation families
+No crackle families found, returning empty array
+Loaded audio data with shape: (4, 1357617), type: <class 'numpy.ndarray'>
+Channel maximums: [1.        1.        0.9678955 1.       ]
+Threshold: [0.3        0.3        0.29036868 0.3       ]
+Detected 5868 spikes across 4 channels
+Found 18 initial clusters
+After filtering, 0 clusters remain
+Found 0 crackle families
+Generated 0 cross-correlation families
+No crackle families found, creating a dummy family for testing
+Created dummy family with 4 channels
+Loaded audio data with shape: (8, 222599), type: <class 'numpy.ndarray'>
+Channel maximums: [1.        1.        0.9987693 1.        1.        1.        1.
+ 1.       ]
+Threshold: [0.3       0.3       0.2996308 0.3       0.3       0.3       0.3
+ 0.3      ]
+Detected 9398 spikes across 8 channels
+Found 7 initial clusters
+After filtering, 7 clusters remain
+Found 7 crackle families
+Processing family 1 with 8 peaks
+Processing family 2 with 8 peaks
+Processing family 3 with 2 peaks
+Processing family 4 with 8 peaks
+Processing family 5 with 2 peaks
+Processing family 6 with 8 peaks
+Processing family 7 with 2 peaks
+Generated 7 cross-correlation families

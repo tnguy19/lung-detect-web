@@ -1,65 +1,163 @@
 import React, { useState } from "react";
+import axios from "axios";
+import MultiUploadContainer from "./MultiUploadContainer";
 
 export default function UploadContainer({ updateComputeState, setData }) {
   const [file, setFile] = useState(null);
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [error, setError] = useState(null);
+  const [activeTab, setActiveTab] = useState("single"); // 'single' or 'multi'
 
-  function handleFileChange(e) {
-    setFile(e.target.files[0]);
-  }
+  const handleFileChange = (e) => {
+    if (e.target.files.length > 0) {
+      const selectedFile = e.target.files[0];
+      
+      // Verify file type
+      if (!selectedFile.name.toLowerCase().endsWith('.wav')) {
+        setError("Only .wav files are supported. Please select a valid file.");
+        setFile(null);
+        return;
+      }
+      
+      setFile(selectedFile);
+      setError(null);
+    }
+  };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleUpload = async () => {
     if (!file) {
-      alert("Please select a file to upload");
+      setError("Please select a file to upload.");
       return;
     }
+
+    setIsUploading(true);
+    setUploadProgress(0);
+    setError(null);
 
     const formData = new FormData();
     formData.append("uploaded_file", file);
 
     try {
-      const response = await fetch("http://localhost:5000/compute", {
-        method: "POST",
-        body: formData,
+      const response = await axios.post("http://localhost:5000/compute", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+        onUploadProgress: (progressEvent) => {
+          const percentCompleted = Math.round(
+            (progressEvent.loaded * 100) / progressEvent.total
+          );
+          setUploadProgress(percentCompleted);
+        },
       });
 
-      if (response.ok) {
-        const data = await response.json(); // Process response as JSON
-        console.log("File uploaded successfully:", data);
-        setData(data); // Update state with the correlation data
-        updateComputeState(); // Update state in the parent component
-        console.log("Data in upload container:", data);
-      } else {
-        console.error("Error uploading file:", response.statusText);
-        alert("Error uploading file");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred while uploading the file");
+      console.log("Upload successful:", response.data);
+      setData(response.data);
+      updateComputeState();
+    } catch (err) {
+      console.error("Upload error:", err);
+      setError(
+        err.response?.data || "An error occurred during upload. Please try again."
+      );
+    } finally {
+      setIsUploading(false);
     }
+  };
+  
+  // Toggle between single file and multi-file upload
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    setError(null);
   };
 
   return (
-    <div>
-      <div class="card border-primary mb-3" >
-        <div class="card-header">File upload</div>
-        <div class="card-body">
-          <p class="card-text">
-            Upload your lung noises audio file here for processing
-          </p>
-
-          <form onSubmit={handleSubmit}>
-        <div className="upload-buttons-container">
-          <input type="file" onChange={handleFileChange} class="form-control" />
-          <button type="submit" class="btn btn-primary">
-            Compute
-          </button>
-        </div>
-      </form>
-        </div>
-      </div>
+    <div className="upload-container">
+      <h2>Lung Sound Analysis</h2>
       
+      {/* Tab navigation */}
+      <ul className="nav nav-tabs mb-4">
+        <li className="nav-item">
+          <button 
+            className={`nav-link ${activeTab === 'single' ? 'active' : ''}`} 
+            onClick={() => handleTabChange('single')}
+          >
+            Single Multi-Channel File
+          </button>
+        </li>
+        <li className="nav-item">
+          <button 
+            className={`nav-link ${activeTab === 'multi' ? 'active' : ''}`} 
+            onClick={() => handleTabChange('multi')}
+          >
+            Multiple Single-Channel Files
+          </button>
+        </li>
+      </ul>
+      
+      {/* Tab content */}
+      {activeTab === 'single' ? (
+        <>
+          <div className="upload-instructions">
+            <p>
+              Upload a multi-channel .wav file containing lung sound recordings
+              for analysis.
+            </p>
+          </div>
+          
+          <div className="upload-buttons-container">
+            <div className="file-input-container">
+              <input
+                type="file"
+                className="form-control"
+                onChange={handleFileChange}
+                disabled={isUploading}
+                accept=".wav"
+              />
+            </div>
+            <button
+              className="btn btn-primary"
+              onClick={handleUpload}
+              disabled={isUploading || !file}
+            >
+              {isUploading ? "Uploading..." : "Process File"}
+            </button>
+          </div>
+          
+          {file && (
+            <div className="selected-file mt-3">
+              <h5>Selected File:</h5>
+              <div className="card">
+                <div className="card-body">
+                  <h6 className="card-title">{file.name}</h6>
+                  <p className="card-text">Size: {(file.size / 1024).toFixed(2)} KB</p>
+                </div>
+              </div>
+            </div>
+          )}
+          
+          {isUploading && (
+            <div className="progress mt-3">
+              <div
+                className="progress-bar"
+                role="progressbar"
+                style={{ width: `${uploadProgress}%` }}
+                aria-valuenow={uploadProgress}
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                {uploadProgress}%
+              </div>
+            </div>
+          )}
+          
+          {error && <div className="alert alert-danger mt-3">{error}</div>}
+        </>
+      ) : (
+        <MultiUploadContainer 
+          updateComputeState={updateComputeState} 
+          setData={setData} 
+        />
+      )}
     </div>
   );
 }

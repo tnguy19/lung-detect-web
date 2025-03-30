@@ -56,11 +56,11 @@ function App() {
               </>
             )}
           </div>
-          <div className={!dataComputed && "convert-container"}>
+          {/* <div className={!dataComputed && "convert-container"}>
             {!dataComputed && (
               <ConvertContainer/>
             )}
-          </div>
+          </div> */}
         </>
       )}
       
