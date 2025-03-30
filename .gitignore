@@ -12,9 +12,9 @@
 /build
 
 # Ignore uploaded files
-/public/data/uploads/*
+/backend/data/uploads/*
 # Keep the uploads directory itself
-!/public/data/uploads/.gitkeep
+!/backend/data/uploads/.gitkeep
 
 # Ignore all log files anywhere in the project
 *.log
