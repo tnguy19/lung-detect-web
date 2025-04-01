@@ -4,6 +4,7 @@ const multer = require('multer');
 const { execFile } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 
 const app = express();
 const PORT = 5000;
@@ -19,8 +20,17 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-app.use(cors());
+// Enable CORS for all routes to allow cross-origin requests
+app.use(cors({
+    origin: '*', // Allow all origins
+    methods: ['GET', 'POST'], // Allow only GET and POST methods
+    allowedHeaders: ['Content-Type', 'Authorization'] // Allow these headers
+}));
+
 app.use(express.json());
+
+// Serve static files from the public folder
+app.use(express.static('public'));
 
 // Original endpoint for single file processing
 app.post('/compute', upload.single('uploaded_file'), (req, res) => {
@@ -158,6 +168,28 @@ app.post('/convert', upload.single('uploaded_file'), (req, res) => {
     res.json({ success: true, message: 'File uploaded successfully', file: req.file.originalname });
 });
 
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
+// Basic health check endpoint
+app.get('/health', (req, res) => {
+    res.json({ status: 'ok', uptime: process.uptime() });
+});
+
+// Listen on all network interfaces
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on port ${PORT}`);
+    
+    // Print all available network interfaces for easy access
+    const networkInterfaces = os.networkInterfaces();
+    console.log('Server is accessible at:');
+    
+    // Local access
+    console.log(`- Local: http://localhost:${PORT}`);
+    
+    // Network access
+    Object.keys(networkInterfaces).forEach(interfaceName => {
+        networkInterfaces[interfaceName].forEach(iface => {
+            if (iface.family === 'IPv4' && !iface.internal) {
+                console.log(`- Network: http://${iface.address}:${PORT}`);
+            }
+        });
+    });
 });

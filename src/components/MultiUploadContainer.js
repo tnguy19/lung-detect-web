@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
+import { API_URL } from "../config";
 
 export default function MultiUploadContainer({ updateComputeState, setData }) {
   const [files, setFiles] = useState([]);
@@ -52,13 +53,13 @@ export default function MultiUploadContainer({ updateComputeState, setData }) {
     setError(null);
 
     const formData = new FormData();
-    files.forEach((file, index) => {
-      // Use a specific field name for each file to maintain order
-      formData.append(`uploaded_files`, file);
+    files.forEach((file) => {
+      formData.append("uploaded_files", file);
     });
 
     try {
-      const response = await axios.post("http://localhost:5000/compute-multi", formData, {
+      // Use the API_URL from config instead of hardcoded localhost
+      const response = await axios.post(`${API_URL}/compute-multi`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -101,7 +102,7 @@ export default function MultiUploadContainer({ updateComputeState, setData }) {
       <h3>Upload Multiple Channel Files</h3>
       <p className="text-muted">
         Upload individual .wav files (one per channel) to be combined and processed.
-        Each file will be assigned to a channel in the order they are selected.
+        Each file will be assigned to a channel in the order they are added.
       </p>
       
       <div className="upload-buttons-container">

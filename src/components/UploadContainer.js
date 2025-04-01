@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import MultiUploadContainer from "./MultiUploadContainer";
+import { API_URL } from "../config";
 
 export default function UploadContainer({ updateComputeState, setData }) {
   const [file, setFile] = useState(null);
@@ -39,7 +40,8 @@ export default function UploadContainer({ updateComputeState, setData }) {
     formData.append("uploaded_file", file);
 
     try {
-      const response = await axios.post("http://localhost:5000/compute", formData, {
+      // Use the API_URL from config instead of hardcoded localhost
+      const response = await axios.post(`${API_URL}/compute`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
