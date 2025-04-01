@@ -117,16 +117,7 @@ for family_id, crackle_family in enumerate(crackle_families):
 
     for channel, time in crackle_family:
         if channel == mother_channel:
-<<<<<<< HEAD
-            one_family_cross_correlation.append({
-                'channel': int(channel),
-                'delay': 0.0,
-                'transmission_coefficient': 1.0,
-                'time': float(time)  # Add the time information
-            })
-=======
             one_family_cross_correlation.append({'channel': channel, 'delay': 0, 'transmission_coefficient': 1})
->>>>>>> 3093348 (mother appended)
             continue  # Skip autocorrelation (already computed)
 
         daughter_sample = int(time * sample_rate / 1000)
