@@ -67,7 +67,7 @@ filtered_clusters = []
 for cluster in clusters.values():
     channels_in_cluster = set(channel for channel, _ in cluster)
     # More lenient filtering - require only 30% of channels instead of 60%
-    if len(channels_in_cluster) >= max(2, int(num_channels * 0.3)):
+    if len(channels_in_cluster) >= max(2, int(num_channels * 0.6)):
         filtered_clusters.append(cluster)
 
 # Log number of filtered clusters
