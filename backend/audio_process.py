@@ -167,6 +167,7 @@ if len(all_spikes) > 0:
             cluster_id += 1
         clusters[cluster_id].append((ch_i, t_i))
 
+
 log(f"Found {len(clusters)} initial clusters (based on {FAMILY_RANGE_MS} ms gap).")
 
 # Filter out clusters that aren't on enough channels
@@ -201,6 +202,7 @@ def refine_cluster(cluster_spikes, audio_data, sr):
     return refined
 
 crackle_families = []
+
 for clist in filtered_clusters:
     refined = refine_cluster(clist, audio_data, sample_rate)
     crackle_families.append(refined)
@@ -347,6 +349,7 @@ def compute_final_delays_transmissions(leader_ch, waveforms, cluster_family, sr)
 # Process each refined cluster with cross-correlation, now choosing the leader
 # by highest cross-corr peak sum => "leader_by_transmission"
 ################################################################################
+
 
 cross_correlation_families = []
 

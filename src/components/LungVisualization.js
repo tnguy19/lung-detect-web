@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef, useCallback } from "react";
 import HumanBack from "../images/human_back.jpg";
 import DataTable from "./DataTable";
@@ -12,8 +13,8 @@ export default function LungVisualization({ data, initialShowChannelNumbers }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [activeChannel, setActiveChannel] = useState(null);
 
-  // Initialize detection state arrays, one per family
-  const [detectionStates, setDetectionStates] = useState([]);
+  const [leftDetected, setLeftDetected] = useState(false);
+  const [rightDetected, setRightDetected] = useState(false);
 
   useEffect(() => {
     // Process the data when it changes
@@ -52,148 +53,51 @@ export default function LungVisualization({ data, initialShowChannelNumbers }) {
     };
   }, [data]);
 
-  function analyzeCrackleFamily(family, familyIndex) {
-    let delays = {
-      topLeft: Infinity,
-      topRight: Infinity,
-      midLeft: Infinity,
-      midRight: Infinity,
-      bottomLeft: Infinity,
-      bottomRight: Infinity
-    };
-    
-    let times = {
-      topLeft: null,
-      topRight: null,
-      midLeft: null,
-      midRight: null,
-      bottomLeft: null,
-      bottomRight: null
-    };
 
-    // Extract delays and times for each channel in this family
-    for (let i = 0; i < family.length; i++) {
-      let dataPoint = family[i];
+    //if theres only one sound being picked up, then assign by location
 
-      // Map channels 0-5 to specific positions
+    if (data.length === 1) {
+      console.log("datapoint:", data[0][0]);
+      let dataPoint = data[0][0];
       if (dataPoint.channel === 0) {
-        delays.topLeft = dataPoint.delay;
-        times.topLeft = dataPoint.time;
+        leftFound = true;
       } else if (dataPoint.channel === 1) {
-        delays.topRight = dataPoint.delay;
-        times.topRight = dataPoint.time;
-      } else if (dataPoint.channel === 2) {
-        delays.midLeft = dataPoint.delay;
-        times.midLeft = dataPoint.time;
-      } else if (dataPoint.channel === 3) {
-        delays.midRight = dataPoint.delay;
-        times.midRight = dataPoint.time;
-      } else if (dataPoint.channel === 4) {
-        delays.bottomLeft = dataPoint.delay;
-        times.bottomLeft = dataPoint.time;
-      } else if (dataPoint.channel === 5) {
-        delays.bottomRight = dataPoint.delay;
-        times.bottomRight = dataPoint.time;
+        rightFound = true;
+      }
+      setLeftDetected(leftFound);
+      setRightDetected(rightFound);
+      return;
+    }
+
+    //else compare and assign location based on delay
+    let leftDelay = 0;
+    let rightDelay = 0;
+
+    for (let i = 0; i < data.length; i++) {
+      console.log("datapoint:", data[i][0]);
+      let dataPoint = data[i][0];
+      if (dataPoint.channel === 0) {
+        leftDelay = dataPoint.delay;
+      } else if (dataPoint.channel === 1) {
+        rightDelay = dataPoint.delay;
       }
     }
-
-    // Find the minimum delay
-    let minDelay = Math.min(
-      Math.abs(delays.topLeft),
-      Math.abs(delays.topRight),
-      Math.abs(delays.midLeft),
-      Math.abs(delays.midRight),
-      Math.abs(delays.bottomLeft),
-      Math.abs(delays.bottomRight)
-    );
-
-    // Update detection states for this family
-    setDetectionStates(prevStates => {
-      const newStates = [...prevStates];
-      newStates[familyIndex] = {
-        topLeft: Math.abs(delays.topLeft) === minDelay,
-        topRight: Math.abs(delays.topRight) === minDelay,
-        midLeft: Math.abs(delays.midLeft) === minDelay,
-        midRight: Math.abs(delays.midRight) === minDelay,
-        bottomLeft: Math.abs(delays.bottomLeft) === minDelay,
-        bottomRight: Math.abs(delays.bottomRight) === minDelay,
-        times: times
-      };
-      return newStates;
-    });
+    
+    //basically the one with the lower delay is nearer to the sign, so assign location based on that
+    if (leftDelay < rightDelay) {
+      leftFound = true;
+    } else {
+      rightFound = true;
+    }
+    setLeftDetected(leftFound);
+    setRightDetected(rightFound);
   }
 
-  // Create a ref for each family's canvas
-  const canvasRefs = useRef([]);
-  const imageRefs = useRef([]);
-
-  // Function to create refs for multiple canvases
-  const createCanvasRef = (index) => {
-    if (!canvasRefs.current[index]) {
-      canvasRefs.current[index] = React.createRef();
-    }
-    return canvasRefs.current[index];
-  };
-
-  // Function to create refs for multiple images
-  const createImageRef = (index) => {
-    if (!imageRefs.current[index]) {
-      imageRefs.current[index] = React.createRef();
-    }
-    return imageRefs.current[index];
-  };
-
-  // Draw grid on a specific canvas
-  const drawGrid = useCallback((canvasIndex) => {
-    const canvas = canvasRefs.current[canvasIndex]?.current;
-    const image = imageRefs.current[canvasIndex]?.current;
-
-    if (!canvas || !image) return;
-
-    const context = canvas.getContext("2d");
-    
-    // Calculate grid size based on image dimensions
-    // We'll create a consistent grid with 8 columns and 10 rows
-    const numCols = 8;
-    const numRows = 10;
-    const colWidth = image.width / numCols;
-    const rowHeight = image.height / numRows;
-
-    // Set the canvas size to match the image size
-    canvas.width = image.width;
-    canvas.height = image.height;
-
-    // Draw grid lines
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    context.strokeStyle = "black";
-    context.lineWidth = 0.8;
-
-    // Draw vertical grid lines
-    for (let i = 0; i <= numCols; i++) {
-      const x = i * colWidth;
-      context.beginPath();
-      context.moveTo(x, 0);
-      context.lineTo(x, canvas.height);
-      context.stroke();
-    }
-
-    // Draw horizontal grid lines
-    for (let j = 0; j <= numRows; j++) {
-      const y = j * rowHeight;
-      context.beginPath();
-      context.moveTo(0, y);
-      context.lineTo(canvas.width, y);
-      context.stroke();
-    }
-  }, []);
-
-  // Draw grids for all canvases when component mounts or canvases change
   useEffect(() => {
-    if (familyData.length > 0) {
-      familyData.forEach((_, index) => {
-        setTimeout(() => drawGrid(index), 100); // Delay to ensure refs are set
-      });
+    if (data && data.length > 0) {
+      analyze(data);
     }
+    
   }, [familyData, drawGrid]);
 
   // Function to handle family selection
