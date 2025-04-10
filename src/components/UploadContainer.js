@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import MultiUploadContainer from "./MultiUploadContainer";
 import { API_URL } from "../config";
+import audioService from "../services/AudioService";
 
 export default function UploadContainer({ updateComputeState, setData }) {
   const [file, setFile] = useState(null);
@@ -22,6 +23,10 @@ export default function UploadContainer({ updateComputeState, setData }) {
       }
       
       setFile(selectedFile);
+      
+      // Save the file to the audio service for later playback
+      audioService.setUploadedFile(selectedFile);
+      
       setError(null);
     }
   };
@@ -54,6 +59,16 @@ export default function UploadContainer({ updateComputeState, setData }) {
       });
 
       console.log("Upload successful:", response.data);
+      
+      // Pre-load the audio buffer for playback
+      try {
+        await audioService.loadAudioFromUploadedFile();
+        console.log("Audio loaded successfully for playback");
+      } catch (error) {
+        console.error("Failed to load audio for playback:", error);
+        // Continue even if audio loading fails - we'll try again when user clicks play
+      }
+      
       setData(response.data);
       updateComputeState();
     } catch (err) {
@@ -102,7 +117,8 @@ export default function UploadContainer({ updateComputeState, setData }) {
           <div className="upload-instructions">
             <p>
               Upload a multi-channel .wav file containing lung sound recordings
-              for analysis.
+              for analysis. You'll be able to play back sounds by clicking on the
+              detection points after analysis.
             </p>
           </div>
           
