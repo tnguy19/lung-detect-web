@@ -20,7 +20,7 @@ A web application for lung sound analysis that processes multi-channel audio rec
 
 ### Backend Setup
 
-1. Clone the repository:
+1. Fork and Clone the repository on your local machine:
    ```
    git clone https://github.com/yourusername/lung-detect.git
    cd lung-detect
