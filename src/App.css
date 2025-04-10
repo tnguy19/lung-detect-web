@@ -31,19 +31,56 @@
   color: #61dafb;
 }
 
-/* Visualization container - preserve your original flexbox layout */
+/* Visualization container with left and right columns */
 .visualization-container {
-  flex: 1;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: center;
-  gap: 10px; /*Space between visualization and table */
+  justify-content: flex-start;
+  gap: 20px;
   width: 100%;
   padding: 10px;
 }
 
-/* Table container - keep your original settings */
+/* Left column for family selector and info alert */
+.left-column {
+  width: 250px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Right column for visualization content */
+.right-column {
+  flex: 1;
+  min-width: 0; /* Important for flex layout to prevent overflow */
+}
+
+/* Family selector styles */
+.family-selector {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Info alert in the left column */
+.info-alert-inline {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.info-alert-inline .alert {
+  margin: 0;
+  padding: 10px;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.info-alert-inline .fa-info-circle {
+  font-size: 1.1rem;
+}
+
+/* Table container */
 .table-container {
   flex: 1;
   max-width: 600px; 
@@ -52,7 +89,7 @@
   margin-left: 30px; /* Extra space if needed */
 }
 
-/* Lung container - keep your original settings */
+/* Lung container */
 .lung-container {
   flex: 1;
   position: relative;
@@ -73,7 +110,7 @@
   height: 100%;
 }
 
-/* Keep your button styling and positions */
+/* Button styling and positions */
 .lung-point {
   position: absolute;
   width: 100px;
@@ -85,6 +122,16 @@
   color: #fff;
   font-weight: bold;
   font-size: 14px;
+  /* Disable default browser button appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none !important;
+  box-shadow: none !important;
+  /* Prevent text selection */
+  user-select: none;
+  /* Remove any transitions that might affect positioning */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 .top-left {
@@ -95,7 +142,7 @@
 
 .top-right {
   top: 35%;
-  right:36%;
+  right: 36%;
   transform: translate(50%, -50%);
 }
 
@@ -187,15 +234,32 @@
   padding: 20px;
 }
 
-/* Family selector styles */
-.family-selector {
-  width: 250px;
-  margin: 10px auto;
+/* Media queries for responsive design */
+@media (max-width: 992px) {
+  .visualization-container {
+    flex-direction: column;
+  }
+  
+  .left-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .family-selector,
+  .info-alert-inline {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
-/* Media queries for responsive design */
 @media (max-width: 768px) {
   .visualization-container {
+    padding: 5px;
+  }
+  
+  /* Nested visualization container within accordion */
+  .right-column .visualization-container {
     flex-direction: column;
     align-items: center;
   }
@@ -210,6 +274,23 @@
     width: 80px;
     height: 40px;
     font-size: 12px;
+  }
+
+  .lung-point, 
+  .lung-point:active,
+  .lung-point:hover,
+  .lung-point:focus {
+    padding: 0.25rem 0.5rem !important;
+  }
+  
+  .lung-point .fa-play,
+  .lung-point .fa-pause {
+    margin-left: 2px;
+    font-size: 0.8rem;
+  }
+  
+  .lung-point:hover::after {
+    display: none;
   }
 }
 
@@ -230,8 +311,6 @@
   border-color: #545b62;
 }
 
-/* Add these styles to your App.css file */
-
 /* Style for the theme button icon */
 .btn-icon {
   background: transparent;
@@ -250,31 +329,10 @@
   color: #fff;
   background-color: rgba(255, 255, 255, 0.1);
 }
-
-/* Add these styles to your App.css file */
 
 /* Container for the theme switcher */
 .theme-switcher-container {
   position: relative;
-}
-
-/* Style for the theme button icon */
-.btn-icon {
-  background: transparent;
-  border: none;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.3s ease;
-}
-
-.btn-icon:hover, 
-.btn-icon:focus {
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Custom dropdown menu */
@@ -329,8 +387,6 @@
   background-color: var(--bs-primary, #0d6efd);
   color: white;
 }
-
-/* Add these styles to your App.css file */
 
 /* Tab styling */
 .nav-tabs .nav-link {
@@ -387,4 +443,120 @@
 
 .mt-3 strong {
   color: #0d6efd;
+}
+
+/* Audio playback enhancements for lung-point buttons */
+.lung-point .fa-play,
+.lung-point .fa-pause {
+  margin-left: 5px;
+}
+
+/* Major fix for all button states to stay in position */
+.lung-point:hover,
+.lung-point:active,
+.lung-point:focus,
+.lung-point.active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-danger:not(:disabled):not(.disabled):active,
+.btn-success:not(:disabled):not(.disabled):active {
+  margin: 0 !important;
+  padding: 0.375rem 0.75rem !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Position must stay absolute in all states */
+.top-left, .top-left:hover, .top-left:active, .top-left:focus, .top-left.active,
+.top-left.playing, .top-left.playing:active, .top-left.playing:hover {
+  top: 35% !important;
+  left: 36% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.top-right, .top-right:hover, .top-right:active, .top-right:focus, .top-right.active,
+.top-right.playing, .top-right.playing:active, .top-right.playing:hover {
+  top: 35% !important;
+  right: 36% !important;
+  transform: translate(50%, -50%) !important;
+}
+
+.mid-left, .mid-left:hover, .mid-left:active, .mid-left:focus, .mid-left.active,
+.mid-left.playing, .mid-left.playing:active, .mid-left.playing:hover {
+  top: 50% !important;
+  left: 36% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.mid-right, .mid-right:hover, .mid-right:active, .mid-right:focus, .mid-right.active,
+.mid-right.playing, .mid-right.playing:active, .mid-right.playing:hover {
+  top: 50% !important;
+  right: 36% !important;
+  transform: translate(50%, -50%) !important;
+}
+
+.bottom-left, .bottom-left:hover, .bottom-left:active, .bottom-left:focus, .bottom-left.active,
+.bottom-left.playing, .bottom-left.playing:active, .bottom-left.playing:hover {
+  top: 65% !important;
+  left: 36% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.bottom-right, .bottom-right:hover, .bottom-right:active, .bottom-right:focus, .bottom-right.active,
+.bottom-right.playing, .bottom-right.playing:active, .bottom-right.playing:hover {
+  top: 65% !important;
+  right: 36% !important;
+  transform: translate(50%, -50%) !important;
+}
+
+/* Use filter property for pulse animation instead of transform */
+@keyframes pulse-fixed {
+  0% {
+    filter: brightness(1);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+  }
+  50% {
+    filter: brightness(1.2);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
+  }
+  100% {
+    filter: brightness(1);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+  }
+}
+
+/* Apply fixed animation to all playing buttons */
+.lung-point.playing {
+  animation: pulse-fixed 1.5s infinite;
+  z-index: 10;
+}
+
+/* Replace scale transform with filter for visual feedback */
+.lung-point:not(:disabled):hover {
+  filter: brightness(1.1);
+}
+
+/* Clear Bootstrap's button focus properties */
+.btn:focus, .btn.focus,
+.btn-primary:focus, .btn-primary.focus,
+.btn-danger:focus, .btn-danger.focus,
+.btn-success:focus, .btn-success.focus {
+  box-shadow: none !important;
+}
+
+/* Enhanced tooltip styling */
+.lung-point:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 12px;
+  z-index: 1000;
+  pointer-events: none;
 }
