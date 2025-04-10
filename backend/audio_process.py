@@ -12,6 +12,7 @@ from collections import defaultdict
 from scipy import signal
 import sys
 import os
+from calibrate import calibrate
 
 ################################################################################
 # Logging setup
@@ -167,6 +168,7 @@ if len(all_spikes) > 0:
             cluster_id += 1
         clusters[cluster_id].append((ch_i, t_i))
 
+
 log(f"Found {len(clusters)} initial clusters (based on {FAMILY_RANGE_MS} ms gap).")
 
 # Filter out clusters that aren't on enough channels
@@ -201,6 +203,7 @@ def refine_cluster(cluster_spikes, audio_data, sr):
     return refined
 
 crackle_families = []
+
 for clist in filtered_clusters:
     refined = refine_cluster(clist, audio_data, sample_rate)
     crackle_families.append(refined)
@@ -299,11 +302,13 @@ def compute_final_delays_transmissions(leader_ch, waveforms, cluster_family, sr)
     transmission_coefficient by cross-correlating that channel's 
     waveform with the leader's.
     Return a list of dict => each dict has 
-        { channel, delay, transmission_coefficient, time }
+        { channel, delay, transmission_coefficient, raw_time, adjusted_delay, adjusted_time }
     """
     leader_wave = waveforms[leader_ch]
     leader_ac = signal.correlate(leader_wave, leader_wave, mode='full')
     leader_ac_peak = np.max(leader_ac) if len(leader_ac)>0 else 1e-9
+    deltas, deltas_dict = calibrate()
+    deltas_adjusted = deltas - deltas[leader_ch]
 
     results = []
     for (ch, t_ms) in cluster_family:
@@ -312,7 +317,9 @@ def compute_final_delays_transmissions(leader_ch, waveforms, cluster_family, sr)
                 'channel': int(ch),
                 'delay': 0.0,
                 'transmission_coefficient': 1.0,
-                'time': float(t_ms)
+                'raw_time': float(t_ms),
+                'adjusted_delay': 0.0,
+                'adjusted_time': float(t_ms - deltas[ch])
             })
         else:
             w_ch = waveforms[ch]
@@ -322,7 +329,9 @@ def compute_final_delays_transmissions(leader_ch, waveforms, cluster_family, sr)
                     'channel': int(ch),
                     'delay': 0.0,
                     'transmission_coefficient': 0.0,
-                    'time': float(t_ms)
+                    'raw_time': float(t_ms),
+                    'adjusted_delay': 0.0,
+                    'adjusted_time': float(t_ms - deltas[ch] )
                 })
                 continue
             w_lead = leader_wave[:min_len]
@@ -339,7 +348,9 @@ def compute_final_delays_transmissions(leader_ch, waveforms, cluster_family, sr)
                 'channel': int(ch),
                 'delay': float(delay_ms),
                 'transmission_coefficient': float(trans),
-                'time': float(t_ms)
+                'raw_time': float(t_ms),
+                'adjusted_delay': float(delay_ms - deltas_adjusted[ch]),
+                'adjusted_time': float(t_ms - deltas[ch])
             })
     return results
 
@@ -347,6 +358,7 @@ def compute_final_delays_transmissions(leader_ch, waveforms, cluster_family, sr)
 # Process each refined cluster with cross-correlation, now choosing the leader
 # by highest cross-corr peak sum => "leader_by_transmission"
 ################################################################################
+
 
 cross_correlation_families = []
 
@@ -383,7 +395,9 @@ if len(cross_correlation_families) == 0:
             'channel': int(channel),
             'delay': float(channel * 5.0),  # fake delay values
             'transmission_coefficient': 1.0 / (channel + 1.0),  # fake transmission coefficient
-            'time': time_ms
+            'time': time_ms,
+            'adjusted_delay': 0.0,
+            'adjusted_time': time_ms
         })
     cross_correlation_families.append(dummy_family)
     log(f"Created dummy family with {len(dummy_family)} channels")
