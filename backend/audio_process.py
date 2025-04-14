@@ -395,7 +395,7 @@ if len(cross_correlation_families) == 0:
             'channel': int(channel),
             'delay': float(channel * 5.0),  # fake delay values
             'transmission_coefficient': 1.0 / (channel + 1.0),  # fake transmission coefficient
-            'time': time_ms,
+            'raw_time': time_ms,
             'adjusted_delay': 0.0,
             'adjusted_time': time_ms
         })
