@@ -32,7 +32,62 @@ app.use(express.json());
 // Serve static files from the public folder
 app.use(express.static('public'));
 
-// Original endpoint for single file processing
+// Helper function to extract JSON from Python output
+function extractJsonFromPythonOutput(stdout) {
+    // Find the last occurrence of multiple consecutive JSON arrays
+    // This looks for the pattern that matches our specific Python output format
+    const jsonMatch = stdout.match(/\[\[.*\]\]/s);
+    
+    if (!jsonMatch) {
+        throw new Error('Could not find valid JSON array in Python output');
+    }
+    
+    let jsonString = jsonMatch[0];
+    
+    // Debug logging to identify potential issues
+    console.log("Extracted JSON string starts with:", jsonString.substring(0, 50));
+    console.log("First 10 characters as hex:", Array.from(jsonString.substring(0, 10)).map(c => c.charCodeAt(0).toString(16).padStart(2, '0')).join(' '));
+    
+    // Remove any BOM or invisible characters at the beginning
+    jsonString = jsonString.replace(/^\uFEFF/, '');
+    
+    // Try to clean up the JSON string
+    jsonString = jsonString.trim();
+    
+    try {
+        return JSON.parse(jsonString);
+    } catch (e) {
+        console.error("JSON parse error:", e.message);
+        console.error("First 50 characters of attempted JSON:", jsonString.substring(0, 50));
+        
+        // Last resort: Try a more aggressive cleaning approach
+        // Remove any non-standard whitespace characters
+        jsonString = jsonString.replace(/[\s\uFEFF\xA0]+/g, ' ');
+        
+        // Ensure proper array format
+        jsonString = jsonString.replace(/^\s*\[\s*\[/, '[[').replace(/\]\s*\]\s*$/, ']]');
+        
+        try {
+            return JSON.parse(jsonString);
+        } catch (finalError) {
+            console.error("Final JSON parse attempt failed:", finalError.message);
+            
+            // If we still can't parse it, try a manual regex-based approach
+            // This is a last resort method to handle potential malformed JSON
+            const crackleRegex = /\[\[{"channel".*?\]\]/s;
+            const lastResortMatch = stdout.match(crackleRegex);
+            
+            if (lastResortMatch) {
+                console.log("Using regex-based JSON extraction as last resort");
+                return JSON.parse(lastResortMatch[0]);
+            }
+            
+            throw new Error('Failed to parse JSON after multiple attempts');
+        }
+    }
+}
+
+// Updated compute endpoint to properly extract JSON from Python output
 app.post('/compute', upload.single('uploaded_file'), (req, res) => {
     // Check if a file was uploaded
     if (!req.file) {
@@ -55,22 +110,19 @@ app.post('/compute', upload.single('uploaded_file'), (req, res) => {
     
         // Log the raw output from Python for debugging
         console.log("Raw Python output:", stdout);
-    
-        // Remove any unnecessary outer arrays (if present)
-        const cleanedOutput = stdout.replace(/^\[{/, '[').replace(/\}]$/, ']');
-    
+        
         try {
-            const jsonResponse = JSON.parse(cleanedOutput);
+            const jsonResponse = extractJsonFromPythonOutput(stdout);
             console.log("Parsed JSON response:", jsonResponse);
             res.json(jsonResponse);
         } catch (parseError) {
             console.error('Error parsing Python response:', parseError);
-            return res.status(500).send('Error parsing Python response');
+            return res.status(500).send(`Error parsing Python response: ${parseError.message}`);
         }
     });
 });
 
-// New endpoint for multiple file processing
+// Updated compute-multi endpoint to properly extract JSON from Python output
 app.post('/compute-multi', upload.array('uploaded_files', 6), (req, res) => {
     // Check if files were uploaded
     if (!req.files || req.files.length === 0) {
@@ -123,11 +175,8 @@ app.post('/compute-multi', upload.array('uploaded_files', 6), (req, res) => {
             // Log the raw output from Python for debugging
             console.log("Raw Python output:", stdout);
             
-            // Remove any unnecessary outer arrays (if present)
-            const cleanedOutput = stdout.replace(/^\[{/, '[').replace(/\}]$/, ']');
-            
             try {
-                const jsonResponse = JSON.parse(cleanedOutput);
+                const jsonResponse = extractJsonFromPythonOutput(stdout);
                 console.log("Parsed JSON response:", jsonResponse);
                 
                 // Cleanup the temp file
@@ -144,7 +193,7 @@ app.post('/compute-multi', upload.array('uploaded_files', 6), (req, res) => {
                     if (err) console.error(`Error deleting temporary file: ${err}`);
                 });
                 
-                return res.status(500).send('Error parsing Python response');
+                return res.status(500).send(`Error parsing Python response: ${parseError.message}`);
             }
         });
     });

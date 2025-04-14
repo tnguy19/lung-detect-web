@@ -1,9 +1,7 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
-import { API_URL } from "../config";
-import audioService from "../services/AudioService";
 
-export default function MultiUploadContainer({ updateComputeState, setData }) {
+export default function MultiUploadContainer({ updateComputeState, setData, setUploadedFileUrl }) {
   const [files, setFiles] = useState([]);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
@@ -59,8 +57,14 @@ export default function MultiUploadContainer({ updateComputeState, setData }) {
     });
 
     try {
-      // Use the API_URL from config instead of hardcoded localhost
-      const response = await axios.post(`${API_URL}/compute-multi`, formData, {
+      // Store the URL of the first file for audio playback
+      // In a more advanced implementation, we might want to handle channel selection for multi-file playback
+      if (files.length > 0) {
+        const fileUrl = URL.createObjectURL(files[0]);
+        setUploadedFileUrl(fileUrl);
+      }
+
+      const response = await axios.post("http://localhost:5000/compute-multi", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -73,22 +77,6 @@ export default function MultiUploadContainer({ updateComputeState, setData }) {
       });
 
       console.log("Upload successful:", response.data);
-      
-      // If we have a main file (first file), use it for audio playback
-      if (files.length > 0) {
-        // Store the first file for audio playback 
-        audioService.setUploadedFile(files[0]);
-        
-        // Pre-load the audio buffer for playback
-        try {
-          await audioService.loadAudioFromUploadedFile();
-          console.log("Audio loaded successfully for playback");
-        } catch (error) {
-          console.error("Failed to load audio for playback:", error);
-          // Continue even if audio loading fails - we'll try again when user clicks play
-        }
-      }
-      
       setData(response.data);
       updateComputeState();
     } catch (err) {
@@ -96,6 +84,8 @@ export default function MultiUploadContainer({ updateComputeState, setData }) {
       setError(
         err.response?.data || "An error occurred during upload. Please try again."
       );
+      // Clear the file URL if upload fails
+      setUploadedFileUrl(null);
     } finally {
       setIsUploading(false);
     }
@@ -119,9 +109,7 @@ export default function MultiUploadContainer({ updateComputeState, setData }) {
       <h3>Upload Multiple Channel Files</h3>
       <p className="text-muted">
         Upload individual .wav files (one per channel) to be combined and processed.
-        Each file will be assigned to a channel in the order they are added.
-        After processing, you'll be able to play back sounds by clicking on the
-        detection points.
+        Each file will be assigned to a channel in the order they are selected.
       </p>
       
       <div className="upload-buttons-container">

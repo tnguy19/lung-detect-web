@@ -6,9 +6,10 @@ import ConvertContainer from "./components/ConvertContainer";
 import NavBar from "./components/NavBar";
 
 function App() {
-  const [dataComputed, isDataComputed] = useState(false); // default == false!
-  const [data, isData] = useState(null); // default == true
-  const [activePage, setActivePage] = useState("home"); // Track active page
+  const [dataComputed, isDataComputed] = useState(false);
+  const [data, isData] = useState(null);
+  const [uploadedFile, setUploadedFile] = useState(null);
+  const [activePage, setActivePage] = useState("home");
 
   function updateComputeState() {
     isDataComputed((prevState) => !prevState);
@@ -16,6 +17,11 @@ function App() {
 
   function setData(newData) {
     isData((prevState) => newData);
+  }
+  
+  // Function to handle setting the uploaded file
+  function setUploadedFileUrl(fileUrl) {
+    setUploadedFile(fileUrl);
   }
   
   // Function to handle navbar navigation
@@ -27,6 +33,7 @@ function App() {
   function handleReset() {
     isDataComputed(false);
     isData(null);
+    setUploadedFile(null);
   }
 
   return (
@@ -40,19 +47,23 @@ function App() {
               <UploadContainer
                 updateComputeState={updateComputeState}
                 setData={setData}
+                setUploadedFileUrl={setUploadedFileUrl}
               />
             )}
             {dataComputed && data && (
               <>
                 <div className="back-button-container mb-3">
                   <button 
-                    className="btn btn-primary" 
+                    className="btn btn-secondary" 
                     onClick={handleReset}
                   >
                     <i className="fas fa-arrow-left mr-1"></i> Back to Upload
                   </button>
                 </div>
-                <LungVisualization data={data} />
+                <LungVisualization 
+                  data={data} 
+                  audioFile={uploadedFile}
+                />
               </>
             )}
           </div>

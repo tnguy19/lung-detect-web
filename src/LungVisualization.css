@@ -1,0 +1,55 @@
+/* LungVisualization.css - Modern and clean styling */
+
+/* Main container */
+.visualization-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Left column with controls */
+  .left-column {
+    width: 250px;
+    flex-shrink: 0;
+  }
+  
+  /* Right column with visualization */
+  .right-column {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  /* Family selector styles */
+  .family-selector {
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .family-selector .form-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #495057;
+  }
+  
+  .family-selector .form-select {
+    border-radius: 6px;
+    border-color: #dee2e6;
+    padding: 8px 12px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  .family-selector .form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  }
+  
+  .family-selector .form-check {
+    margin-top: 12px;
+  }

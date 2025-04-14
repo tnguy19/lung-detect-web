@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import MultiUploadContainer from "./MultiUploadContainer";
-import { API_URL } from "../config";
-import audioService from "../services/AudioService";
 
-export default function UploadContainer({ updateComputeState, setData }) {
+export default function UploadContainer({ updateComputeState, setData, setUploadedFileUrl }) {
   const [file, setFile] = useState(null);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
@@ -23,10 +21,6 @@ export default function UploadContainer({ updateComputeState, setData }) {
       }
       
       setFile(selectedFile);
-      
-      // Save the file to the audio service for later playback
-      audioService.setUploadedFile(selectedFile);
-      
       setError(null);
     }
   };
@@ -45,8 +39,11 @@ export default function UploadContainer({ updateComputeState, setData }) {
     formData.append("uploaded_file", file);
 
     try {
-      // Use the API_URL from config instead of hardcoded localhost
-      const response = await axios.post(`${API_URL}/compute`, formData, {
+      // Store file URL for audio playback
+      const fileUrl = URL.createObjectURL(file);
+      setUploadedFileUrl(fileUrl);
+      
+      const response = await axios.post("http://localhost:5000/compute", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -59,16 +56,6 @@ export default function UploadContainer({ updateComputeState, setData }) {
       });
 
       console.log("Upload successful:", response.data);
-      
-      // Pre-load the audio buffer for playback
-      try {
-        await audioService.loadAudioFromUploadedFile();
-        console.log("Audio loaded successfully for playback");
-      } catch (error) {
-        console.error("Failed to load audio for playback:", error);
-        // Continue even if audio loading fails - we'll try again when user clicks play
-      }
-      
       setData(response.data);
       updateComputeState();
     } catch (err) {
@@ -76,6 +63,8 @@ export default function UploadContainer({ updateComputeState, setData }) {
       setError(
         err.response?.data || "An error occurred during upload. Please try again."
       );
+      // Clear the file URL if upload fails
+      setUploadedFileUrl(null);
     } finally {
       setIsUploading(false);
     }
@@ -117,8 +106,7 @@ export default function UploadContainer({ updateComputeState, setData }) {
           <div className="upload-instructions">
             <p>
               Upload a multi-channel .wav file containing lung sound recordings
-              for analysis. You'll be able to play back sounds by clicking on the
-              detection points after analysis.
+              for analysis.
             </p>
           </div>
           
@@ -173,7 +161,8 @@ export default function UploadContainer({ updateComputeState, setData }) {
       ) : (
         <MultiUploadContainer 
           updateComputeState={updateComputeState} 
-          setData={setData} 
+          setData={setData}
+          setUploadedFileUrl={setUploadedFileUrl}
         />
       )}
     </div>

@@ -1,16 +1,16 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import HumanBack from "../images/human_back.jpg";
+import AudioPlayback from "../services/AudioPlayback";
 import DataTable from "./DataTable";
 import React from "react";
-import audioService from "../services/AudioService";
+import "../LungVisualization.css";
 
-export default function LungVisualization({ data, initialShowChannelNumbers }) {
+export default function LungVisualization({ data, audioFile, initialShowChannelNumbers = false }) {
   const [selectedFamily, setSelectedFamily] = useState(0);
   const [familyData, setFamilyData] = useState([]);
   const [showChannelNumbers, setShowChannelNumbers] = useState(initialShowChannelNumbers);
-  const [isAudioLoading, setIsAudioLoading] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [activeChannel, setActiveChannel] = useState(null);
+  const [selectedChannel, setSelectedChannel] = useState(null);
+  const [playingChannel, setPlayingChannel] = useState(null);
 
   // Initialize detection state arrays, one per family
   const [detectionStates, setDetectionStates] = useState([]);
@@ -45,11 +45,6 @@ export default function LungVisualization({ data, initialShowChannelNumbers }) {
         analyzeCrackleFamily(family, index);
       });
     }
-    
-    // Cleanup function to stop any audio playback when component unmounts
-    return () => {
-      audioService.stopAudio();
-    };
   }, [data]);
 
   function analyzeCrackleFamily(family, familyIndex) {
@@ -78,22 +73,22 @@ export default function LungVisualization({ data, initialShowChannelNumbers }) {
       // Map channels 0-5 to specific positions
       if (dataPoint.channel === 0) {
         delays.topLeft = dataPoint.delay;
-        times.topLeft = dataPoint.time;
+        times.topLeft = dataPoint.raw_time || dataPoint.time;
       } else if (dataPoint.channel === 1) {
         delays.topRight = dataPoint.delay;
-        times.topRight = dataPoint.time;
+        times.topRight = dataPoint.raw_time || dataPoint.time;
       } else if (dataPoint.channel === 2) {
         delays.midLeft = dataPoint.delay;
-        times.midLeft = dataPoint.time;
+        times.midLeft = dataPoint.raw_time || dataPoint.time;
       } else if (dataPoint.channel === 3) {
         delays.midRight = dataPoint.delay;
-        times.midRight = dataPoint.time;
+        times.midRight = dataPoint.raw_time || dataPoint.time;
       } else if (dataPoint.channel === 4) {
         delays.bottomLeft = dataPoint.delay;
-        times.bottomLeft = dataPoint.time;
+        times.bottomLeft = dataPoint.raw_time || dataPoint.time;
       } else if (dataPoint.channel === 5) {
         delays.bottomRight = dataPoint.delay;
-        times.bottomRight = dataPoint.time;
+        times.bottomRight = dataPoint.raw_time || dataPoint.time;
       }
     }
 
@@ -165,7 +160,7 @@ export default function LungVisualization({ data, initialShowChannelNumbers }) {
 
     // Draw grid lines
     context.clearRect(0, 0, canvas.width, canvas.height);
-    context.strokeStyle = "black";
+    context.strokeStyle = "rgba(0, 0, 0, 0.3)";
     context.lineWidth = 0.8;
 
     // Draw vertical grid lines
@@ -199,65 +194,57 @@ export default function LungVisualization({ data, initialShowChannelNumbers }) {
   // Function to handle family selection
   const handleFamilyChange = (event) => {
     setSelectedFamily(parseInt(event.target.value));
+    setSelectedChannel(null);
+    setPlayingChannel(null);
   };
-  
-  // Check if a location has sound detection
-  const hasSound = (position, index) => {
-    if (!detectionStates[index]) return false;
-    return detectionStates[index][position];
+
+  // Function to handle channel button click
+  const handleChannelButtonClick = (channel) => {
+    // Find the data point for this channel in the current family
+    const channelData = familyData[selectedFamily]?.find(item => item.channel === channel);
+    setSelectedChannel(channelData);
   };
-  
-  // Function to handle button clicks for audio playback
-  const handlePlayButtonClick = async (channel, timeMs, position, index) => {
-    // Check if this channel/position has sound detection
-    // If not, don't play any audio and don't proceed further
-    if (!hasSound(position, index)) {
-      return;
-    }
-    
-    // If this channel is already playing, stop it
-    if (isPlaying && activeChannel === channel) {
-      audioService.stopAudio();
-      setIsPlaying(false);
-      setActiveChannel(null);
-      return;
-    }
-    
-    // Stop any currently playing audio
-    if (isPlaying) {
-      audioService.stopAudio();
-    }
-    
-    // Start playing the new channel
-    setIsAudioLoading(true);
-    setActiveChannel(channel);
-    
-    try {
-      const success = await audioService.playChannelAtTime(channel, timeMs, 2000); // 2-second clip
-      
-      if (success) {
-        setIsPlaying(true);
-        
-        // Set up a listener for when playback ends
-        const originalSource = audioService.source;
-        if (originalSource) {
-          const originalOnEnded = originalSource.onended;
-          originalSource.onended = () => {
-            if (originalOnEnded) originalOnEnded();
-            setIsPlaying(false);
-            setActiveChannel(null);
-          };
-        }
-      } else {
-        // If playback failed, reset the state
-        setActiveChannel(null);
-      }
-    } catch (error) {
-      console.error("Error playing audio:", error);
-      setActiveChannel(null);
-    } finally {
-      setIsAudioLoading(false);
-    }
+
+  // Function to handle audio playback start
+  const handlePlaybackStart = (channel) => {
+    setPlayingChannel(channel);
+  };
+
+  // Function to handle audio playback end
+  const handlePlaybackEnd = () => {
+    setPlayingChannel(null);
+  };
+
+  // Get the channel mapping
+  const getChannelFromPosition = (position) => {
+    const channelMap = {
+      'topLeft': 0,
+      'topRight': 1,
+      'midLeft': 2,
+      'midRight': 3,
+      'bottomLeft': 4,
+      'bottomRight': 5
+    };
+    return channelMap[position];
+  };
+
+  // Get channel label
+  const getChannelLabel = (channel, isDetected) => {
+    const baseLabel = showChannelNumbers ? `Ch ${channel}: ` : '';
+    return `${baseLabel}${isDetected ? 'Sound' : 'No Sound'}`;
+  };
+
+  // Get position name for a channel
+  const getPositionName = (channel) => {
+    const positionMap = {
+      0: 'Top Left',
+      1: 'Top Right',
+      2: 'Middle Left',
+      3: 'Middle Right',
+      4: 'Bottom Left',
+      5: 'Bottom Right'
+    };
+    return positionMap[channel] || `Channel ${channel}`;
   };
 
   return (
@@ -295,187 +282,188 @@ export default function LungVisualization({ data, initialShowChannelNumbers }) {
             </div>
           </div>
         )}
-        
-        {/* Info alert moved to the same column as family selector */}
+
         <div className="info-alert-inline">
           <div className="alert alert-info">
             <i className="fas fa-info-circle me-2"></i>
-            Click on any red "Sound" button to play back the detected lung sound.
+            Click on a channel button to view details and play audio.
           </div>
         </div>
       </div>
-      
+
       <div className="right-column">
         <div className="accordion" id="crackleFamiliesAccordion">
-          {familyData.map((family, index) => (
-            <div className="accordion-item" key={index}>
-              <h2 className="accordion-header">
-                <button 
-                  className={`accordion-button ${index !== selectedFamily ? 'collapsed' : ''}`} 
-                  type="button" 
-                  data-bs-toggle="collapse" 
-                  data-bs-target={`#family${index}`} 
-                  aria-expanded={index === selectedFamily} 
-                  aria-controls={`family${index}`}
-                  onClick={() => setSelectedFamily(index)}
-                >
-                  Crackle Family {index + 1}
-                </button>
-              </h2>
-              <div 
-                id={`family${index}`} 
-                className={`accordion-collapse collapse ${index === selectedFamily ? 'show' : ''}`}
-                data-bs-parent="#crackleFamiliesAccordion"
+          <div className="accordion-item">
+            <h2 className="accordion-header">
+              <button 
+                className="accordion-button" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#family1" 
+                aria-expanded="true" 
+                aria-controls="family1"
               >
-                <div className="accordion-body">
-                  <div className="visualization-container" style={{padding: '0'}}>
-                    <div className="lung-container">
-                      {/* Human Back Image */}
-                      <img
-                        ref={createImageRef(index)}
-                        src={HumanBack}
-                        alt="Human Back Diagram"
-                        className="lung-image"
-                      />
+                Crackle Family {selectedFamily + 1}
+              </button>
+            </h2>
+            <div 
+              id="family1" 
+              className="accordion-collapse collapse show"
+              data-bs-parent="#crackleFamiliesAccordion"
+            >
+              <div className="accordion-body">
+                <div className="visualization-container" style={{padding: '0'}}>
+                  <div className="lung-container">
+                    {/* Human Back Image */}
+                    <img
+                      ref={createImageRef(selectedFamily)}
+                      src={HumanBack}
+                      alt="Human Back Diagram"
+                      className="lung-image"
+                    />
 
-                      {/* Canvas Overlay */}
-                      <canvas ref={createCanvasRef(index)} className="lung-canvas" />
+                    {/* Canvas Overlay */}
+                    <canvas ref={createCanvasRef(selectedFamily)} className="lung-canvas" />
 
-                      {/* Detected Points as Buttons with Time Information Tooltips */}
-                      {detectionStates[index] && (
-                        <>
-                          {/* Top Row */}
-                          <button 
-                            type="button" 
-                            className={`btn ${detectionStates[index].topLeft ? "btn-danger" : "btn-success"} lung-point top-left ${activeChannel === 0 && isPlaying ? "playing" : ""}`}
-                            title={detectionStates[index].times?.topLeft ? 
-                              `Channel 0 - Detection Time: ${detectionStates[index].times.topLeft.toFixed(2)} ms - ${detectionStates[index].topLeft ? "Click to play sound" : "No sound detected"}` : 
-                              "Channel 0 - No time data available"}
-                            onClick={() => detectionStates[index].times?.topLeft && handlePlayButtonClick(0, detectionStates[index].times.topLeft, "topLeft", index)}
-                            disabled={!detectionStates[index].times?.topLeft || isAudioLoading}
-                          >
-                            {showChannelNumbers ? "Ch 0: " : ""}
-                            {detectionStates[index].topLeft ? (
-                              <>
-                                {activeChannel === 0 && isPlaying ? "Playing..." : "Sound"}
-                                <i className={`ms-2 fas ${activeChannel === 0 && isPlaying ? "fa-pause" : "fa-play"}`}></i>
-                              </>
-                            ) : "No Sound"}
-                          </button>
-                          <button 
-                            type="button" 
-                            className={`btn ${detectionStates[index].topRight ? "btn-danger" : "btn-success"} lung-point top-right ${activeChannel === 1 && isPlaying ? "playing" : ""}`}
-                            title={detectionStates[index].times?.topRight ? 
-                              `Channel 1 - Detection Time: ${detectionStates[index].times.topRight.toFixed(2)} ms - ${detectionStates[index].topRight ? "Click to play sound" : "No sound detected"}` : 
-                              "Channel 1 - No time data available"}
-                            onClick={() => detectionStates[index].times?.topRight && handlePlayButtonClick(1, detectionStates[index].times.topRight, "topRight", index)}
-                            disabled={!detectionStates[index].times?.topRight || isAudioLoading}
-                          >
-                            {showChannelNumbers ? "Ch 1: " : ""}
-                            {detectionStates[index].topRight ? (
-                              <>
-                                {activeChannel === 1 && isPlaying ? "Playing..." : "Sound"}
-                                <i className={`ms-2 fas ${activeChannel === 1 && isPlaying ? "fa-pause" : "fa-play"}`}></i>
-                              </>
-                            ) : "No Sound"}
-                          </button>
+                    {/* Detected Points as Buttons with Time Information Tooltips */}
+                    {detectionStates[selectedFamily] && (
+                      <>
+                        {/* Top Row */}
+                        <button 
+                          type="button" 
+                          className={`btn ${detectionStates[selectedFamily].topLeft ? "btn-danger" : "btn-success"} 
+                                    lung-point top-left ${playingChannel === 0 ? 'playing' : ''}`}
+                          title={detectionStates[selectedFamily].times?.topLeft ? 
+                            `Channel 0 - Detection Time: ${detectionStates[selectedFamily].times.topLeft.toFixed(2)} ms` : 
+                            "Channel 0 - No time data available"}
+                          onClick={() => handleChannelButtonClick(0)}
+                        >
+                          {getChannelLabel(0, detectionStates[selectedFamily].topLeft)}
+                        </button>
+                        <button 
+                          type="button" 
+                          className={`btn ${detectionStates[selectedFamily].topRight ? "btn-danger" : "btn-success"} 
+                                    lung-point top-right ${playingChannel === 1 ? 'playing' : ''}`}
+                          title={detectionStates[selectedFamily].times?.topRight ? 
+                            `Channel 1 - Detection Time: ${detectionStates[selectedFamily].times.topRight.toFixed(2)} ms` : 
+                            "Channel 1 - No time data available"}
+                          onClick={() => handleChannelButtonClick(1)}
+                        >
+                          {getChannelLabel(1, detectionStates[selectedFamily].topRight)}
+                        </button>
+                        
+                        {/* Middle Row */}
+                        <button 
+                          type="button" 
+                          className={`btn ${detectionStates[selectedFamily].midLeft ? "btn-danger" : "btn-success"} 
+                                    lung-point mid-left ${playingChannel === 2 ? 'playing' : ''}`}
+                          title={detectionStates[selectedFamily].times?.midLeft ? 
+                            `Channel 2 - Detection Time: ${detectionStates[selectedFamily].times.midLeft.toFixed(2)} ms` : 
+                            "Channel 2 - No time data available"}
+                          onClick={() => handleChannelButtonClick(2)}
+                        >
+                          {getChannelLabel(2, detectionStates[selectedFamily].midLeft)}
+                        </button>
+                        <button 
+                          type="button" 
+                          className={`btn ${detectionStates[selectedFamily].midRight ? "btn-danger" : "btn-success"} 
+                                    lung-point mid-right ${playingChannel === 3 ? 'playing' : ''}`}
+                          title={detectionStates[selectedFamily].times?.midRight ? 
+                            `Channel 3 - Detection Time: ${detectionStates[selectedFamily].times.midRight.toFixed(2)} ms` : 
+                            "Channel 3 - No time data available"}
+                          onClick={() => handleChannelButtonClick(3)}
+                        >
+                          {getChannelLabel(3, detectionStates[selectedFamily].midRight)}
+                        </button>
+                        
+                        {/* Bottom Row */}
+                        <button 
+                          type="button" 
+                          className={`btn ${detectionStates[selectedFamily].bottomLeft ? "btn-danger" : "btn-success"} 
+                                    lung-point bottom-left ${playingChannel === 4 ? 'playing' : ''}`}
+                          title={detectionStates[selectedFamily].times?.bottomLeft ? 
+                            `Channel 4 - Detection Time: ${detectionStates[selectedFamily].times.bottomLeft.toFixed(2)} ms` : 
+                            "Channel 4 - No time data available"}
+                          onClick={() => handleChannelButtonClick(4)}
+                        >
+                          {getChannelLabel(4, detectionStates[selectedFamily].bottomLeft)}
+                        </button>
+                        <button 
+                          type="button" 
+                          className={`btn ${detectionStates[selectedFamily].bottomRight ? "btn-danger" : "btn-success"} 
+                                    lung-point bottom-right ${playingChannel === 5 ? 'playing' : ''}`}
+                          title={detectionStates[selectedFamily].times?.bottomRight ? 
+                            `Channel 5 - Detection Time: ${detectionStates[selectedFamily].times.bottomRight.toFixed(2)} ms` : 
+                            "Channel 5 - No time data available"}
+                          onClick={() => handleChannelButtonClick(5)}
+                        >
+                          {getChannelLabel(5, detectionStates[selectedFamily].bottomRight)}
+                        </button>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Selected Channel Details and Audio Playback */}
+                  {selectedChannel && (
+                    <div className="selected-channel-card">
+                      <div className="card">
+                        <div className="card-header">
+                          <h5>Channel {selectedChannel.channel} - {getPositionName(selectedChannel.channel)}</h5>
+                        </div>
+                        <div className="card-body">
+                          <div className="channel-details">
+                            <div className="detail-row">
+                              <div className="detail-label">Time:</div>
+                              <div className="detail-value">{(selectedChannel.raw_time || selectedChannel.time).toFixed(2)} ms</div>
+                            </div>
+                            <div className="detail-row">
+                              <div className="detail-label">Delay:</div>
+                              <div className="detail-value">{selectedChannel.delay.toFixed(2)} ms</div>
+                            </div>
+                            <div className="detail-row">
+                              <div className="detail-label">Transmission:</div>
+                              <div className="detail-value">{selectedChannel.transmission_coefficient.toFixed(3)}</div>
+                            </div>
+                            {selectedChannel.adjusted_time && (
+                              <div className="detail-row">
+                                <div className="detail-label">Adjusted Time:</div>
+                                <div className="detail-value">{selectedChannel.adjusted_time.toFixed(2)} ms</div>
+                              </div>
+                            )}
+                          </div>
                           
-                          {/* Middle Row */}
-                          <button 
-                            type="button" 
-                            className={`btn ${detectionStates[index].midLeft ? "btn-danger" : "btn-success"} lung-point mid-left ${activeChannel === 2 && isPlaying ? "playing" : ""}`}
-                            title={detectionStates[index].times?.midLeft ? 
-                              `Channel 2 - Detection Time: ${detectionStates[index].times.midLeft.toFixed(2)} ms - ${detectionStates[index].midLeft ? "Click to play sound" : "No sound detected"}` : 
-                              "Channel 2 - No time data available"}
-                            onClick={() => detectionStates[index].times?.midLeft && handlePlayButtonClick(2, detectionStates[index].times.midLeft, "midLeft", index)}
-                            disabled={!detectionStates[index].times?.midLeft || isAudioLoading}
-                          >
-                            {showChannelNumbers ? "Ch 2: " : ""}
-                            {detectionStates[index].midLeft ? (
-                              <>
-                                {activeChannel === 2 && isPlaying ? "Playing..." : "Sound"}
-                                <i className={`ms-2 fas ${activeChannel === 2 && isPlaying ? "fa-pause" : "fa-play"}`}></i>
-                              </>
-                            ) : "No Sound"}
-                          </button>
-                          <button 
-                            type="button" 
-                            className={`btn ${detectionStates[index].midRight ? "btn-danger" : "btn-success"} lung-point mid-right ${activeChannel === 3 && isPlaying ? "playing" : ""}`}
-                            title={detectionStates[index].times?.midRight ? 
-                              `Channel 3 - Detection Time: ${detectionStates[index].times.midRight.toFixed(2)} ms - ${detectionStates[index].midRight ? "Click to play sound" : "No sound detected"}` : 
-                              "Channel 3 - No time data available"}
-                            onClick={() => detectionStates[index].times?.midRight && handlePlayButtonClick(3, detectionStates[index].times.midRight, "midRight", index)}
-                            disabled={!detectionStates[index].times?.midRight || isAudioLoading}
-                          >
-                            {showChannelNumbers ? "Ch 3: " : ""}
-                            {detectionStates[index].midRight ? (
-                              <>
-                                {activeChannel === 3 && isPlaying ? "Playing..." : "Sound"}
-                                <i className={`ms-2 fas ${activeChannel === 3 && isPlaying ? "fa-pause" : "fa-play"}`}></i>
-                              </>
-                            ) : "No Sound"}
-                          </button>
-                          
-                          {/* Bottom Row */}
-                          <button 
-                            type="button" 
-                            className={`btn ${detectionStates[index].bottomLeft ? "btn-danger" : "btn-success"} lung-point bottom-left ${activeChannel === 4 && isPlaying ? "playing" : ""}`}
-                            title={detectionStates[index].times?.bottomLeft ? 
-                              `Channel 4 - Detection Time: ${detectionStates[index].times.bottomLeft.toFixed(2)} ms - ${detectionStates[index].bottomLeft ? "Click to play sound" : "No sound detected"}` : 
-                              "Channel 4 - No time data available"}
-                            onClick={() => detectionStates[index].times?.bottomLeft && handlePlayButtonClick(4, detectionStates[index].times.bottomLeft, "bottomLeft", index)}
-                            disabled={!detectionStates[index].times?.bottomLeft || isAudioLoading}
-                          >
-                            {showChannelNumbers ? "Ch 4: " : ""}
-                            {detectionStates[index].bottomLeft ? (
-                              <>
-                                {activeChannel === 4 && isPlaying ? "Playing..." : "Sound"}
-                                <i className={`ms-2 fas ${activeChannel === 4 && isPlaying ? "fa-pause" : "fa-play"}`}></i>
-                              </>
-                            ) : "No Sound"}
-                          </button>
-                          <button 
-                            type="button" 
-                            className={`btn ${detectionStates[index].bottomRight ? "btn-danger" : "btn-success"} lung-point bottom-right ${activeChannel === 5 && isPlaying ? "playing" : ""}`}
-                            title={detectionStates[index].times?.bottomRight ? 
-                              `Channel 5 - Detection Time: ${detectionStates[index].times.bottomRight.toFixed(2)} ms - ${detectionStates[index].bottomRight ? "Click to play sound" : "No sound detected"}` : 
-                              "Channel 5 - No time data available"}
-                            onClick={() => detectionStates[index].times?.bottomRight && handlePlayButtonClick(5, detectionStates[index].times.bottomRight, "bottomRight", index)}
-                            disabled={!detectionStates[index].times?.bottomRight || isAudioLoading}
-                          >
-                            {showChannelNumbers ? "Ch 5: " : ""}
-                            {detectionStates[index].bottomRight ? (
-                              <>
-                                {activeChannel === 5 && isPlaying ? "Playing..." : "Sound"}
-                                <i className={`ms-2 fas ${activeChannel === 5 && isPlaying ? "fa-pause" : "fa-play"}`}></i>
-                              </>
-                            ) : "No Sound"}
-                          </button>
-                        </>
-                      )}
+                          {audioFile && (
+                            <div className="audio-playback mt-3">
+                              <AudioPlayback 
+                                audioFile={audioFile} 
+                                timeMs={selectedChannel.raw_time || selectedChannel.time}
+                                channel={selectedChannel.channel}
+                                playbackDuration={2000}
+                                onPlaybackStart={() => handlePlaybackStart(selectedChannel.channel)}
+                                onPlaybackComplete={handlePlaybackEnd}
+                              />
+                            </div>
+                          )}
+                        </div>
+                      </div>
                     </div>
+                  )}
 
-                    <div className="table-container">
-                      <h5>Family {index + 1} Data</h5>
-                      <DataTable data={family} />
-                    </div>
+                  <div className="table-container">
+                    <h5>Family {selectedFamily + 1} Data</h5>
+                    <DataTable 
+                      data={familyData[selectedFamily] || []} 
+                      audioFile={audioFile}
+                      onPlaybackStart={handlePlaybackStart}
+                      onPlaybackComplete={handlePlaybackEnd}
+                    />
                   </div>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
-      
-      {/* Audio playback status messages */}
-      {isAudioLoading && (
-        <div className="alert alert-info mt-3">
-          <div className="spinner-border spinner-border-sm me-2" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-          Loading audio...
-        </div>
-      )}
     </div>
   );
 }
