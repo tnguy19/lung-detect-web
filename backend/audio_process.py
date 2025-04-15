@@ -307,8 +307,16 @@ def compute_final_delays_transmissions(leader_ch, waveforms, cluster_family, sr)
     leader_wave = waveforms[leader_ch]
     leader_ac = signal.correlate(leader_wave, leader_wave, mode='full')
     leader_ac_peak = np.max(leader_ac) if len(leader_ac)>0 else 1e-9
+
     deltas, deltas_dict = calibrate()
     deltas_adjusted = deltas - deltas[leader_ch]
+
+    #extract leaders time index:
+    leader_time_ms = 0.0
+    for (ch, t_ms) in cluster_family:
+        if ch == leader_ch:
+            leader_time_ms = t_ms
+            break
 
     results = []
     for (ch, t_ms) in cluster_family:
@@ -322,28 +330,39 @@ def compute_final_delays_transmissions(leader_ch, waveforms, cluster_family, sr)
                 'adjusted_time': float(t_ms - deltas[ch])
             })
         else:
+            #get this channels delay
+            delay_ms = t_ms - leader_time_ms
+
+            #get waveforms for cross correlation
             w_ch = waveforms[ch]
             min_len = min(len(leader_wave), len(w_ch))
+
+            #error checking if waveforms are too short, set amplitude ratio to 0
             if min_len < 5:
                 results.append({
                     'channel': int(ch),
-                    'delay': 0.0,
+                    'delay': float(delay_ms),
                     'transmission_coefficient': 0.0,
                     'raw_time': float(t_ms),
-                    'adjusted_delay': 0.0,
+                    'adjusted_delay': float(delay_ms - deltas_adjusted[ch]),
                     'adjusted_time': float(t_ms - deltas[ch] )
                 })
                 continue
+            #get time windows for correlation
             w_lead = leader_wave[:min_len]
             w_sub = w_ch[:min_len]
+
             cc = signal.correlate(w_sub, w_lead, mode='full')
-            lags = signal.correlation_lags(len(w_lead), len(w_sub), mode='full')
-            idx = np.argmax(cc)
-            delay_ms = 0.0
-            if idx < len(lags):
-                delay_samples = lags[idx]
-                delay_ms = (delay_samples/sr)*1000.0
-            trans = cc[idx]/leader_ac_peak if leader_ac_peak!=0 else 0.0
+            #lags = signal.correlation_lags(len(w_lead), len(w_sub), mode='full') nopt using htis anymore
+            # idx = np.argmax(cc)
+            # delay_ms = 0.0
+            # if idx < len(lags):
+            #     delay_samples = lags[idx]
+            #     delay_ms = (delay_samples/sr)*1000.0
+
+            peak_val = np.max(cc) if len(cc) > 0 else 0.0
+            trans = peak_val / leader_ac_peak if leader_ac_peak != 0 else 0.0
+            
             results.append({
                 'channel': int(ch),
                 'delay': float(delay_ms),
